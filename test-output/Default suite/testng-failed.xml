@@ -7,7 +7,7 @@
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="headerTest"/>
+          <include name="EmpPolicyDocs"/>
         </methods>
       </class> <!-- Mytestpackage.Homepagetest -->
     </classes>

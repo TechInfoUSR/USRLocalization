@@ -34,13 +34,13 @@ public class Homepagetest {
 		}
 
 		@Test
-		public void headerTest() {
-			Assert.assertTrue(homePage.isHeaderExist(prop.getProperty("empgreetings")));
+		public void empgreetings() {
+			Assert.assertTrue(homePage.isempgreetingsExist(prop.getProperty("empgreetings")));
 		}
 
 		@Test
-		public void contactFooterTest() {
-			Assert.assertTrue(homePage.isContactExist(prop.getProperty("EmpTotal")));
+		public void EmpTotal() {
+			Assert.assertTrue(homePage.isEmpTotalExist(prop.getProperty("EmpTotal")));
 		}
 		
 		@Test
@@ -48,7 +48,80 @@ public class Homepagetest {
 			Assert.assertTrue(homePage.isEmpstatusTest(prop.getProperty("Empstatus")));
 		}
 		
+		@Test
+		public void Emp360feedback() {
+			Assert.assertTrue(homePage.isEmp360feedback(prop.getProperty("Emp360feedback")));
+		}
+		
+		@Test
+		public void EmpCumulativeReports() {
+			Assert.assertTrue(homePage.isEmpCumulativeReports(prop.getProperty("EmpCumulativeReports")));
+		}
+		@Test
+		public void EmpMYGoal() {
+			Assert.assertTrue(homePage.isEmpMYGoal(prop.getProperty("EmpMYGoal")));
+		}
+		@Test
+		public void EmpOnTrack() {
+			Assert.assertTrue(homePage.isEmpOnTrack(prop.getProperty("EmpOnTrack")));
+		}
+		@Test
+		public void EmpAtRisk() {
+			Assert.assertTrue(homePage.isEmpAtRisk(prop.getProperty("EmpAtRisk")));
+		}
 
+		@Test
+		public void EmpBehind() {
+			Assert.assertTrue(homePage.isEmpBehind(prop.getProperty("EmpBehind")));
+		}
+		@Test
+		public void EmpClosed() {
+			Assert.assertTrue(homePage.isEmpClosed(prop.getProperty("EmpClosed")));
+		}
+		@Test
+		public void EmpPostponed() {
+			Assert.assertTrue(homePage.isEmpPostponed(prop.getProperty("EmpPostponed")));
+		}
+		@Test
+		public void EmpNotStarted() {
+			Assert.assertTrue(homePage.isEmpNotStarted(prop.getProperty("EmpNotStarted")));
+		}
+		@Test
+		public void EmpNotApproved() {
+			Assert.assertTrue(homePage.isEmpNotApproved(prop.getProperty("EmpNotApproved")));
+		}
+		@Test
+		public void EmpASSIGNEDBY() {
+			Assert.assertTrue(homePage.isEmpASSIGNEDBY(prop.getProperty("EmpASSIGNEDBY")));
+		}
+		@Test
+		public void EmpPROGRESSSCORE() {
+			Assert.assertTrue(homePage.isEmpPROGRESSSCORE(prop.getProperty("EmpPROGRESSSCORE")));
+		}
+		@Test
+		public void EmpADDNEWKRA() {
+			Assert.assertTrue(homePage.isEmpADDNEWKRA(prop.getProperty("EmpADDNEWKRA")));
+		}
+		@Test
+		public void EmpActions() {
+			Assert.assertTrue(homePage.isEmpActions(prop.getProperty("EmpActions")));
+		}
+		@Test
+		public void EmpProfileSettings() {
+			Assert.assertTrue(homePage.isEmpProfileSettings(prop.getProperty("EmpProfileSettings")));
+		}
+		@Test
+		public void EmpLogOut() {
+			Assert.assertTrue(homePage.isEmpLogOut(prop.getProperty("EmpLogOut")));
+		}
+		@Test
+		public void SubmitSelfAssessment() {
+			Assert.assertTrue(homePage.isSubmitSelfAssessment(prop.getProperty("SubmitSelfAssessment")));
+		}
+		@Test
+		public void EmpPolicyDocs() {
+			Assert.assertTrue(homePage.isEmpPolicyDocs(prop.getProperty("EmpPolicyDocs")));
+		}
 		@AfterTest
 		public void tearDown() {
 			driver.quit();
