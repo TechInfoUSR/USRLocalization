@@ -1,105 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="21" passed="21" failed="0" skipped="0">
+<testng-results ignored="0" total="17" passed="17" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-05T07:34:14Z" name="Default suite" finished-at="2024-06-05T07:34:32Z" duration-ms="18406">
+  <suite started-at="2024-06-07T12:18:49Z" name="Default suite" finished-at="2024-06-07T12:19:18Z" duration-ms="29542">
     <groups>
     </groups>
-    <test started-at="2024-06-05T07:34:14Z" name="Default test" finished-at="2024-06-05T07:34:32Z" duration-ms="18406">
-      <class name="Mytestpackage.Homepagetest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:14Z" name="setup" finished-at="2024-06-05T07:34:28Z" duration-ms="14493" status="PASS">
+    <test started-at="2024-06-07T12:18:49Z" name="Default test" finished-at="2024-06-07T12:19:18Z" duration-ms="29542">
+      <class name="Mytestpackage.degreeFedback360pagetest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:18:49Z" name="setup" finished-at="2024-06-07T12:19:10Z" duration-ms="21255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Emp360feedback()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:28Z" name="Emp360feedback" finished-at="2024-06-05T07:34:28Z" duration-ms="125" status="PASS">
+        <test-method signature="Pending()[pri:1, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:10Z" name="Pending" finished-at="2024-06-07T12:19:10Z" duration-ms="227" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Emp360feedback -->
-        <test-method signature="EmpADDNEWKRA()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:28Z" name="EmpADDNEWKRA" finished-at="2024-06-05T07:34:28Z" duration-ms="98" status="PASS">
+        </test-method> <!-- Pending -->
+        <test-method signature="Completed()[pri:2, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:10Z" name="Completed" finished-at="2024-06-07T12:19:10Z" duration-ms="121" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpADDNEWKRA -->
-        <test-method signature="EmpASSIGNEDBY()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:28Z" name="EmpASSIGNEDBY" finished-at="2024-06-05T07:34:28Z" duration-ms="109" status="PASS">
+        </test-method> <!-- Completed -->
+        <test-method signature="KRAPEERREVIEW()[pri:3, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:10Z" name="KRAPEERREVIEW" finished-at="2024-06-07T12:19:10Z" duration-ms="120" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpASSIGNEDBY -->
-        <test-method signature="EmpActions()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:28Z" name="EmpActions" finished-at="2024-06-05T07:34:29Z" duration-ms="92" status="PASS">
+        </test-method> <!-- KRAPEERREVIEW -->
+        <test-method signature="SCOPE()[pri:4, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:10Z" name="SCOPE" finished-at="2024-06-07T12:19:10Z" duration-ms="138" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpActions -->
-        <test-method signature="EmpAtRisk()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:29Z" name="EmpAtRisk" finished-at="2024-06-05T07:34:29Z" duration-ms="93" status="PASS">
+        </test-method> <!-- SCOPE -->
+        <test-method signature="EMPLOYEE()[pri:5, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:10Z" name="EMPLOYEE" finished-at="2024-06-07T12:19:11Z" duration-ms="116" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpAtRisk -->
-        <test-method signature="EmpBehind()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:29Z" name="EmpBehind" finished-at="2024-06-05T07:34:29Z" duration-ms="95" status="PASS">
+        </test-method> <!-- EMPLOYEE -->
+        <test-method signature="REQUESTEDBY()[pri:6, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:11Z" name="REQUESTEDBY" finished-at="2024-06-07T12:19:11Z" duration-ms="70" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpBehind -->
-        <test-method signature="EmpClosed()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:29Z" name="EmpClosed" finished-at="2024-06-05T07:34:29Z" duration-ms="91" status="PASS">
+        </test-method> <!-- REQUESTEDBY -->
+        <test-method signature="EMPLOYEESELFREVIEW()[pri:7, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:11Z" name="EMPLOYEESELFREVIEW" finished-at="2024-06-07T12:19:11Z" duration-ms="80" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpClosed -->
-        <test-method signature="EmpCumulativeReports()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:29Z" name="EmpCumulativeReports" finished-at="2024-06-05T07:34:29Z" duration-ms="109" status="PASS">
+        </test-method> <!-- EMPLOYEESELFREVIEW -->
+        <test-method signature="MANAGERREVIEW()[pri:8, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:11Z" name="MANAGERREVIEW" finished-at="2024-06-07T12:19:11Z" duration-ms="60" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpCumulativeReports -->
-        <test-method signature="EmpLogOut()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:29Z" name="EmpLogOut" finished-at="2024-06-05T07:34:29Z" duration-ms="299" status="PASS">
+        </test-method> <!-- MANAGERREVIEW -->
+        <test-method signature="GOALPEERFEEDBACK()[pri:9, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:11Z" name="GOALPEERFEEDBACK" finished-at="2024-06-07T12:19:11Z" duration-ms="80" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpLogOut -->
-        <test-method signature="EmpMYGoal()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:29Z" name="EmpMYGoal" finished-at="2024-06-05T07:34:29Z" duration-ms="107" status="PASS">
+        </test-method> <!-- GOALPEERFEEDBACK -->
+        <test-method signature="My360FEEDBACK()[pri:10, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:11Z" name="My360FEEDBACK" finished-at="2024-06-07T12:19:11Z" duration-ms="110" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpMYGoal -->
-        <test-method signature="EmpNotApproved()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:29Z" name="EmpNotApproved" finished-at="2024-06-05T07:34:29Z" duration-ms="111" status="PASS">
+        </test-method> <!-- My360FEEDBACK -->
+        <test-method signature="COMPETENCIESPEERREVIEW()[pri:11, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:11Z" name="COMPETENCIESPEERREVIEW" finished-at="2024-06-07T12:19:11Z" duration-ms="276" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpNotApproved -->
-        <test-method signature="EmpNotStarted()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:29Z" name="EmpNotStarted" finished-at="2024-06-05T07:34:30Z" duration-ms="103" status="PASS">
+        </test-method> <!-- COMPETENCIESPEERREVIEW -->
+        <test-method signature="Provide360Feedbackabout()[pri:12, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:11Z" name="Provide360Feedbackabout" finished-at="2024-06-07T12:19:12Z" duration-ms="281" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpNotStarted -->
-        <test-method signature="EmpOnTrack()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:30Z" name="EmpOnTrack" finished-at="2024-06-05T07:34:30Z" duration-ms="218" status="PASS">
+        </test-method> <!-- Provide360Feedbackabout -->
+        <test-method signature="Feedbackrequestedby()[pri:13, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:12Z" name="Feedbackrequestedby" finished-at="2024-06-07T12:19:12Z" duration-ms="267" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpOnTrack -->
-        <test-method signature="EmpPROGRESSSCORE()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:30Z" name="EmpPROGRESSSCORE" finished-at="2024-06-05T07:34:30Z" duration-ms="121" status="PASS">
+        </test-method> <!-- Feedbackrequestedby -->
+        <test-method signature="ReportingManager()[pri:14, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:12Z" name="ReportingManager" finished-at="2024-06-07T12:19:12Z" duration-ms="82" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpPROGRESSSCORE -->
-        <test-method signature="EmpPolicyDocs()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:30Z" name="EmpPolicyDocs" finished-at="2024-06-05T07:34:30Z" duration-ms="450" status="PASS">
+        </test-method> <!-- ReportingManager -->
+        <test-method signature="Requestcameon()[pri:15, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:12Z" name="Requestcameon" finished-at="2024-06-07T12:19:12Z" duration-ms="72" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpPolicyDocs -->
-        <test-method signature="EmpPostponed()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:30Z" name="EmpPostponed" finished-at="2024-06-05T07:34:31Z" duration-ms="196" status="PASS">
+        </test-method> <!-- Requestcameon -->
+        <test-method signature="SelectReport()[pri:16, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:12Z" name="SelectReport" finished-at="2024-06-07T12:19:17Z" duration-ms="5495" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpPostponed -->
-        <test-method signature="EmpProfileSettings()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:31Z" name="EmpProfileSettings" finished-at="2024-06-05T07:34:31Z" duration-ms="333" status="PASS">
+        </test-method> <!-- SelectReport -->
+        <test-method signature="ExporttoExcel()[pri:17, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:17Z" name="ExporttoExcel" finished-at="2024-06-07T12:19:18Z" duration-ms="104" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpProfileSettings -->
-        <test-method signature="EmpTotal()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:31Z" name="EmpTotal" finished-at="2024-06-05T07:34:31Z" duration-ms="65" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpTotal -->
-        <test-method signature="EmpstatusTest()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:31Z" name="EmpstatusTest" finished-at="2024-06-05T07:34:31Z" duration-ms="175" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpstatusTest -->
-        <test-method signature="SubmitSelfAssessment()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:31Z" name="SubmitSelfAssessment" finished-at="2024-06-05T07:34:31Z" duration-ms="104" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SubmitSelfAssessment -->
-        <test-method signature="empgreetings()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:31Z" name="empgreetings" finished-at="2024-06-05T07:34:31Z" duration-ms="141" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- empgreetings -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Mytestpackage.Homepagetest@3148f668]" started-at="2024-06-05T07:34:31Z" name="tearDown" finished-at="2024-06-05T07:34:32Z" duration-ms="636" status="PASS">
+        </test-method> <!-- ExporttoExcel -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Mytestpackage.degreeFedback360pagetest@25f4878b]" started-at="2024-06-07T12:19:18Z" name="tearDown" finished-at="2024-06-07T12:19:18Z" duration-ms="512" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Mytestpackage.Homepagetest -->
+      </class> <!-- Mytestpackage.degreeFedback360pagetest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
 import Pages.HomePage;
+import Pages.degreeFedback360;
 public class Homepagetest {
 	
 
@@ -19,6 +20,7 @@ public class Homepagetest {
 		Properties prop;
 		WebDriver driver;
 		HomePage homePage;
+		degreeFedback360 degreeFedback360;
 
 		@BeforeTest
 		public void setup() {
@@ -31,6 +33,7 @@ public class Homepagetest {
 			driver.findElement(By.xpath("//*[@id=\"hello\"]/div[4]/button")).click();
 			
 			homePage = new HomePage(driver);
+			degreeFedback360 = new degreeFedback360(driver);
 		}
 
 		@Test
@@ -122,6 +125,7 @@ public class Homepagetest {
 		public void EmpPolicyDocs() {
 			Assert.assertTrue(homePage.isEmpPolicyDocs(prop.getProperty("EmpPolicyDocs")));
 		}
+
 		@AfterTest
 		public void tearDown() {
 			driver.quit();

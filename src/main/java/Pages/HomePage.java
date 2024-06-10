@@ -228,7 +228,7 @@ public class HomePage {
 	}
 	private WebElement getEmpPolicyDocs(String EmpPolicyDocsvalue) {
 		driver.findElement(By.xpath("//*[@id=\"nggDiv\"]/div[2]/div[1]/span")).click();
-		String contactXpathValue = "//*[@id=\"policyDocumentation\"]/a";
+		String contactXpathValue = "//span[contains(text(),'"+EmpPolicyDocsvalue+"')]";
 		return elementUtil.getElement("xpath", contactXpathValue);
 	}
 	
