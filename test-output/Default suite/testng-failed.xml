@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Mytestpackage.degreeFedback360pagetest">
+      <class name="ManagerTestPage.managertestHomePage">
         <methods>
-          <include name="ExporttoExcel"/>
-          <include name="SelectReport"/>
-          <include name="tearDown"/>
           <include name="setup"/>
-          <include name="Provide360Feedbackabout"/>
+          <include name="tearDown"/>
+          <include name="MgrGoalsApproved"/>
         </methods>
-      </class> <!-- Mytestpackage.degreeFedback360pagetest -->
+      </class> <!-- ManagerTestPage.managertestHomePage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
