@@ -1,5 +1,6 @@
 package MnagerPages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -23,14 +24,14 @@ public class managerHomePage {
 		System.out.println(header);
 		return getMgrGoalPlanExist(MgrGoalPlanValue).isDisplayed();
 	}
-	private WebElement MgrBellcurve(String MgrGoalPlan) {
+	private WebElement getMgrBellcurve(String MgrGoalPlan) {
 		String headerXpathValue = "//a[contains(text(),'"+MgrGoalPlan+"')]";
 		return elementUtil.getElement("xpath", headerXpathValue);
 	}
 	public boolean isMgrOverallPMSReport(String MgrGoalPlanValue) {
-		String header = getMgrOverallPMSReport(MgrGoalPlanValue).getText();
+		String header = getMgrBellcurve(MgrGoalPlanValue).getText();
 		System.out.println(header);
-		return getMgrOverallPMSReport(MgrGoalPlanValue).isDisplayed();
+		return getMgrBellcurve(MgrGoalPlanValue).isDisplayed();
 	}
 	private WebElement getMgrTeamIDPs(String MgrGoalPlan) {
 		String headerXpathValue = "//a[contains(text(),'"+MgrGoalPlan+"')]";
@@ -157,5 +158,25 @@ public class managerHomePage {
 		String header = getMgrManagerReview(MgrGoalPlanValue).getText();
 		System.out.println(header);
 		return getMgrManagerReview(MgrGoalPlanValue).isDisplayed();
+	}
+	private WebElement getSelectEmp(String MgrGoalPlan) {
+		String headerXpathValue = "//span[contains(text(),"+MgrGoalPlan+")]";
+		
+		return elementUtil.getElement("xpath", headerXpathValue);
+	}
+	public boolean isSelectEmp(String MgrGoalPlanValue) {
+		String header = getSelectEmp(MgrGoalPlanValue).getText();
+		System.out.println(header);
+		return getSelectEmp(MgrGoalPlanValue).isDisplayed();
+		
+	}
+	private WebElement getOverallPMSReport(String MgrGoalPlan) {
+		String headerXpathValue = "//th[contains(text(),"+MgrGoalPlan+")]";
+		return elementUtil.getElement("xpath", headerXpathValue);
+	}
+	public boolean isOverallPMSReport(String MgrGoalPlanValue) {
+		String header = getOverallPMSReport(MgrGoalPlanValue).getText();
+		System.out.println(header);
+		return getOverallPMSReport(MgrGoalPlanValue).isDisplayed();
 	}
 }

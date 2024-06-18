@@ -16,56 +16,84 @@ public class dropDowns {
 		this.driver = driver;
 		elementUtil = new ElementUtil(driver);
 	}
-	private WebElement getOrganization(String Organizationvalue) {
-		driver.findElement(By.xpath("//a[@data-target='#second']")).click();
-		WebElement selectlevel = driver.findElement(By.id("selectlevel"));
-		Select level_select=new Select(selectlevel) ;
-		 level_select.selectByVisibleText("Organization");
-		String contactXpathValue = "//select[@id='selectlevel']";
+	private WebElement getEmpOrganization(String Organizationvalue) {
+
+		String contactXpathValue = "//select[@id='selectlevel']/option[text()='"+Organizationvalue+"']";
 		return elementUtil.getElement("xpath", contactXpathValue);
 	}
-	public boolean isOrganization(String OrganizationTestValue) {
-		String contact = getOrganization(OrganizationTestValue).getText();
+	public boolean isEmpOrganization(String OrganizationTestValue) {
+		String contact = getEmpOrganization(OrganizationTestValue).getText();
 		System.out.println(contact);
-		return getOrganization(OrganizationTestValue).isDisplayed();
+		return getEmpOrganization(OrganizationTestValue).isDisplayed();
 	}
-	private WebElement getManualupdate(String EmpstatusTest) {
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		driver.findElement(By.xpath("//span[contains(text(),'ADD NEW KRA')]")).click();
-		try {
-			Thread.sleep(8000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		driver.findElement(By.xpath("//*[@id=\"tab_default_11\"]/form/div[4]/div[1]/div[1]/div[1]/a")).click();
-		try {
-			Thread.sleep(10000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		driver.findElement(By.xpath("//span[contains(@id,'select2-connectionId-container')]")).click();
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		driver.findElement(By.xpath("//li[contains(text(),'"+EmpstatusTest+"')] ")).click();
-		String contactXpathValue = "//span[contains(text(),'"+EmpstatusTest+"')]";
+	private WebElement getEmpPersonalgoal(String Personalgoalvalue) {
+
+		String contactXpathValue = "//select[@id='selectlevel']/option[text()='"+Personalgoalvalue+"']";
 		return elementUtil.getElement("xpath", contactXpathValue);
 	}
-	
-	public boolean isManualupdate(String EmpstatusTestValue) {
-		String contact = getManualupdate(EmpstatusTestValue).getText();
+	public boolean isEmpPersonalgoal(String PersonalgoalTestValue) {
+		String contact = getEmpPersonalgoal(PersonalgoalTestValue).getText();
 		System.out.println(contact);
-		return getManualupdate(EmpstatusTestValue).isDisplayed();
+		return getEmpPersonalgoal(PersonalgoalTestValue).isDisplayed();
+	}
+	private WebElement getEmpDepartment(String EmpDepartmentvalue) {
+
+		String contactXpathValue = "//select[@id='selectlevel']/option[normalize-space()='"+EmpDepartmentvalue +"']";
+		return elementUtil.getElement("xpath", contactXpathValue);
+	}
+	public boolean isEmpDepartment(String EmpDepartmentTestValue) {
+		String contact = getEmpDepartment(EmpDepartmentTestValue).getText();
+		System.out.println(contact);
+		return getEmpDepartment(EmpDepartmentTestValue).isDisplayed();
 	}
 
+	
+	private WebElement getManualupdate(String ManualupdateTest) {
+	String contactXpathValue = "//span[contains(text(),"+ManualupdateTest+")]";
+	return elementUtil.getElement("xpath", contactXpathValue);
 }
+
+public boolean isManualupdate(String ManualupdateTestValue) {
+	String contact = getManualupdate(ManualupdateTestValue).getText();
+	System.out.println(contact);
+	return getManualupdate(ManualupdateTestValue).isDisplayed();
+}
+private WebElement getManualandaverage(String ManualupdateTest) {
+String contactXpathValue = "//span[contains(text(),"+ManualupdateTest+")]";
+return elementUtil.getElement("xpath", contactXpathValue);
+}
+
+public boolean isManualandaverage(String ManualupdateTestValue) {
+String contact = getManualandaverage(ManualupdateTestValue).getText();
+System.out.println(contact);
+return getManualandaverage(ManualupdateTestValue).isDisplayed();
+}
+private WebElement getManualandweightedaveragefromkeyresults(String ManualupdateTest) {
+String contactXpathValue = "//span[contains(text(),"+ManualupdateTest+")]";
+return elementUtil.getElement("xpath", contactXpathValue);
+}
+
+public boolean isManualandweightedaveragefromkeyresults(String ManualupdateTestValue) {
+String contact = getManualandweightedaveragefromkeyresults(ManualupdateTestValue).getText();
+System.out.println(contact);
+return getManualandweightedaveragefromkeyresults(ManualupdateTestValue).isDisplayed();
+}
+private WebElement getManualandsummationfromkeyresults(String ManualupdateTest) {
+String contactXpathValue = "//span[contains(text(),"+ManualupdateTest+")]";
+return elementUtil.getElement("xpath", contactXpathValue);
+}
+
+public boolean isManualandsummationfromkeyresults(String ManualupdateTestValue) {
+String contact = getManualandsummationfromkeyresults(ManualupdateTestValue).getText();
+System.out.println(contact);
+return getManualandsummationfromkeyresults(ManualupdateTestValue).isDisplayed();
+}
+
+}
+
+
+
+
+
+
+

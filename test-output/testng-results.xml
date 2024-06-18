@@ -1,85 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="16" passed="16" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-17T12:20:55Z" name="Default suite" finished-at="2024-06-17T12:21:11Z" duration-ms="15132">
+  <suite started-at="2024-06-18T12:01:08Z" name="Default suite" finished-at="2024-06-18T12:03:28Z" duration-ms="139805">
     <groups>
     </groups>
-    <test started-at="2024-06-17T12:20:55Z" name="Default test" finished-at="2024-06-17T12:21:11Z" duration-ms="15132">
-      <class name="ManagerTestPage.managertestHomePage">
-        <test-method is-config="true" signature="setup()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:20:55Z" name="setup" finished-at="2024-06-17T12:21:08Z" duration-ms="12805" status="PASS">
+    <test started-at="2024-06-18T12:01:08Z" name="Default test" finished-at="2024-06-18T12:03:28Z" duration-ms="139805">
+      <class name="Mytestpackage.DropdownTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:01:08Z" name="setup" finished-at="2024-06-18T12:01:31Z" duration-ms="22746" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="MgrAPPROVED()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:08Z" name="MgrAPPROVED" finished-at="2024-06-17T12:21:08Z" duration-ms="210" status="PASS">
+        <test-method signature="Organization()[pri:1, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:01:31Z" name="Organization" finished-at="2024-06-18T12:01:49Z" duration-ms="18519" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MgrAPPROVED -->
-        <test-method signature="MgrBellcurve()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:08Z" name="MgrBellcurve" finished-at="2024-06-17T12:21:09Z" duration-ms="148" status="PASS">
+        </test-method> <!-- Organization -->
+        <test-method signature="Personalgoal()[pri:2, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:01:49Z" name="Personalgoal" finished-at="2024-06-18T12:01:55Z" duration-ms="6252" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MgrBellcurve -->
-        <test-method signature="MgrCumulativeReports()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:09Z" name="MgrCumulativeReports" finished-at="2024-06-17T12:21:09Z" duration-ms="160" status="PASS">
+        </test-method> <!-- Personalgoal -->
+        <test-method signature="isEmpDepartment()[pri:3, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:01:55Z" name="isEmpDepartment" finished-at="2024-06-18T12:02:05Z" duration-ms="9221" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MgrCumulativeReports -->
-        <test-method signature="MgrEmployeeSelfReview()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:09Z" name="MgrEmployeeSelfReview" finished-at="2024-06-17T12:21:09Z" duration-ms="92" status="PASS">
+        </test-method> <!-- isEmpDepartment -->
+        <test-method signature="Manualupdate()[pri:4, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:02:05Z" name="Manualupdate" finished-at="2024-06-18T12:02:35Z" duration-ms="30521" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MgrEmployeeSelfReview -->
-        <test-method signature="MgrGapAnalysis()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:09Z" name="MgrGapAnalysis" finished-at="2024-06-17T12:21:09Z" duration-ms="110" status="PASS">
+        </test-method> <!-- Manualupdate -->
+        <test-method signature="Manualandaverage()[pri:5, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:02:35Z" name="Manualandaverage" finished-at="2024-06-18T12:02:50Z" duration-ms="15309" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MgrGapAnalysis -->
-        <test-method signature="MgrGoalPlan()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:09Z" name="MgrGoalPlan" finished-at="2024-06-17T12:21:09Z" duration-ms="108" status="PASS">
+        </test-method> <!-- Manualandaverage -->
+        <test-method signature="Manualandweightedaveragefromkeyresults()[pri:6, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:02:50Z" name="Manualandweightedaveragefromkeyresults" finished-at="2024-06-18T12:03:09Z" duration-ms="18321" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MgrGoalPlan -->
-        <test-method signature="MgrGoalsApproved()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:09Z" name="MgrGoalsApproved" finished-at="2024-06-17T12:21:09Z" duration-ms="78" status="PASS">
+        </test-method> <!-- Manualandweightedaveragefromkeyresults -->
+        <test-method signature="Manualandsummationfromkeyresults()[pri:7, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:03:09Z" name="Manualandsummationfromkeyresults" finished-at="2024-06-18T12:03:27Z" duration-ms="18318" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MgrGoalsApproved -->
-        <test-method signature="MgrManagerReview()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:09Z" name="MgrManagerReview" finished-at="2024-06-17T12:21:09Z" duration-ms="140" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MgrManagerReview -->
-        <test-method signature="MgrMyTeamsPMSworkflowcompletedstatus()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:09Z" name="MgrMyTeamsPMSworkflowcompletedstatus" finished-at="2024-06-17T12:21:09Z" duration-ms="77" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MgrMyTeamsPMSworkflowcompletedstatus -->
-        <test-method signature="MgrOverallPMSReport()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:09Z" name="MgrOverallPMSReport" finished-at="2024-06-17T12:21:09Z" duration-ms="92" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MgrOverallPMSReport -->
-        <test-method signature="MgrREJECTED()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:09Z" name="MgrREJECTED" finished-at="2024-06-17T12:21:10Z" duration-ms="77" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MgrREJECTED -->
-        <test-method signature="MgrSKIPLEVELREVIEW()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:10Z" name="MgrSKIPLEVELREVIEW" finished-at="2024-06-17T12:21:10Z" duration-ms="78" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MgrSKIPLEVELREVIEW -->
-        <test-method signature="MgrSUBMITTEDUNDERAUTHORIZATION()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:10Z" name="MgrSUBMITTEDUNDERAUTHORIZATION" finished-at="2024-06-17T12:21:10Z" duration-ms="108" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MgrSUBMITTEDUNDERAUTHORIZATION -->
-        <test-method signature="MgrTeamIDPs()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:10Z" name="MgrTeamIDPs" finished-at="2024-06-17T12:21:10Z" duration-ms="76" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MgrTeamIDPs -->
-        <test-method signature="MgrTotalReviewCycleInitiated()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:10Z" name="MgrTotalReviewCycleInitiated" finished-at="2024-06-17T12:21:10Z" duration-ms="91" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MgrTotalReviewCycleInitiated -->
-        <test-method signature="YETTOSUBMIT()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:10Z" name="YETTOSUBMIT" finished-at="2024-06-17T12:21:10Z" duration-ms="76" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- YETTOSUBMIT -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:ManagerTestPage.managertestHomePage@2d6c53fc]" started-at="2024-06-17T12:21:10Z" name="tearDown" finished-at="2024-06-17T12:21:11Z" duration-ms="563" status="PASS">
+        </test-method> <!-- Manualandsummationfromkeyresults -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:03:27Z" name="tearDown" finished-at="2024-06-18T12:03:28Z" duration-ms="571" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- ManagerTestPage.managertestHomePage -->
+      </class> <!-- Mytestpackage.DropdownTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

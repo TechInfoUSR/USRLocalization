@@ -3,13 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ManagerTestPage.managertestHomePage">
+      <class name="Mytestpackage.DropdownTest">
         <methods>
+          <include name="Manualandweightedaveragefromkeyresults"/>
+          <include name="Manualupdate"/>
+          <include name="Manualandaverage"/>
           <include name="setup"/>
+          <include name="Manualandsummationfromkeyresults"/>
           <include name="tearDown"/>
-          <include name="MgrGoalsApproved"/>
         </methods>
-      </class> <!-- ManagerTestPage.managertestHomePage -->
+      </class> <!-- Mytestpackage.DropdownTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
