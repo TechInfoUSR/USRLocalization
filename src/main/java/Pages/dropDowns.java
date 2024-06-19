@@ -51,43 +51,43 @@ public class dropDowns {
 	private WebElement getManualupdate(String ManualupdateTest) {
 	String contactXpathValue = "//span[contains(text(),"+ManualupdateTest+")]";
 	return elementUtil.getElement("xpath", contactXpathValue);
-}
+	}
 
-public boolean isManualupdate(String ManualupdateTestValue) {
+	public boolean isManualupdate(String ManualupdateTestValue) {
 	String contact = getManualupdate(ManualupdateTestValue).getText();
 	System.out.println(contact);
 	return getManualupdate(ManualupdateTestValue).isDisplayed();
-}
-private WebElement getManualandaverage(String ManualupdateTest) {
-String contactXpathValue = "//span[contains(text(),"+ManualupdateTest+")]";
-return elementUtil.getElement("xpath", contactXpathValue);
-}
+	}
+	private WebElement getManualandaverage(String ManualupdateTest) {
+		String contactXpathValue = "//span[contains(text(),"+ManualupdateTest+")]";
+		return elementUtil.getElement("xpath", contactXpathValue);
+	}
 
-public boolean isManualandaverage(String ManualupdateTestValue) {
-String contact = getManualandaverage(ManualupdateTestValue).getText();
-System.out.println(contact);
-return getManualandaverage(ManualupdateTestValue).isDisplayed();
-}
-private WebElement getManualandweightedaveragefromkeyresults(String ManualupdateTest) {
-String contactXpathValue = "//span[contains(text(),"+ManualupdateTest+")]";
-return elementUtil.getElement("xpath", contactXpathValue);
-}
+	public boolean isManualandaverage(String ManualupdateTestValue) {
+		String contact = getManualandaverage(ManualupdateTestValue).getText();
+		System.out.println(contact);
+		return getManualandaverage(ManualupdateTestValue).isDisplayed();
+	}
+	private WebElement getManualandweightedaveragefromkeyresults(String ManualupdateTest) {
+		String contactXpathValue = "//span[contains(text(),"+ManualupdateTest+")]";
+		return elementUtil.getElement("xpath", contactXpathValue);
+	}
 
-public boolean isManualandweightedaveragefromkeyresults(String ManualupdateTestValue) {
-String contact = getManualandweightedaveragefromkeyresults(ManualupdateTestValue).getText();
-System.out.println(contact);
-return getManualandweightedaveragefromkeyresults(ManualupdateTestValue).isDisplayed();
-}
-private WebElement getManualandsummationfromkeyresults(String ManualupdateTest) {
-String contactXpathValue = "//span[contains(text(),"+ManualupdateTest+")]";
-return elementUtil.getElement("xpath", contactXpathValue);
-}
+	public boolean isManualandweightedaveragefromkeyresults(String ManualupdateTestValue) {
+		String contact = getManualandweightedaveragefromkeyresults(ManualupdateTestValue).getText();
+		System.out.println(contact);
+		return getManualandweightedaveragefromkeyresults(ManualupdateTestValue).isDisplayed();
+	}
+	private WebElement getManualandsummationfromkeyresults(String ManualupdateTest) {
+		String contactXpathValue = "//span[contains(text(),"+ManualupdateTest+")]";
+		return elementUtil.getElement("xpath", contactXpathValue);
+	}
 
-public boolean isManualandsummationfromkeyresults(String ManualupdateTestValue) {
-String contact = getManualandsummationfromkeyresults(ManualupdateTestValue).getText();
-System.out.println(contact);
-return getManualandsummationfromkeyresults(ManualupdateTestValue).isDisplayed();
-}
+	public boolean isManualandsummationfromkeyresults(String ManualupdateTestValue) {
+		String contact = getManualandsummationfromkeyresults(ManualupdateTestValue).getText();
+		System.out.println(contact);
+		return getManualandsummationfromkeyresults(ManualupdateTestValue).isDisplayed();
+	}
 
 }
 

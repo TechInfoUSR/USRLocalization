@@ -1,49 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-18T12:01:08Z" name="Default suite" finished-at="2024-06-18T12:03:28Z" duration-ms="139805">
+  <suite started-at="2024-06-19T12:42:42Z" name="Default suite" finished-at="2024-06-19T12:43:31Z" duration-ms="49545">
     <groups>
     </groups>
-    <test started-at="2024-06-18T12:01:08Z" name="Default test" finished-at="2024-06-18T12:03:28Z" duration-ms="139805">
-      <class name="Mytestpackage.DropdownTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:01:08Z" name="setup" finished-at="2024-06-18T12:01:31Z" duration-ms="22746" status="PASS">
+    <test started-at="2024-06-19T12:42:42Z" name="Default test" finished-at="2024-06-19T12:43:31Z" duration-ms="49545">
+      <class name="normalFlowTest.EmpNormalFlowTest">
+        <test-method is-config="true" signature="AddGoalPlan()[pri:0, instance:normalFlowTest.EmpNormalFlowTest@7aaca91a]" started-at="2024-06-19T12:42:42Z" name="AddGoalPlan" finished-at="2024-06-19T12:43:00Z" duration-ms="18673" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Organization()[pri:1, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:01:31Z" name="Organization" finished-at="2024-06-18T12:01:49Z" duration-ms="18519" status="PASS">
+        </test-method> <!-- AddGoalPlan -->
+        <test-method signature="AddGoalPaln()[pri:0, instance:normalFlowTest.EmpNormalFlowTest@7aaca91a]" started-at="2024-06-19T12:43:00Z" name="AddGoalPaln" finished-at="2024-06-19T12:43:30Z" duration-ms="30185" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Organization -->
-        <test-method signature="Personalgoal()[pri:2, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:01:49Z" name="Personalgoal" finished-at="2024-06-18T12:01:55Z" duration-ms="6252" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Personalgoal -->
-        <test-method signature="isEmpDepartment()[pri:3, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:01:55Z" name="isEmpDepartment" finished-at="2024-06-18T12:02:05Z" duration-ms="9221" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- isEmpDepartment -->
-        <test-method signature="Manualupdate()[pri:4, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:02:05Z" name="Manualupdate" finished-at="2024-06-18T12:02:35Z" duration-ms="30521" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Manualupdate -->
-        <test-method signature="Manualandaverage()[pri:5, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:02:35Z" name="Manualandaverage" finished-at="2024-06-18T12:02:50Z" duration-ms="15309" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Manualandaverage -->
-        <test-method signature="Manualandweightedaveragefromkeyresults()[pri:6, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:02:50Z" name="Manualandweightedaveragefromkeyresults" finished-at="2024-06-18T12:03:09Z" duration-ms="18321" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Manualandweightedaveragefromkeyresults -->
-        <test-method signature="Manualandsummationfromkeyresults()[pri:7, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:03:09Z" name="Manualandsummationfromkeyresults" finished-at="2024-06-18T12:03:27Z" duration-ms="18318" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Manualandsummationfromkeyresults -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:Mytestpackage.DropdownTest@41294f8]" started-at="2024-06-18T12:03:27Z" name="tearDown" finished-at="2024-06-18T12:03:28Z" duration-ms="571" status="PASS">
+        </test-method> <!-- AddGoalPaln -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:normalFlowTest.EmpNormalFlowTest@7aaca91a]" started-at="2024-06-19T12:43:30Z" name="tearDown" finished-at="2024-06-19T12:43:31Z" duration-ms="666" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- Mytestpackage.DropdownTest -->
+      </class> <!-- normalFlowTest.EmpNormalFlowTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -28,7 +28,8 @@ public class ConfigpropReader {
 				case "russian":
 					ip = new FileInputStream("./src/main/resources/lang.russian.properties");
 					break;
-
+				case "normal":
+					ip = new FileInputStream("./src\\maon\\resources\\Normal.properties");
 				default:
 					System.out.println("lang not found..." + language);
 					break;

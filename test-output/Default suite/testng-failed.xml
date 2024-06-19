@@ -3,16 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Mytestpackage.DropdownTest">
+      <class name="normalFlowTest.EmpNormalFlowTest">
         <methods>
-          <include name="Manualandweightedaveragefromkeyresults"/>
-          <include name="Manualupdate"/>
-          <include name="Manualandaverage"/>
-          <include name="setup"/>
-          <include name="Manualandsummationfromkeyresults"/>
+          <include name="AddGoalPaln"/>
+          <include name="AddGoalPlan"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- Mytestpackage.DropdownTest -->
+      </class> <!-- normalFlowTest.EmpNormalFlowTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
