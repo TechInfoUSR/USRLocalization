@@ -5,9 +5,9 @@
     <classes>
       <class name="normalFlowTest.EmpNormalFlowTest">
         <methods>
+          <include name="AddGoalPaln"/>
           <include name="AddGoalPlan"/>
           <include name="tearDown"/>
-          <include name="InitiatePMSCycle"/>
         </methods>
       </class> <!-- normalFlowTest.EmpNormalFlowTest -->
     </classes>

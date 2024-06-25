@@ -42,7 +42,7 @@ public class EmpNormalFlowTest
 		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[4]/button")).click();
 
 	}
-//	@Test(priority = 1)
+	@Test(priority = 1)
 	public void AddGoalPaln() throws InterruptedException 
 	{
 	 JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -56,11 +56,12 @@ public class EmpNormalFlowTest
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//input[@class=\"form-control dpd1\"]")).click();
 		String FromMonth = driver.findElement(By.xpath("//th[@class=\"datepicker-switch\"]")).getText();
+		Thread.sleep(500);
 		System.out.print(FromMonth);
 //		while(!(FromMonth.equals("June 2024")))
 //		{
 //			driver.findElement(By.xpath("//th[@class=\"next\"]")).click();
-			driver.findElement(By.xpath("//td[contains(text(),\"11\")]")).click();
+			driver.findElement(By.xpath("//td[@class='day' and text()='11']")).click();
 			Thread.sleep(2000);
 //		}					
 		driver.findElement(By.xpath("//input[@class=\"form-control dpd2\"]")).click();
@@ -88,9 +89,12 @@ public class EmpNormalFlowTest
 			Thread.sleep(2000);
 //			driver.findElement(By.xpath("//option[@value=\"62\"]")).click();
 //			Pjgroup= prop.getProperty("EmpGroup");
-			driver.findElement(By.xpath("//input[@placeholder=\"Select Target Employees Group for this Plan\"]")).click();
+//			driver.findElement(By.xpath("//input[@placeholder=\"Select Target Employees Group for this Plan\"]")).click();
 			Thread.sleep(2000);
-			driver.findElement(By.xpath("//span[contains(text(),"+prop.getProperty("EmpGroup")+")]")).click();
+			String EmpGroup = prop.getProperty("EmpGroup");
+			driver.findElement(By.xpath("//input[@placeholder=\"Select Target Employees Group for this Plan\"]")).sendKeys(EmpGroup);
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//span[@class='highlight' and contains(text(), '"+EmpGroup+"')]")).click();
 			Thread.sleep(2000);
 //			select_Gruop.selectByIndex(62);
 		
@@ -114,20 +118,24 @@ public class EmpNormalFlowTest
 			driver.findElement(By.xpath("//input[@id=\"isWeightageBased\"]")).isDisplayed();
 		}
 		driver.findElement(By.xpath("//button[@id=\"submit_btn_action\"]")).click();
-		Thread.sleep(2000);
-		boolean GoalPlan = driver.findElement(By.xpath("//td[contains(text(),\"PMSGoalPaln1 for june\")]")).isDisplayed();
+//		driver.findElement(By.xpath("//button[contains(text(),\"Close\")]")).click();
+		Thread.sleep(5000);
+		String isGoalPlanDispalyed = prop.getProperty("GoalPalnName");
+		boolean GoalPlan = driver.findElement(By.xpath("//td[contains(text(),'"+isGoalPlanDispalyed+"')]")).isDisplayed();
 		Thread.sleep(2000);
 		AssertJUnit.assertEquals(GoalPlan, true);	
 	}
 		
-//	@Test(priority = 2)
+	@Test(priority = 2)
 	public void AddPMSCycle() throws InterruptedException 
 	{
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,1500)");
-		driver.findElement(By.xpath("//h3[contains(text(),'Goal Time Period Plan Management')]")).click();
+//		JavascriptExecutor jse = (JavascriptExecutor)driver;
+//		jse.executeScript("window.scrollBy(0,1500)");
+//		driver.findElement(By.xpath("//h3[contains(text(),'Goal Time Period Plan Management')]")).click();
 		driver.findElement(By.xpath("//a[contains(text(),\"Performance Review cycle\")]")).click();
+		
 		driver.findElement(By.xpath("//img[@alt=\"Add\"]")).click();
+		Thread.sleep(2000);
 		WebElement selectgoalplan = driver.findElement(By.id("goalplan"));
 		Select select_goalplan=new Select(selectgoalplan) ;
 		String GoalPalnName = prop.getProperty("GoalPalnName");
@@ -144,7 +152,7 @@ public class EmpNormalFlowTest
 //		while(!(FromMonth.equals("June 2024")))
 //		{
 //			driver.findElement(By.xpath("//th[@class=\"next\"]")).click();
-			driver.findElement(By.xpath("//td[contains(text(),\"11\")]")).click();
+			driver.findElement(By.xpath("//td[@class='day' and text()='11']")).click();
 			Thread.sleep(2000);
 //		}					
 		driver.findElement(By.xpath("//input[@class=\"form-control dpd2\"]")).click();
@@ -161,6 +169,7 @@ public class EmpNormalFlowTest
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//div[@class=\"modal-footer\"]")).click();
 		driver.findElement(By.xpath("//button[@id=\"saveReviewCycleDetails\"]")).click();
+//		driver.findElement(By.xpath("//button[contains(text(),\"Close\")]")).click();
 		Thread.sleep(1000);
 		
 		String AddPMSCyle = prop.getProperty("GoalPalnName");
@@ -171,10 +180,10 @@ public class EmpNormalFlowTest
 	@Test(priority = 3)
 	public void InitiatePMSCycle() throws InterruptedException 
 	{
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,1500)");
-		driver.findElement(By.xpath("//h3[contains(text(),'Goal Time Period Plan Management')]")).click();
-		driver.findElement(By.xpath("//a[contains(text(),\"Performance Review cycle\")]")).click();
+//		JavascriptExecutor jse = (JavascriptExecutor)driver;
+//		jse.executeScript("window.scrollBy(0,1500)");
+//		driver.findElement(By.xpath("//h3[contains(text(),'Goal Time Period Plan Management')]")).click();
+//		driver.findElement(By.xpath("//a[contains(text(),\"Performance Review cycle\")]")).click();
 		String AddPMSCyle = prop.getProperty("GoalPalnName");
 		driver.findElement(By.xpath("//span[contains(text(),'"+AddPMSCyle+"')]")).click();
 		Thread.sleep(2000);
@@ -195,38 +204,32 @@ public class EmpNormalFlowTest
 		driver.findElement(By.xpath("//input[@ng-model=\"newEligibleGroup.behaviorWeightage\"]")).sendKeys(prop.getProperty("behaviorWeightage"));
 		driver.findElement(By.xpath("//input[@ng-model=\"newEligibleGroup.leadershipWeightage\"]")).sendKeys(prop.getProperty("leadershipWeightage"));
 		driver.findElement(By.xpath("//a[contains(text(),'Insert')]")).click();
-		driver.findElement(By.xpath("")).click();
-		Thread.sleep(6000);
-//		WebElement element = driver.findElement(By.xpath("//a[@class='btn btn-default btn-xs']"));
-//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-//		element.click();
-		  WebDriverWait wait = new WebDriverWait(driver, 10); // 10 seconds timeout
-	        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='btn btn-default btn-xs']")));
-
-	        // Perform the click action
-	        element.click();
-
-		Thread.sleep(6000);
-//		driver.findElement(By.xpath("(//a[@class='btn btn-default btn-xs'])[1]")).click();
-//		Thread.sleep(6000);
+//		driver.findElement(By.xpath("")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//*[@class='btn btn-default btn-xs' and @ng-click='initiateReviewCycleForGroup(eg.weightageGroupId)']")).click();
+		Thread.sleep(2000);
 //		Alert alert = driver.switchTo().alert();
-//		Thread.sleep(6000);
-//		alert.dismiss();
-//		Thread.sleep(6000);
+//		alert.accept();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
+		Thread.sleep(6000);
+		
 		AssertJUnit.assertEquals(true, true);
 	}
 		
-		
-		
-		
-		
-		
-		
-		
-	
-	
-
-	
+	@Test(priority = 4)
+	public void DeletePMSCycle() throws InterruptedException 
+	{
+		driver.findElement(By.xpath("//a[@data-original-title=\"PMS Review\"]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a[contains(text(),'Progress Monitor')]")).click();
+		WebElement Select_PMSCycle = driver.findElement(By.xpath("//select[@class=\"form-control ng-pristine ng-valid ng-touched\"]"));
+		String PMSCyclename = prop.getProperty("GoalPalnName");
+		Select selectCycle = new Select(Select_PMSCycle);
+		selectCycle.selectByVisibleText(PMSCyclename);
+		driver.findElement(By.xpath("(//div[@class=\"btn-group\"])[1]"));
+//		for ()
+	}	
 	
 	@AfterTest
 	public void tearDown() {
