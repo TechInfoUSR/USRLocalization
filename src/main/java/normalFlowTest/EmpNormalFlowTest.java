@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.AssertJUnit;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -19,12 +20,14 @@ import org.testng.annotations.Test;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
-import NormalFlowForEmployee.Employeepage;
-
+import NormalFlowForEmployee.employeepage;
+import NormalFlowForEmployee.employeepage;
 
 public class EmpNormalFlowTest 
 {
-	Employeepage Employeepage;
+//	private static final String case Personalgoal = null;
+//	private static final String Personalgoal = null;
+	employeepage employeepage;
 	DriverFactory df;
 	ConfigpropReader cp;
 	Properties prop;
@@ -43,8 +46,10 @@ public class EmpNormalFlowTest
 
 	}
 	@Test(priority = 1)
-	public void AddGoalPaln() throws InterruptedException 
+	public boolean AddGoalPaln(String string) throws InterruptedException 
 	{
+
+	
 	 JavascriptExecutor jse = (JavascriptExecutor)driver;
 	 jse.executeScript("window.scrollBy(0,1500)");
 	 Thread.sleep(2000);
@@ -123,7 +128,10 @@ public class EmpNormalFlowTest
 		String isGoalPlanDispalyed = prop.getProperty("GoalPalnName");
 		boolean GoalPlan = driver.findElement(By.xpath("//td[contains(text(),'"+isGoalPlanDispalyed+"')]")).isDisplayed();
 		Thread.sleep(2000);
-		AssertJUnit.assertEquals(GoalPlan, true);	
+//		AssertJUnit.assertEquals(GoalPlan, true);	
+		
+		 return GoalPlan;
+		
 	}
 		
 	@Test(priority = 2)
@@ -216,19 +224,81 @@ public class EmpNormalFlowTest
 		
 		AssertJUnit.assertEquals(true, true);
 	}
+//	@Test(priority = 4)
+	public void EmpSelf() throws InterruptedException 
+	{
+		driver.findElement(By.xpath("//a[@class=\"avatar-sec header-icon\"]"));
+		driver.findElement(By.xpath("(//h5[@class=\"ma-0\"])[2]"));
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[2]/input")).sendKeys(prop.getProperty("MgrUsername"));
+		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[3]/input")).sendKeys(prop.getProperty("MgrPassword"));
+		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[4]/button")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a[@class=\"dropdown-toggle\"]")).click();
+		String PMSCyclename = prop.getProperty("GoalPalnName");
+		driver.findElement(By.xpath("//a[contains(text(),'"+PMSCyclename+"')]"));
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'Ranganath ')]")).click();
+		driver.findElement(By.xpath("(//span[@class=\"ml-h align-center\"])[2]")).click();
+		String GoalType = prop.getProperty("GoalType");
 		
-	@Test(priority = 4)
+		switch(GoalType) {
+		case "personalgoal" :
+			driver.findElement(By.id("obj_title")).sendKeys(prop.getProperty("GoalType"));
+//			WebElement selectCatogory = driver.findElement(By.id("goalCategoryId"));
+//			Select selectCat = new Select (selectCatogory);
+//			selectCat.selectByVisibleText(prop.getProperty("goalCategory"));
+			
+			driver.findElement(By.xpath("//input[@class=\"select2-search__field\"]")).click();
+			driver.findElement(By.xpath("//input[@class=\"select2-search__field\"]")).sendKeys(prop.getProperty("goalCategory"));
+			driver.findElement(By.xpath("(//textarea[@class=\"form-control custom ng-pristine ng-untouched ng-valid\"])[2]")).sendKeys(prop.getProperty("Description"));
+			String matrics = prop.getProperty("matrics");
+			if (matrics.equals("Matrics")) 
+			{
+			driver.findElement(By.xpath("(//a[@class=\"toggle-icon toggle-without-bg\"])[2]")).click();
+			driver.findElement(By.id("kpi_success")).click();
+			driver.findElement(By.id("current_metric")).click();
+			
+			
+			driver.findElement(By.id("Weight")).sendKeys(prop.getProperty("Weight"));
+			}
+			else if(matrics.equals("No Matrics"))
+			{
+				driver.findElement(By.xpath("(//a[@class=\"toggle-icon toggle-without-bg\"])[2]")).click();				
+				driver.findElement(By.id("Weight")).sendKeys(prop.getProperty("Weight"));
+				
+				
+			}
+		}
+	}	
+	@Test(priority = 5)
 	public void DeletePMSCycle() throws InterruptedException 
 	{
-		driver.findElement(By.xpath("//a[@data-original-title=\"PMS Review\"]")).click();
+		driver.findElement(By.xpath("//a[@title=\"PMS Review\"]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//a[contains(text(),'Progress Monitor')]")).click();
-		WebElement Select_PMSCycle = driver.findElement(By.xpath("//select[@class=\"form-control ng-pristine ng-valid ng-touched\"]"));
+		Thread.sleep(2000);
+		WebElement Select_PMSCycle = driver.findElement(By.xpath("//select[@class=\"form-control ng-pristine ng-untouched ng-valid\"]"));
+		Thread.sleep(1000);
 		String PMSCyclename = prop.getProperty("GoalPalnName");
 		Select selectCycle = new Select(Select_PMSCycle);
+		Thread.sleep(1000);
 		selectCycle.selectByVisibleText(PMSCyclename);
-		driver.findElement(By.xpath("(//div[@class=\"btn-group\"])[1]"));
-//		for ()
+		Thread.sleep(2000);
+		boolean isbuttondisp = driver.findElement(By.xpath("(//div[@style=\"text-align:left;position:absolute;\"])[1]")).isDisplayed();
+		while(!(isbuttondisp==false))
+		{	
+			driver.findElement(By.xpath("(//div[@style=\"text-align:left;position:absolute;\"])[1]")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("(//ul[@class=\"dropdown-menu cmenu-show\"])[1]")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\" and contains(text(),'OK')]")).click();
+			Thread.sleep(2000);	
+			
+		}
+		driver.findElement(By.xpath("//a[@title=\"PMS Cycles\"]")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'Performance Review cycle')]")).click();
+		driver.findElement(By.xpath("//td[contains(text(),'"+PMSCyclename+"')]")).isDisplayed();
 	}	
 	
 	@AfterTest

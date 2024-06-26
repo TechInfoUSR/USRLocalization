@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="normalFlowTest.EmpNormalFlowTest">
+      <class name="normalFlowTest.addGoalPla_CreatePMSCycleTest">
         <methods>
-          <include name="AddGoalPaln"/>
-          <include name="AddGoalPlan"/>
+          <include name="testinitiatePMSCycle"/>
           <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- normalFlowTest.EmpNormalFlowTest -->
+      </class> <!-- normalFlowTest.addGoalPla_CreatePMSCycleTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
