@@ -1,4 +1,4 @@
-package NormalFlowForEmployee;
+package Basic;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,7 +16,6 @@ import org.testng.annotations.Test;
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
 import Utils.ElementUtil;
-import normalFlowTest.EmpNormalFlowTest;
 
 public class employeepage {
 	private WebDriver driver;

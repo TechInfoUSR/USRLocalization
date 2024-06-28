@@ -5,7 +5,7 @@
     <classes>
       <class name="normalFlowTest.addGoalPla_CreatePMSCycleTest">
         <methods>
-          <include name="testinitiatePMSCycle"/>
+          <include name="selectGoalCycle"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>

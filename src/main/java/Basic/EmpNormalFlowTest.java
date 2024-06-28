@@ -1,4 +1,4 @@
-package normalFlowTest;
+package Basic;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -20,8 +20,6 @@ import org.testng.annotations.Test;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
-import NormalFlowForEmployee.employeepage;
-import NormalFlowForEmployee.employeepage;
 
 public class EmpNormalFlowTest 
 {
@@ -40,12 +38,12 @@ public class EmpNormalFlowTest
 		prop = cp.initLangProp("normal");
 		df = new DriverFactory();
 		driver = df.initDriver("chrome", prop);
-		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[2]/input")).sendKeys(prop.getProperty("hrUsername"));
+		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[2]/input")).sendKeys(prop.getProperty("MgrUsername"));
 		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[3]/input")).sendKeys(prop.getProperty("hrPassword"));
 		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[4]/button")).click();
 
 	}
-	@Test(priority = 1)
+//	@Test(priority = 1)
 	public boolean AddGoalPaln(String string) throws InterruptedException 
 	{
 
@@ -134,7 +132,7 @@ public class EmpNormalFlowTest
 		
 	}
 		
-	@Test(priority = 2)
+//	@Test(priority = 2)
 	public void AddPMSCycle() throws InterruptedException 
 	{
 //		JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -185,7 +183,7 @@ public class EmpNormalFlowTest
 		AssertJUnit.assertEquals(GoalPlan, true);	
 	}
 		
-	@Test(priority = 3)
+//	@Test(priority = 3)
 	public void InitiatePMSCycle() throws InterruptedException 
 	{
 //		JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -224,33 +222,47 @@ public class EmpNormalFlowTest
 		
 		AssertJUnit.assertEquals(true, true);
 	}
-//	@Test(priority = 4)
+	@Test(priority = 4)
 	public void EmpSelf() throws InterruptedException 
 	{
-		driver.findElement(By.xpath("//a[@class=\"avatar-sec header-icon\"]"));
-		driver.findElement(By.xpath("(//h5[@class=\"ma-0\"])[2]"));
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[2]/input")).sendKeys(prop.getProperty("MgrUsername"));
-		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[3]/input")).sendKeys(prop.getProperty("MgrPassword"));
-		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[4]/button")).click();
+//		driver.findElement(By.xpath("//a[@class=\"avatar-sec header-icon\"]"));
+//		driver.findElement(By.xpath("(//h5[@class=\"ma-0\"])[2]"));
+//		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[2]/input")).sendKeys(prop.getProperty("MgrUsername"));
+//		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[3]/input")).sendKeys(prop.getProperty("MgrPassword"));
+//		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[4]/button")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//a[@class=\"dropdown-toggle\"]")).click();
 		String PMSCyclename = prop.getProperty("GoalPalnName");
 		driver.findElement(By.xpath("//a[contains(text(),'"+PMSCyclename+"')]"));
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[contains(text(),'Ranganath ')]")).click();
-		driver.findElement(By.xpath("(//span[@class=\"ml-h align-center\"])[2]")).click();
+		Thread.sleep(10000);
+//		boolean disp = driver.findElement(By.xpath("(//a[@class=\"cs-modal-btn\"])[1]")).isDisplayed();
+//		Thread.sleep(5000);
+//		    driver.findElement(By.xpath("(//span[@class=\"ml-h align-center\"])[2]")).click();
+//		    Thread.sleep(2000); // Add a delay to avoid too rapid execution
+//		    driver.findElement(By.xpath("(//span[@class=\"ml-h align-center\"])[2]")).isDisplayed(); // Re-evaluate disp
+		  
+		By yourElementLocator = By.xpath("(//span[@class=\"ml-h align-center\"])[2]");
+	    clickElementWhenReady(driver, yourElementLocator);
+
+	    
+		
 		String GoalType = prop.getProperty("GoalType");
 		
 		switch(GoalType) {
-		case "personalgoal" :
-			driver.findElement(By.id("obj_title")).sendKeys(prop.getProperty("GoalType"));
-//			WebElement selectCatogory = driver.findElement(By.id("goalCategoryId"));
-//			Select selectCat = new Select (selectCatogory);
-//			selectCat.selectByVisibleText(prop.getProperty("goalCategory"));
+		case "Personalgoal" :
+			driver.findElement(By.id("obj_title")).sendKeys(prop.getProperty("Title"));
 			
-			driver.findElement(By.xpath("//input[@class=\"select2-search__field\"]")).click();
+			driver.findElement(By.id("select2-goalCategoryId-container")).click();
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("//input[@class=\"select2-search__field\"]")).sendKeys(prop.getProperty("goalCategory"));
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//li[contains(text(),'OKRs')]")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//a[@data-target=\"#second\"]")).click();
+			
 			driver.findElement(By.xpath("(//textarea[@class=\"form-control custom ng-pristine ng-untouched ng-valid\"])[2]")).sendKeys(prop.getProperty("Description"));
 			String matrics = prop.getProperty("matrics");
 			if (matrics.equals("Matrics")) 
@@ -271,7 +283,11 @@ public class EmpNormalFlowTest
 			}
 		}
 	}	
-	@Test(priority = 5)
+private void clickElementWhenReady(WebDriver driver2, By yourElementLocator) {
+		// TODO Auto-generated method stub
+		
+	}
+	//	@Test(priority = 5)
 	public void DeletePMSCycle() throws InterruptedException 
 	{
 		driver.findElement(By.xpath("//a[@title=\"PMS Review\"]")).click();

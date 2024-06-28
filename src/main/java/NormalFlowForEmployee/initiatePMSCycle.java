@@ -64,6 +64,7 @@ public class initiatePMSCycle
 	        Thread.sleep(6000);
 	        
 	    }
+	    //Not working due to a minor bug
 	    public boolean isCycleInitiated(String GoalPalnName) throws InterruptedException 
 	    {
 	    	return driver.findElement(By.xpath("//td[contains(text(),'"+GoalPalnName+"')and @class=\"ng-binding\"]")).isDisplayed();
