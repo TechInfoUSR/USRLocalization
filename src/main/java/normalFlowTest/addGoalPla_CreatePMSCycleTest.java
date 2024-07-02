@@ -36,7 +36,7 @@ public class addGoalPla_CreatePMSCycleTest
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
         addGoalPlan = new addGoalPlan(driver);
-        addGoalPlan.login(prop.getProperty("EmpUsername"), prop.getProperty("hrPassword"));
+        addGoalPlan.login(prop.getProperty("EmpUsername"), prop.getProperty("HrPassword"));
           
         PMSCyclePage = new PMSCyclePage(driver, prop);
         initiatePMSCycle = new initiatePMSCycle(driver, prop);

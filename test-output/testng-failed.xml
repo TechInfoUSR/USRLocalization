@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="normalFlowTest.addGoalPla_CreatePMSCycleTest">
+      <class name="_360DFeedback.HRAdminpage_Test">
         <methods>
-          <include name="selectGoalCycle"/>
-          <include name="tearDown"/>
+          <include name="send360form"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- normalFlowTest.addGoalPla_CreatePMSCycleTest -->
+      </class> <!-- _360DFeedback.HRAdminpage_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
