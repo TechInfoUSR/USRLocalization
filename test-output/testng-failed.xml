@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="_360DFeedback.HRAdminpage_Test">
+      <class name="_360DFeedback.Resons_totheForm_Test">
         <methods>
-          <include name="send360form"/>
           <include name="setUp"/>
+          <include name="teardown"/>
+          <include name="send360form"/>
         </methods>
-      </class> <!-- _360DFeedback.HRAdminpage_Test -->
+      </class> <!-- _360DFeedback.Resons_totheForm_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
