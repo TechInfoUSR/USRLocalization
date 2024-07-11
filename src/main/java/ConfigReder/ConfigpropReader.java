@@ -30,6 +30,9 @@ public class ConfigpropReader {
 					break;
 				case "normal":
 					ip = new FileInputStream("./src\\maon\\resources\\Normal.properties");
+				case "360degree_flow":
+					ip = new FileInputStream("./src\\maon\\resources\\360Degree_Flow.properties");
+				
 				default:
 					System.out.println("lang not found..." + language);
 					break;

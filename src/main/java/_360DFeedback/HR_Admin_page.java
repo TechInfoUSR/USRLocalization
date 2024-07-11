@@ -98,47 +98,47 @@ public class HR_Admin_page {
 
 //        About whom need be asked for Feedback 
         driver.findElement(By.xpath("//input[@placeholder=\"Select employee about whom you need to collect 360° feedback\"]")).sendKeys(Empname);
-        Thread.sleep(3000);
+        Thread.sleep(500);
         driver.findElement(By.xpath("//div[@class=\"selectize-dropdown-content\"]")).click();
-        Thread.sleep(3000);
+        Thread.sleep(500);
         driver.findElement(By.xpath("//body[@class=\"menu-open ng-scope\"]")).click();
-        Thread.sleep(3000);
+        Thread.sleep(500);
 	} 
 	 
         void GoalPlanName(String GoalPalnName) throws InterruptedException {
 //      Select goal plan name 
       driver.findElement(By.id("goalid")).click();
-      Thread.sleep(3000);
+      Thread.sleep(500);
       WebElement Select_Goalplan = driver.findElement(By.id("goalid"));
       Select select = new Select(Select_Goalplan);      
-      Thread.sleep(2000);      
+      Thread.sleep(500);      
       select.selectByVisibleText(GoalPalnName);
-      Thread.sleep(2000);
+      Thread.sleep(500);
       driver.findElement(By.id("goalid")).click();
-      Thread.sleep(2000);
+      Thread.sleep(500);
         }
         void SelectForm(String Form) throws InterruptedException {
 //        Select the Form to Ask feedback
         driver.findElement(By.xpath("//input[@placeholder=\"Select 360° Feedback form template from library\"]")).click();
-        Thread.sleep(3000);
+        Thread.sleep(500);
         driver.findElement(By.xpath("//input[@placeholder=\"Select 360° Feedback form template from library\"]")).sendKeys(Form);
-        Thread.sleep(2000);
+        Thread.sleep(500);
         driver.findElement(By.xpath("//div[@class=\"selectize-dropdown single\"]")).click();
-        Thread.sleep(2000);
+        Thread.sleep(500);
         }
         void Responder(String Responder) throws InterruptedException {
 //      Select the Responder
         driver.findElement(By.xpath("//div[@class=\"selectize-input items not-full has-options\"]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(500);
         driver.findElement(By.xpath("//input[@placeholder=\"Please enter minimum 2 character to search the employee\"]")).sendKeys(Responder);
-        Thread.sleep(2000);
+        Thread.sleep(500);
         driver.findElement(By.xpath("(//div[@class=\"selectize-dropdown multi\"])[2]")).click();
-        Thread.sleep(3000);
+        Thread.sleep(500);
         driver.findElement(By.xpath("//body[@class=\"menu-open ng-scope\"]")).click();
-        Thread.sleep(2000);
+        Thread.sleep(500);
 
         driver.findElement(By.id("submit")).click();
-        Thread.sleep(2000);
+        Thread.sleep(100);
     
 	}
 

@@ -23,7 +23,7 @@ public class Resons_totheForm_Test {
 		    void setUp() throws IOException, InterruptedException 
 		    {
 		        cp = new ConfigpropReader();
-		        prop = cp.initLangProp("normal");
+		        prop = cp.initLangProp("360Degree_Flow");
 		        df = new DriverFactory();
 		        driver = df.initDriver("chrome", prop);
 		       
@@ -33,8 +33,8 @@ public class Resons_totheForm_Test {
 
 		    @Test
 		    void send360form() throws InterruptedException, IOException {
-		    	Respons_to_the_Form.login(("Empusername"),("Empuserpass"));
-		    	
+		    	Respons_to_the_Form.Response_to_360Form();
+//		    	Respons_to_the_Form.Validate_the_Data();
 		    }
 
 		    @AfterClass

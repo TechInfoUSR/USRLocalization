@@ -24,7 +24,7 @@ public class HRAdminpage_Test {
 	    void setUp() throws IOException, InterruptedException 
 	    {
 	        cp = new ConfigpropReader();
-	        prop = cp.initLangProp("normal");
+	        prop = cp.initLangProp("360Degree_Flow");
 	        df = new DriverFactory();
 	        driver = df.initDriver("chrome", prop);
 	        HR_Admin_page = new HR_Admin_page(driver, prop);
@@ -34,13 +34,14 @@ public class HRAdminpage_Test {
 	        
 	        JavascriptExecutor Srollup = (JavascriptExecutor) driver;
 	        Srollup.executeScript("window.scrollBy(0,2000)");        
-	        Thread.sleep(2000);
+	        Thread.sleep(100);
 	        driver.findElement(By.xpath("(//h3[contains(text(),'360° Feedback for SMART IDPs')])[1]")).click();
-	        Thread.sleep(2000);
+	        Thread.sleep(100);
 	        driver.findElement(By.xpath("//span[contains(text(),'Send 360° Feedback Request')]")).click();
-	        Thread.sleep(2000);
+	        Thread.sleep(100);
 	    
 	    }
+	   
 	    
 	    @Test
 	    void send360form() throws InterruptedException, IOException {
@@ -49,7 +50,7 @@ public class HRAdminpage_Test {
 	    }
 	    
 
-//	    @AfterClass
+	    @AfterClass
 	    void teardown() {
 	    	driver.quit();
 	    }
