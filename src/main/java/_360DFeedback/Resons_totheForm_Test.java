@@ -18,7 +18,7 @@ public class Resons_totheForm_Test {
 		    Properties prop; 
 		    WebDriver driver;
 		    Respons_to_the_Form Respons_to_the_Form;
-		    
+		    TestResponse TestResponse;
 		    @BeforeTest
 		    void setUp() throws IOException, InterruptedException 
 		    {
@@ -28,15 +28,20 @@ public class Resons_totheForm_Test {
 		        driver = df.initDriver("chrome", prop);
 		       
 		        Respons_to_the_Form = new Respons_to_the_Form(driver, prop);
-	    
+		        TestResponse = new TestResponse(driver,prop);
 		    }
 
 		    @Test
 		    void send360form() throws InterruptedException, IOException {
+		    	Respons_to_the_Form.login();
 		    	Respons_to_the_Form.Response_to_360Form();
 //		    	Respons_to_the_Form.Validate_the_Data();
 		    }
 
+//		    @Test (priority =2)
+		    void test() throws InterruptedException, IOException {
+		    	TestResponse.call();
+		    }
 		    @AfterClass
 		    void teardown() {
 			driver.quit();
