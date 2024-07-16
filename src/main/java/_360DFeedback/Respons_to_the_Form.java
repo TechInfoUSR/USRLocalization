@@ -122,135 +122,171 @@ public class Respons_to_the_Form {
 		        
 	         DataFormatter formatter = new DataFormatter();
 
-		        for (int r = 1; r <= rows; r++) {
-	             XSSFRow row = sheet.getRow(r);
-	             if (row == null) {
-	                 continue;
-	             }
-
-	             List<WebElement> questions = driver.findElements(By.xpath("(//form[@class=\"form-horizontal degree mt-5 ng-pristine ng-valid\"])[1]//div[@class=\"options\"]"));
-
-    	         int numberOfQuestions = questions.size();
-	             
-	             if(numberOfQuestions==13) {
-	             for (int c = 0; c < cols; c++) {
-	                 XSSFCell cell = row.getCell(c);
- 
-	                 switch(c)
-	                 {
-	                 case 0: String optionno = formatter.formatCellValue(cell);
-	                 callfordata(optionno);
-	                 break;           
-	                 }            
-	             }
-	             System.out.println(); 
-	         }
-	             else if(numberOfQuestions==12) {
-		             for (int c = 0; c < cols; c++) {
-		                 XSSFCell cell = row.getCell(c);
-	 
-		                 switch(c)
-		                 {
-		                 case 1: String optionno = formatter.formatCellValue(cell);
-		                 callfordata(optionno);
-		                 break;           
-		                 }            
-		             }
-		             System.out.println(); 
-		         }
-	             
-	             else if(numberOfQuestions==11) {
-	                 for (int c = 0; c < cols; c++) {
-		                 XSSFCell cell = row.getCell(c);
-	 
-		                 switch(c)
-		                 {
-		                 case 2: String optionno = formatter.formatCellValue(cell);
-		                 callfordata(optionno);
-		                 break;           
-		                 }            
-		             }
-		             System.out.println(); 
-		         
-	             }
-	             else if(numberOfQuestions==10) {
-	                 for (int c = 0; c < cols; c++) {
-		                 XSSFCell cell = row.getCell(c);
-	 
-		                 switch(c)
-		                 {
-		                 case 3: String optionno = formatter.formatCellValue(cell);
-		                 callfordata(optionno);
-		                 break;           
-		                 }            
-		             }
-		             System.out.println(); 
-		         
-	             }
-	             else if(numberOfQuestions==14) {
-	                 for (int c = 0; c < cols; c++) {
-		                 XSSFCell cell = row.getCell(c);
-	 
-		                 switch(c)
-		                 {
-		                 case 4: String optionno = formatter.formatCellValue(cell);
-		                 callfordata(optionno);
-		                 break;           
-		                 }            
-		             }
-		             System.out.println(); 
-		         
-	             }
-	             else if(numberOfQuestions==2) {
-
-	                     if (row != null) {
-	                         for (int c = 5; c < row.getLastCellNum(); c++) {
-	                             XSSFCell cell = row.getCell(c);
-	                             if (cell != null) {
-	                                 String cellValue = formatter.formatCellValue(cell);
-	                                 callfordata(cellValue);
-	                             }
-	                         }
-	                     }
-	                 }     
-
-		             System.out.println(); 
-		         
-	             }
-		      
-			        workbook1.close();
-			        inputStream.close();	
-		     } 
-		     
-	             
-
-	        
-	     void callfordata(String optionno) throws InterruptedException{
-	    	 List<WebElement> questions = driver.findElements(By.xpath("(//form[@class=\"form-horizontal degree mt-5 ng-pristine ng-valid\"])[1]//div[@class=\"options\"]"));
+	         
+	         List<WebElement> questions = driver.findElements(By.xpath("(//form[@class='form-horizontal degree mt-5 ng-pristine ng-valid'])[1]//div[@class='options']"));
 
 	         int numberOfQuestions = questions.size();
-
 	         System.out.println("Number of questions: " + numberOfQuestions);
 
+	       if (numberOfQuestions == 13) {
+	         for (int r = 1; r <= numberOfQuestions; r++) {
+	             XSSFRow row = sheet.getRow(r);
+	             if (row == null) {
+	                 continue; // Skip empty rows
+	             }
+
+	             // Read the value from the specific column (e.g., column 0)
+	             XSSFCell cell = row.getCell(0); 
+	             if (cell != null) {
+          
+	                 cell.getCellType();
+	                 int option_no = (int) cell.getNumericCellValue();
+	                 System.out.println("Row " + r + " Column 0 value: " + option_no);
+
+	                 callfordata(option_no,numberOfQuestions, r);
+	             }
+	         
+	         }
+	       }
+	       else if(numberOfQuestions==12) {
+	           for (int r = 1; r <= numberOfQuestions; r++) {
+	               XSSFRow row = sheet.getRow(r);
+	               if (row == null) {
+	                   continue; 
+	               }
+
+	               XSSFCell cell = row.getCell(1); 
+	               if (cell != null) {
+	                   cell.getCellType();
+	                   int option_no = (int) cell.getNumericCellValue();
+	                   System.out.println("Row " + r + " Column 0 value: " + option_no);
+
+	                   callfordata(option_no,numberOfQuestions, r);
+	               }
+	           
+	           }
+	           
+	       }
+	       else if (numberOfQuestions==11) {
+	           for (int r = 1; r <= numberOfQuestions; r++) {
+	               XSSFRow row = sheet.getRow(r);
+	               if (row == null) {
+	                   continue;
+	               }
+
+	               XSSFCell cell = row.getCell(2); 
+	               if (cell != null) {
+	                   cell.getCellType();
+	                   int option_no = (int) cell.getNumericCellValue();
+	                   System.out.println("Row " + r + " Column 0 value: " + option_no);
+
+	                   callfordata(option_no,numberOfQuestions, r);
+	               }
+	           
+	           }
+	       }
+	       else if(numberOfQuestions==10) {
+	           for (int r = 1; r <= numberOfQuestions; r++) {
+	               XSSFRow row = sheet.getRow(r);
+	               if (row == null) {
+	                   continue; 
+	               }
+	               XSSFCell cell = row.getCell(3); 
+	               if (cell != null) {
+	                   cell.getCellType();
+	                   int option_no = (int) cell.getNumericCellValue();
+	                   System.out.println("Row " + r + " Column 0 value: " + option_no);
+
+	                   callfordata(option_no,numberOfQuestions, r);
+	               }
+	           
+	           }
+	       }
+	       else if(numberOfQuestions==14) {
+	           for (int r = 1; r <= numberOfQuestions; r++) {
+	               XSSFRow row = sheet.getRow(r);
+	               if (row == null) {
+	                   continue; 
+	               }
+
+	               XSSFCell cell = row.getCell(4); 
+	               if (cell != null) {
+	                   cell.getCellType();
+	                   int option_no = (int) cell.getNumericCellValue();
+	                   System.out.println("Row " + r + " Column 0 value: " + option_no);
+	                   callfordata(option_no,numberOfQuestions, r);
+	               }
+	           
+	           }
+	       }
+	       else if(numberOfQuestions==2) {
+	           for (int r = 1; r <= numberOfQuestions; r++) {
+	               XSSFRow row = sheet.getRow(r);
+	               if (row == null) {
+	                   continue;
+	               }
+
+	               XSSFCell cell = row.getCell(5);
+	               if (cell != null) 
+	               {
+	                   cell.getCellType();
+	                   int option_no = (int) cell.getNumericCellValue();
+	                   System.out.println("Row " + r + " Column 0 value: " + option_no);
+
+	                   WebElement question = questions.get(r - 1);
+
+	                   callfordata(option_no,numberOfQuestions, r);
+	               }           
+	           }
+	       }
+	       else if(numberOfQuestions==1) {
+	           for (int r = 1; r <= numberOfQuestions; r++) {
+	               XSSFRow row = sheet.getRow(r);
+	               if (row == null) {
+	                   continue;
+	               }
+
+	               XSSFCell cell = row.getCell(6);
+	               if (cell != null) 
+	               {
+	                   cell.getCellType();
+	                   int option_no = (int) cell.getNumericCellValue();
+	                   System.out.println("Row " + r + " Column 0 value: " + option_no);
+
+	                   WebElement question = questions.get(r - 1);
+
+	                   callfordata(option_no,numberOfQuestions, r);
+	               }           
+	           }
+	       }
+	             System.out.println(); 
+	         
+	      
+		        workbook1.close();
+		        inputStream.close();
+		
+	     } 
+	     
+	     void callfordata(int optionno,int numberOfQuestions,int r) throws InterruptedException{	    		       
 	         for (int j = 1; j <= numberOfQuestions; j++) 
-	         {                 
-	             Thread.sleep(1000);
-//	             if(numberOfQuestions<= 3) {
-//	            	  String radioButtonXPath = "(//input[@value='" + optionno + " '])[" + j + "]";
-//
-////	             String radioButtonXPath = "(//input[@value=\"+(optionno)+"])["+(j)+"]";
-//	             driver.findElement(By.xpath(radioButtonXPath)).click();//input[@value="1 "]
-//	             Thread.sleep(1000);
-//	             }
-//	             else {
-	            	 String radioButtonXPath = "(//input[@value='" + optionno + " '])[" + j + "]";
-//	           	  String radioButtonXPath = "(//input[@value=\""+(optionno)+" \"])["+(j)+"]";
+	         {  
+	             System.out.println(r);         
+	             if(numberOfQuestions<= 3) 
+	             {
+	            	 String radioButtonXPath = "(//input[@value=\"" + optionno + " \"])[" + r + "]";
+	            	 driver.findElement(By.xpath(radioButtonXPath)).click();//input[@value="1 "]
+	            	 Thread.sleep(1000);
+	             }
+	             else 
+	             {
+	            	 String radioButtonXPath = "(//input[@value=\"" + optionno + " \"])[" + r + "]";
 	                 driver.findElement(By.xpath(radioButtonXPath)).click();
 	                 Thread.sleep(1000);
-//	             }	                  
+	             }	          
+	                  
 	         }
+
 	     }
-	     
 		
 			
 }

@@ -36,7 +36,7 @@ public class addGoalPla_CreatePMSCycleTest
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
         addGoalPlan = new addGoalPlan(driver);
-        addGoalPlan.login(prop.getProperty("EmpUsername"), prop.getProperty("HrPassword"));
+        addGoalPlan.login(prop.getProperty("hrUsername"), prop.getProperty("hrPassword"));
           
         PMSCyclePage = new PMSCyclePage(driver, prop);
         initiatePMSCycle = new initiatePMSCycle(driver, prop);
@@ -45,21 +45,21 @@ public class addGoalPla_CreatePMSCycleTest
     
     }
 
-//    @Test(priority = 1)
+    @Test(priority = 1)
     public void testAddGoalPlan() throws InterruptedException 
     {
     	addGoalPlan.addGoalPlan1(prop.getProperty("GoalPalnName"), prop.getProperty("EmpGroup"), prop.getProperty("Weighted").equals("Weighted"),prop.getProperty("RatingScale"));
         boolean isDisplayed = addGoalPlan.isGoalPlanDisplayed(prop.getProperty("GoalPalnName"));
         Assert.assertTrue(isDisplayed, "Goal Plan is not displayed!");
     }
-//    @Test(priority = 2)
+    @Test(priority = 2)
     public void testAddPMSCycle() throws InterruptedException 
     {	
     	PMSCyclePage.addPMSCycle(prop.getProperty("GoalPalnName"));
     	boolean isDisplayed = PMSCyclePage.isPMSCycleDisplayed();
         Assert.assertTrue(isDisplayed, "PMS Cycle is not displayed");
     }
-//    @Test(priority = 3)
+    @Test(priority = 3)
     public void testinitiatePMSCycle() throws InterruptedException 
     {	
     	initiatePMSCycle.goToWeightTab(prop.getProperty("EmpGroup"),prop.getProperty("GoalPalnName"));

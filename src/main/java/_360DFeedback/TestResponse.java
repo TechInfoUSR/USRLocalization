@@ -120,7 +120,7 @@ public class TestResponse {
          int numberOfQuestions = questions.size();
          System.out.println("Number of questions: " + numberOfQuestions);
 
-         // Excel file setup
+       if (numberOfQuestions == 13) {
          for (int r = 1; r <= numberOfQuestions; r++) {
              XSSFRow row = sheet.getRow(r);
              if (row == null) {
@@ -130,17 +130,137 @@ public class TestResponse {
              // Read the value from the specific column (e.g., column 0)
              XSSFCell cell = row.getCell(0); // Change 0 to the specific column index you want to read
              if (cell != null) {
-                 String cellValue = formatter.formatCellValue(cell);
-                 System.out.println("Row " + r + " Column 0 value: " + cellValue);
+//                 String cellValue = formatter.formatCellValue(cell);
+                 cell.getCellType();
+                 int S = (int) cell.getNumericCellValue();
+                 System.out.println("Row " + r + " Column 0 value: " + S);
 
                  // Get the corresponding question
                  WebElement question = questions.get(r - 1);
 
                  // Call your method with the cell value and the question element
-                 callfordata(cellValue,numberOfQuestions, r);
+                 callfordata(S,numberOfQuestions, r);
              }
          
          }
+       }
+       else if(numberOfQuestions==12) {
+           for (int r = 1; r <= numberOfQuestions; r++) {
+               XSSFRow row = sheet.getRow(r);
+               if (row == null) {
+                   continue; // Skip empty rows
+               }
+
+               // Read the value from the specific column (e.g., column 0)
+               XSSFCell cell = row.getCell(1); // Change 0 to the specific column index you want to read
+               if (cell != null) {
+//                   String cellValue = formatter.formatCellValue(cell);
+                   cell.getCellType();
+                   int S = (int) cell.getNumericCellValue();
+                   System.out.println("Row " + r + " Column 0 value: " + S);
+
+                   // Get the corresponding question
+                   WebElement question = questions.get(r - 1);
+
+                   // Call your method with the cell value and the question element
+                   callfordata(S,numberOfQuestions, r);
+               }
+           
+           }
+           
+       }
+       else if (numberOfQuestions==11) {
+           for (int r = 1; r <= numberOfQuestions; r++) {
+               XSSFRow row = sheet.getRow(r);
+               if (row == null) {
+                   continue; // Skip empty rows
+               }
+
+               // Read the value from the specific column (e.g., column 0)
+               XSSFCell cell = row.getCell(2); // Change 0 to the specific column index you want to read
+               if (cell != null) {
+//                   String cellValue = formatter.formatCellValue(cell);
+                   cell.getCellType();
+                   int S = (int) cell.getNumericCellValue();
+                   System.out.println("Row " + r + " Column 0 value: " + S);
+
+                   // Get the corresponding question
+                   WebElement question = questions.get(r - 1);
+
+                   // Call your method with the cell value and the question element
+                   callfordata(S,numberOfQuestions, r);
+               }
+           
+           }
+       }
+       else if(numberOfQuestions==10) {
+           for (int r = 1; r <= numberOfQuestions; r++) {
+               XSSFRow row = sheet.getRow(r);
+               if (row == null) {
+                   continue; // Skip empty rows
+               }
+
+               // Read the value from the specific column (e.g., column 0)
+               XSSFCell cell = row.getCell(3); // Change 0 to the specific column index you want to read
+               if (cell != null) {
+//                   String cellValue = formatter.formatCellValue(cell);
+                   cell.getCellType();
+                   int S = (int) cell.getNumericCellValue();
+                   System.out.println("Row " + r + " Column 0 value: " + S);
+
+                   // Get the corresponding question
+                   WebElement question = questions.get(r - 1);
+
+                   // Call your method with the cell value and the question element
+                   callfordata(S,numberOfQuestions, r);
+               }
+           
+           }
+       }
+       else if(numberOfQuestions==14) {
+           for (int r = 1; r <= numberOfQuestions; r++) {
+               XSSFRow row = sheet.getRow(r);
+               if (row == null) {
+                   continue; // Skip empty rows
+               }
+
+               // Read the value from the specific column (e.g., column 0)
+               XSSFCell cell = row.getCell(4); // Change 0 to the specific column index you want to read
+               if (cell != null) {
+//                   String cellValue = formatter.formatCellValue(cell);
+                   cell.getCellType();
+                   int S = (int) cell.getNumericCellValue();
+                   System.out.println("Row " + r + " Column 0 value: " + S);
+
+                   // Get the corresponding question
+                   WebElement question = questions.get(r - 1);
+
+                   // Call your method with the cell value and the question element
+                   callfordata(S,numberOfQuestions, r);
+               }
+           
+           }
+       }
+       else if(numberOfQuestions==2) {
+           for (int r = 1; r <= numberOfQuestions; r++) {
+               XSSFRow row = sheet.getRow(r);
+               if (row == null) {
+                   continue;
+               }
+
+               XSSFCell cell = row.getCell(5);
+               if (cell != null) 
+               {
+                   cell.getCellType();
+                   int S = (int) cell.getNumericCellValue();
+                   System.out.println("Row " + r + " Column 0 value: " + S);
+
+                   WebElement question = questions.get(r - 1);
+
+                   callfordata(S,numberOfQuestions, r);
+               }           
+           }
+       }
              System.out.println(); 
          
       
@@ -149,7 +269,7 @@ public class TestResponse {
 	
      } 
      
-     void callfordata(String optionno,int numberOfQuestions,int r) throws InterruptedException{
+     void callfordata(int optionno,int numberOfQuestions,int r) throws InterruptedException{
     	
          
 //         int noofquestions = (numberOfQuestions);
@@ -157,8 +277,9 @@ public class TestResponse {
                System.out.println(r);         
              Thread.sleep(1000);
              if(numberOfQuestions<= 3) {
-             String radioButtonXPath = "(//input[@value=\""+(optionno)+"])["+(r)+"]";
-             driver.findElement(By.xpath(radioButtonXPath)).click();//input[@value="1 "]
+            	 String radioButtonXPath = "(//input[@value=\"" + optionno + " \"])[" + r + "]";
+            	 driver.findElement(By.xpath(radioButtonXPath)).click();
+//input[@value="1 "]
              Thread.sleep(1000);
              }
              else {

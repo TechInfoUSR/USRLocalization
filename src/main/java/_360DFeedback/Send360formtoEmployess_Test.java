@@ -13,12 +13,12 @@ import org.testng.annotations.Test;
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
 
-public class HRAdminpage_Test {
+public class Send360formtoEmployess_Test {
 	  DriverFactory df;
 	    ConfigpropReader cp;
 	    Properties prop; 
 	    WebDriver driver;
-	    HR_Admin_page HR_Admin_page;
+	    Send360formto_Employess Send360formto_Employess;
 	    
 	    @BeforeTest
 	    void setUp() throws IOException, InterruptedException 
@@ -27,10 +27,10 @@ public class HRAdminpage_Test {
 	        prop = cp.initLangProp("360Degree_Flow");
 	        df = new DriverFactory();
 	        driver = df.initDriver("chrome", prop);
-	        HR_Admin_page = new HR_Admin_page(driver, prop);
-	        HR_Admin_page.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
+	        Send360formto_Employess = new Send360formto_Employess(driver, prop);
+	        Send360formto_Employess.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
 	          
-	        HR_Admin_page = new HR_Admin_page(driver, prop);
+	        Send360formto_Employess = new Send360formto_Employess(driver, prop);
 	        
 	        JavascriptExecutor Srollup = (JavascriptExecutor) driver;
 	        Srollup.executeScript("window.scrollBy(0,2000)");        
@@ -45,7 +45,7 @@ public class HRAdminpage_Test {
 	    
 	    @Test
 	    void send360form() throws InterruptedException, IOException {
-	    	HR_Admin_page.DataReader();
+	    	Send360formto_Employess.DataReader();
 	    	
 	    }
 	    
