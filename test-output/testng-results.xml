@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-16T07:31:06Z" name="Default suite" finished-at="2024-07-16T07:39:05Z" duration-ms="478732">
+  <suite started-at="2024-07-17T08:47:12Z" name="Default suite" finished-at="2024-07-17T09:01:30Z" duration-ms="857484">
     <groups>
     </groups>
-    <test started-at="2024-07-16T07:31:06Z" name="Default test" finished-at="2024-07-16T07:39:05Z" duration-ms="478732">
+    <test started-at="2024-07-17T08:47:12Z" name="Default test" finished-at="2024-07-17T09:01:30Z" duration-ms="857484">
       <class name="_360DFeedback.Respons_totheForm_Test">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:_360DFeedback.Respons_totheForm_Test@7d446ed1]" started-at="2024-07-16T07:31:06Z" name="setUp" finished-at="2024-07-16T07:31:13Z" duration-ms="6995" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:_360DFeedback.Respons_totheForm_Test@7d446ed1]" started-at="2024-07-17T08:47:12Z" name="setUp" finished-at="2024-07-17T08:47:19Z" duration-ms="6961" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="test()[pri:2, instance:_360DFeedback.Respons_totheForm_Test@7d446ed1]" started-at="2024-07-16T07:31:13Z" name="test" finished-at="2024-07-16T07:39:04Z" duration-ms="470791" status="PASS">
+        <test-method signature="Responsto_360form()[pri:0, instance:_360DFeedback.Respons_totheForm_Test@7d446ed1]" started-at="2024-07-17T08:47:19Z" name="Responsto_360form" finished-at="2024-07-17T09:01:29Z" duration-ms="849875" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:_360DFeedback.Respons_totheForm_Test@7d446ed1]" started-at="2024-07-16T07:39:04Z" name="teardown" finished-at="2024-07-16T07:39:05Z" duration-ms="894" status="PASS">
+        </test-method> <!-- Responsto_360form -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:_360DFeedback.Respons_totheForm_Test@7d446ed1]" started-at="2024-07-17T09:01:29Z" name="teardown" finished-at="2024-07-17T09:01:30Z" duration-ms="610" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

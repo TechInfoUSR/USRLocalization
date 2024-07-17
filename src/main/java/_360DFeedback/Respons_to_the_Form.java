@@ -2,6 +2,7 @@ package _360DFeedback;
 
 import java.util.NoSuchElementException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -41,10 +42,11 @@ public class Respons_to_the_Form {
 	     
 	     void Response_to_360Form() throws InterruptedException, IOException
 	     	{
+	    	    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		        driver.findElement(By.xpath("//a[contains(text(),'360° feedback')]")).click();
-		        Thread.sleep(2000);
+
 		        driver.findElement(By.xpath("//a[@class='dropdown-toggle']")).click();
-		        Thread.sleep(2000);
+		      
 		        String GoalPlanfor360degreefeedback = prop.getProperty("GoalPlanfor360degreefeedback");
 		        driver.findElement(By.xpath("//a[contains(text(),'"+ GoalPlanfor360degreefeedback  +"')]")).click();
 		        Thread.sleep(2000);
@@ -81,28 +83,29 @@ public class Respons_to_the_Form {
 	         WebElement element = driver.findElement(By.xpath(xpath));
 
 //	         element.click();
-	         
+	         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	     		        
 	           JavascriptExecutor executor = (JavascriptExecutor) driver;
 	           executor.executeScript("arguments[0].click();", element);
-	           Thread.sleep(1000);
+	          
 	           
 		        //Call for loop to read data from Excel
 	           Datafor();
 	          
 	           WebElement scrollViewElement = driver.findElement(By.xpath("(//button[@type=\"submit\"])[1]"));
 	           js.executeScript("arguments[0].scrollIntoView(true);", scrollViewElement);
-	           Thread.sleep(2000); 
+	           
 	           
 	           System.out.println(noforepons);
 //			  driver.findElement(By.xpath("(//button[@type=\"reset\"])[1]")).click();
 	           driver.findElement(By.xpath("(//button[@type=\"submit\"])[1]")).click();
 	           Thread.sleep(1000);
 	           Alert alert = driver.switchTo().alert();
-	           alert.accept();             
-	           Thread.sleep(3000);
-	           driver.findElement(By.xpath("//h3[contains(text(),'My 360° FEEDBACK')]")).click();
+	           alert.accept();  
 	           Thread.sleep(1000);
+	           driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	           driver.findElement(By.xpath("//h3[contains(text(),'My 360° FEEDBACK')]")).click();
+	         
 	     
 		    }
 	}
@@ -273,15 +276,17 @@ public class Respons_to_the_Form {
 	             System.out.println(r);         
 	             if(numberOfQuestions<= 3) 
 	             {
+	            	 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	            	 String radioButtonXPath = "(//input[@value=\"" + optionno + " \"])[" + r + "]";
 	            	 driver.findElement(By.xpath(radioButtonXPath)).click();//input[@value="1 "]
-	            	 Thread.sleep(1000);
+//	            	 Thread.sleep(1000);
 	             }
 	             else 
 	             {
+	            	 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	            	 String radioButtonXPath = "(//input[@value=\"" + optionno + " \"])[" + r + "]";
 	                 driver.findElement(By.xpath(radioButtonXPath)).click();
-	                 Thread.sleep(1000);
+//	                 Thread.sleep(1000);
 	             }	          
 	                  
 	         }

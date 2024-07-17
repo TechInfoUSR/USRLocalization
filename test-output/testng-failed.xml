@@ -6,7 +6,7 @@
       <class name="_360DFeedback.Respons_totheForm_Test">
         <methods>
           <include name="setUp"/>
-          <include name="test"/>
+          <include name="Responsto_360form"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- _360DFeedback.Respons_totheForm_Test -->
