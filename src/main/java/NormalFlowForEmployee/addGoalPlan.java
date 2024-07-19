@@ -1,5 +1,7 @@
 package NormalFlowForEmployee;
 
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -7,9 +9,10 @@ import org.openqa.selenium.WebElement;
 
 public class addGoalPlan {
     WebDriver driver;
-
-    public addGoalPlan(WebDriver driver) {
+    Properties prop;
+    public addGoalPlan(WebDriver driver, Properties prop) {
         this.driver = driver;
+        this.prop = prop;
     }
 
     private By usernameField = By.xpath("//*[@id=\"hello\"]/div[2]/input");
@@ -34,8 +37,13 @@ public class addGoalPlan {
         driver.findElement(loginButton).click();
     }
 
-    public void addGoalPlan1(String goalPlanName, String empGroup, boolean isWeighted,String RatingScale) throws InterruptedException 
+    public void addGoalPlan1() throws InterruptedException 
     {
+    	String goalPlanName1 =prop.getProperty("GoalPalnName1");
+    	String empGroup1= prop.getProperty("EmpGroup1");
+//    	String isWeighted = prop.getProperty("Weighted1");
+    	String RatingScale = prop.getProperty("RatingScale1");
+    	
         JavascriptExecutor Srollup = (JavascriptExecutor) driver;
         Srollup.executeScript("window.scrollBy(0,1500)");
         Thread.sleep(2000);
@@ -43,9 +51,9 @@ public class addGoalPlan {
         Thread.sleep(2000);
         driver.findElement(addGoalPlanButton).click();
         Thread.sleep(2000);
-        driver.findElement(goalPlanNameField).sendKeys(goalPlanName);
+        driver.findElement(By.id("goalPlanName")).sendKeys(goalPlanName1);
         Thread.sleep(500);
-
+        
         // Select start date
         driver.findElement(By.xpath("//input[@class=\"form-control dpd1\"]")).click();
         selectDate("June 2024", "11");
@@ -65,9 +73,9 @@ public class addGoalPlan {
         Srollup2.executeScript("window.scrollBy(0,1000)");
         driver.findElement(groupRadioButton).click();
         Thread.sleep(2000);
-        driver.findElement(empGroupField).sendKeys(empGroup);
+        driver.findElement(empGroupField).sendKeys(empGroup1);
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//span[@class='highlight' and contains(text(), '" + empGroup + "')]")).click();
+        driver.findElement(By.xpath("//span[@class='highlight' and contains(text(), '" + empGroup1 + "')]")).click();
         Thread.sleep(2000);
 
         // Check active
@@ -75,12 +83,11 @@ public class addGoalPlan {
         Thread.sleep(1000);
 
         // Check weighted
-        if (isWeighted) 
-        {
+    
             Thread.sleep(2000);
             driver.findElement(isWeightageBasedCheckbox).click();
             Thread.sleep(2000);
-        }
+
 
         driver.findElement(submitButton).click();
         Thread.sleep(5000);

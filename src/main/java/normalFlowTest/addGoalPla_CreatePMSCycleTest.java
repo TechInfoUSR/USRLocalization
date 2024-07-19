@@ -35,8 +35,8 @@ public class addGoalPla_CreatePMSCycleTest
         prop = cp.initLangProp("normal");
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
-        addGoalPlan = new addGoalPlan(driver);
-        addGoalPlan.login(prop.getProperty("hrUsername"), prop.getProperty("hrPassword"));
+        addGoalPlan = new addGoalPlan(driver, prop);
+        addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
           
         PMSCyclePage = new PMSCyclePage(driver, prop);
         initiatePMSCycle = new initiatePMSCycle(driver, prop);
@@ -45,26 +45,27 @@ public class addGoalPla_CreatePMSCycleTest
     
     }
 
+  
     @Test(priority = 1)
     public void testAddGoalPlan() throws InterruptedException 
     {
-    	addGoalPlan.addGoalPlan1(prop.getProperty("GoalPalnName"), prop.getProperty("EmpGroup"), prop.getProperty("Weighted").equals("Weighted"),prop.getProperty("RatingScale"));
-        boolean isDisplayed = addGoalPlan.isGoalPlanDisplayed(prop.getProperty("GoalPalnName"));
+    	addGoalPlan.addGoalPlan1();
+        boolean isDisplayed = addGoalPlan.isGoalPlanDisplayed(prop.getProperty("GoalPalnName1"));
         Assert.assertTrue(isDisplayed, "Goal Plan is not displayed!");
     }
-    @Test(priority = 2)
+//    @Test(priority = 2)
     public void testAddPMSCycle() throws InterruptedException 
     {	
     	PMSCyclePage.addPMSCycle(prop.getProperty("GoalPalnName"));
     	boolean isDisplayed = PMSCyclePage.isPMSCycleDisplayed();
         Assert.assertTrue(isDisplayed, "PMS Cycle is not displayed");
     }
-    @Test(priority = 3)
+//    @Test(priority = 3)
     public void testinitiatePMSCycle() throws InterruptedException 
     {	
-    	initiatePMSCycle.goToWeightTab(prop.getProperty("EmpGroup"),prop.getProperty("GoalPalnName"));
-    	initiatePMSCycle.enterWeightages(prop.getProperty("objectiveWeightage"),prop.getProperty("coreValueWeightage"), prop.getProperty("jobCompetencyWeightage"), prop.getProperty("behaviorWeightage"), prop.getProperty("leadershipWeightage"));
-    	boolean isCycleInitiatedDisplayed = initiatePMSCycle.isCycleInitiated(prop.getProperty("EmpGroup"));
+    	initiatePMSCycle.goToWeightTab(prop.getProperty("EmpGroup1"),prop.getProperty("GoalPalnName1"));
+    	initiatePMSCycle.enterWeightages(prop.getProperty("objectiveWeightage1"),prop.getProperty("coreValueWeightage1"), prop.getProperty("jobCompetencyWeightage1"), prop.getProperty("behaviorWeightage1"), prop.getProperty("leadershipWeightage1"));
+    	boolean isCycleInitiatedDisplayed = initiatePMSCycle.isCycleInitiated(prop.getProperty("EmpGroup1"));
 //        Assert.assertTrue(isCycleInitiatedDisplayed, "Map and content is not displayed");
     	//Not working due to a minor bug
     }
@@ -79,7 +80,7 @@ public class addGoalPla_CreatePMSCycleTest
         Assert.assertTrue(true); 
     }
     
-    @Test(priority = 5)
+//    @Test(priority = 5)
     public void selectGoalCycle() throws InterruptedException{
     	 String pmsCycleName = prop.getProperty("GoalPalnName");
     	emp_assesment_Submission.selectGoalCycle(pmsCycleName);

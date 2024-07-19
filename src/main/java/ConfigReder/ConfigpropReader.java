@@ -29,7 +29,7 @@ public class ConfigpropReader {
 					ip = new FileInputStream("./src/main/resources/lang.russian.properties");
 					break;
 				case "normal":
-					ip = new FileInputStream("./src\\maon\\resources\\Normal.properties");
+					ip = new FileInputStream("./src/maon/resources/Normal.properties");
 				case "360degree_flow":
 					ip = new FileInputStream("./src\\maon\\resources\\360Degree_Flow.properties");
 				

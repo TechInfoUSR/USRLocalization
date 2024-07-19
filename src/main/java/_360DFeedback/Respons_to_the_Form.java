@@ -132,16 +132,18 @@ public class Respons_to_the_Form {
 	         System.out.println("Number of questions: " + numberOfQuestions);
 
 	       if (numberOfQuestions == 13) {
-	         for (int r = 1; r <= numberOfQuestions; r++) {
+	         for (int r = 1; r <= numberOfQuestions; r++) 
+	         {
 	             XSSFRow row = sheet.getRow(r);
-	             if (row == null) {
+	             if (row == null) 
+	             {
 	                 continue; // Skip empty rows
 	             }
 
 	             // Read the value from the specific column (e.g., column 0)
 	             XSSFCell cell = row.getCell(0); 
-	             if (cell != null) {
-          
+	             if (cell != null) 
+	             {
 	                 cell.getCellType();
 	                 int option_no = (int) cell.getNumericCellValue();
 	                 System.out.println("Row " + r + " Column 0 value: " + option_no);
@@ -152,14 +154,17 @@ public class Respons_to_the_Form {
 	         }
 	       }
 	       else if(numberOfQuestions==12) {
-	           for (int r = 1; r <= numberOfQuestions; r++) {
+	           for (int r = 1; r <= numberOfQuestions; r++) 
+	           {
 	               XSSFRow row = sheet.getRow(r);
-	               if (row == null) {
+	               if (row == null) 
+	               {
 	                   continue; 
 	               }
 
 	               XSSFCell cell = row.getCell(1); 
-	               if (cell != null) {
+	               if (cell != null) 
+	               {
 	                   cell.getCellType();
 	                   int option_no = (int) cell.getNumericCellValue();
 	                   System.out.println("Row " + r + " Column 0 value: " + option_no);
@@ -171,14 +176,17 @@ public class Respons_to_the_Form {
 	           
 	       }
 	       else if (numberOfQuestions==11) {
-	           for (int r = 1; r <= numberOfQuestions; r++) {
+	           for (int r = 1; r <= numberOfQuestions; r++) 
+	           {
 	               XSSFRow row = sheet.getRow(r);
-	               if (row == null) {
+	               if (row == null) 
+	               {
 	                   continue;
 	               }
 
 	               XSSFCell cell = row.getCell(2); 
-	               if (cell != null) {
+	               if (cell != null) 
+	               {
 	                   cell.getCellType();
 	                   int option_no = (int) cell.getNumericCellValue();
 	                   System.out.println("Row " + r + " Column 0 value: " + option_no);
@@ -189,13 +197,16 @@ public class Respons_to_the_Form {
 	           }
 	       }
 	       else if(numberOfQuestions==10) {
-	           for (int r = 1; r <= numberOfQuestions; r++) {
+	           for (int r = 1; r <= numberOfQuestions; r++) 
+	           {
 	               XSSFRow row = sheet.getRow(r);
-	               if (row == null) {
+	               if (row == null) 
+	               {
 	                   continue; 
 	               }
 	               XSSFCell cell = row.getCell(3); 
-	               if (cell != null) {
+	               if (cell != null) 
+	               {
 	                   cell.getCellType();
 	                   int option_no = (int) cell.getNumericCellValue();
 	                   System.out.println("Row " + r + " Column 0 value: " + option_no);
@@ -206,14 +217,17 @@ public class Respons_to_the_Form {
 	           }
 	       }
 	       else if(numberOfQuestions==14) {
-	           for (int r = 1; r <= numberOfQuestions; r++) {
+	           for (int r = 1; r <= numberOfQuestions; r++) 
+	           {
 	               XSSFRow row = sheet.getRow(r);
-	               if (row == null) {
+	               if (row == null) 
+	               {
 	                   continue; 
 	               }
 
 	               XSSFCell cell = row.getCell(4); 
-	               if (cell != null) {
+	               if (cell != null) 
+	               {
 	                   cell.getCellType();
 	                   int option_no = (int) cell.getNumericCellValue();
 	                   System.out.println("Row " + r + " Column 0 value: " + option_no);
@@ -223,9 +237,11 @@ public class Respons_to_the_Form {
 	           }
 	       }
 	       else if(numberOfQuestions==2) {
-	           for (int r = 1; r <= numberOfQuestions; r++) {
+	           for (int r = 1; r <= numberOfQuestions; r++) 
+	           {
 	               XSSFRow row = sheet.getRow(r);
-	               if (row == null) {
+	               if (row == null) 
+	               {
 	                   continue;
 	               }
 
@@ -243,9 +259,11 @@ public class Respons_to_the_Form {
 	           }
 	       }
 	       else if(numberOfQuestions==1) {
-	           for (int r = 1; r <= numberOfQuestions; r++) {
+	           for (int r = 1; r <= numberOfQuestions; r++) 
+	           {
 	               XSSFRow row = sheet.getRow(r);
-	               if (row == null) {
+	               if (row == null) 
+	               {
 	                   continue;
 	               }
 
@@ -263,33 +281,28 @@ public class Respons_to_the_Form {
 	           }
 	       }
 	             System.out.println(); 
-	         
-	      
+      
 		        workbook1.close();
 		        inputStream.close();
 		
 	     } 
 	     
-	     void callfordata(int optionno,int numberOfQuestions,int r) throws InterruptedException{	    		       
-	         for (int j = 1; j <= numberOfQuestions; j++) 
-	         {  
+	     void callfordata(int optionno,int numberOfQuestions,int r) throws InterruptedException
+	     {	    		       
+ 
 	             System.out.println(r);         
 	             if(numberOfQuestions<= 3) 
 	             {
 	            	 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	            	 String radioButtonXPath = "(//input[@value=\"" + optionno + " \"])[" + r + "]";
 	            	 driver.findElement(By.xpath(radioButtonXPath)).click();//input[@value="1 "]
-//	            	 Thread.sleep(1000);
 	             }
 	             else 
 	             {
 	            	 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	            	 String radioButtonXPath = "(//input[@value=\"" + optionno + " \"])[" + r + "]";
 	                 driver.findElement(By.xpath(radioButtonXPath)).click();
-//	                 Thread.sleep(1000);
 	             }	          
-	                  
-	         }
 
 	     }
 		
