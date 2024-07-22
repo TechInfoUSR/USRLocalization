@@ -32,10 +32,10 @@ public class addGoalPla_CreatePMSCycleTest
     void setUp() throws IOException 
     {
         cp = new ConfigpropReader();
-        prop = cp.initLangProp("normal");
+        prop = cp.initLangProp("NormalFlowTest");
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
-        addGoalPlan = new addGoalPlan(driver, prop);
+        addGoalPlan = new addGoalPlan(driver);
         addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
           
         PMSCyclePage = new PMSCyclePage(driver, prop);
@@ -45,27 +45,29 @@ public class addGoalPla_CreatePMSCycleTest
     
     }
 
-  
     @Test(priority = 1)
     public void testAddGoalPlan() throws InterruptedException 
-    {
-    	addGoalPlan.addGoalPlan1();
-        boolean isDisplayed = addGoalPlan.isGoalPlanDisplayed(prop.getProperty("GoalPalnName1"));
+    {       String GoalPalnName = prop.getProperty("GoalPalnName");
+    		String EmpGroup = prop.getProperty("EmpGroup");
+    		String RatingScale = prop.getProperty("RatingScale");
+    	addGoalPlan.addGoalPlan1(GoalPalnName, EmpGroup ,RatingScale);
+    	
+        boolean isDisplayed = addGoalPlan.isGoalPlanDisplayed(GoalPalnName);
         Assert.assertTrue(isDisplayed, "Goal Plan is not displayed!");
     }
-//    @Test(priority = 2)
+    @Test(priority = 2)
     public void testAddPMSCycle() throws InterruptedException 
     {	
     	PMSCyclePage.addPMSCycle(prop.getProperty("GoalPalnName"));
     	boolean isDisplayed = PMSCyclePage.isPMSCycleDisplayed();
         Assert.assertTrue(isDisplayed, "PMS Cycle is not displayed");
     }
-//    @Test(priority = 3)
+    @Test(priority = 3)
     public void testinitiatePMSCycle() throws InterruptedException 
     {	
-    	initiatePMSCycle.goToWeightTab(prop.getProperty("EmpGroup1"),prop.getProperty("GoalPalnName1"));
-    	initiatePMSCycle.enterWeightages(prop.getProperty("objectiveWeightage1"),prop.getProperty("coreValueWeightage1"), prop.getProperty("jobCompetencyWeightage1"), prop.getProperty("behaviorWeightage1"), prop.getProperty("leadershipWeightage1"));
-    	boolean isCycleInitiatedDisplayed = initiatePMSCycle.isCycleInitiated(prop.getProperty("EmpGroup1"));
+    	initiatePMSCycle.goToWeightTab(prop.getProperty("EmpGroup"),prop.getProperty("GoalPalnName"));
+    	initiatePMSCycle.enterWeightages(prop.getProperty("objectiveWeightage"),prop.getProperty("coreValueWeightage"), prop.getProperty("jobCompetencyWeightage"), prop.getProperty("behaviorWeightage"), prop.getProperty("leadershipWeightage"));
+    	boolean isCycleInitiatedDisplayed = initiatePMSCycle.isCycleInitiated(prop.getProperty("EmpGroup"));
 //        Assert.assertTrue(isCycleInitiatedDisplayed, "Map and content is not displayed");
     	//Not working due to a minor bug
     }

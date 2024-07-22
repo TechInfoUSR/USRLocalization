@@ -20,7 +20,7 @@ public class ConfigpropReader {
 			try {
 				switch (language.toLowerCase()) {
 				case "english":
-					ip = new FileInputStream("./src\\maon\\resources\\lang.english.properties");
+					ip = new FileInputStream("./properties/lang.english.properties");
 					break;
 				case "french":
 					ip = new FileInputStream("./src/maon/resources/lang.spanish.properties");
@@ -29,16 +29,20 @@ public class ConfigpropReader {
 					ip = new FileInputStream("./src/main/resources/lang.russian.properties");
 					break;
 				case "normal":
-					ip = new FileInputStream("./src/maon/resources/Normal.properties");
+					ip = new FileInputStream("./properties/normal.properties");
+					System.out.println(ip);
 				case "360degree_flow":
-					ip = new FileInputStream("./src\\maon\\resources\\360Degree_Flow.properties");
-				
+					ip = new FileInputStream("./properties/360Degree_Flow.properties");
+				case "normalflowtest":
+					ip = new FileInputStream("./properties/NormalFlowTest.properties");
+					System.out.println(ip);
 				default:
 					System.out.println("lang not found..." + language);
 					break;
 				}
 				prop.load(ip);
 			} catch (Exception e) {
+				
 				System.out.println(language + " : properties file not found");
 			}
 			return prop;

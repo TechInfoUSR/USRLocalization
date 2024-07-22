@@ -1,8 +1,11 @@
 package NormalFlowForEmployee;
 
+import java.util.List;
 import java.util.Properties;
+import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -59,24 +62,29 @@ public class emp_assesment_Submission {
 //           WebElement progressText = driver.findElement(By.cssSelector(".risk"));
 //           jsExecutor.executeScript("arguments[0].innerText = arguments[1];", progressText, String.format("%d%% Complete", progress));
 //           Thread.sleep(3000);
-           
-           updateProgressBar(driver, "(//input[@type=\"range\"])[1]", 50);
-           Thread.sleep(1000);
-           updateProgressBar(driver, "(//input[@type=\"range\"])[2]", 75);
-           Thread.sleep(2000); 
-           updateProgressBar(driver, "(//input[@type=\"range\"])[3]", 25);
-           Thread.sleep(2000); 
-           updateProgressBar(driver, "(//input[@type=\"range\"])[4]", 15);
-           Thread.sleep(2000); 
-           
-           
-//           Increase the Number in 2nd String and Last String for Every Time while calling the Method
-           EmployeeComment(driver,"(//img[@class=\"dropdown-toggle\"])[5]","Employee comment", "(//a[@class=\"view-link mt-h cs-modal-btn ng-binding ng-scope\"]) [1]");
-           Thread.sleep(2000);
-           
-           EmployeeComment(driver,"(//img[@class=\"dropdown-toggle\"])[6]","Employee comment", "(//a[@class=\"view-link mt-h cs-modal-btn ng-binding ng-scope\"]) [2]");
-           Thread.sleep(2000);
-           
+              WebElement listContainer  = driver.findElement(By.id("categ105"));
+
+              List<WebElement> noofGoals =listContainer.findElements(By.xpath("//ul[@class=\"flex flex-btn py-1 onhover-section ng-scope\"]"));
+              int NoofGoal = noofGoals.size();
+              System.out.println(NoofGoal);
+              for (int i=1 ;i<=NoofGoal;i++) 
+              {
+            	  Thread.sleep(2000); 
+              
+            	  Random random = new Random();
+
+              	// Generate a random number between 1 (inclusive) and 101 (exclusive)
+              	int randomNumber = random.nextInt(100) + 1;
+
+              	System.out.println("Random number between 1 and 100: " + randomNumber);
+              
+              	updateProgressBar(driver, "(//input[@type=\"range\"])[1]", randomNumber);
+           		Thread.sleep(1000);
+           		String Employee_cmt = null;
+           		String Employee_comment =Employee_cmt + i;
+                EmployeeComment(driver,"(//img[@src=\"pmsGE/images/ellipsis-1.png\"])[("+i+")]",Employee_comment, "(//a[@class=\"view-link mt-h cs-modal-btn ng-binding ng-scope\"]) [("+i+")]");
+                Thread.sleep(2000);
+              }
            
            driver.findElement(By.xpath("//a[@ng-click=\"submitSelfPerformance(1)\"]")).click();
            Thread.sleep(2000); 

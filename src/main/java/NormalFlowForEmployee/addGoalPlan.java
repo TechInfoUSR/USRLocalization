@@ -1,7 +1,5 @@
 package NormalFlowForEmployee;
 
-import java.util.Properties;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -9,10 +7,9 @@ import org.openqa.selenium.WebElement;
 
 public class addGoalPlan {
     WebDriver driver;
-    Properties prop;
-    public addGoalPlan(WebDriver driver, Properties prop) {
+
+    public addGoalPlan(WebDriver driver) {
         this.driver = driver;
-        this.prop = prop;
     }
 
     private By usernameField = By.xpath("//*[@id=\"hello\"]/div[2]/input");
@@ -37,13 +34,8 @@ public class addGoalPlan {
         driver.findElement(loginButton).click();
     }
 
-    public void addGoalPlan1() throws InterruptedException 
+    public void addGoalPlan1(String goalPlanName, String empGroup,String RatingScale) throws InterruptedException 
     {
-    	String goalPlanName1 =prop.getProperty("GoalPalnName1");
-    	String empGroup1= prop.getProperty("EmpGroup1");
-//    	String isWeighted = prop.getProperty("Weighted1");
-    	String RatingScale = prop.getProperty("RatingScale1");
-    	
         JavascriptExecutor Srollup = (JavascriptExecutor) driver;
         Srollup.executeScript("window.scrollBy(0,1500)");
         Thread.sleep(2000);
@@ -51,12 +43,12 @@ public class addGoalPlan {
         Thread.sleep(2000);
         driver.findElement(addGoalPlanButton).click();
         Thread.sleep(2000);
-        driver.findElement(By.id("goalPlanName")).sendKeys(goalPlanName1);
+        driver.findElement(goalPlanNameField).sendKeys(goalPlanName);
         Thread.sleep(500);
-        
+
         // Select start date
         driver.findElement(By.xpath("//input[@class=\"form-control dpd1\"]")).click();
-        selectDate("June 2024", "11");
+        selectDate("July 2024", "11");
 
         // Select end date
         driver.findElement(By.xpath("//input[@class=\"form-control dpd2\"]")).click();
@@ -65,7 +57,7 @@ public class addGoalPlan {
         Srollup1.executeScript("window.scrollBy(0,800)");
         // Select rating scale
         driver.findElement(ratingScaleField).sendKeys(RatingScale);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(ratingScaleDropdown).click();
         Thread.sleep(1000);
         // Select employee group
@@ -73,21 +65,19 @@ public class addGoalPlan {
         Srollup2.executeScript("window.scrollBy(0,1000)");
         driver.findElement(groupRadioButton).click();
         Thread.sleep(2000);
-        driver.findElement(empGroupField).sendKeys(empGroup1);
+        driver.findElement(empGroupField).sendKeys(empGroup);
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//span[@class='highlight' and contains(text(), '" + empGroup1 + "')]")).click();
+        driver.findElement(By.xpath("//span[@class='highlight' and contains(text(), '" + empGroup + "')]")).click();
         Thread.sleep(2000);
 
         // Check active
         driver.findElement(isActiveCheckbox).click();
         Thread.sleep(1000);
 
-        // Check weighted
-    
             Thread.sleep(2000);
             driver.findElement(isWeightageBasedCheckbox).click();
             Thread.sleep(2000);
-
+   
 
         driver.findElement(submitButton).click();
         Thread.sleep(5000);
