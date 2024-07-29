@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="3" name="Test">
-    <classes>
-		
+	
+  <test name="AddGoalPlan">
+    <classes>	
       <class name="normalFlowTest.addGoalPla_CreatePMSCycleTest"/>		
-	  <class name="normalFlowTest.managerFlow_Test"/>
-	  <class name="normalFlowTest.employeeFlow_Test"/>
-     <!-- <class name="_360DFeedback.Send360formtoEmployess_Test"/> 
-     
-      	<class name="Mytestpackage.addNewGoaltest"/>
-      	<class name="_360DFeedback.Resons_totheForm_Test"/>
-
-      	<class name="Mytestpackage.degreeFedback360pagetest"/>
-      	<class name="ManagerTestPage.managertestHomePage"/>
-      	<class name="Mytestpackage.Homepagetest"/> 
-      -->
-      
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test> 
+  
+  <test name="MangerFlow">
+    <classes>
+		<class name="normalFlowTest.managerFlow_Test"/>	  
+	</classes>
+  </test> 
+  
+  <test name="EmployeeFlow">
+    <classes>
+		<class name="normalFlowTest.employeeFlow_Test"/>
+	</classes>
+  </test> 
+  
+    <test name="manager_Sumitt_Assesment_To_Skip_Test">
+    <classes>
+		<class name="normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test"/>
+	</classes>
+  </test> 
+  
+  
+</suite> 

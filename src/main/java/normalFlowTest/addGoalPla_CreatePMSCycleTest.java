@@ -47,13 +47,12 @@ public class addGoalPla_CreatePMSCycleTest
 
     @Test(priority = 1)
     public void testAddGoalPlan() throws InterruptedException 
-    {       String GoalPalnName = prop.getProperty("GoalPalnName");
-    		String EmpGroup = prop.getProperty("EmpGroup");
-    		String RatingScale = prop.getProperty("RatingScale");
+    {   String GoalPalnName = prop.getProperty("GoalPalnName");
+    	String EmpGroup = prop.getProperty("EmpGroup");
+    	String RatingScale = prop.getProperty("RatingScale");
     	addGoalPlan.addGoalPlan1(GoalPalnName, EmpGroup ,RatingScale);
-    	
-        boolean isDisplayed = addGoalPlan.isGoalPlanDisplayed(GoalPalnName);
-        Assert.assertTrue(isDisplayed, "Goal Plan is not displayed!");
+    	boolean isDisplayed = addGoalPlan.isGoalPlanDisplayed(GoalPalnName);
+    	Assert.assertTrue(isDisplayed, "Goal Plan is not displayed!");
     }
     @Test(priority = 2)
     public void testAddPMSCycle() throws InterruptedException 
@@ -67,26 +66,9 @@ public class addGoalPla_CreatePMSCycleTest
     {	
     	initiatePMSCycle.goToWeightTab(prop.getProperty("EmpGroup"),prop.getProperty("GoalPalnName"));
     	initiatePMSCycle.enterWeightages(prop.getProperty("objectiveWeightage"),prop.getProperty("coreValueWeightage"), prop.getProperty("jobCompetencyWeightage"), prop.getProperty("behaviorWeightage"), prop.getProperty("leadershipWeightage"));
-    	boolean isCycleInitiatedDisplayed = initiatePMSCycle.isCycleInitiated(prop.getProperty("EmpGroup"));
-//        Assert.assertTrue(isCycleInitiatedDisplayed, "Map and content is not displayed");
-    	//Not working due to a minor bug
     }
 
-//    @Test(priority = 4)
-    public void empSelf() throws InterruptedException {
-//    	manager_AddGoals.navigateToEmployeeSelf();
-        String pmsCycleName = prop.getProperty("GoalPalnName");
-        manager_AddGoals.selectGoalCycle(pmsCycleName);
-        manager_AddGoals.openEmployeeAssessment();
-        manager_AddGoals.enterGoalDetails();
-        Assert.assertTrue(true); 
-    }
-    
-//    @Test(priority = 5)
-    public void selectGoalCycle() throws InterruptedException{
-    	 String pmsCycleName = prop.getProperty("GoalPalnName");
-    	emp_assesment_Submission.selectGoalCycle(pmsCycleName);
-    }
+
     @AfterTest
     void tearDown() 
     {

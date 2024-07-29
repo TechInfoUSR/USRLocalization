@@ -19,8 +19,8 @@ public class DriverFactory {
 			System.out.println("browser name is : " + browserName);
 			switch (browserName.toLowerCase()) {
 			case "chrome":
-				WebDriverManager.chromedriver().setup();
-				System.setProperty("webdriver.chrome.driver", "./Soft/chromedriver.exe");
+//				WebDriverManager.chromedriver().setup();
+//				System.setProperty("webdriver.chrome.driver", "./Soft/chromedriver.exe");
 				driver = new ChromeDriver();
 				break;
 			case "firefox":
