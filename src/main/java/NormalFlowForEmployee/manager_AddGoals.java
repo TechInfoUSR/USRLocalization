@@ -5,6 +5,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import java.util.NoSuchElementException;
@@ -119,8 +120,12 @@ public class manager_AddGoals
 //              driver.findElement(toggleMetric).click();                  
 //              WebElement ele = driver.findElement(weightField);
 //              Srollup1.executeScript("arguments[0].srollIntoView();", ele);
+                
+            	WebElement rangeInput = driver.findElement(toggleMetric); 
+                JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+                
                 driver.findElement(weightField).sendKeys(weight);
-                Thread.sleep(1000);
+                Thread.sleep(5000);
                 driver.findElement(CreateBTN).click();
                 Thread.sleep(5000);
                 

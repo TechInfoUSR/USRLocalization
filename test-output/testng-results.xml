@@ -1,81 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-29T10:50:13Z" name="Suite" finished-at="2024-07-29T10:53:33Z" duration-ms="200370">
+  <suite started-at="2024-07-30T09:08:05Z" name="Suite" finished-at="2024-07-30T09:12:55Z" duration-ms="290286">
     <groups>
     </groups>
-    <test started-at="2024-07-29T10:50:13Z" name="AddGoalPlan" finished-at="2024-07-29T10:51:38Z" duration-ms="84840">
+    <test started-at="2024-07-30T09:08:05Z" name="AddGoalPlan" finished-at="2024-07-30T09:09:32Z" duration-ms="86600">
       <class name="normalFlowTest.addGoalPla_CreatePMSCycleTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:normalFlowTest.addGoalPla_CreatePMSCycleTest@70f02c32]" started-at="2024-07-29T10:50:13Z" name="setUp" finished-at="2024-07-29T10:50:24Z" duration-ms="11208" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:normalFlowTest.addGoalPla_CreatePMSCycleTest@70f02c32]" started-at="2024-07-30T09:08:05Z" name="setUp" finished-at="2024-07-30T09:08:17Z" duration-ms="12035" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testAddGoalPlan()[pri:1, instance:normalFlowTest.addGoalPla_CreatePMSCycleTest@70f02c32]" started-at="2024-07-29T10:50:24Z" name="testAddGoalPlan" finished-at="2024-07-29T10:50:59Z" duration-ms="34391" status="PASS">
+        <test-method signature="testAddGoalPlan()[pri:1, instance:normalFlowTest.addGoalPla_CreatePMSCycleTest@70f02c32]" started-at="2024-07-30T09:08:17Z" name="testAddGoalPlan" finished-at="2024-07-30T09:08:52Z" duration-ms="35044" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddGoalPlan -->
-        <test-method signature="testAddPMSCycle()[pri:2, instance:normalFlowTest.addGoalPla_CreatePMSCycleTest@70f02c32]" started-at="2024-07-29T10:50:59Z" name="testAddPMSCycle" finished-at="2024-07-29T10:51:14Z" duration-ms="15726" status="PASS">
+        <test-method signature="testAddPMSCycle()[pri:2, instance:normalFlowTest.addGoalPla_CreatePMSCycleTest@70f02c32]" started-at="2024-07-30T09:08:52Z" name="testAddPMSCycle" finished-at="2024-07-30T09:09:08Z" duration-ms="16074" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddPMSCycle -->
-        <test-method signature="testinitiatePMSCycle()[pri:3, instance:normalFlowTest.addGoalPla_CreatePMSCycleTest@70f02c32]" started-at="2024-07-29T10:51:14Z" name="testinitiatePMSCycle" finished-at="2024-07-29T10:51:37Z" duration-ms="22896" status="PASS">
+        <test-method signature="testinitiatePMSCycle()[pri:3, instance:normalFlowTest.addGoalPla_CreatePMSCycleTest@70f02c32]" started-at="2024-07-30T09:09:08Z" name="testinitiatePMSCycle" finished-at="2024-07-30T09:09:31Z" duration-ms="22861" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testinitiatePMSCycle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:normalFlowTest.addGoalPla_CreatePMSCycleTest@70f02c32]" started-at="2024-07-29T10:51:37Z" name="tearDown" finished-at="2024-07-29T10:51:38Z" duration-ms="596" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:normalFlowTest.addGoalPla_CreatePMSCycleTest@70f02c32]" started-at="2024-07-30T09:09:31Z" name="tearDown" finished-at="2024-07-30T09:09:32Z" duration-ms="565" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- normalFlowTest.addGoalPla_CreatePMSCycleTest -->
     </test> <!-- AddGoalPlan -->
-    <test started-at="2024-07-29T10:51:38Z" name="MangerFlow" finished-at="2024-07-29T10:52:27Z" duration-ms="48926">
+    <test started-at="2024-07-30T09:09:32Z" name="MangerFlow" finished-at="2024-07-30T09:10:12Z" duration-ms="40472">
       <class name="normalFlowTest.managerFlow_Test">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:normalFlowTest.managerFlow_Test@2bb3058]" started-at="2024-07-29T10:51:38Z" name="setUp" finished-at="2024-07-29T10:51:49Z" duration-ms="11415" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:normalFlowTest.managerFlow_Test@2bb3058]" started-at="2024-07-30T09:09:32Z" name="setUp" finished-at="2024-07-30T09:09:41Z" duration-ms="9698" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="empSelf()[pri:1, instance:normalFlowTest.managerFlow_Test@2bb3058]" started-at="2024-07-29T10:51:49Z" name="empSelf" finished-at="2024-07-29T10:52:26Z" duration-ms="36915" status="PASS">
+        <test-method signature="empSelf()[pri:1, instance:normalFlowTest.managerFlow_Test@2bb3058]" started-at="2024-07-30T09:09:41Z" name="empSelf" finished-at="2024-07-30T09:10:12Z" duration-ms="30257" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- empSelf -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:normalFlowTest.managerFlow_Test@2bb3058]" started-at="2024-07-29T10:52:26Z" name="tearDown" finished-at="2024-07-29T10:52:27Z" duration-ms="596" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:normalFlowTest.managerFlow_Test@2bb3058]" started-at="2024-07-30T09:10:12Z" name="tearDown" finished-at="2024-07-30T09:10:12Z" duration-ms="517" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- normalFlowTest.managerFlow_Test -->
     </test> <!-- MangerFlow -->
-    <test started-at="2024-07-29T10:52:27Z" name="EmployeeFlow" finished-at="2024-07-29T10:52:51Z" duration-ms="24012">
+    <test started-at="2024-07-30T09:10:12Z" name="EmployeeFlow" finished-at="2024-07-30T09:10:45Z" duration-ms="33381">
       <class name="normalFlowTest.employeeFlow_Test">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:normalFlowTest.employeeFlow_Test@1800a575]" started-at="2024-07-29T10:52:27Z" name="setUp" finished-at="2024-07-29T10:52:38Z" duration-ms="11440" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:normalFlowTest.employeeFlow_Test@1800a575]" started-at="2024-07-30T09:10:12Z" name="setUp" finished-at="2024-07-30T09:10:33Z" duration-ms="20412" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="selectGoalCycle()[pri:1, instance:normalFlowTest.employeeFlow_Test@1800a575]" started-at="2024-07-29T10:52:38Z" name="selectGoalCycle" finished-at="2024-07-29T10:52:49Z" duration-ms="10513" status="PASS">
+        <test-method signature="selectGoalCycle()[pri:1, instance:normalFlowTest.employeeFlow_Test@1800a575]" started-at="2024-07-30T09:10:33Z" name="selectGoalCycle" finished-at="2024-07-30T09:10:43Z" duration-ms="10863" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectGoalCycle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:normalFlowTest.employeeFlow_Test@1800a575]" started-at="2024-07-29T10:52:49Z" name="tearDown" finished-at="2024-07-29T10:52:51Z" duration-ms="2058" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:normalFlowTest.employeeFlow_Test@1800a575]" started-at="2024-07-30T09:10:43Z" name="tearDown" finished-at="2024-07-30T09:10:45Z" duration-ms="2105" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- normalFlowTest.employeeFlow_Test -->
     </test> <!-- EmployeeFlow -->
-    <test started-at="2024-07-29T10:52:51Z" name="manager_Sumitt_Assesment_To_Skip_Test" finished-at="2024-07-29T10:53:33Z" duration-ms="42497">
+    <test started-at="2024-07-30T09:10:45Z" name="manager_Sumitt_Assesment_To_Skip_Test" finished-at="2024-07-30T09:11:16Z" duration-ms="30225">
       <class name="normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test@2fd953a6]" started-at="2024-07-29T10:52:51Z" name="setUp" finished-at="2024-07-29T10:53:21Z" duration-ms="29568" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test@2fd953a6]" started-at="2024-07-30T09:10:45Z" name="setUp" finished-at="2024-07-30T09:11:03Z" duration-ms="17885" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="select_Emp()[pri:1, instance:normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test@2fd953a6]" started-at="2024-07-29T10:53:21Z" name="select_Emp" finished-at="2024-07-29T10:53:33Z" duration-ms="12408" status="PASS">
+        <test-method signature="select_Emp()[pri:1, instance:normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test@2fd953a6]" started-at="2024-07-30T09:11:03Z" name="select_Emp" finished-at="2024-07-30T09:11:15Z" duration-ms="11870" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- select_Emp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test@2fd953a6]" started-at="2024-07-29T10:53:33Z" name="tearDown" finished-at="2024-07-29T10:53:33Z" duration-ms="520" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test@2fd953a6]" started-at="2024-07-30T09:11:15Z" name="tearDown" finished-at="2024-07-30T09:11:16Z" duration-ms="470" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test -->
     </test> <!-- manager_Sumitt_Assesment_To_Skip_Test -->
+    <test started-at="2024-07-30T09:11:16Z" name="Skipp_Approval_test" finished-at="2024-07-30T09:11:48Z" duration-ms="32533">
+      <class name="normalFlowTest.Skipp_Approval_test">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:normalFlowTest.Skipp_Approval_test@3adcc812]" started-at="2024-07-30T09:11:16Z" name="setUp" finished-at="2024-07-30T09:11:31Z" duration-ms="14887" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="approve()[pri:0, instance:normalFlowTest.Skipp_Approval_test@3adcc812]" started-at="2024-07-30T09:11:31Z" name="approve" finished-at="2024-07-30T09:11:48Z" duration-ms="17190" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- approve -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:normalFlowTest.Skipp_Approval_test@3adcc812]" started-at="2024-07-30T09:11:48Z" name="teardown" finished-at="2024-07-30T09:11:48Z" duration-ms="455" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- normalFlowTest.Skipp_Approval_test -->
+    </test> <!-- Skipp_Approval_test -->
+    <test started-at="2024-07-30T09:11:48Z" name="One_to_One_manager_test" finished-at="2024-07-30T09:12:28Z" duration-ms="39681">
+      <class name="normalFlowTest.One_to_One_manager_test">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:normalFlowTest.One_to_One_manager_test@3b96c42e]" started-at="2024-07-30T09:11:48Z" name="setUp" finished-at="2024-07-30T09:12:04Z" duration-ms="15460" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="OntoOneMeeting()[pri:0, instance:normalFlowTest.One_to_One_manager_test@3b96c42e]" started-at="2024-07-30T09:12:04Z" name="OntoOneMeeting" finished-at="2024-07-30T09:12:27Z" duration-ms="23719" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OntoOneMeeting -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:normalFlowTest.One_to_One_manager_test@3b96c42e]" started-at="2024-07-30T09:12:27Z" name="teardown" finished-at="2024-07-30T09:12:28Z" duration-ms="502" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- normalFlowTest.One_to_One_manager_test -->
+    </test> <!-- One_to_One_manager_test -->
+    <test started-at="2024-07-30T09:12:28Z" name="One_to_One_Employee_test" finished-at="2024-07-30T09:12:55Z" duration-ms="27331">
+      <class name="normalFlowTest.One_to_One_Employee_test">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:normalFlowTest.One_to_One_Employee_test@4b23c30a]" started-at="2024-07-30T09:12:28Z" name="setUp" finished-at="2024-07-30T09:12:46Z" duration-ms="17857" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="selectGoalCycle()[pri:1, instance:normalFlowTest.One_to_One_Employee_test@4b23c30a]" started-at="2024-07-30T09:12:46Z" name="selectGoalCycle" finished-at="2024-07-30T09:12:55Z" duration-ms="8972" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectGoalCycle -->
+        <test-method is-config="true" signature="Teardown()[pri:0, instance:normalFlowTest.One_to_One_Employee_test@4b23c30a]" started-at="2024-07-30T09:12:55Z" name="Teardown" finished-at="2024-07-30T09:12:55Z" duration-ms="502" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Teardown -->
+      </class> <!-- normalFlowTest.One_to_One_Employee_test -->
+    </test> <!-- One_to_One_Employee_test -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -4,28 +4,23 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
-import NormalFlowForEmployee.PMSCyclePage;
+import NormalFlowForEmployee.One_to_One_Employee;
 import NormalFlowForEmployee.addGoalPlan;
 import NormalFlowForEmployee.emp_assesment_Submission;
-import NormalFlowForEmployee.initiatePMSCycle;
-import NormalFlowForEmployee.manager_AddGoals;
 
-public class employeeFlow_Test
-{
+public class One_to_One_Employee_test {
 	addGoalPlan addGoalPlan;
-	emp_assesment_Submission emp_assesment_Submission;
     DriverFactory df;
     ConfigpropReader cp;
     Properties prop;
     WebDriver driver;
-
+    One_to_One_Employee One_to_One_Employee;
     @BeforeTest
     void setUp() throws IOException 
     {
@@ -35,24 +30,18 @@ public class employeeFlow_Test
         driver = df.initDriver("chrome", prop);
         addGoalPlan = new addGoalPlan(driver);
         addGoalPlan.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));
-
-        emp_assesment_Submission = new emp_assesment_Submission(driver, prop);
+         
+        One_to_One_Employee = new One_to_One_Employee(driver, prop);
     
     }
   @Test(priority = 1)
   public void selectGoalCycle() throws InterruptedException{
   	 String pmsCycleName = prop.getProperty("GoalPalnName");
-  	emp_assesment_Submission.selectGoalCycle(pmsCycleName);
+  	One_to_One_Employee.selectGoalCycle(pmsCycleName);
   }
-
-
-  @AfterTest
-  void tearDown() 
-  {
-      if (driver != null) 
-      {
-          driver.quit();
-      }
+  @AfterClass
+  void Teardown() {
+	  driver.quit();
   }
-
+  
 }

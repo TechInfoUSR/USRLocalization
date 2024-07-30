@@ -16,9 +16,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class manager_Sumitt_Assesment_To_Skip {
 
-		
-	  
-		
 	   private WebDriver driver;
        private Properties prop;
        public manager_Sumitt_Assesment_To_Skip(WebDriver driver, Properties prop) 
@@ -63,8 +60,7 @@ public class manager_Sumitt_Assesment_To_Skip {
             {
           	  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             
-          	  Random random = new Random();
-
+          	    Random random = new Random();
             	int randomNumber = random.nextInt(100) + 1;
 
             	System.out.println("Random number between 1 and 100: " + randomNumber);

@@ -36,10 +36,7 @@ public class emp_assesment_Submission {
 //              driver.findElement(goalCycleLink(cycleName)).click();
               driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
               driver.findElement(By.xpath("//span[@class=\"ml-4\"]")).click();
-              
-              
-              
-              
+                         
               
           //  FOR Clicking on Drop down  
               WebElement element = driver.findElement(By.xpath("(//div[@class=\"card list-view-card\"])[1]")); 
@@ -78,7 +75,8 @@ public class emp_assesment_Submission {
            Thread.sleep(500); 
            
           }
-    	  private static void updateProgressBar(WebDriver driver, String cssSelector, int progress) {  
+    	  private static void updateProgressBar(WebDriver driver, String cssSelector, int progress) 
+    	  {  
 	    	  WebElement rangeInput = driver.findElement(By.xpath(cssSelector)); 
             // Cast WebDriver to JavascriptExecutor
             JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
@@ -90,9 +88,9 @@ public class emp_assesment_Submission {
             WebElement progressText = driver.findElement(By.cssSelector(".risk"));
             jsExecutor.executeScript("arguments[0].innerText = arguments[1];", progressText, String.format("%d%% Complete", progress));
 
-
-	    }
-    	  private static void EmployeeComment(WebDriver driver, String cssSelector, String Empcmt, String ReviewBTN) throws InterruptedException { 
+	      }
+    	  private static void EmployeeComment(WebDriver driver, String cssSelector, String Empcmt, String ReviewBTN) throws InterruptedException 
+    	  { 
     		  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     		  driver.findElement(By.xpath(cssSelector)).click();
     		  Thread.sleep(500);
@@ -107,5 +105,3 @@ public class emp_assesment_Submission {
     		  Thread.sleep(1000);
     	  }
     }
-
-

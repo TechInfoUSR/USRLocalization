@@ -20,11 +20,30 @@
 	</classes>
   </test> 
   
-    <test name="manager_Sumitt_Assesment_To_Skip_Test">
+  <test name="manager_Sumitt_Assesment_To_Skip_Test">
     <classes>
 		<class name="normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test"/>
 	</classes>
   </test> 
+  
+  <test name="Skipp_Approval_test">
+    <classes>
+		<class name="normalFlowTest.Skipp_Approval_test"/>
+	</classes>
+  </test>
+  
+  <test name="One_to_One_manager_test">
+    <classes>
+		<class name="normalFlowTest.One_to_One_manager_test"/>
+	</classes>
+  </test>
+    
+  <test name="One_to_One_Employee_test">
+    <classes>
+		<class name="normalFlowTest.One_to_One_Employee_test"/>
+	</classes>
+  </test>
+  
   
   
 </suite> 
