@@ -44,6 +44,12 @@
 	</classes>
   </test>
   
+    <test name="Delete_the_PMS_Cycle_test">
+    <classes>
+		<class name="normalFlowTest.Delete_the_PMS_Cycle_test"/>
+	</classes>
+  </test>
   
   
 </suite> 
+

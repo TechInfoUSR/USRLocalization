@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="AddGoalPlan(failed)">
+    <classes>
+      <class name="normalFlowTest.addGoalPla_CreatePMSCycleTest">
+        <methods>
+          <include name="testinitiatePMSCycle"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- normalFlowTest.addGoalPla_CreatePMSCycleTest -->
+    </classes>
+  </test> <!-- AddGoalPlan(failed) -->
+  <test thread-count="5" name="MangerFlow(failed)">
+    <classes>
+      <class name="normalFlowTest.managerFlow_Test">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="empSelf"/>
+        </methods>
+      </class> <!-- normalFlowTest.managerFlow_Test -->
+    </classes>
+  </test> <!-- MangerFlow(failed) -->
+  <test thread-count="5" name="EmployeeFlow(failed)">
+    <classes>
+      <class name="normalFlowTest.employeeFlow_Test">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="selectGoalCycle"/>
+        </methods>
+      </class> <!-- normalFlowTest.employeeFlow_Test -->
+    </classes>
+  </test> <!-- EmployeeFlow(failed) -->
+  <test thread-count="5" name="manager_Sumitt_Assesment_To_Skip_Test(failed)">
+    <classes>
+      <class name="normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test">
+        <methods>
+          <include name="select_Emp"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test -->
+    </classes>
+  </test> <!-- manager_Sumitt_Assesment_To_Skip_Test(failed) -->
   <test thread-count="5" name="Skipp_Approval_test(failed)">
     <classes>
       <class name="normalFlowTest.Skipp_Approval_test">
@@ -12,4 +56,37 @@
       </class> <!-- normalFlowTest.Skipp_Approval_test -->
     </classes>
   </test> <!-- Skipp_Approval_test(failed) -->
+  <test thread-count="5" name="One_to_One_manager_test(failed)">
+    <classes>
+      <class name="normalFlowTest.One_to_One_manager_test">
+        <methods>
+          <include name="setUp"/>
+          <include name="teardown"/>
+          <include name="OntoOneMeeting"/>
+        </methods>
+      </class> <!-- normalFlowTest.One_to_One_manager_test -->
+    </classes>
+  </test> <!-- One_to_One_manager_test(failed) -->
+  <test thread-count="5" name="One_to_One_Employee_test(failed)">
+    <classes>
+      <class name="normalFlowTest.One_to_One_Employee_test">
+        <methods>
+          <include name="setUp"/>
+          <include name="selectGoalCycle"/>
+          <include name="Teardown"/>
+        </methods>
+      </class> <!-- normalFlowTest.One_to_One_Employee_test -->
+    </classes>
+  </test> <!-- One_to_One_Employee_test(failed) -->
+  <test thread-count="5" name="Delete_the_PMS_Cycle_test(failed)">
+    <classes>
+      <class name="normalFlowTest.Delete_the_PMS_Cycle_test">
+        <methods>
+          <include name="setUp"/>
+          <include name="Deletion"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- normalFlowTest.Delete_the_PMS_Cycle_test -->
+    </classes>
+  </test> <!-- Delete_the_PMS_Cycle_test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

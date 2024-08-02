@@ -48,7 +48,7 @@ public class addGoalPlan {
 
         // Select start date
         driver.findElement(By.xpath("//input[@class=\"form-control dpd1\"]")).click();
-        selectDate("July 2024", "11");
+        selectDate("August 2024", "11");
 
         // Select end date
         driver.findElement(By.xpath("//input[@class=\"form-control dpd2\"]")).click();
@@ -67,18 +67,27 @@ public class addGoalPlan {
         Thread.sleep(2000);
         driver.findElement(empGroupField).sendKeys(empGroup);
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//span[@class='highlight' and contains(text(), '" + empGroup + "')]")).click();
+        
+        
+        WebElement element = driver.findElement(By.cssSelector("span.name"));
+        if (element.getText().contains(empGroup)) {
+        	
+            System.out.println(element.getText());
+            element.click();
+        }
+         
+        
+//        driver.findElement(By.xpath("//span[@class='highlight' and contains(text(), '" + empGroup + "')]")).click();
         Thread.sleep(2000);
 
         // Check active
         driver.findElement(isActiveCheckbox).click();
         Thread.sleep(1000);
 
-            Thread.sleep(2000);
-            driver.findElement(isWeightageBasedCheckbox).click();
-            Thread.sleep(2000);
+        Thread.sleep(2000);
+        driver.findElement(isWeightageBasedCheckbox).click();
+        Thread.sleep(2000);
    
-
         driver.findElement(submitButton).click();
         Thread.sleep(5000);
     }

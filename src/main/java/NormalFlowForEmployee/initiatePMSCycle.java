@@ -32,6 +32,7 @@ public class initiatePMSCycle
 	        this.prop = prop;
 	    }
 
+	    
 	    public void goToWeightTab(String group, String AddPMSCyle) throws InterruptedException 
 	    {
 	    	driver.findElement(By.xpath("//span[contains(text(),'"+AddPMSCyle+"')]")).click();
