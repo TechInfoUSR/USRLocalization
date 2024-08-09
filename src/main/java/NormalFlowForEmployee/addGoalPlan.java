@@ -5,7 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class addGoalPlan {
+public class addGoalPlan {	
     WebDriver driver;
 
     public addGoalPlan(WebDriver driver) {
@@ -75,12 +75,16 @@ public class addGoalPlan {
             System.out.println(element.getText());
             element.click();
         }
-         
-        
-//        driver.findElement(By.xpath("//span[@class='highlight' and contains(text(), '" + empGroup + "')]")).click();
         Thread.sleep(2000);
+        
+//        String empgruop = driver.findElement(By.xpath("//*[@id=\"selectGroupDropDiv\"]/div/div/div[1]/div/span/span")).getText();
+//        if (empgruop != empGroup) 
+//        {
+//        	driver.findElement(empGroupField).sendKeys(empGroup);	
+//        driver.findElement(By.xpath("//span[@class='highlight' and contains(text(), '" + empGroup + "')]")).click();
+//        Thread.sleep(2000);
+//        }
 
-        // Check active
         driver.findElement(isActiveCheckbox).click();
         Thread.sleep(1000);
 

@@ -1,5 +1,6 @@
 package NormalFlowForEmployee;
 
+import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -19,31 +20,65 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
     }
 	public void DeletionPMSCycle() throws InterruptedException 
 	{
-		String AddPMSCyle = prop.getProperty("GoalPalnName");
 		JavascriptExecutor Srollup = (JavascriptExecutor) driver;
         Srollup.executeScript("window.scrollBy(0,1500)");
         Thread.sleep(2000);
 		driver.findElement(By.xpath("//h3[contains(text(),'Performance Review Cycle Management')]")).click();
-		String cyclename = driver.findElement(By.xpath("//span[contains(text(),'"+AddPMSCyle+"')]")).getText();
+		Thread.sleep(2000);
+		String GoalPlanName = prop.getProperty("GoalPalnName");
+        WebElement tbody = driver.findElement(By.cssSelector("tbody[role='alert']"));
+
+        // Find all <tr> elements within the <tbody>
+        List<WebElement> rows = tbody.findElements(By.tagName("tr"));
+
+        // Get the count of <tr> elements
+        int rowCount = rows.size();
+        System.out.println("Number of rows in the table: " + rowCount);
+        
+        
+		for (int i = 1;i<=rowCount ;i++) 
+		{
+			String test=driver.findElement(By.xpath("//tr["+i+"]//span[contains(text(),'"+GoalPlanName+"')]")).getText();
+			if(test.equals(GoalPlanName)) 
+			{
+			System.out.println(test);
+			driver.findElement(By.xpath("//tr["+i+"]//a[@title=\"Delete\"]")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
+			Thread.sleep(2000);
+			break;
+			}
+		}
 		
-		
-		WebElement spanElement = driver.findElement(By.xpath("//span[text()='"+AddPMSCyle+"']"));
-
-		 WebElement tdElement = driver.findElement(By.xpath("//td[a/span[text()='four of them']]"));
-
-	        // Locate the <a> tag button within the same <td> element
-	        WebElement buttonElement = tdElement.findElement(By.xpath(".//a[@id='btnDeleteRow']"));
-
-
-	        // Print the value
-	        System.out.println("Value of the <td> element with class 'sorting_1': " + buttonElement);
 
 	}
 	
 	
-	public void DeletionGoalPlan() 
+	public void DeletionGoalPlan() throws InterruptedException 
 	{
-		
+		driver.findElement(By.xpath("//a[contains(text(),'Goal Plan')]")).click();
+		Thread.sleep(2000);
+		String GoalPlanName = prop.getProperty("GoalPalnName");
+        WebElement tbody = driver.findElement(By.cssSelector("tbody[role='alert']"));
+        List<WebElement> rows = tbody.findElements(By.tagName("tr"));
+
+        int rowCount = rows.size();
+        System.out.println("Number of rows in the table: " + rowCount);
+        
+        
+		for (int i = 1;i<=rowCount ;i++) 
+		{
+			String test=driver.findElement(By.xpath("//tr["+i+"]//td[contains(text(),'"+GoalPlanName+"')]")).getText();
+			if(test.equals(GoalPlanName)) 
+			{
+			System.out.println(test);
+			driver.findElement(By.xpath("//tr["+i+"]//a[@title=\"Delete\"]")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
+			Thread.sleep(2000);
+			break;
+			}
+		}
 		
 	}
 } 

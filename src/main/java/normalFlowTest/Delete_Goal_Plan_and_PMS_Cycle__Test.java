@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -35,14 +36,18 @@ public class Delete_Goal_Plan_and_PMS_Cycle__Test {
     
     
     @Test(priority=1)
-    void Deletion() throws InterruptedException {
+    void DeletionodGoalPlan() throws InterruptedException {
     	Delete_Goal_Plan_and_PMS_Cycle.DeletionPMSCycle();
     }
     
     @Test(priority=2)
-    void DeletionGoalPlan() throws InterruptedException {
+    void DeletionofPMS() throws InterruptedException {
     	Delete_Goal_Plan_and_PMS_Cycle.DeletionGoalPlan();
     }
     
+    @AfterClass
+    void teardown() {
+    	driver.quit();
+    }
     
 }
