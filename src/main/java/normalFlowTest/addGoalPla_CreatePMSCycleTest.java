@@ -1,10 +1,12 @@
 package normalFlowTest;
 
+import static org.testng.Assert.*;
+
 import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+import org.testng.Assert.*;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -52,14 +54,14 @@ public class addGoalPla_CreatePMSCycleTest
     	String RatingScale = prop.getProperty("RatingScale");
     	addGoalPlan.addGoalPlan1(GoalPalnName, EmpGroup ,RatingScale);
     	boolean isDisplayed = addGoalPlan.isGoalPlanDisplayed(GoalPalnName);
-    	Assert.assertTrue(isDisplayed, "Goal Plan is not displayed!");
+    	assertTrue(isDisplayed, "Goal Plan is not displayed!");
     }
     @Test(priority = 2)
     public void testAddPMSCycle() throws InterruptedException 
     {	
     	PMSCyclePage.addPMSCycle(prop.getProperty("GoalPalnName"));
     	boolean isDisplayed = PMSCyclePage.isPMSCycleDisplayed();
-        Assert.assertTrue(isDisplayed, "PMS Cycle is not displayed");
+        assertTrue(isDisplayed, "PMS Cycle is not displayed");
     }
     @Test(priority = 3)
     public void testinitiatePMSCycle() throws InterruptedException 

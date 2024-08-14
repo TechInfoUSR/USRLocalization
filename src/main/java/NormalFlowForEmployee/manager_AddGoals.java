@@ -1,5 +1,6 @@
 package NormalFlowForEmployee;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -8,7 +9,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import java.util.NoSuchElementException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class manager_AddGoals 
 {
@@ -25,7 +27,7 @@ public class manager_AddGoals
             return By.xpath("//a[contains(text(),'" + cycleName + "')]");
         }
         
-        private By goalAction = By.xpath("(//img[@alt=\"Add\" and @width=\"24\"]) [1]");
+        private By goalAction = By.xpath("//*[@id=\"s-tab01\"]/div/div[2]/div[3]/a[2]");
         private By goalTitle = By.id("obj_title");
         private By goalCategoryField = By.xpath("(//span[contains(text(),'Select Goal Category')])[1]");
         private By descriptionField = By.xpath("//textarea[@placeholder=\"type to add description\"]");
@@ -61,7 +63,30 @@ public class manager_AddGoals
         	String empname = prop.getProperty("empname");
             driver.findElement(By.xpath("//span[contains(text(),'"+empname+" ')]")).click();
             Thread.sleep(2000);
-            driver.findElement(goalAction).click();
+            
+//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"s-tab01\"]/div/div[2]/div[3]/a[2]")));
+//            element.click();
+//            driver.findElement(goalAction).click();
+
+            
+            
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"s-tab01\"]/div/div[2]/div[3]/a[2]")));
+            if (element.isDisplayed() && element.isEnabled()) {
+            	Thread.sleep(3000);
+                element.click(); // or perform other actions
+            }
+            else
+            	element.click();
+
+            
+//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"s-tab01\"]/div/div[2]/div[3]/a[2]")));
+//            element.click(); // or other actions
+
+            
+            
             Thread.sleep(2000);
         }
 

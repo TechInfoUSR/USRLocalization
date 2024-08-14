@@ -18,6 +18,7 @@ import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -49,38 +50,53 @@ public class Email_test_class {
 	        
 	        WebElement element = driver.findElement(By.id("nonexistent_id")); // This will fail
 	        Assert.assertNotNull(element);
-	        
+	        System.out.println("Test case got passed :)");
 	    }
 
-	    @AfterClass
-	    public void tearDown() {
-	        if (driver != null) {
-	            driver.quit();
-	        }
-	    }
+//	    @AfterClass
+//	    public void tearDown() {
+//	        if (driver != null) {
+//	            driver.quit();
+//	        }
+//	    }
 
-	    @AfterMethod
+//	    @AfterMethod
 	    
-	    public void onTestFailure(ITestResult result) throws EmailException {
+	    @AfterTest
+	    public void onTestFailure() throws EmailException, InterruptedException {
 	    	
-	    	Date currentdate =new Date();
-	    	String SS= currentdate.toString().replace(" ", "-").replace(":", "-");
-	    	System.err.println(SS);
-	        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-	        String screenshotPath = ".//Screenshort/"+SS+".png";
-	        try {
-	        	 FileUtils.copyFile(screenshot, new File(screenshotPath));
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
+	    	
+	    	Thread.sleep(10000);
+//	    	Date currentdate =new Date();
+//	    	String SS= currentdate.toString().replace(" ", "-").replace(":", "-");
+//	    	System.err.println(SS);
+//	        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//	        String screenshotPath = ".//Screenshort/"+SS+".png";
+//	        try 
+//	        {
+//	        	 FileUtils.copyFile(screenshot, new File(screenshotPath));
+//	        } catch (IOException e) 
+//	        {
+//	            e.printStackTrace();
+//	        }
 	        
 	        
 	        EmailAttachment attachment = new EmailAttachment();
-	    	attachment.setPath(screenshotPath);
+//	    	attachment.setPath(screenshotPath);
+	    	
+	    	
+	    	
+	    	
+	    	
 	    	attachment.setDisposition(EmailAttachment.ATTACHMENT);
 	    	attachment.setDescription("in this page bug is there");
-	    	attachment.setName("Bug pic"+ SS);
-	    	  
+//	    	attachment.setName("Bug pic"+ SS);
+	    	
+	    	
+	    	attachment.setPath(".//test-output/emailable-report.html");
+	    	attachment.setName("Bug Report");
+	    	
+	    	
 	    	System.out.println("Mail trigger");  	
 	    	MultiPartEmail email = new MultiPartEmail();
 		    email.setHostName("smtp.zeptomail.in");

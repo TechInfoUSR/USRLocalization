@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="normalFlowTest.CustomReportListener"/>
+  </listeners>
+  <test thread-count="5" name="Skipp_Approval_test(failed)">
     <classes>
-      <class name="normalFlowTest.Email_test_class">
+      <class name="normalFlowTest.Skipp_Approval_test">
         <methods>
-          <include name="onTestFailure"/>
-          <include name="exampleTest"/>
-          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="teardown"/>
+          <include name="approve"/>
         </methods>
-      </class> <!-- normalFlowTest.Email_test_class -->
+      </class> <!-- normalFlowTest.Skipp_Approval_test -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Skipp_Approval_test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

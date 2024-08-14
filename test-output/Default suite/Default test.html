@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Aug 08 15:49:58 IST 2024</td>
+<td>Started on:</td><td>Wed Aug 14 12:35:25 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>15 seconds (15995 ms)</td>
+<tr><td>Total time:</td><td>36 seconds (36391 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,16 +75,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='normalFlowTest.Email_test_class.exampleTest()'><b>exampleTest</b><br>Test class: normalFlowTest.Email_test_class</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#nonexistent_id&quot;}
-  (Session info: chrome=127.0.6533.90)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+<td title='normalFlowTest.employeeFlow_Test.selectGoalCycle()'><b>selectGoalCycle</b><br>Test class: normalFlowTest.employeeFlow_Test</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;javascript:;&quot; class=&quot;view-link mt-h cs-modal-btn ng-binding ng-scope&quot; ng-if=&quot;!showApprovalStatus &amp;amp;&amp;amp; performanceReviewStatus &gt;= reviewStatusConst[0]&quot; ng-click=&quot;openGoalCommentsModal(g)&quot; data-toggle=&quot;goalCommentsModal&quot;&gt;...&lt;/a&gt; is not clickable at point (1810, 720). Other element would receive the click: &lt;a href=&quot;javascript:;&quot; class=&quot;view-link mt-h cs-modal-btn ng-scope&quot; ng-if=&quot;flowConfig.hidecheckin !== &apos;on&apos;&quot; ng-click=&quot;openLastCheckInModal(g)&quot; data-toggle=&quot;lastCheckIn&quot;&gt;...&lt;/a&gt;
+  (Session info: chrome=127.0.6533.119)
 Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d31e48a3a0934a849264423f15e69396, findElement {value=nonexistent_id, using=id}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.90, chrome: {chromedriverVersion: 127.0.6533.99 (f31af5097d90..., userDataDir: C:\Users\Dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62674}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62674/devtoo..., se:cdpVersion: 127.0.6533.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d31e48a3a0934a849264423f15e69396
+Command: [e64b3ac04423efddb25447402be98181, clickElement {id=f.01B012DF67968C48F89633A466809F4D.d.F8D2CF64D0A23A2DBE61C1C8D438FF75.e.368}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.119, chrome: {chromedriverVersion: 127.0.6533.119 (bdef6783a05..., userDataDir: C:\Users\Dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63785}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63785/devtoo..., se:cdpVersion: 127.0.6533.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (e64b3ac04423efddb25447402be98181)] -&gt; xpath: (//a[@class=&quot;view-link mt-h cs-modal-btn ng-binding ng-scope&quot;])[2]]
+Session ID: e64b3ac04423efddb25447402be98181
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -97,11 +97,11 @@ Session ID: d31e48a3a0934a849264423f15e69396
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
-	at normalFlowTest.Email_test_class.exampleTest(Email_test_class.java:50)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at NormalFlowForEmployee.emp_assesment_Submission.EmployeeComment(emp_assesment_Submission.java:101)
+	at NormalFlowForEmployee.emp_assesment_Submission.selectGoalCycle(emp_assesment_Submission.java:72)
+	at normalFlowTest.employeeFlow_Test.selectGoalCycle(employeeFlow_Test.java:45)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -127,16 +127,16 @@ Session ID: d31e48a3a0934a849264423f15e69396
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace800493254", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace800493254'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#nonexistent_id&quot;}
-  (Session info: chrome=127.0.6533.90)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+</pre></div><a href='#' onClick='toggleBox("stack-trace943666520", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace943666520'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;javascript:;&quot; class=&quot;view-link mt-h cs-modal-btn ng-binding ng-scope&quot; ng-if=&quot;!showApprovalStatus &amp;amp;&amp;amp; performanceReviewStatus &gt;= reviewStatusConst[0]&quot; ng-click=&quot;openGoalCommentsModal(g)&quot; data-toggle=&quot;goalCommentsModal&quot;&gt;...&lt;/a&gt; is not clickable at point (1810, 720). Other element would receive the click: &lt;a href=&quot;javascript:;&quot; class=&quot;view-link mt-h cs-modal-btn ng-scope&quot; ng-if=&quot;flowConfig.hidecheckin !== &apos;on&apos;&quot; ng-click=&quot;openLastCheckInModal(g)&quot; data-toggle=&quot;lastCheckIn&quot;&gt;...&lt;/a&gt;
+  (Session info: chrome=127.0.6533.119)
 Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d31e48a3a0934a849264423f15e69396, findElement {value=nonexistent_id, using=id}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.90, chrome: {chromedriverVersion: 127.0.6533.99 (f31af5097d90..., userDataDir: C:\Users\Dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62674}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62674/devtoo..., se:cdpVersion: 127.0.6533.90, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d31e48a3a0934a849264423f15e69396
+Command: [e64b3ac04423efddb25447402be98181, clickElement {id=f.01B012DF67968C48F89633A466809F4D.d.F8D2CF64D0A23A2DBE61C1C8D438FF75.e.368}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.119, chrome: {chromedriverVersion: 127.0.6533.119 (bdef6783a05..., userDataDir: C:\Users\Dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63785}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63785/devtoo..., se:cdpVersion: 127.0.6533.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (e64b3ac04423efddb25447402be98181)] -&gt; xpath: (//a[@class=&quot;view-link mt-h cs-modal-btn ng-binding ng-scope&quot;])[2]]
+Session ID: e64b3ac04423efddb25447402be98181
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -149,11 +149,11 @@ Session ID: d31e48a3a0934a849264423f15e69396
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
-	at normalFlowTest.Email_test_class.exampleTest(Email_test_class.java:50)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at NormalFlowForEmployee.emp_assesment_Submission.EmployeeComment(emp_assesment_Submission.java:101)
+	at NormalFlowForEmployee.emp_assesment_Submission.selectGoalCycle(emp_assesment_Submission.java:72)
+	at normalFlowTest.employeeFlow_Test.selectGoalCycle(employeeFlow_Test.java:45)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -180,8 +180,8 @@ Session ID: d31e48a3a0934a849264423f15e69396
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>0</td>
-<td>normalFlowTest.Email_test_class@27216cd</td></tr>
+<td>22</td>
+<td>normalFlowTest.employeeFlow_Test@2c78d320</td></tr>
 </table><p>
 </body>
 </html>

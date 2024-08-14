@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	
+	<!--> Normal flow  
+<test name="AddGoalPlan">
+    <classes>	
+      <class name="normalFlowTest.TestSuitClass"/>		
+    </classes>
+</test> 
+<-->
+  
+  <test name="AddGoalPlan">
+    <classes>	
+      <class name="normalFlowTest.SuitClass_for_Test_TestClass"/>		
+    </classes>
+</test>
+  
+<listeners>
+    <listener class-name="normalFlowTest.CustomReportListener" />
+</listeners>
+
+
+</suite> 
+

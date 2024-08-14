@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="normalFlowTest.Email_test_class">
+      <class name="normalFlowTest.employeeFlow_Test">
         <methods>
-          <include name="onTestFailure"/>
-          <include name="exampleTest"/>
           <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="selectGoalCycle"/>
         </methods>
-      </class> <!-- normalFlowTest.Email_test_class -->
+      </class> <!-- normalFlowTest.employeeFlow_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
