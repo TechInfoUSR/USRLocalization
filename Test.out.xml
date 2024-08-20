@@ -3,16 +3,23 @@
 <suite name="Suite">
 	
 	
-	<listeners>
+<listeners>
     <listener class-name="normalFlowTest.CustomReportListener" />
 </listeners>
 	
-  <!--> Finalize the Aprisal <-->
-  <test name="Finalize_Employee_Appraisal_Test">
+ <!--> Employee will rate the goal and submit his assesment <-->
+  <test name="EmployeeFlow">
     <classes>
-		<class name="normalFlowTest.Finalize_Employee_Appraisal_Test"/>
+		<class name="normalFlowTest.employeeFlow_Test"/>
 	</classes>
-  </test>
+  </test> 
+  
+  <!--> Manager will rate the goal and submit to skip manager  <-->
+  <test name="manager_Sumitt_Assesment_To_Skip_Test">
+    <classes>
+		<class name="normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test"/>
+	</classes>
+  </test> 
 
 
 

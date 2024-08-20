@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class addGoalPlan {	
-    WebDriver driver;
+     WebDriver driver;
 
     public addGoalPlan(WebDriver driver) {
         this.driver = driver;

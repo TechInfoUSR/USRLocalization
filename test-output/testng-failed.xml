@@ -4,15 +4,26 @@
   <listeners>
     <listener class-name="normalFlowTest.CustomReportListener"/>
   </listeners>
-  <test thread-count="5" name="Skipp_Approval_test(failed)">
+  <test thread-count="5" name="EmployeeFlow(failed)">
     <classes>
-      <class name="normalFlowTest.Skipp_Approval_test">
+      <class name="normalFlowTest.employeeFlow_Test">
         <methods>
+          <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="teardown"/>
-          <include name="approve"/>
+          <include name="selectGoalCycle"/>
         </methods>
-      </class> <!-- normalFlowTest.Skipp_Approval_test -->
+      </class> <!-- normalFlowTest.employeeFlow_Test -->
     </classes>
-  </test> <!-- Skipp_Approval_test(failed) -->
+  </test> <!-- EmployeeFlow(failed) -->
+  <test thread-count="5" name="manager_Sumitt_Assesment_To_Skip_Test(failed)">
+    <classes>
+      <class name="normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test">
+        <methods>
+          <include name="select_Emp"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test -->
+    </classes>
+  </test> <!-- manager_Sumitt_Assesment_To_Skip_Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

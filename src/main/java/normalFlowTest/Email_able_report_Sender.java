@@ -21,7 +21,7 @@ public class Email_able_report_Sender implements IReporter {
         System.out.println("Reports are generated in: " + outputDirectory);
 
         // Wait for the report to be fully generated
-        if (waitForFileUpdate(outputDirectory + "/index.html")) {
+        if (waitForFileUpdate(outputDirectory + "/emailable-report.html")) {
             try {
                 sendEmailWithReport();
             } catch (EmailException e) {

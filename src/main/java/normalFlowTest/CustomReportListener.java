@@ -1,7 +1,5 @@
 package normalFlowTest;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Properties;
 
@@ -12,6 +10,7 @@ import org.apache.commons.mail.MultiPartEmail;
 import org.openqa.selenium.WebDriver;
 import org.testng.IReporter;
 import org.testng.ISuite;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.xml.XmlSuite;
 
@@ -67,7 +66,7 @@ public class CustomReportListener implements IReporter {
 
         
         try {
-            Thread.sleep(500000); // Wait for 5 seconds to ensure the report is generated
+            Thread.sleep(1000); // Wait for 5 seconds to ensure the report is generated
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -83,21 +82,7 @@ public class CustomReportListener implements IReporter {
 
     public void sendEmailWithReport() throws EmailException {
         if (outputDirectory != null) {
-        	
-        	 LocalDateTime now = LocalDateTime.now();
-
-             // Define a formatter for the date and time
-             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-             // Format the date and time
-             String formattedDateTime = now.format(formatter);
-
-             // Print the current date and time
-             System.out.println("Current date and time: " + formattedDateTime);
-             
-             
-             
-            String reportPath = outputDirectory + "/emailable-report.html"; 
+            String reportPath = outputDirectory + "/emailable-report.html"; // Path to the TestNG report
 
             System.out.println("Sending email with report from: " + reportPath);
 
