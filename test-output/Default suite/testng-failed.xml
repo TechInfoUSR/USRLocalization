@@ -3,13 +3,21 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="normalFlowTest.employeeFlow_Test">
+      <class name="normalFlowTest.TestSuitClass">
         <methods>
-          <include name="tearDown"/>
+          <include name="DeletionofPMS"/>
+          <include name="DeletionodGoalPlan"/>
+          <include name="Deletion"/>
+          <include name="approve"/>
+          <include name="select_Emp"/>
+          <include name="OntoOneMeeting1"/>
           <include name="setUp"/>
+          <include name="OntoOneMeeting"/>
           <include name="selectGoalCycle"/>
+          <include name="selectGoalCycle1"/>
+          <include name="empSelf"/>
         </methods>
-      </class> <!-- normalFlowTest.employeeFlow_Test -->
+      </class> <!-- normalFlowTest.TestSuitClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

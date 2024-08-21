@@ -12,7 +12,7 @@ public class Finalize_Employee_Appraisal
     
     private By dropdownToggle = By.xpath("//a[@class='dropdown-toggle']");
     private By avatarIcon = By.xpath("//a[@class='avatar-sec header-icon']");
-    private By employeeName = By.xpath("//span[contains(text(),'Ranganath ')]");
+//    private By employeeName = By.xpath("//span[contains(text(),'Ranganath ')]");
     private By goalCycleLink(String cycleName) 
     {
         return By.xpath("//a[contains(text(),'" + cycleName + "')]");
@@ -34,7 +34,10 @@ public class Finalize_Employee_Appraisal
         Thread.sleep(1000);
     }
     public void navigateToEmployeeSelf() throws InterruptedException {
-        driver.findElement(employeeName).click();
+        
+    	String employeeName= prop.getProperty("empname");
+        driver.findElement(By.xpath("//span[contains(text(),'"+employeeName+"')]")).click();
+    	
         Thread.sleep(2000);
         driver.findElement(By.xpath("//textarea[@class=\"form-control finalize_appraisal_meeting\"][1]")).sendKeys("5% Hike will be provided");
         Thread.sleep(2000);

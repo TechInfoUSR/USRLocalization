@@ -44,8 +44,8 @@ public class manager_Sumitt_Assesment_To_Skip {
     	    } else {
     	        throw new IllegalArgumentException("Employee name property is not set or empty.");
     	    }
-    	     WebElement element = driver.findElement(By.xpath("//*[@id=\"myUL\"]/li/div")); 
-//            WebElement element = driver.findElement(By.xpath("(//div[@class=\"card list-view-card\"])[1]")); 
+    	    
+            WebElement element = driver.findElement(By.xpath("(//div[@class=\"card list-view-card\"])[1]")); 
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].click();", element);
             
@@ -55,15 +55,6 @@ public class manager_Sumitt_Assesment_To_Skip {
 
             List<WebElement> noofGoals =listContainer.findElements(By.xpath("//ul[@class=\"flex flex-btn py-1 onhover-section ng-scope\"]"));
             int NoofGoal = noofGoals.size();
-            
-            
-            
-//            WebElement listContainer  = driver.findElement(By.xpath("//ul[@class=\"nested active\"]"));
-//            Thread.sleep(1000);
-//            List<WebElement> noofGoals =listContainer.findElements(By.xpath("//div[@ng-repeat=\"g in goalsList[0].goals track by $index\"]"));
-//            int NoofGoal = noofGoals.size();
-//            
-            
             System.out.println(NoofGoal);
             for (int i=1 ;i<=NoofGoal;i++) 
             {

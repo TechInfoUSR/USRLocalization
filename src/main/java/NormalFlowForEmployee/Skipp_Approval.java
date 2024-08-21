@@ -47,7 +47,7 @@ public class Skipp_Approval
     	
 	    updateProgressBar(driver, "(//input[@type=\"range\"])[5]", randomNumber);
 
-	    driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_commentsa_tVzoTeAkz7RlbR_hxZiL-A\"]")).sendKeys("Skip CMT");
+	    driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_commentsa_ULJyebT3Gn6gwh7fiqcK5g\"]")).sendKeys("Skip CMT");
 //		Thread.sleep(2000);
 		driver.findElement(By.xpath("//img[@class=\"mr-1\"][1]")).click();
 		Thread.sleep(2000);
