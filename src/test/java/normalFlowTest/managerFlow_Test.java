@@ -1,5 +1,7 @@
 package normalFlowTest;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
 import java.util.Properties;
 
@@ -45,13 +47,14 @@ public class managerFlow_Test {
     
     }
   @Test(priority = 1)
-  public void empSelf() throws InterruptedException {
+  public void Manager_addGoalto_emp() throws InterruptedException {
 //  	manager_AddGoals.navigateToEmployeeSelf();
       String pmsCycleName = prop.getProperty("GoalPalnName");
       manager_AddGoals.selectGoalCycle(pmsCycleName);
       manager_AddGoals.openEmployeeAssessment();
       manager_AddGoals.enterGoalDetails();
-      Assert.assertTrue(true); 
+      boolean isDisplayed = manager_AddGoals.isGoalAdded();
+      assertTrue(isDisplayed, "Goal not Added!"); 
   }
 
 

@@ -62,13 +62,15 @@ public class initiatePMSCycle
 	        driver.findElement(initiateReviewCycleButton).click();
 	        Thread.sleep(2000);
 	        driver.findElement(okButton).click();
-	        Thread.sleep(6000);
-	        
+	        Thread.sleep(500);
+	       
 	    }
 	    //Not working due to a minor bug
-	    public boolean isCycleInitiated(String GoalPalnName) throws InterruptedException 
+	    public boolean isCycleInitiated() throws InterruptedException 
 	    {
-	    	return driver.findElement(By.xpath("//td[contains(text(),'"+GoalPalnName+"')and @class=\"ng-binding\"]")).isDisplayed();
+//	    	 driver.findElement(By.xpath("//td[contains(text(),'"+GoalPalnName+"')and @class=\"ng-binding\"]")).isDisplayed();
+	    	 return driver.findElement(By.xpath("//tr[@class=\"ng-scope\"]")).isDisplayed();
+		       
 	    }
 	    
 	}

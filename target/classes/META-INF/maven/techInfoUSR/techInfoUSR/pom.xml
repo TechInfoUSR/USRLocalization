@@ -12,11 +12,31 @@
 			<version>4.4.3</version>
 		</dependency>
 
+    <dependency>
+        <groupId>com.sun.activation</groupId>
+        <artifactId>javax.activation</artifactId>
+        <version>1.2.0</version>
+    </dependency>
+    
+         <dependency>
+        <groupId>com.sun.mail</groupId>
+        <artifactId>javax.mail</artifactId>
+        <version>1.6.2</version>
+    </dependency>
+
+    <!-- Activation Framework (Required by JavaMail) -->
+    <dependency>
+        <groupId>com.sun.activation</groupId>
+        <artifactId>javax.activation</artifactId>
+        <version>1.2.0</version>
+    </dependency>
+    
+    
 	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 	<dependency>
 	    <groupId>org.seleniumhq.selenium</groupId>
 	    <artifactId>selenium-java</artifactId>
-	    <version>4.23.0</version>
+	    <version>4.23.1</version>
 	</dependency>    
      
 		<dependency>
@@ -84,9 +104,10 @@
     <scope>provided</scope>
 </dependency>
 
-
-
-		
-		
-  </dependencies>
+        <dependency>
+    		<groupId>Jenkins</groupId>
+    		<artifactId>Jenkins</artifactId>
+    		<version>0.0.1-SNAPSHOT</version>
+    	</dependency>
+    </dependencies>
 </project>

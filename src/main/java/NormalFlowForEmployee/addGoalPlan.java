@@ -109,9 +109,9 @@ public class addGoalPlan {
         Thread.sleep(100);
     }
 
-    public boolean isGoalPlanDisplayed(String goalPlanName) 
+    public String isGoalPlanDisplayed(String goalPlanName) 
     {
-        return driver.findElement(By.xpath("//td[contains(text(),'" + goalPlanName + "')]")).isDisplayed();
+        return driver.findElement(By.xpath("//td[contains(text(),'" + goalPlanName + "')]")).getText();
     
    
     }  

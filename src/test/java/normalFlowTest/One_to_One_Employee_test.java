@@ -1,5 +1,7 @@
 package normalFlowTest;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 import java.util.Properties;
 
@@ -35,9 +37,13 @@ public class One_to_One_Employee_test {
     
     }
   @Test(priority = 1)
-  public void selectGoalCycle() throws InterruptedException{
+  public void OnToOneMeeting_Employee() throws InterruptedException{
   	 String pmsCycleName = prop.getProperty("GoalPalnName");
   	One_to_One_Employee.selectGoalCycle(pmsCycleName);
+  	String isdisp = One_to_One_Employee.isSelfsub();
+	String Act="Submitted successfully";
+	assertEquals(Act,isdisp,"One to One Employee not completed!!!!");
+  
   }
   @AfterClass
   void Teardown() {

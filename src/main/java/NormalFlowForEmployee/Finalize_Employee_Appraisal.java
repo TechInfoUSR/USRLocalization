@@ -44,4 +44,8 @@ public class Finalize_Employee_Appraisal
         driver.findElement(By.xpath("(//a[contains(text(),'Finalize Employee Appraisal')])[1]")).click();
         Thread.sleep(5000);
     }
+    public String isSelfsub() throws InterruptedException {
+		  Thread.sleep(4000);
+		 return driver.findElement(By.xpath("//span[contains(text(),'Finalized')]")).getText();
+	  }
 }

@@ -4,15 +4,17 @@
   <listeners>
     <listener class-name="normalFlowTest.CustomReportListener"/>
   </listeners>
-  <test thread-count="5" name="Finalize_Employee_Appraisal_Test(failed)">
+  <test thread-count="5" name="addGoalPla_CreatePMSCycleTest(failed)">
     <classes>
-      <class name="normalFlowTest.Finalize_Employee_Appraisal_Test">
+      <class name="normalFlowTest.addGoalPla_CreatePMSCycleTest">
         <methods>
-          <include name="setUp"/>
-          <include name="OntoOneMeeting"/>
+          <include name="AddPMSCycle"/>
+          <include name="Initiate_PMSCycle"/>
           <include name="teardown"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- normalFlowTest.Finalize_Employee_Appraisal_Test -->
+      </class> <!-- normalFlowTest.addGoalPla_CreatePMSCycleTest -->
     </classes>
-  </test> <!-- Finalize_Employee_Appraisal_Test(failed) -->
+  </test> <!-- addGoalPla_CreatePMSCycleTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

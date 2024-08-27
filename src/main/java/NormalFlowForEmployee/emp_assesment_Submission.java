@@ -104,4 +104,8 @@ public class emp_assesment_Submission {
     		  driver.findElement(By.xpath("(//button[contains(text(),'Close')])[1]")).click();
     		  Thread.sleep(1000);
     	  }
+    	  public String isSelfsub() throws InterruptedException {
+    		  Thread.sleep(5000);
+    		 return driver.findElement(By.xpath("//span[contains(text(),'Self Review Completed')]")).getText();
+    	  }
     }

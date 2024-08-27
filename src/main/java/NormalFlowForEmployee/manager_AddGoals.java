@@ -148,12 +148,21 @@ public class manager_AddGoals
                 
             	WebElement rangeInput = driver.findElement(toggleMetric); 
                 JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-                
+                WebElement childwin = driver.findElement(By.xpath("//*[@id=\"tab_default_11\"]/form/div[5]/div/div[1]/div[2]/h5"));
+
+                jsExecutor.executeScript("arguments[0].scrollIntoView(true);", childwin);
+ 
                 driver.findElement(weightField).sendKeys(weight);
-                Thread.sleep(5000);
+                Thread.sleep(500);
                 driver.findElement(CreateBTN).click();
-                Thread.sleep(5000);
+                Thread.sleep(1000);
                 
             }
+        public boolean isGoalAdded() throws InterruptedException 
+        {
+        	return driver.findElement(By.xpath("//div[contains(text(),'Saved goal successfully')]")).isDisplayed();
+        
+        }
+        
 }
     

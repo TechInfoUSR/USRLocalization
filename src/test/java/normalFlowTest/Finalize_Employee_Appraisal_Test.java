@@ -1,5 +1,7 @@
 package normalFlowTest;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 import java.util.Properties;
 
@@ -10,18 +12,17 @@ import org.testng.annotations.Test;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
-import NormalFlowForEmployee.Delete_the_PMS_Cycle;
+import NormalFlowForEmployee.Finalize_Employee_Appraisal;
 import NormalFlowForEmployee.addGoalPlan;
 
-public class Delete_the_PMS_Cycle_test {
+public class Finalize_Employee_Appraisal_Test 
+{
 	addGoalPlan addGoalPlan;
     DriverFactory df;
     ConfigpropReader cp;
     Properties prop;
     WebDriver driver;
-    Delete_the_PMS_Cycle Delete_the_PMS_Cycle;
-    
-    
+    Finalize_Employee_Appraisal Finalize_Employee_Appraisal;
     @BeforeTest
     void setUp() throws IOException 
     {
@@ -30,19 +31,27 @@ public class Delete_the_PMS_Cycle_test {
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
         addGoalPlan = new addGoalPlan(driver);
-        addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
-        Delete_the_PMS_Cycle = new Delete_the_PMS_Cycle(driver, prop);
+        addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
+          
+        Finalize_Employee_Appraisal = new Finalize_Employee_Appraisal(driver, prop);
+
+    
     }
     
-    
     @Test
-    void Deletion() throws InterruptedException {
-    	Delete_the_PMS_Cycle.Deletion();
+    void Finalize_Emp_Appraisal() throws InterruptedException {
+    	Finalize_Employee_Appraisal.selectGoalCycle(prop.getProperty("GoalPalnName"));
+    	Finalize_Employee_Appraisal.navigateToEmployeeSelf();
+    	String isdisp = Finalize_Employee_Appraisal.isSelfsub();
+    	System.out.println(isdisp);
+    	String Act="Finalized";
+    	assertEquals(Act,isdisp,"Finalized not completed!!!!");
+    	
     }
     
     @AfterClass
     void teardown() {
     	driver.quit();
     }
-    
 }
+

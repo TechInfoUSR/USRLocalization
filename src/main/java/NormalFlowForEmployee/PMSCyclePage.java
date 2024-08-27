@@ -55,9 +55,9 @@ public class PMSCyclePage
 	        Thread.sleep(1000);
 	    }
 
-	    public boolean isPMSCycleDisplayed() 
+	    public String isPMSCycleDisplayed() 
 	    {
-	        return driver.findElement(By.xpath("//span[contains(text(),'" + prop.getProperty("GoalPalnName") + "')]")).isDisplayed();
+	        return driver.findElement(By.xpath("//span[contains(text(),'" + prop.getProperty("GoalPalnName") + "')]")).getText();
 	    }
 }
 

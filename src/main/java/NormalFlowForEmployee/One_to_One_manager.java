@@ -46,8 +46,12 @@ public class One_to_One_manager
         driver.findElement(By.xpath("//*[@id=\"s-tab01\"]/div/div[2]/div[6]/textarea")).sendKeys("1:1 meeting comment");
         Thread.sleep(2000);
         driver.findElement(By.xpath("(//a[@class=\"btn checkin-btn block-btn\"])[1]")).click();
-        Thread.sleep(2000);
+        
     
     }
+    public String isSelfsub() throws InterruptedException {
+    	Thread.sleep(500);
+		 return driver.findElement(By.xpath("//div[contains(text(),'Submitted successfully')]")).getText();
+	  }
     
 }

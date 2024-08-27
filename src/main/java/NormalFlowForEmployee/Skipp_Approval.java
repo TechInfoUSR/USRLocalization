@@ -47,14 +47,14 @@ public class Skipp_Approval
     	
 	    updateProgressBar(driver, "(//input[@type=\"range\"])[5]", randomNumber);
 
-	    driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_commentsa_ULJyebT3Gn6gwh7fiqcK5g\"]")).sendKeys("Skip CMT");
+	    driver.findElement(By.xpath("//textarea[@name=\"comment\"][1]")).sendKeys("Skip CMT");
 //		Thread.sleep(2000);
 		driver.findElement(By.xpath("//img[@class=\"mr-1\"][1]")).click();
 		Thread.sleep(2000);
 	    driver.findElement(By.xpath("//button[@ng-click=\"submitApprovalForAssessment()\"]")).click();
 	    Thread.sleep(2000);
 	    driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
-	    Thread.sleep(2000);
+	    Thread.sleep(500);
 	}
 	
 	
@@ -68,7 +68,10 @@ public class Skipp_Approval
       WebElement progressText = driver.findElement(By.cssSelector(".risk"));
       jsExecutor.executeScript("arguments[0].innerText = arguments[1];", progressText, String.format("%d%% Complete", progress));
 
-
-
   }
+    
+	  public String isSelfsub() throws InterruptedException {
+		  
+		 return driver.findElement(By.xpath("//div[contains(text(),'Submitted successfully')]")).getText();
+	  }
 }

@@ -1,5 +1,8 @@
 package normalFlowTest;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
 import java.util.Properties;
 
@@ -36,8 +39,11 @@ public class manager_Sumitt_Assesment_To_Skip_Test
       
     }
   @Test(priority = 1)
-void select_Emp() throws InterruptedException{
+void Manager_Assesmentsubmitto_Skip() throws InterruptedException{
 	  manager_Sumitt_Assesment_To_Skip.selectGoalCycle();
+	  String isselfsub = manager_Sumitt_Assesment_To_Skip.isSelfsub();
+	  String Actualtest = "Manager Review Completed";
+	  	assertEquals(Actualtest,isselfsub,"Manager Assesment is not submitted!!");
   }
   
   

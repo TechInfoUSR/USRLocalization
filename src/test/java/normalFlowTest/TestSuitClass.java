@@ -1,5 +1,8 @@
 package normalFlowTest;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
 import java.util.Properties;
 
@@ -30,7 +33,7 @@ public class TestSuitClass {
     ConfigpropReader cp;
     Properties prop;
     WebDriver driver;
-
+    
     
     AddEmployeetoDB AddEmployeetoDB;
 	PMSCyclePage PMSCyclePage;
@@ -71,94 +74,129 @@ public class TestSuitClass {
     	
     }
     
-//    @Test(priority = 1)
-    public void testAddGoalPlan1() throws InterruptedException 
-    {  
+    @Test(priority = 1)
+    public void AddGoalPlan() throws InterruptedException 
+    {    
     	String GoalPalnName = prop.getProperty("GoalPalnName");
-    	AddEmployeetoDB.AddEmployee();
-	
-    }
-    @Test(priority = 2)
-    public void testAddGoalPlan() throws InterruptedException 
-    {   String GoalPalnName = prop.getProperty("GoalPalnName");
     	String EmpGroup = prop.getProperty("EmpGroup");
     	String RatingScale = prop.getProperty("RatingScale");
     	addGoalPlan.addGoalPlan1(GoalPalnName, EmpGroup ,RatingScale);
-    	boolean isDisplayed = addGoalPlan.isGoalPlanDisplayed(GoalPalnName);
-    	Assert.assertTrue(isDisplayed, "Goal Plan is not displayed!");
+    	String isDisplayed = addGoalPlan.isGoalPlanDisplayed(GoalPalnName);
+    	
+    	assertEquals(GoalPalnName,isDisplayed, "Goal Plan is not displayed!!");
+    }
+    @Test(priority = 2)
+    public void AddPMSCycle() throws InterruptedException 
+    {	String GoalPalnName = prop.getProperty("GoalPalnName");
+    	PMSCyclePage.addPMSCycle(prop.getProperty("GoalPalnName"));
+    	String isDisplayed = PMSCyclePage.isPMSCycleDisplayed();    	
+        assertEquals(GoalPalnName,isDisplayed, "PMS Cycle is not displayed!!!");
     }
     @Test(priority = 3)
-    public void testAddPMSCycle() throws InterruptedException 
-    {	
-    	PMSCyclePage.addPMSCycle(prop.getProperty("GoalPalnName"));
-    	boolean isDisplayed = PMSCyclePage.isPMSCycleDisplayed();
-        Assert.assertTrue(isDisplayed, "PMS Cycle is not displayed");
-    }
-    @Test(priority = 4)
-    public void testinitiatePMSCycle() throws InterruptedException 
+    public void Initiate_PMSCycle() throws InterruptedException 
     {	
     	initiatePMSCycle.goToWeightTab(prop.getProperty("EmpGroup"),prop.getProperty("GoalPalnName"));
     	initiatePMSCycle.enterWeightages(prop.getProperty("objectiveWeightage"),prop.getProperty("coreValueWeightage"), prop.getProperty("jobCompetencyWeightage"), prop.getProperty("behaviorWeightage"), prop.getProperty("leadershipWeightage"));
+    	boolean isDisplayed =initiatePMSCycle.isCycleInitiated();
+    	System.out.println(isDisplayed);    	
+    	assertTrue(isDisplayed, "Goal plan didn't initiated");
     }
 
-
-    @Test(priority = 5)
-    public void empSelf() throws InterruptedException {
+    @Test(priority = 4)
+    public void Manager_addGoalto_emp() throws InterruptedException {
+    	driver.get(prop.getProperty("url"));
+    	addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
 //    	manager_AddGoals.navigateToEmployeeSelf();
         String pmsCycleName = prop.getProperty("GoalPalnName");
         manager_AddGoals.selectGoalCycle(pmsCycleName);
         manager_AddGoals.openEmployeeAssessment();
         manager_AddGoals.enterGoalDetails();
-        Assert.assertTrue(true); 
+        boolean isDisplayed = manager_AddGoals.isGoalAdded();
+        assertTrue(isDisplayed, "Goal not Added!"); 
+    }
+
+
+    @Test(priority = 5)
+    public void Employee_Assesment() throws InterruptedException{
+    	driver.get(prop.getProperty("url"));
+    	addGoalPlan.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));
+    	String pmsCycleName = prop.getProperty("GoalPalnName");
+    	emp_assesment_Submission.selectGoalCycle(pmsCycleName);
+    	String isselfsub = emp_assesment_Submission.isSelfsub();
+    	String Actual="Self Review Completed";
+    	assertEquals(Actual,isselfsub,"Self Assesment is not submitted!!");
     }
 
     @Test(priority = 6)
-    public void selectGoalCycle() throws InterruptedException{
-    	 String pmsCycleName = prop.getProperty("GoalPalnName");
-    	emp_assesment_Submission.selectGoalCycle(pmsCycleName);
-    }
-    
-    @Test(priority = 7)
-    void select_Emp() throws InterruptedException{
+    void Manager_Assesmentsubmitto_Skip() throws InterruptedException{
+    	driver.get(prop.getProperty("url"));
+    	addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
     	  manager_Sumitt_Assesment_To_Skip.selectGoalCycle();
+    	  String isselfsub = manager_Sumitt_Assesment_To_Skip.isSelfsub();
+    	  String Actualtest = "Manager Review Completed";
+    	  assertEquals(Actualtest,isselfsub,"Manager Assesment is not submitted!!");
       }
-  
-    @Test(priority = 8)
-    void approve() throws InterruptedException
+      
+    @Test(priority = 7)
+    void Skip_approval() throws InterruptedException
     {
+    	driver.get(prop.getProperty("url"));
+    	addGoalPlan.login(prop.getProperty("SkipmgrUN"), prop.getProperty("SkipmgrPass"));
     	Skipp_Approval.approve();
+    	String isdisp = Skipp_Approval.isSelfsub();
+    	System.out.println(isdisp);
+    	String Act="Submitted successfully";
+    	assertEquals(Act,isdisp,"Skip_approval not completed!!!!");
+    }
+    @Test(priority = 8)
+    void OneToOneMeeting_Manager() throws InterruptedException {
+    	driver.get(prop.getProperty("url"));
+    	addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
+    	One_to_One_manager.selectGoalCycle(prop.getProperty("GoalPalnName"));
+    	One_to_One_manager.navigateToEmployeeSelf();
+    	String isdisp = One_to_One_manager.isSelfsub();
+    	System.out.println(isdisp);
+    	String Act="Submitted successfully";
+    	assertEquals(Act,isdisp,"One To One Meeting Manager not completed!!!!");
+    	
     }
     
     @Test(priority = 9)
-    void OntoOneMeeting() throws InterruptedException {
-    	One_to_One_manager.selectGoalCycle(prop.getProperty("GoalPalnName"));
-    	One_to_One_manager.navigateToEmployeeSelf();
-    	
+    public void OnToOneMeeting_Employee() throws InterruptedException{
+    	driver.get(prop.getProperty("url"));
+    	String pmsCycleName = prop.getProperty("GoalPalnName");
+    	One_to_One_Employee.selectGoalCycle(pmsCycleName);
+    	String isdisp = One_to_One_Employee.isSelfsub();
+    	String Act="Submitted successfully";
+    	assertEquals(Act,isdisp,"One to One Employee not completed!!!!");
+    
     }
     
     @Test(priority = 10)
-    public void selectGoalCycle1() throws InterruptedException{
-    	 String pmsCycleName = prop.getProperty("GoalPalnName");
-    	One_to_One_Employee.selectGoalCycle(pmsCycleName);
-    }
-    
-    @Test(priority =11)
-    void OntoOneMeeting1() throws InterruptedException {
+    void Finalize_Emp_Appraisal() throws InterruptedException {
+    	driver.get(prop.getProperty("url"));
+    	addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
     	Finalize_Employee_Appraisal.selectGoalCycle(prop.getProperty("GoalPalnName"));
     	Finalize_Employee_Appraisal.navigateToEmployeeSelf();
+    	String isdisp = Finalize_Employee_Appraisal.isSelfsub();
+    	System.out.println(isdisp);
+    	String Act="Finalized";
+    	assertEquals(Act,isdisp,"Finalized not completed!!!!");
     	
     }
-    @Test(priority= 12)
-    void Deletion() throws InterruptedException {
-    	Delete_the_PMS_Cycle.Deletion();
-    }
-    @Test(priority=13)
+    
+    @Test(priority=11)
     void DeletionodGoalPlan() throws InterruptedException {
+    	
+    	driver.get(prop.getProperty("url"));
+    	addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
     	Delete_Goal_Plan_and_PMS_Cycle.DeletionPMSCycle();
     }
     
-    @Test(priority=14)
+    @Test(priority=12)
     void DeletionofPMS() throws InterruptedException {
+    	driver.get(prop.getProperty("url"));
+    	addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
     	Delete_Goal_Plan_and_PMS_Cycle.DeletionGoalPlan();
     }
     

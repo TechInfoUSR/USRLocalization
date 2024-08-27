@@ -1,5 +1,8 @@
 package normalFlowTest;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
 import java.util.Properties;
 
@@ -40,9 +43,12 @@ public class employeeFlow_Test
     
     }
   @Test(priority = 1)
-  public void selectGoalCycle() throws InterruptedException{
+  public void Employee_Assesment() throws InterruptedException{
   	 String pmsCycleName = prop.getProperty("GoalPalnName");
   	emp_assesment_Submission.selectGoalCycle(pmsCycleName);
+  	String isselfsub = emp_assesment_Submission.isSelfsub();
+  	String Actual="Self Review Completed";
+  	assertEquals(Actual,isselfsub,"Self Assesment is not submitted!!");
   }
 
 

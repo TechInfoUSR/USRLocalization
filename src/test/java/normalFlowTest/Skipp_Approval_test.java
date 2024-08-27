@@ -1,5 +1,8 @@
 package normalFlowTest;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
 import java.util.Properties;
 
@@ -47,9 +50,13 @@ public class Skipp_Approval_test
     
     
     @Test
-    void approve() throws InterruptedException
+    void Skip_approval() throws InterruptedException
     {
     	Skipp_Approval.approve();
+    	String isdisp = Skipp_Approval.isSelfsub();
+    	System.out.println(isdisp);
+    	String Act="Submitted successfully";
+    	assertEquals(Act,isdisp,"Skip_approval not completed!!!!");
     }
 	
     

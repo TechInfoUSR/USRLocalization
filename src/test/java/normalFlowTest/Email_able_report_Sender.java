@@ -32,7 +32,7 @@ public class Email_able_report_Sender implements IReporter {
         }
     }
 
-    private boolean waitForFileUpdate(String filePath) {
+    public boolean waitForFileUpdate(String filePath) {
         File file = new File(filePath);
         long lastModified = 0;
         int maxAttempts = 10;
@@ -58,7 +58,7 @@ public class Email_able_report_Sender implements IReporter {
         return false;
     }
 
-    private void sendEmailWithReport() throws EmailException {
+    public void sendEmailWithReport() throws EmailException {
         if (outputDirectory != null) {
             String reportPath = outputDirectory + "/emailable-report.html";
             File reportFile = new File(reportPath);

@@ -67,12 +67,12 @@ public void Deletion() throws InterruptedException {
     	 }
 	     else if(actualText1.equals(rmtex)) 
 	     {
-	    	 System.out.println("HIIIII");
+	    	 System.out.println("ResetManagerAssessment");
 	    	 ResetManagerAssessment();
 	     }
 	     else if(ResetEmpAssesmet.equals(ResetAct)) 
 	     {
-	    	 System.out.println("Huuuu");
+	    	 System.out.println("ResetEmpAssesmet");
 	    	 ResetEmpAssesmet();
 	     }
     	

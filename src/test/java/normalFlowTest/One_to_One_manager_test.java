@@ -1,5 +1,7 @@
 package normalFlowTest;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 import java.util.Properties;
 
@@ -36,9 +38,13 @@ public class One_to_One_manager_test {
     }
     
     @Test
-    void OntoOneMeeting() throws InterruptedException {
+    void OneToOneMeeting_Manager() throws InterruptedException {
     	One_to_One_manager.selectGoalCycle(prop.getProperty("GoalPalnName"));
     	One_to_One_manager.navigateToEmployeeSelf();
+    	String isdisp = One_to_One_manager.isSelfsub();
+    	System.out.println(isdisp);
+    	String Act="Submitted successfully";
+    	assertEquals(Act,isdisp,"One To One Meeting Manager not completed!!!!");
     	
     }
     

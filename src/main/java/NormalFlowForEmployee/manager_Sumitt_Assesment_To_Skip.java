@@ -118,5 +118,9 @@ public class manager_Sumitt_Assesment_To_Skip {
       		  driver.findElement(By.xpath("(//button[contains(text(),'Close')])[1]")).click();
       		  Thread.sleep(1000);
       	  }
+    	  public String isSelfsub() throws InterruptedException {
+    		  Thread.sleep(5000);
+    		 return driver.findElement(By.xpath("//span[contains(text(),'Manager Review Completed')]")).getText();
+    	  }
  
 }
