@@ -131,9 +131,8 @@ public void Deletion() throws InterruptedException {
 	   RemoveEmp();
 	   
    }
-   
-   
-   
-   
+	  public boolean isDeleted() throws InterruptedException {
+		  Thread.sleep(500);
+		 return driver.findElement(By.xpath("//span[contains(text(),'0-1000 of 0')]")).isDisplayed();
+	  }
 }
-

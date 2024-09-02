@@ -4,17 +4,27 @@
   <listeners>
     <listener class-name="normalFlowTest.CustomReportListener"/>
   </listeners>
-  <test thread-count="5" name="addGoalPla_CreatePMSCycleTest(failed)">
+  <test thread-count="5" name="Smoke testing(failed)">
     <classes>
-      <class name="normalFlowTest.addGoalPla_CreatePMSCycleTest">
+      <class name="Test_Suit.TestSuitClass">
         <methods>
-          <include name="AddPMSCycle"/>
-          <include name="Initiate_PMSCycle"/>
-          <include name="teardown"/>
+          <include name="OneToOneMeeting_Manager"/>
           <include name="tearDown"/>
+          <include name="Initiate_PMSCycle"/>
+          <include name="Manager_Assesmentsubmitto_Skip"/>
+          <include name="Employee_Assesment"/>
           <include name="setUp"/>
+          <include name="DeletionofPMS"/>
+          <include name="AddGoalPlan"/>
+          <include name="Finalize_Emp_Appraisal"/>
+          <include name="DeletionodGoalPlan"/>
+          <include name="teardown"/>
+          <include name="Manager_addGoalto_emp"/>
+          <include name="OnToOneMeeting_Employee"/>
+          <include name="AddPMSCycle"/>
+          <include name="Skip_approval"/>
         </methods>
-      </class> <!-- normalFlowTest.addGoalPla_CreatePMSCycleTest -->
+      </class> <!-- Test_Suit.TestSuitClass -->
     </classes>
-  </test> <!-- addGoalPla_CreatePMSCycleTest(failed) -->
+  </test> <!-- Smoke testing(failed) -->
 </suite> <!-- Failed suite [Suite] -->

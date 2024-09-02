@@ -48,11 +48,11 @@ public class addGoalPlan {
 
         // Select start date
         driver.findElement(By.xpath("//input[@class=\"form-control dpd1\"]")).click();
-        selectDate("August 2024", "11");
+        selectDate("January 2025", "11");
 
         // Select end date
         driver.findElement(By.xpath("//input[@class=\"form-control dpd2\"]")).click();
-        selectDate("June 2025", "20");
+        selectDate("January 2026", "11");
         JavascriptExecutor Srollup1 = (JavascriptExecutor) driver;
         Srollup1.executeScript("window.scrollBy(0,800)");
         // Select rating scale

@@ -69,16 +69,28 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
 		for (int i = 1;i<=rowCount ;i++) 
 		{
 			String test=driver.findElement(By.xpath("//tr["+i+"]//td[contains(text(),'"+GoalPlanName+"')]")).getText();
+			System.out.println(test);
 			if(test.equals(GoalPlanName)) 
 			{
 			System.out.println(test);
 			driver.findElement(By.xpath("//tr["+i+"]//a[@title=\"Delete\"]")).click();
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
-			Thread.sleep(2000);
+			Thread.sleep(500);
 			break;
 			}
+
 		}
 		
+		
 	}
+	  public boolean isPMSDeleted() throws InterruptedException {
+		  Thread.sleep(200);
+		 return driver.findElement(By.xpath("//div[contains(text(),'Performance Review Cycle deleted successfully ')]")).isDisplayed();
+	  }
+	  public boolean isGoalPlanDeleted() throws InterruptedException {
+		  
+		 return driver.findElement(By.xpath("//div[contains(text(),'Selected Goal Plan/PMS Cycle is deleted successfully ')]")).isDisplayed();
+	 
+	  }
 } 

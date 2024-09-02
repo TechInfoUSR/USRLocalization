@@ -1,5 +1,6 @@
 package normalFlowTest;
 
+import java.io.File;
 import java.util.List;
 import java.util.Properties;
 
@@ -63,14 +64,20 @@ public class CustomReportListener implements IReporter {
         this.outputDirectory = outputDirectory;
 
         System.out.println("Reports are generated in: " + outputDirectory);
-
-        
-        try {
-            Thread.sleep(1000); // Wait for 5 seconds to ensure the report is generated
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        File reportFile = new File(outputDirectory + "/emailable-report.html");
+        int attempts = 0;
+        while (!reportFile.exists() || reportFile.lastModified() < System.currentTimeMillis() - 5000) {
+            try {
+                Thread.sleep(1000); // Check every second
+                attempts++;
+                if (attempts > 30) { // Timeout after 30 seconds
+                    System.out.println("Timeout waiting for report to be generated.");
+                    break;
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
-        
         
 //         After generating the report, send an email
         try {
@@ -100,7 +107,12 @@ public class CustomReportListener implements IReporter {
             email.setFrom("noreply@okrstars.com");
             email.setSubject("TestNG Report");
             email.setMsg("Please find the test report attached.");
-            email.addTo("Hanumanth@usrinfotech.com");
+//            email.addTo("Hanumanth@usrinfotech.com");
+            
+            String[] recipients = {"Hanumanth@usrinfotech.com","partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co","bharath@usrinfotech.com"};
+            for (String recipient : recipients) {
+                email.addTo(recipient);
+            }
             email.attach(attachment);
 
             email.send();

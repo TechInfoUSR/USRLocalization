@@ -6,9 +6,9 @@
       <class name="normalFlowTest.TestSuitClass">
         <methods>
           <include name="DeletionofPMS"/>
-          <include name="OnToOneMeeting_Employee"/>
+          <include name="teardown"/>
+          <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="Finalize_Emp_Appraisal"/>
         </methods>
       </class> <!-- normalFlowTest.TestSuitClass -->
     </classes>

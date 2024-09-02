@@ -1,5 +1,7 @@
 package normalFlowTest;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.IOException;
 import java.util.Properties;
 
@@ -42,11 +44,15 @@ public class Delete_Goal_Plan_and_PMS_Cycle__Test {
     @Test(priority=1)
     void DeletionodGoalPlan() throws InterruptedException {
     	Delete_Goal_Plan_and_PMS_Cycle.DeletionPMSCycle();
+    	boolean ispmsDeleted = Delete_Goal_Plan_and_PMS_Cycle.isPMSDeleted();
+    	assertTrue(ispmsDeleted,"PMS Cycle deleted");
     }
     
     @Test(priority=2)
     void DeletionofPMS() throws InterruptedException {
     	Delete_Goal_Plan_and_PMS_Cycle.DeletionGoalPlan();
+    	boolean isGoalPlanDeleted = Delete_Goal_Plan_and_PMS_Cycle.isGoalPlanDeleted();
+    	assertTrue(isGoalPlanDeleted,"Goal plan deleted");
     }
     @AfterMethod
     public void tearDown(ITestResult result) {
