@@ -13,7 +13,7 @@
   <!--> execute Normal flow / Smoke testing <-->
     <test name="Smoke testing">
     <classes>
-		<class name="Test_Suit.TestSuitClass"/>
+		<class name="Test_Suit.SmokeTestSuite"/>
 	</classes>
   </test>
 

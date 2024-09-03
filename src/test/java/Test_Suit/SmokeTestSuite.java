@@ -33,7 +33,7 @@ import Utils.EmailUtil;
 import Utils.RetryAnalyzer;
 import Utils.ScreenshotUtil;
 
-public class TestSuitClass {
+public class SmokeTestSuite{
 	addGoalPlan addGoalPlan;
     DriverFactory df;
     ConfigpropReader cp;
@@ -109,7 +109,7 @@ public class TestSuitClass {
     }
 
     @Test(priority = 4,dependsOnMethods = "Initiate_PMSCycle",retryAnalyzer = RetryAnalyzer.class)
-    public void Manager_addGoalto_emp() throws InterruptedException {
+    public void Manager_AddGoalTo_Emp() throws InterruptedException {
     	driver.get(prop.getProperty("url"));
     	addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
 //    	manager_AddGoals.navigateToEmployeeSelf();
@@ -122,8 +122,8 @@ public class TestSuitClass {
     }
 
 
-    @Test(priority = 5,dependsOnMethods = "Manager_addGoalto_emp",retryAnalyzer = RetryAnalyzer.class)
-    public void Employee_Assesment() throws InterruptedException{
+    @Test(priority = 5,dependsOnMethods = "Manager_AddGoalTo_Emp",retryAnalyzer = RetryAnalyzer.class)
+    public void Employee_AssessmentSubmission() throws InterruptedException{
     	driver.get(prop.getProperty("url"));
     	addGoalPlan.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));
     	String pmsCycleName = prop.getProperty("GoalPalnName");
@@ -133,8 +133,8 @@ public class TestSuitClass {
     	assertEquals(Actual,isselfsub,"Self Assesment is not submitted!!");
     }
 
-    @Test(priority = 6,dependsOnMethods = "Employee_Assesment",retryAnalyzer = RetryAnalyzer.class)
-    void Manager_Assesmentsubmitto_Skip() throws InterruptedException{
+    @Test(priority = 6,dependsOnMethods = "Employee_AssessmentSubmission",retryAnalyzer = RetryAnalyzer.class)
+    void Manager_AssessmentSubmissionTo_Skip() throws InterruptedException{
     	driver.get(prop.getProperty("url"));
     	addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
     	  manager_Sumitt_Assesment_To_Skip.selectGoalCycle();
@@ -143,8 +143,8 @@ public class TestSuitClass {
     	  assertEquals(Actualtest,isselfsub,"Manager Assesment is not submitted!!");
       }
       
-    @Test(priority = 7,dependsOnMethods = "Manager_Assesmentsubmitto_Skip",retryAnalyzer = RetryAnalyzer.class)
-    void Skip_approval() throws InterruptedException
+    @Test(priority = 7,dependsOnMethods = "Manager_AssessmentSubmissionTo_Skip",retryAnalyzer = RetryAnalyzer.class)
+    void Skip_Approval() throws InterruptedException
     {
     	driver.get(prop.getProperty("url"));
     	addGoalPlan.login(prop.getProperty("SkipmgrUN"), prop.getProperty("SkipmgrPass"));
@@ -154,7 +154,7 @@ public class TestSuitClass {
     	String Act="Submitted successfully";
     	assertEquals(Act,isdisp,"Skip_approval not completed!!!!");
     }
-    @Test(priority = 8,dependsOnMethods = "Skip_approval",retryAnalyzer = RetryAnalyzer.class)
+    @Test(priority = 8,dependsOnMethods = "Skip_Approval",retryAnalyzer = RetryAnalyzer.class)
     void OneToOneMeeting_Manager() throws InterruptedException {
     	driver.get(prop.getProperty("url"));
     	addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
@@ -193,7 +193,7 @@ public class TestSuitClass {
     }
     
     @Test(priority=11,dependsOnMethods = "Finalize_Emp_Appraisal",retryAnalyzer = RetryAnalyzer.class)
-    void DeletionodGoalPlan() throws InterruptedException {
+    void Remove_EmployeesFromGoalPlan() throws InterruptedException {
     	
     	driver.get(prop.getProperty("url"));
     	addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
@@ -205,8 +205,8 @@ public class TestSuitClass {
     
 
     
-    @Test(priority=12,dependsOnMethods = "DeletionodGoalPlan",retryAnalyzer = RetryAnalyzer.class)
-    void DeletionofPMS() throws InterruptedException {
+    @Test(priority=12,dependsOnMethods = "Remove_EmployeesFromGoalPlan",retryAnalyzer = RetryAnalyzer.class)
+    void DeletionOf_PMSCycleAndGoalPlan() throws InterruptedException {
     	driver.get(prop.getProperty("url"));
     	addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
     	Delete_Goal_Plan_and_PMS_Cycle.DeletionPMSCycle();

@@ -23,6 +23,14 @@ import Factory.DriverFactory;
 import NormalFlowForEmployee.AddEmployeetoDB;
 import NormalFlowForEmployee.addGoalPlan;
 
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.HtmlEmail;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class CustomReportListener implements IReporter {
 
     private WebDriver driver;
@@ -99,33 +107,55 @@ public class CustomReportListener implements IReporter {
          Date currentDate = new Date();
          SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
          System.out.println(dateFormat.format(currentDate));
+         String reportPath = outputDirectory + "/emailable-report.html"; // Path to the TestNG report
+         System.out.println("Sending email with report from: " + reportPath);
          
          
-            String reportPath = outputDirectory + "/emailable-report.html"; // Path to the TestNG report
+         
+         StringBuilder reportContent = new StringBuilder();
+         try (BufferedReader reader = new BufferedReader(new FileReader(reportPath))) {
+             String line;
+             while ((line = reader.readLine()) != null) {
+                 reportContent.append(line);
+             }
+         } catch (IOException e) {
+             e.printStackTrace();
+             System.out.println("Failed to read the report file.");
+             return;
+         }
+         
+         
+         
+         
+         
+            
 
-            System.out.println("Sending email with report from: " + reportPath);
+//            EmailAttachment attachment = new EmailAttachment();
+//            attachment.setDisposition(EmailAttachment.ATTACHMENT);
+//            attachment.setDescription("Test Report");
+//            attachment.setPath(reportPath);
+//            attachment.setName("Test Report"+dateFormat.format(currentDate)+".docx");
 
-            EmailAttachment attachment = new EmailAttachment();
-            attachment.setDisposition(EmailAttachment.ATTACHMENT);
-            attachment.setDescription("Test Report");
-            attachment.setPath(reportPath);
-            attachment.setName("Test Report"+dateFormat.format(currentDate)+".docx");
-
-            MultiPartEmail email = new MultiPartEmail();
+//            MultiPartEmail email = new MultiPartEmail();
+            HtmlEmail email = new HtmlEmail();
             email.setHostName("smtp.zeptomail.in");
             email.setSmtpPort(587);
             email.setAuthenticator(new DefaultAuthenticator("noreply@okrstars.com", "PHtE6r0OE+/q2TQppkUD4/6/Hs6tZ456+rtlLwMWtopEDfBQGU1Sr9kilWSx/ksuA/VFFP/JzNpqsLuY4uKMI2rtZDxMWWqyqK3sx/VYSPOZsbq6x00bt1gfdkDeUILue9Zq3SfTuN7ZNA=="));
             email.setSSLOnConnect(true);
             email.setFrom("noreply@okrstars.com");
-            email.setSubject("TestNG Report.docx");
-            email.setMsg("Please find the test report executed on "+dateFormat.format(currentDate)+" find the file attached.");
+            email.setSubject("TestNG Report");
+            email.setHtmlMsg("Test Report: "+reportContent.toString());
+//            email.setMsg("Please find the test report executed on "+dateFormat.format(currentDate)+" find the file attached.");
 //            email.addTo("Hanumanth@usrinfotech.com");
             
             String[] recipients = {"Hanumanth@usrinfotech.com","partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co","bharath@usrinfotech.com","ajantha@usrinfotech.com","alisha@usrinfotech.com"};
             for (String recipient : recipients) {
                 email.addTo(recipient);
             }
-            email.attach(attachment);
+            
+            
+            
+//            email.attach(attachment);
 
             email.send();
             System.out.println("Email sent successfully!");

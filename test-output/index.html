@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-skipped">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">12 methods,  12 skipped,  </span>
+                    <span class="method-stats">13 methods, 1 failed,  10 skipped,  2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Test_Suit.TestSuitClass" class="method navigator-link" hash-for-method="Initiate_PMSCycle">Initiate_PMSCycle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title skipped">Skipped methods</span>
@@ -100,16 +114,6 @@
                       <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
                     </span>
                     <div class="method-list-content skipped suite-Suite">
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Test_Suit.TestSuitClass" class="method navigator-link" hash-for-method="AddGoalPlan">AddGoalPlan</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="Test_Suit.TestSuitClass" class="method navigator-link" hash-for-method="AddPMSCycle">AddPMSCycle</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="skipped.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="Test_Suit.TestSuitClass" class="method navigator-link" hash-for-method="DeletionodGoalPlan">DeletionodGoalPlan</a> <!-- method navigator-link -->
@@ -162,6 +166,25 @@
                       <br/>
                     </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Test_Suit.TestSuitClass" class="method navigator-link" hash-for-method="AddGoalPlan">AddGoalPlan</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="Test_Suit.TestSuitClass" class="method navigator-link" hash-for-method="AddPMSCycle">AddPMSCycle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite -->
+                  </li>
                 </ul>
               </div> <!-- suite-section-content -->
             </div> <!-- result-section -->
@@ -172,26 +195,26 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-skipped">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
+              <img src="failed.png"/>
               <span class="class-name">Test_Suit.TestSuitClass</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="AddGoalPlan">
-                  </a> <!-- AddGoalPlan -->
-                  <span class="method-name">AddGoalPlan</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name=&quot;username&quot;]&quot;}
+                  <a name="Initiate_PMSCycle">
+                  </a> <!-- Initiate_PMSCycle -->
+                  <span class="method-name">Initiate_PMSCycle</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(text(),&apos;Automation Test PMS 15&apos;)]&quot;}
   (Session info: chrome=128.0.6613.114)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.23.1&apos;, revision: &apos;656257d8e9&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8410cbb64f91a34cee46388a6533c4c3, findElement {using=xpath, value=//input[@name=&quot;username&quot;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.114, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\Dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56110}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56110/devtoo..., se:cdpVersion: 128.0.6613.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8410cbb64f91a34cee46388a6533c4c3
+Command: [606b36e32c7b3042616988947a6d9b6f, findElement {value=//span[contains(text(),&apos;Automation Test PMS 15&apos;)], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.114, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\Dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63700}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63700/devtoo..., se:cdpVersion: 128.0.6613.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 606b36e32c7b3042616988947a6d9b6f
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -203,22 +226,20 @@ Session ID: 8410cbb64f91a34cee46388a6533c4c3
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at NormalFlowForEmployee.addGoalPlan.login(addGoalPlan.java:32)
-	at Test_Suit.TestSuitClass.setUp(TestSuitClass.java:65)
-... Removed 29 stack frames
+	at NormalFlowForEmployee.initiatePMSCycle.goToWeightTab(initiatePMSCycle.java:38)
+	at Test_Suit.TestSuitClass.Initiate_PMSCycle(TestSuitClass.java:104)
+... Removed 30 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="AddPMSCycle">
-                  </a> <!-- AddPMSCycle -->
-                  <span class="method-name">AddPMSCycle</span>
-                  <div class="stack-trace">java.lang.Throwable: Method TestSuitClass.AddPMSCycle()[pri:2, instance:Test_Suit.TestSuitClass@73cd37c0] depends on not successfully finished methods
-... Removed 18 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">Test_Suit.TestSuitClass</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="DeletionodGoalPlan">
@@ -264,8 +285,29 @@ Session ID: 8410cbb64f91a34cee46388a6533c4c3
                   <a name="Initiate_PMSCycle">
                   </a> <!-- Initiate_PMSCycle -->
                   <span class="method-name">Initiate_PMSCycle</span>
-                  <div class="stack-trace">java.lang.Throwable: Method TestSuitClass.Initiate_PMSCycle()[pri:3, instance:Test_Suit.TestSuitClass@73cd37c0] depends on not successfully finished methods
-... Removed 18 stack frames
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@data-toggle=&apos;tab&apos; and @href=&apos;#sectionWeightTab&apos;]&quot;}
+  (Session info: chrome=128.0.6613.114)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.23.1&apos;, revision: &apos;656257d8e9&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [606b36e32c7b3042616988947a6d9b6f, findElement {value=//a[@data-toggle=&apos;tab&apos; and @href=&apos;#sectionWeightTab&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.114, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\Dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63700}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63700/devtoo..., se:cdpVersion: 128.0.6613.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 606b36e32c7b3042616988947a6d9b6f
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at NormalFlowForEmployee.initiatePMSCycle.goToWeightTab(initiatePMSCycle.java:40)
+	at Test_Suit.TestSuitClass.Initiate_PMSCycle(TestSuitClass.java:104)
+... Removed 30 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -321,6 +363,28 @@ Session ID: 8410cbb64f91a34cee46388a6533c4c3
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-skipped -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">Test_Suit.TestSuitClass</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="AddGoalPlan">
+                  </a> <!-- AddGoalPlan -->
+                  <span class="method-name">AddGoalPlan</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="AddPMSCycle">
+                  </a> <!-- AddPMSCycle -->
+                  <span class="method-name">AddPMSCycle</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -376,60 +440,64 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(12);
+data.addRows(13);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'DeletionofPMS')
+data.setCell(0, 1, 'AddGoalPlan')
 data.setCell(0, 2, 'Test_Suit.TestSuitClass')
-data.setCell(0, 3, 1);
+data.setCell(0, 3, 36890);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'OneToOneMeeting_Manager')
+data.setCell(1, 1, 'AddPMSCycle')
 data.setCell(1, 2, 'Test_Suit.TestSuitClass')
-data.setCell(1, 3, 0);
+data.setCell(1, 3, 15961);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'OnToOneMeeting_Employee')
+data.setCell(2, 1, 'Initiate_PMSCycle')
 data.setCell(2, 2, 'Test_Suit.TestSuitClass')
-data.setCell(2, 3, 0);
+data.setCell(2, 3, 5918);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'Initiate_PMSCycle')
 data.setCell(3, 2, 'Test_Suit.TestSuitClass')
-data.setCell(3, 3, 0);
+data.setCell(3, 3, 19);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'Manager_Assesmentsubmitto_Skip')
 data.setCell(4, 2, 'Test_Suit.TestSuitClass')
-data.setCell(4, 3, 0);
+data.setCell(4, 3, 1);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'Skip_approval')
+data.setCell(5, 1, 'Manager_addGoalto_emp')
 data.setCell(5, 2, 'Test_Suit.TestSuitClass')
 data.setCell(5, 3, 0);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'Manager_addGoalto_emp')
+data.setCell(6, 1, 'Skip_approval')
 data.setCell(6, 2, 'Test_Suit.TestSuitClass')
 data.setCell(6, 3, 0);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'AddPMSCycle')
+data.setCell(7, 1, 'OnToOneMeeting_Employee')
 data.setCell(7, 2, 'Test_Suit.TestSuitClass')
 data.setCell(7, 3, 0);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'Employee_Assesment')
+data.setCell(8, 1, 'DeletionodGoalPlan')
 data.setCell(8, 2, 'Test_Suit.TestSuitClass')
 data.setCell(8, 3, 0);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'DeletionodGoalPlan')
+data.setCell(9, 1, 'OneToOneMeeting_Manager')
 data.setCell(9, 2, 'Test_Suit.TestSuitClass')
 data.setCell(9, 3, 0);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'AddGoalPlan')
+data.setCell(10, 1, 'Employee_Assesment')
 data.setCell(10, 2, 'Test_Suit.TestSuitClass')
 data.setCell(10, 3, 0);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'Finalize_Emp_Appraisal')
+data.setCell(11, 1, 'DeletionofPMS')
 data.setCell(11, 2, 'Test_Suit.TestSuitClass')
 data.setCell(11, 3, 0);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'Finalize_Emp_Appraisal')
+data.setCell(12, 2, 'Test_Suit.TestSuitClass')
+data.setCell(12, 3, 0);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 ms</span>
+              <span class="suite-total-time">Total running time: 58 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -457,15 +525,47 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">Test_Suit.TestSuitClass</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">AddGoalPlan</span>
-                <span class="method-start">-1725349420644 ms</span>
+                <span class="method-start">11408 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=AddGoalPlan status=SUCCESS method=TestSuitClass.AddGoalPlan()[pri:1, instance:Test_...)</span>
+                <span class="method-start">48301 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">AddPMSCycle</span>
+                <span class="method-start">48304 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=AddPMSCycle status=SUCCESS method=TestSuitClass.AddPMSCycle()[pri:2, instance:Test_...)</span>
+                <span class="method-start">64266 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">Initiate_PMSCycle</span>
+                <span class="method-start">64266 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=Initiate_PMSCycle status=SKIP method=TestSuitClass.Initiate_PMSCycle()[pri:3, insta...)</span>
+                <span class="method-start">70188 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Initiate_PMSCycle</span>
+                <span class="method-start">70189 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=Initiate_PMSCycle status=FAILURE method=TestSuitClass.Initiate_PMSCycle()[pri:3, in...)</span>
+                <span class="method-start">70211 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">72349 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
