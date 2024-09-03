@@ -221,7 +221,7 @@ public class TestSuitClass {
     public void tearDown(ITestResult result) {
         if (ITestResult.FAILURE == result.getStatus()) {
              ScreenshotUtil.captureScreenshot(result.getName(),driver);
-            EmailUtil.sendEmail("hanumanth@usrinfotech.com,bharath@usrinfotech.com", 
+            EmailUtil.sendEmail("Hanumanth@usrinfotech.com,partnership@usrinfo.tech,ravi@okrstars.co,santhosh@usrinfo.tech,vaidya@usrinfo.tech,subashini@usrinfo.tech,support@okrstars.co,bharath@usrinfotech.com,ajantha@usrinfotech.com,alisha@usrinfotech.com", 
                 "Test Failed: " + result.getName(),
                 "Please find the attached screenshot of the failed test.",
                 "screenshots/" + result.getName() + ".png");

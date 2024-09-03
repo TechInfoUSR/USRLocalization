@@ -12,9 +12,9 @@ public class addGoalPlan {
         this.driver = driver;
     }
 
-    private By usernameField = By.xpath("//*[@id=\"hello\"]/div[2]/input");
-    private By passwordField = By.xpath("//*[@id=\"hello\"]/div[3]/input");
-    private By loginButton = By.xpath("//*[@id=\"hello\"]/div[4]/button");
+    private By usernameField = By.xpath("//input[@name=\"username\"]");
+    private By passwordField = By.xpath("//input[@name=\"password\"]");
+    private By loginButton = By.xpath("//button[@type=\"submit\"]");
     private By goalPlanManagementLink = By.xpath("//h3[contains(text(),'Goal Time Period Plan Management')]");
     private By addGoalPlanButton = By.id("addGoalPlan");
     private By goalPlanNameField = By.xpath("//input[@id='goalPlanName']");

@@ -1,6 +1,9 @@
 package normalFlowTest;
 
 import java.io.File;
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -85,10 +88,19 @@ public class CustomReportListener implements IReporter {
         } catch (EmailException e) {
             e.printStackTrace();
         }
+
+
     }
 
     public void sendEmailWithReport() throws EmailException {
         if (outputDirectory != null) {
+       	 long systemTime = System.currentTimeMillis();
+         Time time = new Time(systemTime);
+         Date currentDate = new Date();
+         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+         System.out.println(dateFormat.format(currentDate));
+         
+         
             String reportPath = outputDirectory + "/emailable-report.html"; // Path to the TestNG report
 
             System.out.println("Sending email with report from: " + reportPath);
@@ -97,7 +109,7 @@ public class CustomReportListener implements IReporter {
             attachment.setDisposition(EmailAttachment.ATTACHMENT);
             attachment.setDescription("Test Report");
             attachment.setPath(reportPath);
-            attachment.setName("Test Report");
+            attachment.setName("Test Report"+dateFormat.format(currentDate)+".docx");
 
             MultiPartEmail email = new MultiPartEmail();
             email.setHostName("smtp.zeptomail.in");
@@ -105,11 +117,11 @@ public class CustomReportListener implements IReporter {
             email.setAuthenticator(new DefaultAuthenticator("noreply@okrstars.com", "PHtE6r0OE+/q2TQppkUD4/6/Hs6tZ456+rtlLwMWtopEDfBQGU1Sr9kilWSx/ksuA/VFFP/JzNpqsLuY4uKMI2rtZDxMWWqyqK3sx/VYSPOZsbq6x00bt1gfdkDeUILue9Zq3SfTuN7ZNA=="));
             email.setSSLOnConnect(true);
             email.setFrom("noreply@okrstars.com");
-            email.setSubject("TestNG Report");
-            email.setMsg("Please find the test report attached.");
+            email.setSubject("TestNG Report.docx");
+            email.setMsg("Please find the test report executed on "+dateFormat.format(currentDate)+" find the file attached.");
 //            email.addTo("Hanumanth@usrinfotech.com");
             
-            String[] recipients = {"Hanumanth@usrinfotech.com","partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co","bharath@usrinfotech.com"};
+            String[] recipients = {"Hanumanth@usrinfotech.com","partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co","bharath@usrinfotech.com","ajantha@usrinfotech.com","alisha@usrinfotech.com"};
             for (String recipient : recipients) {
                 email.addTo(recipient);
             }
