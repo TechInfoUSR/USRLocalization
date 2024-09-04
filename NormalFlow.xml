@@ -6,6 +6,7 @@
   
 <listeners>
     <listener class-name="normalFlowTest.CustomReportListener" />
+    <listener class-name="normalFlowTest.TestFailureListener" />
 </listeners>
 
 	

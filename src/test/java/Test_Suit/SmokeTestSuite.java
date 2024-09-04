@@ -7,11 +7,12 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import ConfigReder.ConfigpropReader;
@@ -32,7 +33,9 @@ import NormalFlowForEmployee.manager_Sumitt_Assesment_To_Skip;
 import Utils.EmailUtil;
 import Utils.RetryAnalyzer;
 import Utils.ScreenshotUtil;
-
+import normalFlowTest.CustomReportListener;
+import normalFlowTest.TestFailureListener;
+@Listeners(TestFailureListener.class)
 public class SmokeTestSuite{
 	addGoalPlan addGoalPlan;
     DriverFactory df;
@@ -53,6 +56,7 @@ public class SmokeTestSuite{
 	Finalize_Employee_Appraisal Finalize_Employee_Appraisal;
 	Delete_the_PMS_Cycle Delete_the_PMS_Cycle;
 	Delete_Goal_Plan_and_PMS_Cycle Delete_Goal_Plan_and_PMS_Cycle;
+	
 	
     @BeforeTest
     void setUp() throws IOException 
@@ -192,6 +196,9 @@ public class SmokeTestSuite{
     	
     }
     
+    
+    
+   
     @Test(priority=11,dependsOnMethods = "Finalize_Emp_Appraisal",retryAnalyzer = RetryAnalyzer.class)
     void Remove_EmployeesFromGoalPlan() throws InterruptedException {
     	
@@ -204,9 +211,10 @@ public class SmokeTestSuite{
     }
     
 
-    
+
     @Test(priority=12,dependsOnMethods = "Remove_EmployeesFromGoalPlan",retryAnalyzer = RetryAnalyzer.class)
     void DeletionOf_PMSCycleAndGoalPlan() throws InterruptedException {
+    	
     	driver.get(prop.getProperty("url"));
     	addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
     	Delete_Goal_Plan_and_PMS_Cycle.DeletionPMSCycle();
@@ -218,15 +226,73 @@ public class SmokeTestSuite{
     }
     
     @AfterMethod
-    public void tearDown(ITestResult result) {
-        if (ITestResult.FAILURE == result.getStatus()) {
-             ScreenshotUtil.captureScreenshot(result.getName(),driver);
-            EmailUtil.sendEmail("Hanumanth@usrinfotech.com,partnership@usrinfo.tech,ravi@okrstars.co,santhosh@usrinfo.tech,vaidya@usrinfo.tech,subashini@usrinfo.tech,support@okrstars.co,bharath@usrinfotech.com,ajantha@usrinfotech.com,alisha@usrinfotech.com", 
-                "Test Failed: " + result.getName(),
-                "Please find the attached screenshot of the failed test.",
-                "screenshots/" + result.getName() + ".png");
+    public void runOnFailure(ITestResult result) throws InterruptedException {
+    	
+    	if (ITestResult.FAILURE == result.getStatus()) {
+            ScreenshotUtil.captureScreenshot(result.getName(),driver);
+            CustomReportListener.Screenshortpath( 
+               "Test Failed: " + result.getName(),
+               "Please find the attached screenshot of the failed test.",
+               "screenshots/" + result.getName() + ".png");
+    	
+    	
+        // Correctly reference the static method hasTestFailed()
+        if (TestFailureListener.hasTestFailed()) {
+        	
+        	
+        	
+        	driver.get(prop.getProperty("url"));
+        	addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
+        	Delete_the_PMS_Cycle.Deletion();
+        	boolean isdeleted = Delete_the_PMS_Cycle.isDeleted();
+        	String Actual ="Selected Goal Plan/PMS Cycle is deleted succsessfully";
+//        	System.out.println(isdeleted);
+//        	assertEquals(Actual,isdeleted,"working fine");
+        	
+        	
+        
+        	
+        	driver.get(prop.getProperty("url"));
+        	addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
+        	Delete_Goal_Plan_and_PMS_Cycle.DeletionPMSCycle();
+        	boolean ispmsDeleted = Delete_Goal_Plan_and_PMS_Cycle.isPMSDeleted();
+        	assertTrue(ispmsDeleted,"PMS Cycle deleted");
+        	Delete_Goal_Plan_and_PMS_Cycle.DeletionGoalPlan();
+        	boolean isGoalPlanDeleted = Delete_Goal_Plan_and_PMS_Cycle.isGoalPlanDeleted();
+        	String Actual1 ="Selected Goal Plan/PMS Cycle is deleted succsessfully";
+//        	assertEquals(Actual1,isGoalPlanDeleted,"Goal plan deleted");
+        	
+        	
+//        	Remove_EmployeesFromGoalPlan();
+//            DeletionOf_PMSCycleAndGoalPlan();
         }
+    }
+//    @AfterMethod
+//    public void tearDown(ITestResult result) {
+//        if (ITestResult.FAILURE == result.getStatus()) {
+//             ScreenshotUtil.captureScreenshot(result.getName(),driver);
+//             CustomReportListener.Screenshortpath( 
+//                "Test Failed: " + result.getName(),
+//                "Please find the attached screenshot of the failed test.",
+//                "screenshots/" + result.getName() + ".png");
+//        }
 //        driver.quitDriver();
+        
+        
+        
+        
+        
+//        EmailUtil.sendEmail("Hanumanth@usrinfotech.com,partnership@usrinfo.tech,ravi@okrstars.co,santhosh@usrinfo.tech,vaidya@usrinfo.tech,subashini@usrinfo.tech,support@okrstars.co,bharath@usrinfotech.com,ajantha@usrinfotech.com,alisha@usrinfotech.com", 
+//                "Test Failed: " + result.getName(),
+//                "Please find the attached screenshot of the failed test.",
+//                "screenshots/" + result.getName() + ".png");
+//        }
+        
+        
+        
+        
+        
+        
     }
     @AfterTest
     void teardown() {

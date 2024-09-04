@@ -58,6 +58,7 @@ public void Deletion() throws InterruptedException {
 	    
 	    String exp = "Remove Employee from this PMS Cycle";
 	    String rmtex = "Reset Manager's Assessment (without deleting contents filled already by emp. and manager)";
+
 	    String ResetAct = "Reset Employee's Assessment (without deleting contents filled already by emp.)";
 	    Thread.sleep(2000);
 	    if(actualText.equals(exp)) 
@@ -85,6 +86,7 @@ public void Deletion() throws InterruptedException {
 //	    }
     	
     	
+	    
 //	    driver.findElement(By.xpath("(//a[@ng-click=\"deleteEmpfromCycle(pp.reviewCycleId,pp.employeeId)\"])[1]")).click();
     }
     
@@ -115,10 +117,10 @@ public void Deletion() throws InterruptedException {
    void ResetManagerAssessment() throws InterruptedException
    {
 	   
-	   driver.findElement(By.xpath("//a[@ng-click=\"resetMangerAssessment(pp.reviewCycleId,pp.employeeId)\"]//b")).click();
-	   Thread.sleep(1000);
-	   driver.findElement(By.xpath("//button[contains(text(),'Reset')]")).click();
-	   Thread.sleep(1000);
+	   driver.findElement(By.xpath("//a[@ng-click=\"resetAppraisal(pp.reviewCycleId,pp.employeeId,true,2)\"]//b")).click();
+	   Thread.sleep(2000);
+	   driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[1]")).click();
+	   Thread.sleep(1500);
 	   driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
 	   Thread.sleep(2000);
 	   driver.findElement(By.xpath("//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"][1]")).click();

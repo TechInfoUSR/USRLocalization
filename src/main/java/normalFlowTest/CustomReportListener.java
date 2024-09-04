@@ -7,6 +7,17 @@ import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;
@@ -14,6 +25,9 @@ import org.apache.commons.mail.MultiPartEmail;
 import org.openqa.selenium.WebDriver;
 import org.testng.IReporter;
 import org.testng.ISuite;
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.xml.XmlSuite;
@@ -31,8 +45,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class CustomReportListener implements IReporter {
+public class CustomReportListener implements IReporter{
 
+	   private static String attachmentPath,subject;
+	
     private WebDriver driver;
     addGoalPlan addGoalPlan;
     DriverFactory df;
@@ -51,24 +67,15 @@ public class CustomReportListener implements IReporter {
         AddEmployeetoDB = new AddEmployeetoDB(driver, prop);
     }
 
-   
-
-
-    // Other setup and test methods...
-
-//    @AfterSuite
-//    public void afterSuite() {
-//        // Send email after the suite is completed, ensuring all reports are generated
-//        try {
-//            sendEmailWithReport();
-//        } catch (EmailException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     // Instance variable to store the output directory
     private String outputDirectory;
 
+    
+
+    void Screenshort() {
+    	
+    }
     @Override
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
         // Store the output directory in the instance variable
@@ -109,7 +116,7 @@ public class CustomReportListener implements IReporter {
          System.out.println(dateFormat.format(currentDate));
          String reportPath = outputDirectory + "/emailable-report.html"; // Path to the TestNG report
          System.out.println("Sending email with report from: " + reportPath);
-         
+  
          
          
          StringBuilder reportContent = new StringBuilder();
@@ -124,17 +131,17 @@ public class CustomReportListener implements IReporter {
              return;
          }
          
-         
-         
-         
-         
-            
+    
 
-//            EmailAttachment attachment = new EmailAttachment();
-//            attachment.setDisposition(EmailAttachment.ATTACHMENT);
-//            attachment.setDescription("Test Report");
-//            attachment.setPath(reportPath);
-//            attachment.setName("Test Report"+dateFormat.format(currentDate)+".docx");
+            EmailAttachment attachment = new EmailAttachment();
+            attachment.setDisposition(EmailAttachment.ATTACHMENT);
+            attachment.setDescription("Test Report");
+            attachment.setPath(attachmentPath);
+            System.out.println("path to SS: "+attachmentPath);
+            attachment.setName(subject+dateFormat.format(currentDate)+".png");
+            
+            
+            
 
 //            MultiPartEmail email = new MultiPartEmail();
             HtmlEmail email = new HtmlEmail();
@@ -155,7 +162,7 @@ public class CustomReportListener implements IReporter {
             
             
             
-//            email.attach(attachment);
+            email.attach(attachment);
 
             email.send();
             System.out.println("Email sent successfully!");
@@ -163,4 +170,46 @@ public class CustomReportListener implements IReporter {
             System.out.println("Error: Output directory is not set.");
         }
     }
+	public static void Screenshortpath(String subject, String body, String attachmentPath) {
+		
+		CustomReportListener.attachmentPath = attachmentPath;
+		CustomReportListener.subject=subject;
+	}
+
+    
+//    public static void sendEmail(String to, String subject, String body, String attachmentPath) {
+//        
+//        Session session = Session.getInstance(properties, new Authenticator() {
+//            protected PasswordAuthentication getPasswordAuthentication() {
+//                return new PasswordAuthentication(from, password);
+//            }
+//        });
+//    	
+//    	
+//    try {
+//        Message message = new MimeMessage(session);
+//        message.setFrom(new InternetAddress(from));
+//        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+//        message.setSubject(subject);
+//
+//        MimeBodyPart messageBodyPart = new MimeBodyPart();
+//        messageBodyPart.setText(body);
+//
+//        MimeBodyPart attachmentPart = new MimeBodyPart();
+//        attachmentPart.attachFile(attachmentPath);
+//
+//        Multipart multipart = new MimeMultipart();
+//        multipart.addBodyPart(messageBodyPart);
+//        multipart.addBodyPart(attachmentPart);
+//
+//        message.setContent(multipart);
+//
+//        Transport.send(message);
+//
+//    } catch (Exception e) {
+//        e.printStackTrace();
+//    }
+//    
+//    }
+    
 }

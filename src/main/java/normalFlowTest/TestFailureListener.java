@@ -25,15 +25,15 @@ public class TestFailureListener implements ITestListener {
         }
     }
 
+    
+    
     @Override
     public void onTestStart(ITestResult result) {}
 
     @Override
     public void onTestSuccess(ITestResult result) {}
 
-    @Override
-    public void onTestFailure(ITestResult result) {}
-
+   
     @Override
     public void onTestSkipped(ITestResult result) {}
 
@@ -42,4 +42,28 @@ public class TestFailureListener implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {}
+    
+    
+    
+    
+    
+    
+    // Flag to track if any test has failed
+    private static boolean hasTestFailed = false;
+
+    @Override
+    public void onTestFailure(ITestResult result) {
+        hasTestFailed = true;  // Set the flag if any test fails
+    }
+
+    // Get the failure status
+    public static boolean hasTestFailed() {
+        return hasTestFailed;
+    }
+
+	
+    
+    
+    
+    
 }

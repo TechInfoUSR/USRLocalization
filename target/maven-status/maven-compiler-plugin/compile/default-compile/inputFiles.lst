@@ -34,6 +34,7 @@ D:\USRInfotech\10-07-2024_Automation\USRLocalization\src\main\java\NormalFlowFor
 D:\USRInfotech\10-07-2024_Automation\USRLocalization\src\main\java\NormalFlowForEmployee\TestClass.java
 D:\USRInfotech\10-07-2024_Automation\USRLocalization\src\main\java\normalFlowTest\AddEmployeetoDB_Test.java
 D:\USRInfotech\10-07-2024_Automation\USRLocalization\src\main\java\normalFlowTest\addGoalPla_CreatePMSCycleTest.java
+D:\USRInfotech\10-07-2024_Automation\USRLocalization\src\main\java\normalFlowTest\CLasstoTest.java
 D:\USRInfotech\10-07-2024_Automation\USRLocalization\src\main\java\normalFlowTest\CustomReportListener.java
 D:\USRInfotech\10-07-2024_Automation\USRLocalization\src\main\java\normalFlowTest\Delete_Goal_Plan_and_PMS_Cycle__Test.java
 D:\USRInfotech\10-07-2024_Automation\USRLocalization\src\main\java\normalFlowTest\Delete_the_PMS_Cycle_test.java
@@ -59,4 +60,5 @@ D:\USRInfotech\10-07-2024_Automation\USRLocalization\src\main\java\Utils\Element
 D:\USRInfotech\10-07-2024_Automation\USRLocalization\src\main\java\Utils\EmailUtil.java
 D:\USRInfotech\10-07-2024_Automation\USRLocalization\src\main\java\Utils\RetryAnalyzer.java
 D:\USRInfotech\10-07-2024_Automation\USRLocalization\src\main\java\Utils\ScreenshotUtil.java
+D:\USRInfotech\10-07-2024_Automation\USRLocalization\src\main\java\Utils\ScreenshotUtil1.java
 D:\USRInfotech\10-07-2024_Automation\USRLocalization\src\main\java\Utils\SuitListener.java

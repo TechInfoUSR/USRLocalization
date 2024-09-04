@@ -8,76 +8,11 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="7">Suite</th></tr>
-<tr><td><a href="#t0">Smoke testing</a></td><td class="num">2</td><td class="num attn">10</td><td class="num attn">1</td><td class="num">72,994</td><td></td><td></td></tr>
+<tr><th colspan="7">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">37,011</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Smoke testing &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">Test_Suit.TestSuitClass</td><td><a href="#m0">Initiate_PMSCycle</a></td><td rowspan="1">1725358799169</td><td rowspan="1">19</td></tr><tr><th colspan="4">Smoke testing &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="10">Test_Suit.TestSuitClass</td><td><a href="#m1">DeletionodGoalPlan</a></td><td rowspan="1">1725358801326</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m2">DeletionofPMS</a></td><td rowspan="1">1725358801327</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m3">Employee_Assesment</a></td><td rowspan="1">1725358801313</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m4">Finalize_Emp_Appraisal</a></td><td rowspan="1">1725358801325</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m5">Initiate_PMSCycle</a></td><td rowspan="1">1725358793246</td><td rowspan="1">5918</td></tr><tr class="skippedeven"><td><a href="#m6">Manager_Assesmentsubmitto_Skip</a></td><td rowspan="1">1725358801316</td><td rowspan="1">1</td></tr><tr class="skippedeven"><td><a href="#m7">Manager_addGoalto_emp</a></td><td rowspan="1">1725358801310</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m8">OnToOneMeeting_Employee</a></td><td rowspan="1">1725358801323</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m9">OneToOneMeeting_Manager</a></td><td rowspan="1">1725358801321</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m10">Skip_approval</a></td><td rowspan="1">1725358801319</td><td rowspan="1">0</td></tr><tr><th colspan="4">Smoke testing &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">Test_Suit.TestSuitClass</td><td><a href="#m11">AddGoalPlan</a></td><td rowspan="1">1725358740388</td><td rowspan="1">36890</td></tr><tr class="passedeven"><td><a href="#m12">AddPMSCycle</a></td><td rowspan="1">1725358777284</td><td rowspan="1">15961</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">normalFlowTest.Delete_the_PMS_Cycle_test</td><td><a href="#m0">DeletionOfEmp_FromCycle</a></td><td rowspan="1">1725453723064</td><td rowspan="1">24032</td></tr></tbody>
 </table>
-<h2>Smoke testing</h2><h3 id="m0">Test_Suit.TestSuitClass#Initiate_PMSCycle</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(text(),&apos;Automation Test PMS 15&apos;)]&quot;}
-  (Session info: chrome=128.0.6613.114)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.23.1&apos;, revision: &apos;656257d8e9&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [606b36e32c7b3042616988947a6d9b6f, findElement {value=//span[contains(text(),&apos;Automation Test PMS 15&apos;)], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.114, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\Dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63700}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63700/devtoo..., se:cdpVersion: 128.0.6613.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 606b36e32c7b3042616988947a6d9b6f
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at NormalFlowForEmployee.initiatePMSCycle.goToWeightTab(initiatePMSCycle.java:38)
-	at Test_Suit.TestSuitClass.Initiate_PMSCycle(TestSuitClass.java:104)
-... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">Test_Suit.TestSuitClass#DeletionodGoalPlan</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method TestSuitClass.DeletionodGoalPlan()[pri:11, instance:Test_Suit.TestSuitClass@73cd37c0] depends on not successfully finished methods
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">Test_Suit.TestSuitClass#DeletionofPMS</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method TestSuitClass.DeletionofPMS()[pri:12, instance:Test_Suit.TestSuitClass@73cd37c0] depends on not successfully finished methods
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">Test_Suit.TestSuitClass#Employee_Assesment</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method TestSuitClass.Employee_Assesment()[pri:5, instance:Test_Suit.TestSuitClass@73cd37c0] depends on not successfully finished methods
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">Test_Suit.TestSuitClass#Finalize_Emp_Appraisal</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method TestSuitClass.Finalize_Emp_Appraisal()[pri:10, instance:Test_Suit.TestSuitClass@73cd37c0] depends on not successfully finished methods
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">Test_Suit.TestSuitClass#Initiate_PMSCycle</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@data-toggle=&apos;tab&apos; and @href=&apos;#sectionWeightTab&apos;]&quot;}
-  (Session info: chrome=128.0.6613.114)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.23.1&apos;, revision: &apos;656257d8e9&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.9&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [606b36e32c7b3042616988947a6d9b6f, findElement {value=//a[@data-toggle=&apos;tab&apos; and @href=&apos;#sectionWeightTab&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.114, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\Dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63700}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63700/devtoo..., se:cdpVersion: 128.0.6613.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 606b36e32c7b3042616988947a6d9b6f
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at NormalFlowForEmployee.initiatePMSCycle.goToWeightTab(initiatePMSCycle.java:40)
-	at Test_Suit.TestSuitClass.Initiate_PMSCycle(TestSuitClass.java:104)
-... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">Test_Suit.TestSuitClass#Manager_Assesmentsubmitto_Skip</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method TestSuitClass.Manager_Assesmentsubmitto_Skip()[pri:6, instance:Test_Suit.TestSuitClass@73cd37c0] depends on not successfully finished methods
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">Test_Suit.TestSuitClass#Manager_addGoalto_emp</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method TestSuitClass.Manager_addGoalto_emp()[pri:4, instance:Test_Suit.TestSuitClass@73cd37c0] depends on not successfully finished methods
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m8">Test_Suit.TestSuitClass#OnToOneMeeting_Employee</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method TestSuitClass.OnToOneMeeting_Employee()[pri:9, instance:Test_Suit.TestSuitClass@73cd37c0] depends on not successfully finished methods
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m9">Test_Suit.TestSuitClass#OneToOneMeeting_Manager</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method TestSuitClass.OneToOneMeeting_Manager()[pri:8, instance:Test_Suit.TestSuitClass@73cd37c0] depends on not successfully finished methods
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m10">Test_Suit.TestSuitClass#Skip_approval</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method TestSuitClass.Skip_approval()[pri:7, instance:Test_Suit.TestSuitClass@73cd37c0] depends on not successfully finished methods
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m11">Test_Suit.TestSuitClass#AddGoalPlan</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m12">Test_Suit.TestSuitClass#AddPMSCycle</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">normalFlowTest.Delete_the_PMS_Cycle_test#DeletionOfEmp_FromCycle</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
