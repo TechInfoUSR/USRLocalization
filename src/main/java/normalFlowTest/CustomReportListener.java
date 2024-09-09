@@ -48,6 +48,7 @@ import java.io.IOException;
 public class CustomReportListener implements IReporter{
 
 	   private static String attachmentPath,subject;
+	   
 	
     private WebDriver driver;
     addGoalPlan addGoalPlan;
@@ -131,7 +132,10 @@ public class CustomReportListener implements IReporter{
              return;
          }
          
-    
+         if(attachmentPath ==null) {
+			 attachmentPath = "screenshots/AllTestCasesPassed.png";
+			
+		}
 
             EmailAttachment attachment = new EmailAttachment();
             attachment.setDisposition(EmailAttachment.ATTACHMENT);

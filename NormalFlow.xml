@@ -6,7 +6,8 @@
   
 <listeners>
     <listener class-name="normalFlowTest.CustomReportListener" />
-    <listener class-name="normalFlowTest.TestFailureListener" />
+    <!--> execute Normal flow / Smoke testing 
+    <listener class-name="normalFlowTest.TestFailureListener" /><-->
 </listeners>
 
 	

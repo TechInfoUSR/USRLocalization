@@ -1,25 +1,301 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="13" passed="11" failed="0" skipped="2">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-04T12:41:50Z" name="Default suite" finished-at="2024-09-04T12:42:27Z" duration-ms="37011">
+  <suite started-at="2024-09-09T05:23:12Z" name="Suite" finished-at="2024-09-09T05:27:54Z" duration-ms="281558">
     <groups>
     </groups>
-    <test started-at="2024-09-04T12:41:50Z" name="Default test" finished-at="2024-09-04T12:42:27Z" duration-ms="37011">
-      <class name="normalFlowTest.Delete_the_PMS_Cycle_test">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:normalFlowTest.Delete_the_PMS_Cycle_test@132e0cc]" started-at="2024-09-04T12:41:50Z" name="setUp" finished-at="2024-09-04T12:42:03Z" duration-ms="12272" status="PASS">
+    <test started-at="2024-09-09T05:23:12Z" name="Smoke testing" finished-at="2024-09-09T05:27:54Z" duration-ms="281558">
+      <class name="Test_Suit.SmokeTestSuite">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:23:12Z" name="setUp" finished-at="2024-09-09T05:23:26Z" duration-ms="13444" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="DeletionOfEmp_FromCycle()[pri:0, instance:normalFlowTest.Delete_the_PMS_Cycle_test@132e0cc]" started-at="2024-09-04T12:42:03Z" name="DeletionOfEmp_FromCycle" finished-at="2024-09-04T12:42:27Z" duration-ms="24032" status="PASS">
+        <test-method signature="AddGoalPlan()[pri:1, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:23:26Z" name="AddGoalPlan" finished-at="2024-09-09T05:24:02Z" duration-ms="36577" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DeletionOfEmp_FromCycle -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:normalFlowTest.Delete_the_PMS_Cycle_test@132e0cc]" started-at="2024-09-04T12:42:27Z" name="teardown" finished-at="2024-09-04T12:42:27Z" duration-ms="688" status="PASS">
+        </test-method> <!-- AddGoalPlan -->
+        <test-method signature="AddPMSCycle()[pri:2, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:24:02Z" name="AddPMSCycle" finished-at="2024-09-09T05:24:18Z" depends-on-methods="Test_Suit.SmokeTestSuite.AddGoalPlan" duration-ms="15951" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddPMSCycle -->
+        <test-method is-config="true" signature="runOnFailure(org.testng.ITestResult)[pri:0, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:24:02Z" name="runOnFailure" finished-at="2024-09-09T05:24:02Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AddGoalPlan status=SUCCESS method=SmokeTestSuite.AddGoalPlan()[pri:1, instance:Test_Suit.SmokeTestSuite@7a362b6b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runOnFailure -->
+        <test-method is-config="true" signature="runOnFailure(org.testng.ITestResult)[pri:0, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:24:18Z" name="runOnFailure" finished-at="2024-09-09T05:24:18Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AddPMSCycle status=SUCCESS method=SmokeTestSuite.AddPMSCycle()[pri:2, instance:Test_Suit.SmokeTestSuite@7a362b6b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runOnFailure -->
+        <test-method signature="Initiate_PMSCycle()[pri:3, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:24:18Z" name="Initiate_PMSCycle" finished-at="2024-09-09T05:24:36Z" depends-on-methods="Test_Suit.SmokeTestSuite.AddPMSCycle" duration-ms="17756" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initiate_PMSCycle -->
+        <test-method is-config="true" signature="runOnFailure(org.testng.ITestResult)[pri:0, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:24:36Z" name="runOnFailure" finished-at="2024-09-09T05:24:36Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Initiate_PMSCycle status=SUCCESS method=SmokeTestSuite.Initiate_PMSCycle()[pri:3, instance:Test_Suit.SmokeTestSuite@7a362b6b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runOnFailure -->
+        <test-method signature="Manager_AddGoalTo_Emp()[pri:4, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:24:36Z" name="Manager_AddGoalTo_Emp" finished-at="2024-09-09T05:25:05Z" depends-on-methods="Test_Suit.SmokeTestSuite.Initiate_PMSCycle" duration-ms="29218" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Manager_AddGoalTo_Emp -->
+        <test-method is-config="true" signature="runOnFailure(org.testng.ITestResult)[pri:0, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:25:05Z" name="runOnFailure" finished-at="2024-09-09T05:25:05Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Manager_AddGoalTo_Emp status=SUCCESS method=SmokeTestSuite.Manager_AddGoalTo_Emp()[pri:4, instance:Test_Suit.SmokeTestSuite@7a362b6b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runOnFailure -->
+        <test-method signature="Employee_AssessmentSubmission()[pri:5, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:25:05Z" name="Employee_AssessmentSubmission" finished-at="2024-09-09T05:25:27Z" depends-on-methods="Test_Suit.SmokeTestSuite.Manager_AddGoalTo_Emp" duration-ms="22222" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Employee_AssessmentSubmission -->
+        <test-method is-config="true" signature="runOnFailure(org.testng.ITestResult)[pri:0, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:25:27Z" name="runOnFailure" finished-at="2024-09-09T05:25:27Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Employee_AssessmentSubmission status=SUCCESS method=SmokeTestSuite.Employee_AssessmentSubmission()[pri:5, instance:Test_Suit.SmokeTestSuite@7a362b6b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runOnFailure -->
+        <test-method signature="Manager_AssessmentSubmissionTo_Skip()[pri:6, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:25:27Z" name="Manager_AssessmentSubmissionTo_Skip" finished-at="2024-09-09T05:25:46Z" depends-on-methods="Test_Suit.SmokeTestSuite.Employee_AssessmentSubmission" duration-ms="19152" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Manager_AssessmentSubmissionTo_Skip -->
+        <test-method is-config="true" signature="runOnFailure(org.testng.ITestResult)[pri:0, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:25:46Z" name="runOnFailure" finished-at="2024-09-09T05:25:46Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Manager_AssessmentSubmissionTo_Skip status=SUCCESS method=SmokeTestSuite.Manager_AssessmentSubmissionTo_Skip()[pri:6, instance:Test_Suit.SmokeTestSuite@7a362b6b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runOnFailure -->
+        <test-method signature="Skip_Approval()[pri:7, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:25:46Z" name="Skip_Approval" finished-at="2024-09-09T05:26:01Z" depends-on-methods="Test_Suit.SmokeTestSuite.Manager_AssessmentSubmissionTo_Skip" duration-ms="14682" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Skip_Approval -->
+        <test-method signature="OneToOneMeeting_Manager()[pri:8, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:26:01Z" name="OneToOneMeeting_Manager" finished-at="2024-09-09T05:26:19Z" depends-on-methods="Test_Suit.SmokeTestSuite.Skip_Approval" duration-ms="17364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OneToOneMeeting_Manager -->
+        <test-method is-config="true" signature="runOnFailure(org.testng.ITestResult)[pri:0, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:26:01Z" name="runOnFailure" finished-at="2024-09-09T05:26:01Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Skip_Approval status=SUCCESS method=SmokeTestSuite.Skip_Approval()[pri:7, instance:Test_Suit.SmokeTestSuite@7a362b6b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runOnFailure -->
+        <test-method is-config="true" signature="runOnFailure(org.testng.ITestResult)[pri:0, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:26:19Z" name="runOnFailure" finished-at="2024-09-09T05:26:19Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=OneToOneMeeting_Manager status=SUCCESS method=SmokeTestSuite.OneToOneMeeting_Manager()[pri:8, instance:Test_Suit.SmokeTestSuite@7a362b6b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runOnFailure -->
+        <test-method signature="OnToOneMeeting_Employee()[pri:9, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:26:19Z" name="OnToOneMeeting_Employee" finished-at="2024-09-09T05:26:32Z" depends-on-methods="Test_Suit.SmokeTestSuite.OneToOneMeeting_Manager" duration-ms="12983" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OnToOneMeeting_Employee -->
+        <test-method is-config="true" signature="runOnFailure(org.testng.ITestResult)[pri:0, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:26:32Z" name="runOnFailure" finished-at="2024-09-09T05:26:32Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=OnToOneMeeting_Employee status=SUCCESS method=SmokeTestSuite.OnToOneMeeting_Employee()[pri:9, instance:Test_Suit.SmokeTestSuite@7a362b6b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runOnFailure -->
+        <test-method signature="Finalize_Emp_Appraisal()[pri:10, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:26:32Z" name="Finalize_Emp_Appraisal" finished-at="2024-09-09T05:26:58Z" depends-on-methods="Test_Suit.SmokeTestSuite.OnToOneMeeting_Employee" duration-ms="26541" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Finalize_Emp_Appraisal -->
+        <test-method is-config="true" signature="runOnFailure(org.testng.ITestResult)[pri:0, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:26:58Z" name="runOnFailure" finished-at="2024-09-09T05:26:58Z" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Finalize_Emp_Appraisal status=SUCCESS method=SmokeTestSuite.Finalize_Emp_Appraisal()[pri:10, instance:Test_Suit.SmokeTestSuite@7a362b6b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runOnFailure -->
+        <test-method signature="Remove_EmployeesFromGoalPlan()[pri:11, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:26:58Z" name="Remove_EmployeesFromGoalPlan" finished-at="2024-09-09T05:27:23Z" depends-on-methods="Test_Suit.SmokeTestSuite.Finalize_Emp_Appraisal" duration-ms="24700" status="SKIP">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[@data-bb-handler="confirm"]"}
+  (Session info: chrome=128.0.6613.120)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.1', revision: '656257d8e9'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a95ca848324436c6a73821247916c3b4, findElement {using=xpath, value=//button[@data-bb-handler="confirm"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.120, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\Dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50980}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50980/devtoo..., se:cdpVersion: 128.0.6613.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a95ca848324436c6a73821247916c3b4]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@data-bb-handler="confirm"]"}
+  (Session info: chrome=128.0.6613.120)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.1', revision: '656257d8e9'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a95ca848324436c6a73821247916c3b4, findElement {using=xpath, value=//button[@data-bb-handler="confirm"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 128.0.6613.120, chrome: {chromedriverVersion: 128.0.6613.119 (6e439cfca4d..., userDataDir: C:\Users\Dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50980}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50980/devtoo..., se:cdpVersion: 128.0.6613.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a95ca848324436c6a73821247916c3b4
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+at NormalFlowForEmployee.Delete_the_PMS_Cycle.ResetManagerAssessment(Delete_the_PMS_Cycle.java:124)
+at NormalFlowForEmployee.Delete_the_PMS_Cycle.Deletion(Delete_the_PMS_Cycle.java:72)
+at Test_Suit.SmokeTestSuite.Remove_EmployeesFromGoalPlan(SmokeTestSuite.java:207)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Remove_EmployeesFromGoalPlan -->
+        <test-method signature="Remove_EmployeesFromGoalPlan()[pri:11, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:27:23Z" name="Remove_EmployeesFromGoalPlan" finished-at="2024-09-09T05:27:53Z" depends-on-methods="Test_Suit.SmokeTestSuite.Finalize_Emp_Appraisal" duration-ms="30172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Remove_EmployeesFromGoalPlan -->
+        <test-method is-config="true" signature="runOnFailure(org.testng.ITestResult)[pri:0, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:27:23Z" name="runOnFailure" finished-at="2024-09-09T05:27:23Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Remove_EmployeesFromGoalPlan status=SKIP method=SmokeTestSuite.Remove_EmployeesFromGoalPlan()[pri:11, instance:Test_Suit.SmokeTestSuite@7a362b6b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runOnFailure -->
+        <test-method is-config="true" signature="runOnFailure(org.testng.ITestResult)[pri:0, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:27:53Z" name="runOnFailure" finished-at="2024-09-09T05:27:53Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Remove_EmployeesFromGoalPlan status=SUCCESS method=SmokeTestSuite.Remove_EmployeesFromGoalPlan()[pri:11, instance:Test_Suit.SmokeTestSuite@7a362b6b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runOnFailure -->
+        <test-method signature="DeletionOf_PMSCycleAndGoalPlan()[pri:12, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:27:53Z" name="DeletionOf_PMSCycleAndGoalPlan" finished-at="2024-09-09T05:27:53Z" depends-on-methods="Test_Suit.SmokeTestSuite.Remove_EmployeesFromGoalPlan" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method SmokeTestSuite.DeletionOf_PMSCycleAndGoalPlan()[pri:12, instance:Test_Suit.SmokeTestSuite@7a362b6b] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method SmokeTestSuite.DeletionOf_PMSCycleAndGoalPlan()[pri:12, instance:Test_Suit.SmokeTestSuite@7a362b6b] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeletionOf_PMSCycleAndGoalPlan -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Test_Suit.SmokeTestSuite@7a362b6b]" started-at="2024-09-09T05:27:53Z" name="teardown" finished-at="2024-09-09T05:27:54Z" duration-ms="751" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- normalFlowTest.Delete_the_PMS_Cycle_test -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- Test_Suit.SmokeTestSuite -->
+    </test> <!-- Smoke testing -->
+  </suite> <!-- Suite -->
 </testng-results>
