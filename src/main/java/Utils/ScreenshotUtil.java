@@ -21,10 +21,9 @@ public class ScreenshotUtil {
     	
         File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-        	if(!srcFile.equals(null))
+        
             FileUtils.copyFile(srcFile, new File("screenshots/" + testName + ".png"));
-        	else
-            FileUtils.copyFile(srcFile, new File("screenshots/AllTestCasesPassed.png"));
+        	
         } catch (IOException e) {
             e.printStackTrace();
         }

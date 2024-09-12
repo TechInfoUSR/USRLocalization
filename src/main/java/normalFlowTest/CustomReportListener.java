@@ -151,15 +151,17 @@ public class CustomReportListener implements IReporter{
             HtmlEmail email = new HtmlEmail();
             email.setHostName("smtp.zeptomail.in");
             email.setSmtpPort(587);
-            email.setAuthenticator(new DefaultAuthenticator("noreply@okrstars.com", "PHtE6r0OE+/q2TQppkUD4/6/Hs6tZ456+rtlLwMWtopEDfBQGU1Sr9kilWSx/ksuA/VFFP/JzNpqsLuY4uKMI2rtZDxMWWqyqK3sx/VYSPOZsbq6x00bt1gfdkDeUILue9Zq3SfTuN7ZNA=="));
+            email.setAuthenticator(new DefaultAuthenticator("noreply@pms-gobetter.com", "PHtE6r0EEeHogjEt8BUCsaKwHsH2Yd54r+02K1ZAsdxLXqULSk1SqNsrlzTh+hcqAaFCE6bJnItt5OuasO6AIWjuY21LWWqyqK3sx/VYSPOZsbq6x00YuVoTd0PVXYHudtNq3CXVs97YNA=="));
             email.setSSLOnConnect(true);
-            email.setFrom("noreply@okrstars.com");
+            email.setFrom("noreply@pms-gobetter.com");
             email.setSubject("TestNG Report");
             email.setHtmlMsg("Test Report: "+reportContent.toString());
 //            email.setMsg("Please find the test report executed on "+dateFormat.format(currentDate)+" find the file attached.");
 //            email.addTo("Hanumanth@usrinfotech.com");
-            
-            String[] recipients = {"Hanumanth@usrinfotech.com","partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co","bharath@usrinfotech.com","ajantha@usrinfotech.com","alisha@usrinfotech.com"};
+//            ,"partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co","bharath@usrinfotech.com","ajantha@usrinfotech.com","alisha@usrinfotech.com"
+
+            //            ,"partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co"
+            String[] recipients = {"Hanumanth@usrinfotech.com"};
             for (String recipient : recipients) {
                 email.addTo(recipient);
             }

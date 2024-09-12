@@ -64,7 +64,7 @@ public class Email_able_report_Sender implements IReporter {
             File reportFile = new File(reportPath);
 
             if (reportFile.exists()) {
-                System.out.println("Sending email with report from: " + reportPath);
+                System.out.println("(This is from email able class)Sending email with report from: " + reportPath);
 
                 HtmlEmail email = new HtmlEmail();
                 email.setHostName("smtp.zeptomail.in");
@@ -75,7 +75,7 @@ public class Email_able_report_Sender implements IReporter {
                 email.setSubject("Test Report");
                 email.setMsg("Please find the attached test report.");
 
-                email.addTo("Hanumanth@usrinfotech.com", "Recipient Name");
+                email.addTo("Hanumanth@usrinfotech.com");
                 email.attach(reportFile);
 
                 email.send();

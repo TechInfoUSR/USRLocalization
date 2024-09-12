@@ -94,11 +94,12 @@ public void Deletion() throws InterruptedException {
 
 	void RemoveEmp() throws InterruptedException 
 	{
-		driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr[1]/td[1]/div/ul[2]/li/a/b")).click();
+		driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div[2]/table/tbody/tr[1]/td[1]/div/ul[2]/li/a/b")).click();
 //		driver.findElement(By.xpath("//a[@class=\"dropdown-toggle cmenu-hide\"]")).click();
 //		driver.findElement(By.xpath("(//b[contains(text(),'Remove Employee from this PMS Cycle')])[2]"));
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
+//		driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[1]")).click();
 		Thread.sleep(1000);
 	}
 	
@@ -106,8 +107,10 @@ public void Deletion() throws InterruptedException {
    void ResetEmpAssesmet() throws InterruptedException 
    {
 	   driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr/td[1]/div/ul[1]/li[1]/a[2]/b")).click();
+	   
 	   Thread.sleep(1000);
 	   driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
+//	   driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[1]")).click();
 	   Thread.sleep(1000);
 	   driver.findElement(By.xpath("//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"][1]")).click();
 	   Thread.sleep(1000);
@@ -119,17 +122,21 @@ public void Deletion() throws InterruptedException {
 	   
 	   driver.findElement(By.xpath("//a[@ng-click=\"resetAppraisal(pp.reviewCycleId,pp.employeeId,true,2)\"]//b")).click();
 	   Thread.sleep(2000);
-	   driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[1]")).click();
+//	   driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[1]")).click();
 	   Thread.sleep(1500);
 	   driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
+//	   driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[1]")).click();
 	   Thread.sleep(2000);
-	   driver.findElement(By.xpath("//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"][1]")).click();
+//	   driver.findElement(By.xpath("//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"][1]")).click();
+	   driver.findElement(By.xpath("(//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"])[1]")).click();
 	   Thread.sleep(2000);
 	   driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr/td[1]/div/ul[1]/li[1]/a[2]")).click();
 	   Thread.sleep(1000);
 	   driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
+//	   driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[1]")).click();
 	   Thread.sleep(1000);
-	   driver.findElement(By.xpath("//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"][1]")).click();
+//	   driver.findElement(By.xpath("//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"][1]")).click();
+	   driver.findElement(By.xpath("(//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"])[1]")).click();
 	   RemoveEmp();
 	   
    }

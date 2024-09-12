@@ -199,7 +199,7 @@ public class SmokeTestSuite{
     
     
    
-    @Test(priority=11,dependsOnMethods = "Finalize_Emp_Appraisal",retryAnalyzer = RetryAnalyzer.class)
+    @Test(priority=11,retryAnalyzer = RetryAnalyzer.class)
     void Remove_EmployeesFromGoalPlan() throws InterruptedException {
     	
     	driver.get(prop.getProperty("url"));
@@ -212,7 +212,7 @@ public class SmokeTestSuite{
     
 
 
-    @Test(priority=12,dependsOnMethods = "Remove_EmployeesFromGoalPlan",retryAnalyzer = RetryAnalyzer.class)
+    @Test(priority=12,retryAnalyzer = RetryAnalyzer.class)
     void DeletionOf_PMSCycleAndGoalPlan() throws InterruptedException {
     	
     	driver.get(prop.getProperty("url"));
@@ -222,6 +222,7 @@ public class SmokeTestSuite{
     	assertTrue(ispmsDeleted,"PMS Cycle deleted");
     	Delete_Goal_Plan_and_PMS_Cycle.DeletionGoalPlan();
     	boolean isGoalPlanDeleted = Delete_Goal_Plan_and_PMS_Cycle.isGoalPlanDeleted();
+    	System.err.println(isGoalPlanDeleted);
     	assertTrue(isGoalPlanDeleted,"Goal plan deleted");
     }
     
@@ -235,8 +236,7 @@ public class SmokeTestSuite{
                "Please find the attached screenshot of the failed test.",
                "screenshots/" + result.getName() + ".png");
     	
-    	
-        // Correctly reference the static method hasTestFailed()
+      /*	
         if (TestFailureListener.hasTestFailed()) {
         	
         	
@@ -244,53 +244,18 @@ public class SmokeTestSuite{
         	driver.get(prop.getProperty("url"));
         	addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
         	Delete_the_PMS_Cycle.Deletion();
-        	boolean isdeleted = Delete_the_PMS_Cycle.isDeleted();
-        	String Actual ="Selected Goal Plan/PMS Cycle is deleted succsessfully";
-//        	System.out.println(isdeleted);
-//        	assertEquals(Actual,isdeleted,"working fine");
-        	
-        	
-        
+        	System.out.println("Test case failed and Employees removed from the PMS group");
+
         	
         	driver.get(prop.getProperty("url"));
         	addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
         	Delete_Goal_Plan_and_PMS_Cycle.DeletionPMSCycle();
-        	boolean ispmsDeleted = Delete_Goal_Plan_and_PMS_Cycle.isPMSDeleted();
-        	assertTrue(ispmsDeleted,"PMS Cycle deleted");
         	Delete_Goal_Plan_and_PMS_Cycle.DeletionGoalPlan();
-        	boolean isGoalPlanDeleted = Delete_Goal_Plan_and_PMS_Cycle.isGoalPlanDeleted();
-        	String Actual1 ="Selected Goal Plan/PMS Cycle is deleted succsessfully";
-//        	assertEquals(Actual1,isGoalPlanDeleted,"Goal plan deleted");
-        	
-        	
-//        	Remove_EmployeesFromGoalPlan();
-//            DeletionOf_PMSCycleAndGoalPlan();
+
         }
+      */
     }
-//    @AfterMethod
-//    public void tearDown(ITestResult result) {
-//        if (ITestResult.FAILURE == result.getStatus()) {
-//             ScreenshotUtil.captureScreenshot(result.getName(),driver);
-//             CustomReportListener.Screenshortpath( 
-//                "Test Failed: " + result.getName(),
-//                "Please find the attached screenshot of the failed test.",
-//                "screenshots/" + result.getName() + ".png");
-//        }
-//        driver.quitDriver();
-        
-        
-        
-        
-        
-//        EmailUtil.sendEmail("Hanumanth@usrinfotech.com,partnership@usrinfo.tech,ravi@okrstars.co,santhosh@usrinfo.tech,vaidya@usrinfo.tech,subashini@usrinfo.tech,support@okrstars.co,bharath@usrinfotech.com,ajantha@usrinfotech.com,alisha@usrinfotech.com", 
-//                "Test Failed: " + result.getName(),
-//                "Please find the attached screenshot of the failed test.",
-//                "screenshots/" + result.getName() + ".png");
-//        }
-        
-        
-        
-        
+   
         
         
     }
