@@ -87,9 +87,9 @@ public class CustomReportListener implements IReporter{
         int attempts = 0;
         while (!reportFile.exists() || reportFile.lastModified() < System.currentTimeMillis() - 5000) {
             try {
-                Thread.sleep(1000); // Check every second
+                Thread.sleep(1000); 
                 attempts++;
-                if (attempts > 30) { // Timeout after 30 seconds
+                if (attempts > 30) { 
                     System.out.println("Timeout waiting for report to be generated.");
                     break;
                 }
@@ -160,7 +160,7 @@ public class CustomReportListener implements IReporter{
 //            email.addTo("Hanumanth@usrinfotech.com");
 //            ,"partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co","bharath@usrinfotech.com","ajantha@usrinfotech.com","alisha@usrinfotech.com"
 
-            //            ,"partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co"
+            //    ,"partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co"        
             String[] recipients = {"Hanumanth@usrinfotech.com"};
             for (String recipient : recipients) {
                 email.addTo(recipient);

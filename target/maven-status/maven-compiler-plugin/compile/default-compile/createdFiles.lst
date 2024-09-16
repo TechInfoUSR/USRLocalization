@@ -26,6 +26,7 @@ Basic\EmpNormalFlowTest.class
 Mytestpackage\degreeFedback360pagetest.class
 NormalFlowForEmployee\Delete_the_PMS_Cycle.class
 Basic\employeepage.class
+Utils\ScreenshotUtil1.class
 Utils\ScreenshotUtil.class
 _360DFeedback\Send360formtoEmployess_Test.class
 normalFlowTest\CustomReportListener.class
@@ -51,6 +52,7 @@ formredingfor360degreefeedback\EmpNormalFlowTest.class
 Utils\RetryAnalyzer.class
 _360DFeedback\Respons_to_the_Form.class
 normalFlowTest\Delete_the_PMS_Cycle_test.class
+normalFlowTest\CLasstoTest.class
 _360DFeedback\Respons_totheForm_Test.class
 normalFlowTest\Normal_Flow_testing_Class.class
 NormalFlowForEmployee\manager_Sumitt_Assesment_To_Skip.class

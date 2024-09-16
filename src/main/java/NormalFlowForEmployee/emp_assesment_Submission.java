@@ -65,7 +65,7 @@ public class emp_assesment_Submission {
            		Thread.sleep(1000);
            		String Employee_cmt = "EmpCmt";
            		String Employee_comment =Employee_cmt + i;
-                EmployeeComment(driver,"(//img[@src=\"pmsGE/images/ellipsis-1.png\"])[("+i+")]",Employee_comment, "(//a[@class=\"view-link mt-h cs-modal-btn ng-binding ng-scope\"]) [("+i+")]");
+                EmployeeComment(driver,"(//div[@class=\"dropdown\"])[2]",Employee_comment, "(//a[@class=\"view-link mt-h cs-modal-btn ng-binding ng-scope\"]) [("+i+")]");
                 Thread.sleep(1000);
               }
            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
