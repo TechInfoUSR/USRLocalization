@@ -11,7 +11,7 @@
         <methods>
           <include name="runOnFailure"/>
           <include name="teardown"/>
-          <include name="Remove_EmployeesFromGoalPlan"/>
+          <include name="AddGoalPlan"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- Test_Suit.SmokeTestSuite -->

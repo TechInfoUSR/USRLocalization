@@ -48,14 +48,14 @@ public class initiatePMSCycle
 	        Thread.sleep(2000);
 
 	    }
-
-	    public void enterWeightages(String objective, String coreValue, String jobCompetency, String behavior, String leadership) throws InterruptedException 
+//	    public void enterWeightages(String objective, String coreValue, String jobCompetency, String behavior, String leadership) throws InterruptedException 
+	    public void enterWeightages() throws InterruptedException 
 	    {
-	        driver.findElement(objectiveWeightageField).sendKeys(objective);
-	        driver.findElement(coreValueWeightageField).sendKeys(coreValue);
-	        driver.findElement(jobCompetencyWeightageField).sendKeys(jobCompetency);
-	        driver.findElement(behaviorWeightageField).sendKeys(behavior);
-	        driver.findElement(leadershipWeightageField).sendKeys(leadership);
+	        driver.findElement(objectiveWeightageField).sendKeys("100");
+	        driver.findElement(coreValueWeightageField).sendKeys("0");
+	        driver.findElement(jobCompetencyWeightageField).sendKeys("0");
+	        driver.findElement(behaviorWeightageField).sendKeys("0");
+	        driver.findElement(leadershipWeightageField).sendKeys("0");
 
 	        driver.findElement(insertButton).click();
 	    	Thread.sleep(5000);

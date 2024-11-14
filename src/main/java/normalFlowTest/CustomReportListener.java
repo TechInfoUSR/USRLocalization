@@ -137,10 +137,12 @@ public class CustomReportListener implements IReporter{
 			
 		}
 
+         String Logo = "screenshots/Logo.png";
             EmailAttachment attachment = new EmailAttachment();
             attachment.setDisposition(EmailAttachment.ATTACHMENT);
             attachment.setDescription("Test Report");
             attachment.setPath(attachmentPath);
+//            attachment.setPath(Logo);
             System.out.println("path to SS: "+attachmentPath);
             attachment.setName(subject+dateFormat.format(currentDate)+".png");
             
@@ -148,20 +150,26 @@ public class CustomReportListener implements IReporter{
             
 
 //            MultiPartEmail email = new MultiPartEmail();
+//            HtmlEmail email = new HtmlEmail();
+//            email.setHostName("smtp.zeptomail.in");
+//            email.setSmtpPort(587);
+//            email.setAuthenticator(new DefaultAuthenticator("noreply@pms-gobetter.com", "PHtE6r0EEeHogjEt8BUCsaKwHsH2Yd54r+02K1ZAsdxLXqULSk1SqNsrlzTh+hcqAaFCE6bJnItt5OuasO6AIWjuY21LWWqyqK3sx/VYSPOZsbq6x00YuVoTd0PVXYHudtNq3CXVs97YNA=="));
+//            email.setSSLOnConnect(true);
+//            email.setFrom("noreply@pms-gobetter.com");
+//            email.setSubject("Test Instance Test Report");
+//            email.setHtmlMsg("Test Report: "+reportContent.toString());
+            
             HtmlEmail email = new HtmlEmail();
-            email.setHostName("smtp.zeptomail.in");
+            email.setHostName("mail.usrinfotech.com");
             email.setSmtpPort(587);
-            email.setAuthenticator(new DefaultAuthenticator("noreply@pms-gobetter.com", "PHtE6r0EEeHogjEt8BUCsaKwHsH2Yd54r+02K1ZAsdxLXqULSk1SqNsrlzTh+hcqAaFCE6bJnItt5OuasO6AIWjuY21LWWqyqK3sx/VYSPOZsbq6x00YuVoTd0PVXYHudtNq3CXVs97YNA=="));
+            email.setAuthenticator(new DefaultAuthenticator("noreply@usrinfotech.com", "]#hoPoQxTqYr"));
             email.setSSLOnConnect(true);
-            email.setFrom("noreply@pms-gobetter.com");
-            email.setSubject("TestNG Report");
+            email.setFrom("noreply@usrinfotech.com");
+            email.setSubject("Test Instance Test Report");
             email.setHtmlMsg("Test Report: "+reportContent.toString());
-//            email.setMsg("Please find the test report executed on "+dateFormat.format(currentDate)+" find the file attached.");
-//            email.addTo("Hanumanth@usrinfotech.com");
-//            ,"partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co","bharath@usrinfotech.com","ajantha@usrinfotech.com","alisha@usrinfotech.com"
-
-            //    ,"partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co"        
-            String[] recipients = {"Hanumanth@usrinfotech.com"};
+            
+//          String[] recipients = {"Hanumanth@usrinfotech.com","partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co"};       
+            String[] recipients = {"Hanumanth@usrinfotech.com","ravi@okrstars.co","support@okrstars.co"};
             for (String recipient : recipients) {
                 email.addTo(recipient);
             }

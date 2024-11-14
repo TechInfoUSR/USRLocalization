@@ -80,7 +80,9 @@ public class addGoalPla_CreatePMSCycleTest
     public void Initiate_PMSCycle() throws InterruptedException 
     {	
     	initiatePMSCycle.goToWeightTab(prop.getProperty("EmpGroup"),prop.getProperty("GoalPalnName"));
-    	initiatePMSCycle.enterWeightages(prop.getProperty("objectiveWeightage"),prop.getProperty("coreValueWeightage"), prop.getProperty("jobCompetencyWeightage"), prop.getProperty("behaviorWeightage"), prop.getProperty("leadershipWeightage"));
+//    	initiatePMSCycle.enterWeightages(prop.getProperty("objectiveWeightage"),prop.getProperty("coreValueWeightage"), prop.getProperty("jobCompetencyWeightage"), prop.getProperty("behaviorWeightage"), prop.getProperty("leadershipWeightage"));
+    	initiatePMSCycle.enterWeightages();
+
     	boolean isDisplayed =initiatePMSCycle.isCycleInitiated();
     	System.out.println(isDisplayed);    	
     	assertTrue(isDisplayed, "Goal plan didn't initiated");
