@@ -29,7 +29,6 @@ Basic\employeepage.class
 Utils\ScreenshotUtil1.class
 Utils\ScreenshotUtil.class
 _360DFeedback\Send360formtoEmployess_Test.class
-normalFlowTest\CustomReportListener.class
 NormalFlowForEmployee\manager_AddGoals.class
 NormalFlowForEmployee\initiatePMSCycle.class
 ConfigReder\ConfigpropReader.class
@@ -44,7 +43,6 @@ _360DFeedback\TestResponse.class
 NormalFlowForEmployee\addGoalPlan.class
 normalFlowTest\One_to_One_manager_test.class
 normalFlowTest\manager_Sumitt_Assesment_To_Skip_Test.class
-normalFlowTest\Email_test_class.class
 NormalFlowForEmployee\emp_assesment_Submission.class
 NormalFlowForEmployee\SuitClass_for_Test.class
 NormalFlowForEmployee\PMSCyclePage.class
@@ -52,7 +50,6 @@ formredingfor360degreefeedback\EmpNormalFlowTest.class
 Utils\RetryAnalyzer.class
 _360DFeedback\Respons_to_the_Form.class
 normalFlowTest\Delete_the_PMS_Cycle_test.class
-normalFlowTest\CLasstoTest.class
 _360DFeedback\Respons_totheForm_Test.class
 normalFlowTest\Normal_Flow_testing_Class.class
 NormalFlowForEmployee\manager_Sumitt_Assesment_To_Skip.class

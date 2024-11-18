@@ -7,7 +7,7 @@ import org.testng.ITestResult;
 
 public class TestFailureListener implements ITestListener {
 
-	 private static final String REPORT_DIR = "D:\\USRInfotech\\10-07-2024_Automation\\USRLocalization\\test-output"; // Update this path as needed
+	 private static final String REPORT_DIR = "D:\\USRInfotech\\10-07-2024_Automation\\USRLocalization\\test-output";
 
     @Override
     public void onFinish(ITestContext context) {
@@ -42,21 +42,14 @@ public class TestFailureListener implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {}
-    
-    
-    
-    
-    
-    
-    // Flag to track if any test has failed
+   
     private static boolean hasTestFailed = false;
 
     @Override
     public void onTestFailure(ITestResult result) {
-        hasTestFailed = true;  // Set the flag if any test fails
+        hasTestFailed = true;  
     }
 
-    // Get the failure status
     public static boolean hasTestFailed() {
         return hasTestFailed;
     }
