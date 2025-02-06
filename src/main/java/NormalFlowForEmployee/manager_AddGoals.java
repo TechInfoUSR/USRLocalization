@@ -59,7 +59,7 @@ public class manager_AddGoals
 
         public void openEmployeeAssessment() throws InterruptedException 
         {
-        	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        
         	String empname = prop.getProperty("empname");
             driver.findElement(By.xpath("//span[contains(text(),'"+empname+" ')]")).click();
             Thread.sleep(2000);
@@ -99,8 +99,7 @@ public class manager_AddGoals
         	String weight = prop.getProperty("Weight");
         	  
 //            	driver.findElement(goalTitle).click();
-            Thread.sleep(1000);
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            Thread.sleep(1000);              
      	
             driver.findElement(goalTitle).sendKeys(goalName);
             Thread.sleep(100);
@@ -139,7 +138,7 @@ public class manager_AddGoals
 //              JavascriptExecutor Srollup1 = (JavascriptExecutor) driver;
 //              Srollup1.executeScript("window.scrollBy(0,1000)");
                 driver.findElement(toggleMetric).click();
-                Thread.sleep(500);
+                Thread.sleep(1000);
 //              driver.findElement(kpiSuccess).click();
 //              driver.findElement(currentMetric).click();              
 //              driver.findElement(toggleMetric).click();                  
@@ -148,8 +147,8 @@ public class manager_AddGoals
                 
             	WebElement rangeInput = driver.findElement(toggleMetric); 
                 JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-                WebElement childwin = driver.findElement(By.xpath("//*[@id=\"tab_default_11\"]/form/div[5]/div/div[1]/div[2]/h5"));
-
+                WebElement childwin = driver.findElement(By.xpath("//*[@id=\"Weight\"]"));
+                                                                   //*[@id="tab_default_11"]/form/div[5]/div/div[1]/div[2]/h5
                 jsExecutor.executeScript("arguments[0].scrollIntoView(true);", childwin);
  
                 driver.findElement(weightField).sendKeys(weight);
@@ -160,8 +159,11 @@ public class manager_AddGoals
             }
         public boolean isGoalAdded() throws InterruptedException 
         {
-        	return driver.findElement(By.xpath("//div[contains(text(),'Saved goal successfully')]")).isDisplayed();
-        
+        	By is = By.xpath("//div[contains(text(),'Saved goal successfully')]");
+     	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(is));
+           
+     	return element.isDisplayed();
         }
         
 }

@@ -112,26 +112,28 @@ public class Email_able_report_Sender implements IReporter {
             System.out.println("path to SS: "+attachmentPath);
             attachment.setName(subject+dateFormat.format(currentDate)+".png");
 
-          HtmlEmail email = new HtmlEmail();
-          email.setHostName("smtp.gmail.com");
-          email.setSmtpPort(587);
-          email.setAuthenticator(new DefaultAuthenticator("skipmanagergobetter@gmail.com", "wocx rawr lldu sfws"));
-          email.setSSLOnConnect(true);
-          email.setFrom("skipmanagergobetter@gmail.com");
-          email.setSubject("Test Instance Test Report");
-          email.setHtmlMsg("Test Report: "+reportContent.toString());
+//          HtmlEmail email = new HtmlEmail();
+//          email.setHostName("smtp.gmail.com");
+//          email.setSmtpPort(587);
+//          email.setAuthenticator(new DefaultAuthenticator("skipmanagergobetter@gmail.com", "wocx rawr lldu sfws"));
+//          email.setSSLOnConnect(true);
+//          email.setFrom("skipmanagergobetter@gmail.com");
+//          email.setSubject("Test Instance Test Report");
+//          email.setHtmlMsg("Test Report: "+reportContent.toString());
             
-//            HtmlEmail email = new HtmlEmail();
-//            email.setHostName("mail.usrinfotech.com");
-//            email.setSmtpPort(587);
-//            email.setAuthenticator(new DefaultAuthenticator("noreply@usrinfotech.com", "]#hoPoQxTqYr"));
-//            email.setSSLOnConnect(true);
-//            email.setFrom("noreply@usrinfotech.com");
-//            email.setSubject("Test Instance Test Report");
-//            email.setHtmlMsg("Test Report: "+reportContent.toString());
-            
-//          String[] recipients = {"Hanumanth@usrinfotech.com","partnership@usrinfo.tech","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech","support@okrstars.co"};       
-            String[] recipients = {"Hanumanth@usrinfotech.com","ravi@okrstars.co","santhosh@usrinfo.tech","vaidya@usrinfo.tech","subashini@usrinfo.tech"};
+            HtmlEmail email = new HtmlEmail();
+            email.setHostName("mail.usrinfotech.com");
+            email.setSmtpPort(587);
+            email.setAuthenticator(new DefaultAuthenticator("noreply@usrinfotech.com", "]#hoPoQxTqYr"));
+            email.setSSLOnConnect(true);
+            email.setFrom("noreply@usrinfotech.com");
+            email.setSubject("Test Instance Test Report");
+            email.setHtmlMsg("Test Report: "+reportContent.toString());
+                  
+            String[] recipients = {"Hanumanth@usrinfotech.com",
+            		"ravi@okrstars.co","santhosh@usrinfotech.com",
+            		"vaidya@usrinfotech.com","subashini@usrinfotech.com"};
+
             for (String recipient : recipients) {
                 email.addTo(recipient);
             }

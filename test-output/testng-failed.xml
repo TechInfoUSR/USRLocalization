@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="normalFlowTest.Email_able_report_Sender"/>
-  </listeners>
-  <test thread-count="5" name="Smoke testing(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="Test_Suit.SmokeTestSuite">
         <methods>
@@ -15,16 +12,14 @@
           <include name="AddGoalPlan"/>
           <include name="Finalize_Emp_Appraisal"/>
           <include name="setUp"/>
-          <include name="DeletionOf_PMSCycleAndGoalPlan"/>
           <include name="Employee_AssessmentSubmission"/>
           <include name="Manager_AssessmentSubmissionTo_Skip"/>
           <include name="Initiate_PMSCycle"/>
           <include name="runOnFailure"/>
           <include name="teardown"/>
           <include name="Skip_Approval"/>
-          <include name="Remove_EmployeesFromGoalPlan"/>
         </methods>
       </class> <!-- Test_Suit.SmokeTestSuite -->
     </classes>
-  </test> <!-- Smoke testing(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

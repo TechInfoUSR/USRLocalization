@@ -129,6 +129,7 @@ public class SmokeTestSuite{
 
 
     @Test(priority = 5,dependsOnMethods = "Manager_AddGoalTo_Emp",retryAnalyzer = RetryAnalyzer.class)
+//  @Test
     public void Employee_AssessmentSubmission() throws InterruptedException{
     	driver.get(prop.getProperty("url"));
     	addGoalPlan.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));

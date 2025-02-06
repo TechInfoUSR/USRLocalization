@@ -1,4 +1,6 @@
 package NormalFlowForEmployee;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -39,16 +41,35 @@ public class PMSCyclePage
 	        driver.findElement(By.xpath("//div[@class=\"selectize-dropdown-content\"]")).click();
 
 	        driver.findElement(fromDatePicker).click();
-	        driver.findElement(By.xpath("//td[@class='day' and text()='11']")).click();
+	        
+	        DateTimeFormatter monthYearFormatter = DateTimeFormatter.ofPattern("MMMM yyyy");
+	        DateTimeFormatter dayFormatter = DateTimeFormatter.ofPattern("d");
+
+	        // Print the current month
+	        LocalDate currentDate = LocalDate.now();
+	        String formattedDate1 = currentDate.format(monthYearFormatter);
+	        String formattedDay = currentDate.format(dayFormatter);
+//	        driver.findElement(By.xpath("//td[@class='day' and text()='"+formattedDate1+"']")).click();
+
+	        LocalDate thirdMonth = currentDate.plusMonths(3);
+	        String Third_Month_Year = thirdMonth.format(monthYearFormatter);
+	        String Third_Month_DATE = thirdMonth.format(dayFormatter);
+	        
+	        
+	        driver.findElement(By.xpath("//td[@class='day' and text()='"+Third_Month_DATE+"']")).click();
 	        Thread.sleep(2000);
 
 	        driver.findElement(toDatePicker).click();
-	        while (!driver.findElement(By.xpath("//th[@class=\"datepicker-switch\"]")).getText().equals("June 2025")) 
+	        Thread.sleep(500);
+
+//	        while (!driver.findElement(By.xpath("//th[@class=\"datepicker-switch\"]")).getText().equals("June 2025"))
+	        while (!driver.findElement(By.xpath("//th[@class=\"datepicker-switch\"]")).getText().equals(Third_Month_Year)) 
 	        {
 	            driver.findElement(By.xpath("//th[@class=\"next\"]")).click();
-	            Thread.sleep(10);
-	        }
-	        driver.findElement(By.xpath("/html/body/div[3]/div[1]/table/tbody/tr[3]/td[3]")).click();
+	            Thread.sleep(100);
+	        }                           
+//	        driver.findElement(By.xpath("/html/body/div[3]/div[1]/table/tbody/tr[3]/td[1]")).click();
+	        driver.findElement(By.xpath("//td [contains(text(),'"+Third_Month_DATE+"') and @class=\"day\"]")).click();
 	        Thread.sleep(1000);
 	    	driver.findElement(By.xpath("//div[@class=\"modal-footer\"]")).click();
 	        driver.findElement(saveButton).click();
