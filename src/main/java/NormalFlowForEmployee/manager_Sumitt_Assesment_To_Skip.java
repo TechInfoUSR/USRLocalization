@@ -58,7 +58,6 @@ public class manager_Sumitt_Assesment_To_Skip {
             System.out.println(NoofGoal);
             for (int i=1 ;i<=NoofGoal;i++) 
             {
-          	  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             
           	    Random random = new Random();
             	int randomNumber = random.nextInt(100) + 1;
@@ -69,19 +68,23 @@ public class manager_Sumitt_Assesment_To_Skip {
          		Thread.sleep(1000);
          		String Employee_cmt = "EmpCmt";
          		String Employee_comment =Employee_cmt + i;
-//              EmployeeComment(driver,"(//img[@src=\"pmsGE/images/ellipsis-1.png\"])[("+i+")]",Employee_comment, "(//a[@class=\"view-link mt-h cs-modal-btn ng-binding ng-scope\"]) [("+i+")]");
+              EmployeeComment(driver,"//*[@id=\"categ105\"]/ul/li[4]/div/div[2]/img",Employee_comment, "//*[@id=\"categ105\"]/ul/li[4]/div/div[2]/ul/li[6]/a");
               Thread.sleep(1000);
               
-              WebElement element1 = driver.findElement(By.xpath("//*[@id=\"s-tab01\"]/div/div[2]/div[5]/div/a"));
+              WebElement element1 = driver.findElement(By.xpath("//*[@id=\"s-tab01\"]/div/div[2]/div[6]/div/a"));
               ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
 
               
-              driver.findElement(By.xpath("//*[@id=\"s-tab01\"]/div/div[2]/div[5]/div/a")).click();
+              element1.click();
               Thread.sleep(500); 
               driver.findElement(By.id("goal_checkin_commentsa")).sendKeys("MgrCMT");
               Thread.sleep(100);
               driver.findElement(By.xpath("//button[@ng-click=\"submitPerformanceForAuthorizeApprove()\"]")).click();
-              driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
+              
+ 
+              By OkBtn = (By.xpath("//button[contains(text(),'OK')]"));
+              WebElement OKbtn = wait.until(ExpectedConditions.visibilityOfElementLocated(OkBtn));
+              OKbtn.click();
               Thread.sleep(1000); 
               
               
@@ -105,17 +108,22 @@ public class manager_Sumitt_Assesment_To_Skip {
   	    }
       	  private static void EmployeeComment(WebDriver driver, String cssSelector, String Empcmt, String ReviewBTN) throws InterruptedException 
       	  { 
-      		  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
       		  driver.findElement(By.xpath(cssSelector)).click();
       		  Thread.sleep(500);
       		  driver.findElement(By.xpath(ReviewBTN)).click();
-      		  Thread.sleep(500);
-      		  String goal_comments1 = "goal_comments1";    	
-      		  driver.findElement(By.id(goal_comments1)).sendKeys(Empcmt);
+      		  Thread.sleep(1000);
+      		  String goal_comments1 = "goal_comments1";  
+      		  
+      		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
+            By is = (By.id(goal_comments1));
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(is));
+            element.sendKeys("MGR CMT");;
+            
+//      		  driver.findElement(By.id(goal_comments1)).sendKeys(Empcmt);
 
-      		  driver.findElement(By.xpath("(//button[contains(text(),'Submit')])[3]")).click();
+      		  driver.findElement(By.xpath("(//button[@class=\"btn btn-default btn-cs mt-1 ng-binding\"])[1]")).click();
    
-      		  driver.findElement(By.xpath("(//button[contains(text(),'Close')])[1]")).click();
+      		  driver.findElement(By.xpath("//button[@ng-init=\"fetchTranslations('mgrGoalComments.l6');\" and contains(text(),'Close')]")).click();
       		  Thread.sleep(1000);
       	  }
     	  public String isSelfsub() throws InterruptedException {

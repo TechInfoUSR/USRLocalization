@@ -42,7 +42,6 @@ public class Delete_the_PMS_Cycle_test {
     void DeletionOfEmp_FromCycle() throws InterruptedException {
     	Delete_the_PMS_Cycle.Deletion();
     	boolean isdeleted = Delete_the_PMS_Cycle.isDeleted();
-//    	System.out.println(isdeleted);
     	assertTrue(isdeleted,"working fine");
     	
     }

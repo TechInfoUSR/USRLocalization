@@ -5,9 +5,27 @@
   <artifactId>techInfoUSR</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+  <repositories>
+    <repository>
+        <id>central</id>
+        <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+    
+    <repository>
+        <id>jenkins-releases</id>
+        <url>https://repo.jenkins-ci.org/releases/</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </repository>
+  </repositories>
+  
+  
 <dependencies>
-		
-		
+	
 	<dependency>
     	<groupId>org.apache.poi</groupId>
     	<artifactId>poi</artifactId>
@@ -118,11 +136,6 @@
     	<scope>provided</scope>
 	</dependency>
 
-        <dependency>
-    		<groupId>Jenkins</groupId>
-    		<artifactId>Jenkins</artifactId>
-    		<version>0.0.1-SNAPSHOT</version>
-    	</dependency>
 </dependencies>
     
     <build>

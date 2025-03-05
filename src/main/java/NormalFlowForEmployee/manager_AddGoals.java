@@ -62,23 +62,48 @@ public class manager_AddGoals
         
         	String empname = prop.getProperty("empname");
             driver.findElement(By.xpath("//span[contains(text(),'"+empname+" ')]")).click();
-            Thread.sleep(2000);
+            Thread.sleep(5000);
             
 //            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"s-tab01\"]/div/div[2]/div[3]/a[2]")));
 //            element.click();
 //            driver.findElement(goalAction).click();
 
+//driver.findElement(By.xpath("(//img[@src=\"pmsGE/images/icons/add.svg\"])[1]")).click();
+            
+//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@src=\"pmsGE/images/icons/add.svg\"])[1]")));
+//            if (element.isDisplayed() && element.isEnabled()) {
+//            	Thread.sleep(1000);
+//                element.click(); // or perform other actions
+//            }
+//            else
+//            	element.click();
             
             
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"s-tab01\"]/div/div[2]/div[3]/a[2]")));
-            if (element.isDisplayed() && element.isEnabled()) {
-            	Thread.sleep(3000);
-                element.click(); // or perform other actions
+            
+            
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@src='pmsGE/images/icons/add.svg'])[1]")));
+
+            while (true) {
+                try {
+                    if (element.isDisplayed() && element.isEnabled()) {
+                        element.click();
+                        System.out.println("Clicked on the element.");
+                    }
+                    // Wait and check if the new page or modal appears
+                    boolean isPopupVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("obj_title"))).isDisplayed();
+                    if (isPopupVisible) {
+                        System.out.println("Popup or new page opened.");
+                        break; // Exit loop once the new page is detected
+                    }
+                } catch (Exception e) {
+                    System.out.println("Element not interactable, retrying...");
+                }
+                Thread.sleep(1000); // Small delay before retrying
             }
-            else
-            	element.click();
+
 
             
 //            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
