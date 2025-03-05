@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="Test_Suit.SmokeTestSuite">
+        <methods>
+          <include name="OneToOneMeeting_Manager"/>
+          <include name="AddPMSCycle"/>
+          <include name="OnToOneMeeting_Employee"/>
+          <include name="Manager_AddGoalTo_Emp"/>
+          <include name="AddGoalPlan"/>
+          <include name="Finalize_Emp_Appraisal"/>
+          <include name="setUp"/>
+          <include name="Employee_AssessmentSubmission"/>
+          <include name="Manager_AssessmentSubmissionTo_Skip"/>
+          <include name="Initiate_PMSCycle"/>
+          <include name="runOnFailure"/>
+          <include name="teardown"/>
+          <include name="Skip_Approval"/>
+          <include name="Remove_EmployeesFromGoalPlan"/>
+        </methods>
+      </class> <!-- Test_Suit.SmokeTestSuite -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
