@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  
+<listeners>
+   <listener class-name="normalFlowTest.Email_able_report_Sender" />
+    <!--> execute Normal flow / Smoke testing <-->
+    <listener class-name="normalFlowTest.TestFailureListener" />
+</listeners>
+  
+  <!--> execute Normal flow / Smoke testing <-->
+  <test name="Smoke testing">
+    <classes>
+		<class name="Test_Suit.SmokeTestSuite"/>
+	</classes>
+  </test>
+
+</suite>
+

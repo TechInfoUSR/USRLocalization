@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	
+	
+<listeners>
+    <listener class-name="normalFlowTest.CustomReportListener" />
+</listeners>
+	
+
+
+	  <!--> add goal goal plan and PMS report  <-->
+  <test name="addGoalPla_CreatePMSCycleTest">
+    <classes>
+		<class name="normalFlowTest.addGoalPla_CreatePMSCycleTest"/>	  
+	</classes>
+  </test> 
+	
+
+  
+  <!--> Manager will add goal to repoertees <-->
+  <test name="MangerFlow">
+    <classes>
+		<class name="normalFlowTest.managerFlow_Test"/>	  
+	</classes>
+  </test> 
+  
+  <!--> Employee will rate the goal and submit his assesment <-->
+  <test name="EmployeeFlow">
+    <classes>
+		<class name="normalFlowTest.employeeFlow_Test"/>
+	</classes>
+  </test> 
+  
+  <!--> Manager will rate the goal and submit to skip manager  <-->
+  <test name="manager_Sumitt_Assesment_To_Skip_Test">
+    <classes>
+		<class name="normalFlowTest.manager_Sumitt_Assesment_To_Skip_Test"/>
+	</classes>
+  </test> 
+  
+  <!--> Skip manager will rate the employee and approve <-->
+  <test name="Skipp_Approval_test">
+    <classes>
+		<class name="normalFlowTest.Skipp_Approval_test"/>
+	</classes>
+  </test>
+  
+  <!--> Manager will provide One on One comment to the employee <-->
+  <test name="One_to_One_manager_test">
+    <classes>
+		<class name="normalFlowTest.One_to_One_manager_test"/>
+	</classes>
+  </test>
+    
+    <!--> Employee will ackowlegde the One on one comment <-->
+  <test name="One_to_One_Employee_test">
+    <classes>
+		<class name="normalFlowTest.One_to_One_Employee_test"/>
+	</classes>
+  </test>
+  
+  <!--> Finalize the Aprisal <-->
+  <test name="Finalize_Employee_Appraisal_Test">
+    <classes>
+		<class name="normalFlowTest.Finalize_Employee_Appraisal_Test"/>
+	</classes>
+  </test>
+  
+ 
+  <!--> Delete the employees from the PMS cycle <-->
+  <test name="Delete_the_PMS_Cycle_test">
+    <classes>
+		<class name="normalFlowTest.Delete_the_PMS_Cycle_test"/>
+	</classes>
+  </test>  
+  
+  <!--> Delete the Goal plan and PMS cycle <-->
+    <test name="Delete_Goal_Plan_and_PMS_Cycle__Test">
+    <classes>
+		<class name="normalFlowTest.Delete_Goal_Plan_and_PMS_Cycle__Test"/>
+	</classes>
+  </test>
+
+  
+  
+
+
+</suite> 
+
+
