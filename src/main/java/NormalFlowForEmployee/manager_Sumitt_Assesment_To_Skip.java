@@ -68,17 +68,17 @@ public class manager_Sumitt_Assesment_To_Skip {
          		Thread.sleep(1000);
          		String Employee_cmt = "EmpCmt";
          		String Employee_comment =Employee_cmt + i;
-              EmployeeComment(driver,"//*[@id=\"categ105\"]/ul/li[4]/div/div[2]/img",Employee_comment, "//*[@id=\"categ105\"]/ul/li[4]/div/div[2]/ul/li[6]/a");
+              EmployeeComment(driver,"//*[@id=\"categ105\"]/ul/li[4]/div/div[2]/img",Employee_comment, "(//a[contains(text(), 'Review Comments')])[2]");
               Thread.sleep(1000);
               
-              WebElement element1 = driver.findElement(By.xpath("//*[@id=\"s-tab01\"]/div/div[2]/div[6]/div/a"));
+              WebElement element1 = driver.findElement(By.xpath("(//a[@class=\"btn checkin-btn block-btn subAssessmentButton\"])[1]"));
               ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
-
-              
               element1.click();
-              Thread.sleep(500); 
-              driver.findElement(By.id("goal_checkin_commentsa")).sendKeys("MgrCMT");
-              Thread.sleep(100);
+
+
+              Thread.sleep(1000);
+              driver.findElement(By.xpath("(//textarea[@id=\"goal_checkin_commentsa\"])[2]")).sendKeys("MgrCMT");
+              Thread.sleep(200);
               driver.findElement(By.xpath("//button[@ng-click=\"submitPerformanceForAuthorizeApprove()\"]")).click();
               
  

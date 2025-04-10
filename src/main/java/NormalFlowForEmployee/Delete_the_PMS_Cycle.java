@@ -46,14 +46,15 @@ public void Deletion() throws InterruptedException {
     	String actualText = driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr[1]/td[1]/div/ul[2]/li/a/b")).getText();
 	    System.out.println(actualText);
 	    String actualText1 = driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr/td[1]/div/ul[1]/li[2]/a/b")).getText();
-	    System.out.println(actualText);
-	    String ResetEmpAssesmet = driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr/td[1]/div/ul[1]/li[1]/a[2]/b")).getText();
-	    System.out.println(actualText);
+	    System.out.println(actualText1);
+	    String ResetEmpAssesmet = driver.findElement(By.xpath("(//a[@ng-click=\"resetAppraisal(pp.reviewCycleId,pp.employeeId,false,1,1)\"])[1]")).getText();
+	    System.out.println(ResetEmpAssesmet);
 	    
 	    String exp = "Remove Employee from this PMS Cycle";
 	    String rmtex = "Reset Manager's Assessment (without deleting contents filled already by emp. and manager)";
 
-	    String ResetAct = "Reset Employee's Assessment (without deleting contents filled already by emp.)";
+//	    String ResetAct = "Reset Employee's Assessment (without deleting contents filled already by emp.)";
+		String ResetAct = "Reset Employee's Assessment ";
 	    Thread.sleep(2000);
 	    if(actualText.equals(exp)) 
 	     {
@@ -87,17 +88,21 @@ public void Deletion() throws InterruptedException {
    void ResetEmpAssesmet() throws InterruptedException 
    {   
 	   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
-	   By section = (By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr/td[1]/div/ul[1]/li[1]/a[2]/b"));
-	   WebElement sectionBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(section));
+	   By section = (By.xpath("(//a[@ng-click=\"resetAppraisal(pp.reviewCycleId,pp.employeeId,false,1,1)\"])[1]"));
+	   WebElement sectionBTN = wait.until(ExpectedConditions.elementToBeClickable(section));
        sectionBTN.click();
+//       driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div[2]/table/tbody/tr[1]/td[1]/div/ul[1]/li[1]/a[2]/b")).click();
+       Thread.sleep(2000);
 
        By confirm =(By.xpath("//button[@data-bb-handler=\"confirm\"]"));
 	   WebElement confirmBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(confirm));
 	   confirmBTN.click();
+	   Thread.sleep(2000);
 	   
 	   By images =(By.xpath("//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"][1]"));
 	   WebElement imagesBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(images));
 	   imagesBTN.click();
+	   Thread.sleep(2000);
 	   
 	   RemoveEmp();
    }
@@ -108,18 +113,22 @@ public void Deletion() throws InterruptedException {
        By is = (By.xpath("//a[@ng-click=\"resetAppraisal(pp.reviewCycleId,pp.employeeId,true,2)\"]//b"));
        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(is));
        element.click();
+       Thread.sleep(2000);
 
        By Confirm = (By.xpath("//button[@data-bb-handler=\"confirm\"]"));
        WebElement ConfirmBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(Confirm));
        ConfirmBTN.click();
+       Thread.sleep(2000);   
        
        By images = (By.xpath("(//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"])[1]"));
        WebElement imagesBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(images));
        imagesBTN.click();
+       Thread.sleep(2000);
 
        By section = (By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr/td[1]/div/ul[1]/li[1]/a[2]"));
        WebElement sectionBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(section));
        sectionBTN.click();
+       Thread.sleep(2000);
 
        ConfirmBTN.click();
 

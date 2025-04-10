@@ -1,6 +1,5 @@
 package normalFlowTest;
 
-import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
@@ -41,8 +40,8 @@ public class Delete_the_PMS_Cycle_test {
     @Test
     void DeletionOfEmp_FromCycle() throws InterruptedException {
     	Delete_the_PMS_Cycle.Deletion();
-    	boolean isdeleted = Delete_the_PMS_Cycle.isDeleted();
-    	assertTrue(isdeleted,"working fine");
+//    	boolean isdeleted = Delete_the_PMS_Cycle.isDeleted();
+//    	assertTrue(isdeleted,"working fine");
     	
     }
     

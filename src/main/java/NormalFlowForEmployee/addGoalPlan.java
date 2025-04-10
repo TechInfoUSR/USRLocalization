@@ -1,5 +1,6 @@
 package NormalFlowForEmployee;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -7,6 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class addGoalPlan {	
      WebDriver driver;
@@ -26,7 +29,7 @@ public class addGoalPlan {
     private By ratingScaleDropdown = By.xpath("//div[@class=\"selectize-dropdown-content\"]");
     private By groupRadioButton = By.xpath("//input[@id=\"selectGroupRadio\"]");
     private By empGroupField = By.xpath("//input[@placeholder=\"Select Target Employees Group for this Plan\"]");
-    private By isActiveCheckbox = By.xpath("//input[@id=\"isActive\"]");
+    private By isActiveCheckbox = By.id("isActive");
     private By isWeightageBasedCheckbox = By.xpath("//input[@id=\"isWeightageBased\"]");
     private By submitButton = By.xpath("//button[@id=\"submit_btn_action\"]");
 
@@ -39,7 +42,7 @@ public class addGoalPlan {
     public void addGoalPlan1(String goalPlanName, String empGroup,String RatingScale) throws InterruptedException 
     {
         JavascriptExecutor Srollup = (JavascriptExecutor) driver;
-        Srollup.executeScript("window.scrollBy(0,1500)");
+        Srollup.executeScript("window.scrollBy(0,1600)");
         Thread.sleep(2000);
         driver.findElement(goalPlanManagementLink).click();
         Thread.sleep(2000);
@@ -85,8 +88,9 @@ public class addGoalPlan {
         Thread.sleep(2000);
         driver.findElement(empGroupField).sendKeys(empGroup);
         Thread.sleep(3000);
-        
-        
+
+
+
         WebElement element = driver.findElement(By.cssSelector("span.name"));
         if (element.getText().contains(empGroup)) {
         	
@@ -94,6 +98,7 @@ public class addGoalPlan {
             element.click();
         }
         Thread.sleep(2000);
+
         
 //        String empgruop = driver.findElement(By.xpath("//*[@id=\"selectGroupDropDiv\"]/div/div/div[1]/div/span/span")).getText();
 //        if (empgruop != empGroup) 
@@ -103,12 +108,17 @@ public class addGoalPlan {
 //        Thread.sleep(2000);
 //        }
 
-        driver.findElement(isActiveCheckbox).click();
-        Thread.sleep(1000);
-
         Thread.sleep(2000);
         driver.findElement(isWeightageBasedCheckbox).click();
         Thread.sleep(2000);
+
+        Srollup2.executeScript("window.scrollBy(0,1500)");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebElement enabled = wait.until(ExpectedConditions.visibilityOfElementLocated(isActiveCheckbox));
+        System.out.println(enabled);
+//        driver.findElement(isActiveCheckbox).click();
+        Thread.sleep(1000);
+
    
         driver.findElement(submitButton).click();
         Thread.sleep(5000);
