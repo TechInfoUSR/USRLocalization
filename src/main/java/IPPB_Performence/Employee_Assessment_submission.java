@@ -127,7 +127,7 @@ public class Employee_Assessment_submission {
   	  
 		public void selectGoalCycle() throws InterruptedException 
         {
-			Thread.sleep(5000);
+			Thread.sleep(6000);
         //  FOR Clicking on Drop down  
             WebElement elements = driver.findElement(By.xpath("(//div[@class=\"card list-view-card\"])[1]")); 
             // Use JavaScriptExecutor to click on the element

@@ -1,10 +1,20 @@
 package IPPB_Performence;
 
+import static org.testng.Assert.assertEquals;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,32 +24,75 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Manager_Assessment_submission {
 
-	
-	
 	 private WebDriver driver;
      private Properties prop;
+     String EmpName;
+     
      public Manager_Assessment_submission(WebDriver driver, Properties prop) 
      {
          this.driver = driver;
          this.prop = prop;
      }
      
+ public void DataReader() throws IOException, InterruptedException {
+		
+    	 
+		 String excelFilePath = ".\\DataFolder\\IPPB_Manager_Select_EMP.xlsx";
+
+	        // Create a FileInputStream to read from the Excel file
+	        FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
+
+	        XSSFWorkbook workbook1 = new XSSFWorkbook(inputStream);
+	        XSSFSheet sheet = workbook1.getSheetAt(0); // Assuming first sheet, index starts at 0
+	       
+	        int rows = sheet.getLastRowNum();
+           int cols = sheet.getRow(0).getLastCellNum();
+	        
+           DataFormatter formatter = new DataFormatter();
+
+
+	        for (int r = 1; r <= rows; r++) {
+               XSSFRow row = sheet.getRow(r);
+               if (row == null) {
+                   continue; // Skip empty rows
+               }
+
+               
+               // Iterate through each cell in the row
+               for (int c = 0; c < cols; c++) 
+               {
+                   XSSFCell cell = row.getCell(c);
+                
+				switch(c)
+                   {
+                   case 0: String EmpName1 = formatter.formatCellValue(cell); 
+                   EmpName = EmpName1;
+                   System.out.print(" "+ EmpName + "\t"); break;  
+                   
+                   }                   
+               }
+
+               selectGoalCycle(EmpName);
+               
+               System.out.println(); // Move to the next line after each row
+           }
+
+	        // Close the workbook and input stream
+	        workbook1.close();
+	        inputStream.close();
+	
+	}
      
-     public void selectGoalCycle() throws InterruptedException 
-     {
-  	   String cycleName = prop.getProperty("GoalPalnName");
+     
+     
+     
+     
+     public void selectGoalCycle(String Emp_name) throws InterruptedException 
+     { 	   
   	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-  	    WebElement dropdownToggle = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='dropdown-toggle']")));
-  	    dropdownToggle.click();
-
-  	    // Click on cycle name
-  	    WebElement cycleElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'" + cycleName + "')]")));
-  	    cycleElement.click();
-
-  	    String empname = prop.getProperty("empname");
-  	    if (empname != null && !empname.isEmpty()) {
-  	        WebElement empElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'" + empname + " ')]")));
+  	    if (Emp_name != null && !Emp_name.isEmpty()) {
+  	        WebElement empElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'"+Emp_name+"')]")));
   	        empElement.click();
   	    } else {
   	        throw new IllegalArgumentException("Employee name property is not set or empty.");
@@ -48,9 +101,7 @@ public class Manager_Assessment_submission {
           WebElement element = driver.findElement(By.xpath("(//div[@class=\"card list-view-card\"])[1]")); 
           JavascriptExecutor executor = (JavascriptExecutor) driver;
           executor.executeScript("arguments[0].click();", element);
-          
-         
-          
+ 
           WebElement listContainer  = driver.findElement(By.id("categ105"));
 
           List<WebElement> noofGoals =listContainer.findElements(By.xpath("//ul[@class=\"flex flex-btn py-1 onhover-section ng-scope\"]"));
@@ -62,15 +113,9 @@ public class Manager_Assessment_submission {
         	    Random random = new Random();
           	int randomNumber = random.nextInt(100) + 1;
 
-          	System.out.println("Random number between 1 and 100: " + randomNumber);
-          
           	updateProgressBar(driver, "(//input[@type=\"range\"])[1]", randomNumber);
        		Thread.sleep(1000);
-       		String Employee_cmt = "EmpCmt";
-       		String Employee_comment =Employee_cmt + i;
-            EmployeeComment(driver,"//*[@id=\"categ105\"]/ul/li[4]/div/div[2]/img",Employee_comment, "(//a[contains(text(), 'Review Comments')])[2]");
-            Thread.sleep(1000);
-            
+        
             WebElement element1 = driver.findElement(By.xpath("(//a[@class=\"btn checkin-btn block-btn subAssessmentButton\"])[1]"));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
             element1.click();
@@ -85,8 +130,11 @@ public class Manager_Assessment_submission {
             By OkBtn = (By.xpath("//button[contains(text(),'OK')]"));
             WebElement OKbtn = wait.until(ExpectedConditions.visibilityOfElementLocated(OkBtn));
             OKbtn.click();
-            Thread.sleep(1000); 
+            Thread.sleep(2000); 
             
+            WebElement Click_TEAM_PMS = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@src=\"pmsGE/images/svg/team.svg\"]")));
+            Click_TEAM_PMS.click();
+      
             
           } 
      }   
@@ -106,26 +154,7 @@ public class Manager_Assessment_submission {
 
 
 	    }
-    	  private static void EmployeeComment(WebDriver driver, String cssSelector, String Empcmt, String ReviewBTN) throws InterruptedException 
-    	  { 
-    		  driver.findElement(By.xpath(cssSelector)).click();
-    		  Thread.sleep(500);
-    		  driver.findElement(By.xpath(ReviewBTN)).click();
-    		  Thread.sleep(1000);
-    		  String goal_comments1 = "goal_comments1";  
-    		  
-    		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
-          By is = (By.id(goal_comments1));
-          WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(is));
-          element.sendKeys("MGR CMT");;
-          
-//    		  driver.findElement(By.id(goal_comments1)).sendKeys(Empcmt);
 
-    		  driver.findElement(By.xpath("(//button[@class=\"btn btn-default btn-cs mt-1 ng-binding\"])[1]")).click();
- 
-    		  driver.findElement(By.xpath("//button[@ng-init=\"fetchTranslations('mgrGoalComments.l6');\" and contains(text(),'Close')]")).click();
-    		  Thread.sleep(1000);
-    	  }
   	  public String isSelfsub() throws InterruptedException {
   		  Thread.sleep(5000);
   		 return driver.findElement(By.xpath("//span[contains(text(),'Manager Review Completed')]")).getText();

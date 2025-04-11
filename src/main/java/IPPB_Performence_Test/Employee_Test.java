@@ -33,7 +33,7 @@ public class Employee_Test
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
         addGoalPlan = new addGoalPlan(driver);
-        addGoalPlan.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));
+//        addGoalPlan.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));
 
         Employee_Assessment_submission = new Employee_Assessment_submission(driver, prop);
     
