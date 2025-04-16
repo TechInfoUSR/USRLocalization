@@ -1,6 +1,6 @@
 package NormalFlowForEmployee;
 
-import java.time.Duration; // For Selenium 4
+import java.time.Duration; 
 import java.util.List;
 import java.util.Properties;
 import java.util.Random;
@@ -65,27 +65,27 @@ public class manager_Sumitt_Assesment_To_Skip {
             	System.out.println("Random number between 1 and 100: " + randomNumber);
             
             	updateProgressBar(driver, "(//input[@type=\"range\"])[1]", randomNumber);
-         		Thread.sleep(1000);
+//         		Thread.sleep(1000);
          		String Employee_cmt = "EmpCmt";
          		String Employee_comment =Employee_cmt + i;
               EmployeeComment(driver,"//*[@id=\"categ105\"]/ul/li[4]/div/div[2]/img",Employee_comment, "(//a[contains(text(), 'Review Comments')])[2]");
-              Thread.sleep(1000);
+//              Thread.sleep(1000);
               
               WebElement element1 = driver.findElement(By.xpath("(//a[@class=\"btn checkin-btn block-btn subAssessmentButton\"])[1]"));
               ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
               element1.click();
 
 
-              Thread.sleep(1000);
+//              Thread.sleep(1000);
               driver.findElement(By.xpath("(//textarea[@id=\"goal_checkin_commentsa\"])[2]")).sendKeys("MgrCMT");
-              Thread.sleep(200);
+//              Thread.sleep(200);
               driver.findElement(By.xpath("//button[@ng-click=\"submitPerformanceForAuthorizeApprove()\"]")).click();
               
  
               By OkBtn = (By.xpath("//button[contains(text(),'OK')]"));
               WebElement OKbtn = wait.until(ExpectedConditions.visibilityOfElementLocated(OkBtn));
               OKbtn.click();
-              Thread.sleep(1000); 
+//              Thread.sleep(1000); 
               
               
             } 
@@ -109,9 +109,9 @@ public class manager_Sumitt_Assesment_To_Skip {
       	  private static void EmployeeComment(WebDriver driver, String cssSelector, String Empcmt, String ReviewBTN) throws InterruptedException 
       	  { 
       		  driver.findElement(By.xpath(cssSelector)).click();
-      		  Thread.sleep(500);
+//      		  Thread.sleep(500);
       		  driver.findElement(By.xpath(ReviewBTN)).click();
-      		  Thread.sleep(1000);
+//      		  Thread.sleep(1000);
       		  String goal_comments1 = "goal_comments1";  
       		  
       		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
@@ -124,10 +124,10 @@ public class manager_Sumitt_Assesment_To_Skip {
       		  driver.findElement(By.xpath("(//button[@class=\"btn btn-default btn-cs mt-1 ng-binding\"])[1]")).click();
    
       		  driver.findElement(By.xpath("//button[@ng-init=\"fetchTranslations('mgrGoalComments.l6');\" and contains(text(),'Close')]")).click();
-      		  Thread.sleep(1000);
+//      		  Thread.sleep(1000);
       	  }
     	  public String isSelfsub() throws InterruptedException {
-    		  Thread.sleep(5000);
+//    		  Thread.sleep(5000);
     		 return driver.findElement(By.xpath("//span[contains(text(),'Manager Review Completed')]")).getText();
     	  }
  

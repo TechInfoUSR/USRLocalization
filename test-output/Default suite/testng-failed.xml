@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="IPPB_Performence_Test.Manager_Test">
+      <class name="normalFlowTest.Delete_Goal_Plan_and_PMS_Cycle__Test">
         <methods>
+          <include name="DeletionodGoalPlan"/>
+          <include name="teardown"/>
           <include name="tearDown"/>
+          <include name="DeletionofPMS"/>
           <include name="setUp"/>
-          <include name="Manager_Assesmentsubmitto_Skip"/>
         </methods>
-      </class> <!-- IPPB_Performence_Test.Manager_Test -->
+      </class> <!-- normalFlowTest.Delete_Goal_Plan_and_PMS_Cycle__Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -67,7 +67,7 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
 	public void DeletionGoalPlan() throws InterruptedException 
 	{
 		driver.findElement(By.xpath("//a[contains(text(),'Goal Plan')]")).click();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		String GoalPlanName = prop.getProperty("GoalPalnName");
         WebElement tbody = driver.findElement(By.cssSelector("tbody[role='alert']"));
         List<WebElement> rows = tbody.findElements(By.tagName("tr"));

@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,8 +18,9 @@ public class manager_AddGoals
     
         private WebDriver driver;
         private Properties prop;
+        ExplicitWait ExplicitWait;
+        
 
-        // Locators for elements on the EmployeeSelfPage
         private By avatarIcon = By.xpath("//a[@class='avatar-sec header-icon']");
         private By employeeName = By.xpath("(//h5[@class='ma-0'])[2]");
         private By dropdownToggle = By.xpath("//a[@class='dropdown-toggle']");
@@ -46,15 +48,13 @@ public class manager_AddGoals
         {
             driver.findElement(avatarIcon).click();
             driver.findElement(employeeName).click();
-            Thread.sleep(2000);
         }
 
         public void selectGoalCycle(String cycleName) throws InterruptedException 
         {
             driver.findElement(dropdownToggle).click();
-            Thread.sleep(2000);
             driver.findElement(goalCycleLink(cycleName)).click();
-            Thread.sleep(1000);
+            
         }
 
         public void openEmployeeAssessment() throws InterruptedException 
@@ -62,29 +62,11 @@ public class manager_AddGoals
         
         	String empname = prop.getProperty("empname");
             driver.findElement(By.xpath("//span[contains(text(),'"+empname+" ')]")).click();
-            Thread.sleep(5000);
-            
-//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"s-tab01\"]/div/div[2]/div[3]/a[2]")));
-//            element.click();
-//            driver.findElement(goalAction).click();
-
-//driver.findElement(By.xpath("(//img[@src=\"pmsGE/images/icons/add.svg\"])[1]")).click();
-            
-//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-//            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@src=\"pmsGE/images/icons/add.svg\"])[1]")));
-//            if (element.isDisplayed() && element.isEnabled()) {
-//            	Thread.sleep(1000);
-//                element.click(); // or perform other actions
-//            }
-//            else
-//            	element.click();
-            
-            
             
             
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@src='pmsGE/images/icons/add.svg'])[1]")));
+            By element1 =  By.xpath("(//img[@src='pmsGE/images/icons/add.svg'])[1]");
+            WebElement element = ExplicitWait.waitForElementVisiblity(element1);
 
             while (true) {
                 try {
@@ -104,12 +86,6 @@ public class manager_AddGoals
                 Thread.sleep(1000); // Small delay before retrying
             }
 
-
-            
-//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"s-tab01\"]/div/div[2]/div[3]/a[2]")));
-//            element.click(); // or other actions
-
             
             
             Thread.sleep(2000);
@@ -123,13 +99,8 @@ public class manager_AddGoals
         	String description = prop.getProperty("Description");
         	String weight = prop.getProperty("Weight");
         	  
-//            	driver.findElement(goalTitle).click();
-            Thread.sleep(1000);              
-     	
             driver.findElement(goalTitle).sendKeys(goalName);
-            Thread.sleep(100);
             driver.findElement(goalCategoryField).click();
-            Thread.sleep(500);
             List<WebElement> Catcount = driver.findElements(By.xpath("//li[@aria-selected=\"false\"]"));
      
             int numberOfQuestions = Catcount.size();
@@ -137,38 +108,20 @@ public class manager_AddGoals
                
             System.out.println(Catcount);
                 
-//             String ActualTest = driver.findElement(goalTitle).getText();
 	           for(int i=1;i<=numberOfQuestions;i++) 
 	           {
 	            	  String ActualTest = driver.findElement(By.xpath("//li[@aria-selected=\"false\"]["+i+"]")).getText();
-//	            	  Thread.sleep(10);       	 
-//	                  System.out.println(ActualTest);
+	            	  
 	                if (ActualTest.equals(goalCategory) ) 
 	                {
 	                	System.out.println("Act"+ActualTest);
 	                	driver.findElement(By.xpath("//li[@aria-selected=\"false\" and contains(text(),'')]["+i+"] ")).click();
-	//                  driver.findElement(By.xpath("//li[@class=\"select2-results__option select2-results__option--selectable\" and contains(text(),'"+goalCategory+"')]")).click();
-	                	Thread.sleep(500);
 	                	break;
 	                }
 	            }
-//              driver.findElement(By.xpath("//input[@class='select2-search__field']")).sendKeys(goalCategory);
-//              Thread.sleep(500);
-//              driver.findElement(By.xpath("//li[contains(text(),'OKRs') and @role=\"option\"] [3]")).click();
-//              Thread.sleep(500);
                 driver.findElement(By.xpath("//a[@data-target=\"#second\"]")).click();
-                Thread.sleep(500);
                 driver.findElement(descriptionField).sendKeys(description);
-                Thread.sleep(500);
-//              JavascriptExecutor Srollup1 = (JavascriptExecutor) driver;
-//              Srollup1.executeScript("window.scrollBy(0,1000)");
                 driver.findElement(toggleMetric).click();
-                Thread.sleep(1000);
-//              driver.findElement(kpiSuccess).click();
-//              driver.findElement(currentMetric).click();              
-//              driver.findElement(toggleMetric).click();                  
-//              WebElement ele = driver.findElement(weightField);
-//              Srollup1.executeScript("arguments[0].srollIntoView();", ele);
                 
             	WebElement rangeInput = driver.findElement(toggleMetric); 
                 JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
@@ -177,18 +130,22 @@ public class manager_AddGoals
                 jsExecutor.executeScript("arguments[0].scrollIntoView(true);", childwin);
  
                 driver.findElement(weightField).sendKeys(weight);
-                Thread.sleep(500);
-                driver.findElement(CreateBTN).click();
-                Thread.sleep(1000);
-                
+            	WebElement element = ExplicitWait.waitForElementVisiblity(CreateBTN);
+            	element.click();
             }
+        
         public boolean isGoalAdded() throws InterruptedException 
         {
-        	By is = By.xpath("//div[contains(text(),'Saved goal successfully')]");
-     	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(is));
-           
-     	return element.isDisplayed();
+//        	Thread.sleep(30000);
+        	 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        	    By messageLocator = By.xpath("//div[contains(text(),'Saved goal successfully')]");
+        	    
+        	    try {
+        	        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(messageLocator));
+        	        return element.isDisplayed(); 
+        	    } catch (TimeoutException e) {
+        	        return false;
+        	    }
         }
         
 }

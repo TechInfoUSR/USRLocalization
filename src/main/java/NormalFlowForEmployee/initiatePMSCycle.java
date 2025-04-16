@@ -4,10 +4,11 @@ import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class initiatePMSCycle 
 {
-
+	    ExplicitWait ExplicitWait;
 	    private WebDriver driver;
 	    private Properties prop;
 
@@ -36,16 +37,16 @@ public class initiatePMSCycle
 	    public void goToWeightTab(String group, String AddPMSCyle) throws InterruptedException 
 	    {
 	    	driver.findElement(By.xpath("//span[contains(text(),'"+AddPMSCyle+"')]")).click();
-			Thread.sleep(1000);
+//			Thread.sleep(1000);
 	        driver.findElement(tabWeightTab).click();
-	        Thread.sleep(500);
+//	        Thread.sleep(500);
 	        driver.findElement(addNewRowLink).click();
-	        Thread.sleep(500);
+//	        Thread.sleep(500);
 	        driver.findElement(selectGroupDropdown).click();
 	        driver.findElement(groupSearchField).sendKeys(group);
-	        Thread.sleep(500);
+//	        Thread.sleep(500);
 	        driver.findElement(By.xpath("//div[contains(text(),'"+group+"')]")).click();
-	        Thread.sleep(2000);
+//	        Thread.sleep(2000);
 
 	    }
 //	    public void enterWeightages(String objective, String coreValue, String jobCompetency, String behavior, String leadership) throws InterruptedException 
@@ -56,13 +57,13 @@ public class initiatePMSCycle
 	        driver.findElement(jobCompetencyWeightageField).sendKeys("0");
 	        driver.findElement(behaviorWeightageField).sendKeys("0");
 	        driver.findElement(leadershipWeightageField).sendKeys("0");
-
-	        driver.findElement(insertButton).click();
-	    	Thread.sleep(5000);
-	        driver.findElement(initiateReviewCycleButton).click();
-	        Thread.sleep(2000);
-	        driver.findElement(okButton).click();
-	        Thread.sleep(500);
+	        
+	       WebElement InsertBTN = ExplicitWait.waitForElementVisiblity(insertButton);
+	       InsertBTN.click();
+	       WebElement initReviewCycleButton = ExplicitWait.waitForElementVisiblity(initiateReviewCycleButton);
+	       initReviewCycleButton.click();
+	       WebElement OkBTN = ExplicitWait.waitForElementVisiblity(okButton);
+	       OkBTN.click();
 	       
 	    }
 	    //Not working due to a minor bug

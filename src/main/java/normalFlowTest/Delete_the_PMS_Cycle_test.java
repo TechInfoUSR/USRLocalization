@@ -40,14 +40,14 @@ public class Delete_the_PMS_Cycle_test {
     @Test
     void DeletionOfEmp_FromCycle() throws InterruptedException {
     	Delete_the_PMS_Cycle.Deletion();
-//    	boolean isdeleted = Delete_the_PMS_Cycle.isDeleted();
-//    	assertTrue(isdeleted,"working fine");
+    	boolean isdeleted = Delete_the_PMS_Cycle.isDeleted();
+    	assertTrue(isdeleted,"working fine");
     	
     }
     
-    @AfterClass
-    void teardown() {
-    	driver.quit();
-    }
+//    @AfterClass
+//    void teardown() {
+//    	driver.quit();
+//    }
     
 }

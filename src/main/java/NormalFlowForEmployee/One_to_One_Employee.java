@@ -25,21 +25,19 @@ public class One_to_One_Employee {
     	  
       public void selectGoalCycle(String cycleName) throws InterruptedException 
       {
-	
-		  driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
 	      driver.findElement(dropdownToggle).click();
 	      driver.findElement(By.xpath("//a[contains(text(),'"+cycleName+"')]")).click();
 	//      driver.findElement(goalCycleLink(cycleName)).click();
-	      driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	      driver.findElement(By.xpath("//span[@class=\"ml-4\"]")).click();
-	      Thread.sleep(1000);
+//	      Thread.sleep(1000);
 	      driver.findElement(By.xpath("//a[@ng-click=\"submitEmployeeAckowledgement()\"][1]")).click();
-	      Thread.sleep(2000);
+//	      Thread.sleep(2000);
 	      driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
 //	      Thread.sleep(500);
       }
       public String isSelfsub() throws InterruptedException {
-    	  Thread.sleep(600);
+//    	  Thread.sleep(600);
  		 return driver.findElement(By.xpath("//div[contains(text(),'Submitted successfully')]")).getText();
  	  }
 }

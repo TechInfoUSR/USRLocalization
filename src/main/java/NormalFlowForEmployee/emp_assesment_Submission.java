@@ -42,7 +42,7 @@ public class emp_assesment_Submission {
               By cycleName1 = (By.xpath("//a[contains(text(),'"+cycleName+"')]"));
               WebElement element1 = wait.until(ExpectedConditions.visibilityOfElementLocated(cycleName1));
               element1.click();
-              Thread.sleep(5000);
+//              Thread.sleep(5000);
 //              driver.findElement(goalCycleLink(cycleName)).click();
               driver.findElement(By.xpath("//span[@class=\"ml-4\"]")).click();
                          
@@ -52,7 +52,7 @@ public class emp_assesment_Submission {
               // Use JavaScriptExecutor to click on the element
               JavascriptExecutor executor = (JavascriptExecutor) driver;
               executor.executeScript("arguments[0].click();", elements);
-              Thread.sleep(1000);
+//              Thread.sleep(1000);
             
      
               WebElement listContainer  = driver.findElement(By.id("categ105"));
@@ -67,18 +67,18 @@ public class emp_assesment_Submission {
               	System.out.println("Random number between 1 and 100: " + randomNumber);
               
               	updateProgressBar(driver, "(//input[@type=\"range\"])[1]", randomNumber);
-           		Thread.sleep(5000);
+//           		Thread.sleep(5000);
            		String Employee_cmt = "EmpCmt";
            		String Employee_comment =Employee_cmt + i;
                 EmployeeComment(driver,"(//div[@class=\"dropdown\"])[2]",Employee_comment, "(//a[@class=\"view-link mt-h cs-modal-btn ng-binding ng-scope\"]) [("+i+")]");
-                Thread.sleep(1000);
+//                Thread.sleep(1000);
               }
            driver.findElement(By.xpath("//*[@id=\"s-tab01\"]/div/div[2]/div[3]/div/a")).click();
            Thread.sleep(1000); 
            WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30)); // Wait for up to 30 seconds
            WebElement okButton = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-bb-handler=\"confirm\"]")));
            okButton.click();
-           Thread.sleep(1000);
+//           Thread.sleep(1000);
            
           }
     	  private static void updateProgressBar(WebDriver driver, String cssSelector, int progress) 
@@ -111,9 +111,9 @@ public class emp_assesment_Submission {
     	  private static void EmployeeComment(WebDriver driver, String cssSelector, String Empcmt, String ReviewBTN) throws InterruptedException 
     	  { 
     		  driver.findElement(By.xpath(cssSelector)).click();
-    		  Thread.sleep(500);
+//    		  Thread.sleep(500);
     		  driver.findElement(By.xpath(ReviewBTN)).click();
-    		  Thread.sleep(500);
+//    		  Thread.sleep(500);
     		  String goal_comments1 = "goal_comments1";
     		  
     		  By CMT = By.id(goal_comments1);
@@ -131,10 +131,10 @@ public class emp_assesment_Submission {
        	      element2.click();
     		
     		  
-    		  Thread.sleep(1000);
+//    		  Thread.sleep(1000);
     	  }
     	  public String isSelfsub() throws InterruptedException {   	
-    		  Thread.sleep(2000);
+//    		  Thread.sleep(2000);
     		  WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30)); // Wait for up to 30 seconds
               WebElement okButton = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Self Review Completed')]")));
               okButton.getText();

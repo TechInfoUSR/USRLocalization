@@ -76,7 +76,7 @@ public class Employee_Assessment_submission {
                    login(EmpUN,Emppass);
                    
                    
-                   System.out.print(" "+ Emppass + "\t");break;      
+                   System.out.print(" "+ Emppass +" "+ r + "\t");break;      
                    
                    }
                    
@@ -127,7 +127,11 @@ public class Employee_Assessment_submission {
   	  
 		public void selectGoalCycle() throws InterruptedException 
         {
-			Thread.sleep(6000);
+			 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//			 WebElement empElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class=\"card list-view-card\"])[1]")));
+//	  	        empElement.();
+			
+			Thread.sleep(7000);
         //  FOR Clicking on Drop down  
             WebElement elements = driver.findElement(By.xpath("(//div[@class=\"card list-view-card\"])[1]")); 
             // Use JavaScriptExecutor to click on the element

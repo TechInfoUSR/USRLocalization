@@ -1,6 +1,8 @@
 package Factory;
 
+import java.time.Duration;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,36 +13,36 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
 
-	
-		public WebDriver driver;
+	public WebDriver driver;
 
-		public WebDriver initDriver(String browserName, Properties prop) {
+	public WebDriver initDriver(String browserName, Properties prop) {
 
-			System.out.println("browser name is : " + browserName);
-			switch (browserName.toLowerCase()) {
-			case "chrome":
-//				WebDriverManager.chromedriver().setup();
-//				System.setProperty("webdriver.chrome.driver", "./Soft/chromedriver.exe");
-				driver = new ChromeDriver();
-				break;
-			case "firefox":
-				WebDriverManager.firefoxdriver().setup();
-				driver = new FirefoxDriver();
-				break;
-			case "safari":
-				driver = new SafariDriver();
-				break;
+		System.out.println("browser name is : " + browserName);
+		switch (browserName.toLowerCase()) {
 
-			default:
-				System.out.println("plz pass the right browser name.... " + browserName);
-				break;
-			}
+		case "chrome":
+			driver = new ChromeDriver();
+			break;
+		case "firefox":
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+			break;
+		case "safari":
+			driver = new SafariDriver();
+			break;
 
-			driver.get(prop.getProperty("url"));
-			driver.manage().deleteAllCookies();
-			driver.manage().window().maximize();
-			return driver;
-
+		default:
+			System.out.println("plz pass the right browser name.... " + browserName);
+			break;
 		}
 
+		driver.get(prop.getProperty("url"));
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		return driver;
+
 	}
+
+}

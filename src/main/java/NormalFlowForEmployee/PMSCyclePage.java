@@ -29,12 +29,12 @@ public class PMSCyclePage
 	    {
 	        driver.findElement(performanceReviewCycleLink).click();
 	        driver.findElement(addButton).click();
-	        Thread.sleep(2000);
+//	        Thread.sleep(2000);
 	        driver.findElement(goalPlanDropdown).click();
 	        WebElement selectGoalPlan = driver.findElement(goalPlanDropdown);
 	        Select select_goalplan = new Select(selectGoalPlan);
 	        select_goalplan.selectByVisibleText(prop.getProperty("GoalPalnName"));
-	        Thread.sleep(2000);
+//	        Thread.sleep(2000);
 
 	        driver.findElement(ratingScaleField).click();
 	        driver.findElement(ratingScaleField).sendKeys(prop.getProperty("RatingScale"));
@@ -57,23 +57,23 @@ public class PMSCyclePage
 	        
 	        
 	        driver.findElement(By.xpath("//td[@class='day' and text()='"+Third_Month_DATE+"']")).click();
-	        Thread.sleep(2000);
+//	        Thread.sleep(2000);
 
 	        driver.findElement(toDatePicker).click();
-	        Thread.sleep(500);
+//	        Thread.sleep(500);
 
 //	        while (!driver.findElement(By.xpath("//th[@class=\"datepicker-switch\"]")).getText().equals("June 2025"))
 	        while (!driver.findElement(By.xpath("//th[@class=\"datepicker-switch\"]")).getText().equals(Third_Month_Year)) 
 	        {
 	            driver.findElement(By.xpath("//th[@class=\"next\"]")).click();
-	            Thread.sleep(100);
+//	            Thread.sleep(100);
 	        }                           
 //	        driver.findElement(By.xpath("/html/body/div[3]/div[1]/table/tbody/tr[3]/td[1]")).click();
 	        driver.findElement(By.xpath("//td [contains(text(),'"+Third_Month_DATE+"') and @class=\"day\"]")).click();
-	        Thread.sleep(1000);
+//	        Thread.sleep(1000);
 	    	driver.findElement(By.xpath("//div[@class=\"modal-footer\"]")).click();
 	        driver.findElement(saveButton).click();
-	        Thread.sleep(1000);
+//	        Thread.sleep(1000);
 	    }
 
 	    public String isPMSCycleDisplayed() 

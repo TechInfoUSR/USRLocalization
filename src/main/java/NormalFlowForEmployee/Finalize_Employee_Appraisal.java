@@ -29,23 +29,23 @@ public class Finalize_Employee_Appraisal
     public void selectGoalCycle(String cycleName) throws InterruptedException 
     {
         driver.findElement(dropdownToggle).click();
-        Thread.sleep(2000);
+//        Thread.sleep(2000);
         driver.findElement(goalCycleLink(cycleName)).click();
-        Thread.sleep(1000);
+//        Thread.sleep(1000);
     }
     public void navigateToEmployeeSelf() throws InterruptedException {
         
     	String employeeName= prop.getProperty("empname");
         driver.findElement(By.xpath("//span[contains(text(),'"+employeeName+"')]")).click();
     	
-        Thread.sleep(2000);
+//        Thread.sleep(2000);
         driver.findElement(By.xpath("//textarea[@class=\"form-control finalize_appraisal_meeting\"][1]")).sendKeys("5% Hike will be provided");
-        Thread.sleep(2000);
+//        Thread.sleep(2000);
         driver.findElement(By.xpath("(//a[contains(text(),'Finalize Employee Appraisal')])[1]")).click();
-        Thread.sleep(5000);
+//        Thread.sleep(5000);
     }
     public String isSelfsub() throws InterruptedException {
-		  Thread.sleep(4000);
+//		  Thread.sleep(4000);
 		 return driver.findElement(By.xpath("//span[contains(text(),'Finalized')]")).getText();
 	  }
 }
