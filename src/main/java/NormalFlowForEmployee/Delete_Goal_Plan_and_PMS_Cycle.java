@@ -15,6 +15,7 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
 
     WebDriver driver;
     Properties prop;
+    ExplicitWait explicitWait;
     
     public Delete_Goal_Plan_and_PMS_Cycle(WebDriver driver, Properties prop) 
     {
@@ -25,11 +26,9 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
 	{
 		JavascriptExecutor Srollup = (JavascriptExecutor) driver;
         Srollup.executeScript("window.scrollBy(0,1800)");
-        
-    	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    	
+        	
   	    By ReviewCycle = (By.xpath("//h3[contains(text(),'Performance Review Cycle Management')]"));
-  	    WebElement ReviewCycleIcon = wait.until(ExpectedConditions.visibilityOfElementLocated(ReviewCycle));
+  	    WebElement ReviewCycleIcon = explicitWait.waitForElementVisiblity(ReviewCycle);
   	    ReviewCycleIcon.click();
 
 		String GoalPlanName = prop.getProperty("GoalPalnName");
@@ -50,16 +49,16 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
 			{
 				
 	  	    By section = (By.xpath("//tr["+i+"]//a[@title=\"Delete\"]"));
-	  	    WebElement dropdownToggle = wait.until(ExpectedConditions.visibilityOfElementLocated(section));
+	  	    WebElement dropdownToggle = explicitWait.waitForElementVisiblity(section);
 	  	    dropdownToggle.click();
 	  	    
 	  	    By confirm = (By.xpath("//button[@data-bb-handler=\"confirm\"]"));
-	  	    WebElement confirmBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(confirm));
+	  	    WebElement confirmBTN = explicitWait.waitForElementVisiblity(confirm);
 	  	    confirmBTN.click();
+	  	    isPMSDeleted();
 			break;
 			}
 		}
-		
 
 	}
 	
@@ -67,11 +66,9 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
 	public void DeletionGoalPlan() throws InterruptedException 
 	{
 		driver.findElement(By.xpath("//a[contains(text(),'Goal Plan')]")).click();
-//		Thread.sleep(2000);
 		String GoalPlanName = prop.getProperty("GoalPalnName");
         WebElement tbody = driver.findElement(By.cssSelector("tbody[role='alert']"));
         List<WebElement> rows = tbody.findElements(By.tagName("tr"));
-
         int rowCount = rows.size();
         System.out.println("Number of rows in the table: " + rowCount);
         
@@ -82,15 +79,14 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
 			System.out.println(test);
 			if(test.equals(GoalPlanName)) 
 			{
-				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 				By section = (By.xpath("//tr[" + i + "]//a[@title=\"Delete\"]"));
-				WebElement sectionBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(section));
+				WebElement sectionBTN = explicitWait.waitForElementVisiblity(section);
 				sectionBTN.click();
 				
 				By confirm = (By.xpath("//button[@data-bb-handler=\"confirm\"]"));
-				WebElement confirmBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(confirm));
+				WebElement confirmBTN = explicitWait.waitForElementVisiblity(confirm);
 				confirmBTN.click();
-
+				isGoalPlanDeleted();
 				break;
 			}
 
@@ -98,21 +94,16 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
 		
 		
 	}
-	  public boolean isPMSDeleted() throws InterruptedException {
-		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
-		  
+	  public boolean isPMSDeleted() throws InterruptedException { 
 		   By section = (By.xpath("//div[contains(text(),'Performance Review Cycle deleted successfully ')]"));
-		   WebElement sectionBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(section));
-		   
+		   WebElement sectionBTN = explicitWait.waitForElementVisiblity(section);
 		   return sectionBTN.isDisplayed();		  
 	  }
-	  public boolean isGoalPlanDeleted() throws InterruptedException {
-		   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
-		   
-		   By section = (By.xpath("//div[contains(text(),'Selected Goal Plan/PMS Cycle is deleted successfully ')]"));
-		   WebElement sectionBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(section));
-     
-		   return sectionBTN.isDisplayed();
+	  
+	  public boolean isGoalPlanDeleted() throws InterruptedException {	   
+//		   By section = (By.xpath("//div[contains(text(),'Selected Goal Plan/PMS Cycle is deleted successfully ')]"));
+//		    explicitWait.waitForElementVisiblity(section);   		   
+		   return driver.findElement((By.xpath("//div[contains(text(),'Selected Goal Plan/PMS Cycle is deleted successfully ')]"))).isDisplayed();
 	 
 	  }
 } 

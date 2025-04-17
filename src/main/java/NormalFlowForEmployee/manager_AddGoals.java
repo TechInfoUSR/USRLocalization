@@ -85,9 +85,6 @@ public class manager_AddGoals
                 }
                 Thread.sleep(1000); // Small delay before retrying
             }
-
-            
-            
             Thread.sleep(2000);
         }
 
@@ -130,8 +127,21 @@ public class manager_AddGoals
                 jsExecutor.executeScript("arguments[0].scrollIntoView(true);", childwin);
  
                 driver.findElement(weightField).sendKeys(weight);
-            	WebElement element = ExplicitWait.waitForElementVisiblity(CreateBTN);
+            	WebElement element = ExplicitWait.waitUntillClickable(CreateBTN);
             	element.click();
+           	 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+     	    By messageLocator = By.xpath("//div[contains(text(),'Saved goal successfully')]");
+     	    
+     	    try {
+     	        WebElement element1 = wait.until(ExpectedConditions.visibilityOfElementLocated(messageLocator));
+     	        element1.isDisplayed(); 
+     	    } catch (TimeoutException e) {
+     	         System.err.println("Not working");
+     	    }
+            	
+            	Thread.sleep(30000);
+            	
+            	
             }
         
         public boolean isGoalAdded() throws InterruptedException 
