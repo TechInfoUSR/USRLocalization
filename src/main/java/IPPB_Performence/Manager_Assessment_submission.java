@@ -95,7 +95,7 @@ public class Manager_Assessment_submission {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);
 
-		WebElement listContainer = driver.findElement(By.id("categ105"));
+		WebElement listContainer = driver.findElement(By.id("categ1"));
 
 		List<WebElement> noofGoals = listContainer
 				.findElements(By.xpath("//ul[@class=\"flex flex-btn py-1 onhover-section ng-scope\"]"));

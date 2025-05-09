@@ -21,7 +21,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import NormalFlowForEmployee.addGoalPlan;
+
+import normalFlow_BaseClasses.addGoalPlan;
 
 public class Employee_Assessment_submission {
 
@@ -139,8 +140,8 @@ public class Employee_Assessment_submission {
             executor.executeScript("arguments[0].click();", elements);
             Thread.sleep(2000);
           
-   
-            WebElement listContainer  = driver.findElement(By.id("categ105"));
+   // Categ number should be chnaged baded on Category
+            WebElement listContainer  = driver.findElement(By.id("categ1"));
 
             List<WebElement> noofGoals =listContainer.findElements(By.xpath("//ul[@class=\"flex flex-btn py-1 onhover-section ng-scope\"]"));
             int NoofGoal = noofGoals.size();
@@ -176,8 +177,8 @@ public class Employee_Assessment_submission {
           WebElement progressText = driver.findElement(By.cssSelector(".risk"));
           jsExecutor.executeScript("arguments[0].innerText = arguments[1];", progressText, String.format("%d%% Complete", progress));
 
-          
-             String num = driver.findElement(By.xpath("//*[@id=\"categ105\"]/ul/li[3]/div[2]/div/div[2]")).getText();
+                                                // Categ number should be chnaged baded on Category
+             String num = driver.findElement(By.xpath("//*[@id=\"categ1\"]/ul/li[3]/div[2]/div/div[2]")).getText();
             String s= "+progress+"+"%";
             if (num== s)
 		{
@@ -186,7 +187,8 @@ public class Employee_Assessment_submission {
             else
             {
                 WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30)); // Wait for up to 30 seconds
-                WebElement okButton = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"categ105\"]/ul/li[3]/div[2]/div/div[2]")));
+                                                                                                    // Categ number should be chnaged baded on Category
+                WebElement okButton = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"categ1\"]/ul/li[3]/div[2]/div/div[2]")));
                 okButton.isDisplayed();
             }
 	      }

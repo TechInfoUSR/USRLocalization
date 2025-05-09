@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
 import IPPB_Performence.Manager_Assessment_submission;
-import NormalFlowForEmployee.addGoalPlan;
+import normalFlow_BaseClasses.addGoalPlan;
 
 public class Manager_Test {
 

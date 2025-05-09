@@ -7,7 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.IAnnotationTransformer;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import NormalFlowForEmployee.addGoalPlan;
+
+import normalFlow_BaseClasses.addGoalPlan;
 
 public abstract class SuitListener implements ITestListener, IAnnotationTransformer{
 	
