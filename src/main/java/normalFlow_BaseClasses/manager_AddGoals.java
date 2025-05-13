@@ -69,78 +69,89 @@ public class manager_AddGoals
             WebElement element =  wait.until(ExpectedConditions.visibilityOfElementLocated(element1));
 
 
+            By messageLocator = By.xpath("(//h3[contains(text(),'01')])[1]");
 
-            while (true) {
-                try {
-                    if (element.isDisplayed() && element.isEnabled()) {
-                        element.click();
-                        System.out.println("Clicked on the element.");
-                    }
-                    // Wait and check if the new page or modal appears
-                    boolean isPopupVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("obj_title"))).isDisplayed();
-                    if (isPopupVisible) {
-                        System.out.println("Popup or new page opened.");
-                        break; // Exit loop once the new page is detected
-                    }
-                } catch (Exception e) {
-                    System.out.println("Element not interactable, retrying...");
-                }
-                Thread.sleep(1000); // Small delay before retrying
+            try {
+                WebElement ele = wait.until(ExpectedConditions.visibilityOfElementLocated(messageLocator));
+                ele.isDisplayed();
             }
-            Thread.sleep(2000);
+
+            catch (TimeoutException e)
+            {
+
+                while (true) {
+                    try {
+                        if (element.isDisplayed() && element.isEnabled()) {
+                            element.click();
+                            System.out.println("Clicked on the element.");
+                        }
+                        // Wait and check if the new page or modal appears
+                        boolean isPopupVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("obj_title"))).isDisplayed();
+                        if (isPopupVisible) {
+                            System.out.println("Popup or new page opened.");
+                            break; // Exit loop once the new page is detected
+                        }
+                    } catch (Exception e1) {
+                        System.out.println("Element not interactable, retrying...");
+                    }
+                    Thread.sleep(1000); // Small delay before retrying
+                }
+
+              Thread.sleep(2000);
+
+
+              enterGoalDetails();
+            }
+
         }
 
         public void enterGoalDetails() throws InterruptedException 
         {
-        	String goalType = prop.getProperty("GoalType");
-        	String goalName = prop.getProperty("Title");
-        	String goalCategory = prop.getProperty("goalCategory");
-        	String description = prop.getProperty("Description");
-        	String weight = prop.getProperty("Weight");
-        	  
-            driver.findElement(goalTitle).sendKeys(goalName);
-            driver.findElement(goalCategoryField).click();
-            List<WebElement> Catcount = driver.findElements(By.xpath("//li[@aria-selected=\"false\"]"));
-     
-            int numberOfQuestions = Catcount.size();
-  	        System.out.println("Number of questions: " + numberOfQuestions);
-               
-            System.out.println(Catcount);
-                
-	           for(int i=1;i<=numberOfQuestions;i++) 
-	           {
-	            	  String ActualTest = driver.findElement(By.xpath("//li[@aria-selected=\"false\"]["+i+"]")).getText();
-	            	  
-	                if (ActualTest.equals(goalCategory) ) 
-	                {
-	                	System.out.println("Act"+ActualTest);
-	                	driver.findElement(By.xpath("//li[@aria-selected=\"false\" and contains(text(),'')]["+i+"] ")).click();
-	                	break;
-	                }
-	            }
+
+                System.err.println("Self Review Not Completed");
+
+                String goalType = prop.getProperty("GoalType");
+                String goalName = prop.getProperty("Title");
+                String goalCategory = prop.getProperty("goalCategory");
+                String description = prop.getProperty("Description");
+                String weight = prop.getProperty("Weight");
+
+                driver.findElement(goalTitle).sendKeys(goalName);
+                driver.findElement(goalCategoryField).click();
+                List<WebElement> Catcount = driver.findElements(By.xpath("//li[@aria-selected=\"false\"]"));
+
+                int numberOfQuestions = Catcount.size();
+                System.out.println("Number of questions: " + numberOfQuestions);
+
+                System.out.println(Catcount);
+
+                for (int i = 1; i <= numberOfQuestions; i++) {
+                    String ActualTest = driver.findElement(By.xpath("//li[@aria-selected=\"false\"][" + i + "]")).getText();
+
+                    if (ActualTest.equals(goalCategory)) {
+                        System.out.println("Act" + ActualTest);
+                        driver.findElement(By.xpath("//li[@aria-selected=\"false\" and contains(text(),'')][" + i + "] ")).click();
+                        break;
+                    }
+                }
                 driver.findElement(By.xpath("//a[@data-target=\"#second\"]")).click();
                 driver.findElement(descriptionField).sendKeys(description);
                 driver.findElement(toggleMetric).click();
-                
-            	WebElement rangeInput = driver.findElement(toggleMetric); 
+
+                WebElement rangeInput = driver.findElement(toggleMetric);
                 JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
                 WebElement childwin = driver.findElement(By.xpath("//*[@id=\"Weight\"]"));
-                                                                   //*[@id="tab_default_11"]/form/div[5]/div/div[1]/div[2]/h5
+                //*[@id="tab_default_11"]/form/div[5]/div/div[1]/div[2]/h5
                 jsExecutor.executeScript("arguments[0].scrollIntoView(true);", childwin);
- 
-                driver.findElement(weightField).sendKeys(weight);
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(CreateBTN));
-            	element.click();
 
-     	    By messageLocator = By.xpath("//div[contains(text(),'Saved goal successfully')]");
-     	    
-     	    try {
-     	        WebElement element1 = wait.until(ExpectedConditions.visibilityOfElementLocated(messageLocator));
-     	        element1.isDisplayed(); 
-     	    } catch (TimeoutException e) {
-     	         System.err.println("Not working");
-     	    }
+
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+                driver.findElement(weightField).sendKeys(weight);
+                WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(CreateBTN));
+                element.click();
+
+
+
 
             	
             	
@@ -150,7 +161,7 @@ public class manager_AddGoals
         {
 //        	Thread.sleep(30000);
         	 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-        	    By messageLocator = By.xpath("//div[contains(text(),'Saved goal successfully')]");
+        	    By messageLocator = By.xpath("(//h3[contains(text(),'01')])[1]");
         	    
         	    try {
         	        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(messageLocator));

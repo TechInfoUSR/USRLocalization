@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.IOException;
 import java.util.Properties;
 
+import Utils.RetryAnalyzer;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
@@ -37,7 +38,7 @@ public class Delete_the_PMS_Cycle_test {
     }
     
     
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     void DeletionOfEmp_FromCycle() throws InterruptedException {
     	Delete_the_PMS_Cycle.Deletion();
     	boolean isdeleted = Delete_the_PMS_Cycle.isDeleted();

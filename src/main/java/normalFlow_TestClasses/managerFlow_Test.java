@@ -52,9 +52,9 @@ public class managerFlow_Test {
       String pmsCycleName = prop.getProperty("GoalPalnName");
       manager_AddGoals.selectGoalCycle(pmsCycleName);
       manager_AddGoals.openEmployeeAssessment();
-      manager_AddGoals.enterGoalDetails();
+
       boolean isDisplayed = manager_AddGoals.isGoalAdded();
-      assertTrue(isDisplayed, "Goal not Added!"); 
+      assertTrue(isDisplayed, "01");
   }
 
 

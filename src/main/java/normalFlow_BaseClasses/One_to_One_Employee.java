@@ -1,10 +1,14 @@
 package normalFlow_BaseClasses;
 
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class One_to_One_Employee {
 	  private WebDriver driver;
@@ -30,8 +34,12 @@ public class One_to_One_Employee {
 	      driver.findElement(By.xpath("//a[contains(text(),'"+cycleName+"')]")).click();
 	//      driver.findElement(goalCycleLink(cycleName)).click();
 	      driver.findElement(By.xpath("//span[@class=\"ml-4\"]")).click();
-//	      Thread.sleep(1000);
-	      driver.findElement(By.xpath("//a[@ng-click=\"submitEmployeeAckowledgement()\"][1]")).click();
+	      Thread.sleep(1000);
+		  By SUBBTN = By.xpath("(//a[contains(text(),' Submit Employee Acknowledgement')])[1]");
+
+		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		  WebElement ReviewCycleIcon1 = wait.until(ExpectedConditions.elementToBeClickable(SUBBTN));
+		  ReviewCycleIcon1.click();
 //	      Thread.sleep(2000);
 	      driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
 //	      Thread.sleep(500);

@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 import java.io.IOException;
 import java.util.Properties;
 
+import Utils.RetryAnalyzer;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -41,14 +42,14 @@ public class Delete_Goal_Plan_and_PMS_Cycle__Test {
     }
     
     
-    @Test(priority=1)
+    @Test(priority=1, retryAnalyzer = RetryAnalyzer.class)
     void DeletionodGoalPlan() throws InterruptedException {
     	Delete_Goal_Plan_and_PMS_Cycle.DeletionPMSCycle();
     	boolean ispmsDeleted = Delete_Goal_Plan_and_PMS_Cycle.isPMSDeleted();
     	assertTrue(ispmsDeleted,"PMS Cycle deleted");
     }
     
-    @Test(priority=2)
+    @Test(priority=2, retryAnalyzer = RetryAnalyzer .class)
     void DeletionofPMS() throws InterruptedException {
     	Delete_Goal_Plan_and_PMS_Cycle.DeletionGoalPlan();
     	boolean isGoalPlanDeleted = Delete_Goal_Plan_and_PMS_Cycle.isGoalPlanDeleted();

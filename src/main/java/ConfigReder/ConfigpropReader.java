@@ -22,8 +22,8 @@ public class ConfigpropReader {
 				case "english":
 					ip = new FileInputStream("./properties/lang.english.properties");
 					break;
-				case "french":
-					ip = new FileInputStream("./src/maon/resources/lang.spanish.properties");
+				case "directmgrprop":
+					ip = new FileInputStream("./properties/DirectMGRFlow.properties");
 					break;
 				case "russian":
 					ip = new FileInputStream("./src/main/resources/lang.russian.properties");

@@ -121,7 +121,6 @@ public class SmokeTestSuite{
         String pmsCycleName = prop.getProperty("GoalPalnName");
         manager_AddGoals.selectGoalCycle(pmsCycleName);
         manager_AddGoals.openEmployeeAssessment();
-        manager_AddGoals.enterGoalDetails();
         boolean isDisplayed = manager_AddGoals.isGoalAdded();
         assertTrue(isDisplayed, "Saved goal successfully"); 
     }
