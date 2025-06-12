@@ -55,7 +55,7 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
 	  	    By confirm = (By.xpath("//button[@data-bb-handler=\"confirm\"]"));
 				WebElement confirmBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(confirm));
 	  	    confirmBTN.click();
-	  	    isPMSDeleted();
+	  	    isPMSDeleted(GoalPlanName);
 //			break;
 //			}
 		}
@@ -97,10 +97,11 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
 		
 		
 	}
-	  public boolean isPMSDeleted() throws InterruptedException { 
-		   By section = (By.xpath("//div[contains(text(),'Performance Review Cycle deleted successfully ')]"));
+	  public boolean isPMSDeleted(String GoalPlanName) throws InterruptedException {
+
+		  By test=By.xpath("//tr[1]//span[contains(text(),'"+GoalPlanName+"')]");
 		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		  WebElement sectionBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(section));
+		  WebElement sectionBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(test));
 		   return sectionBTN.isDisplayed();		  
 	  }
 	  

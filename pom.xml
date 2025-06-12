@@ -81,7 +81,7 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.26.0</version>
+			<version>4.28.1</version>
 		</dependency>
 
 		<dependency>
@@ -146,7 +146,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.28</version> <!-- Use the latest version -->
+			<version>1.18.28</version>
 			<scope>provided</scope>
 		</dependency>
         <dependency>

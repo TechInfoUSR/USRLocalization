@@ -45,7 +45,7 @@ public class Delete_Goal_Plan_and_PMS_Cycle__Test {
     @Test(priority=1, retryAnalyzer = RetryAnalyzer.class)
     void DeletionodGoalPlan() throws InterruptedException {
     	Delete_Goal_Plan_and_PMS_Cycle.DeletionPMSCycle();
-    	boolean ispmsDeleted = Delete_Goal_Plan_and_PMS_Cycle.isPMSDeleted();
+    	boolean ispmsDeleted = Delete_Goal_Plan_and_PMS_Cycle.isPMSDeleted(prop.getProperty("GoalPalnName"));
     	assertTrue(ispmsDeleted,"PMS Cycle deleted");
     }
     
