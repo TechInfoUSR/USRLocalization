@@ -107,17 +107,37 @@ public class Manager_Assessment_submission {
 			int randomNumber = random.nextInt(100) + 1;
 
 			updateProgressBar(driver, "(//input[@type=\"range\"])[1]", randomNumber);
-			Thread.sleep(1000);
+//			Thread.sleep(1000);
 
 			WebElement element1 = driver
 					.findElement(By.xpath("(//a[@class=\"btn checkin-btn block-btn subAssessmentButton\"])[1]"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
 			element1.click();
 
+//			Thread.sleep(1000);
+//			for (int im=0;im<=168;im++) {
+//				driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys("MGRCMT");
+//			}
+
+
+//			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys("MGRCMT");
+
+//			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys("MGRCMT");
+			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+
+			Thread.sleep(1500);
+
+			driver.findElement(By.xpath("//button[@id=\"submitPerformanceBtn\"]")).click();
 			Thread.sleep(1000);
-			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys("MgrCMT");
-//            Thread.sleep(200);
-			driver.findElement(By.xpath("//button[@ng-click=\"submitPerformanceForAuthorizeApprove()\"]")).click();
 
 			By OkBtn = (By.xpath("//button[contains(text(),'OK')]"));
 			WebElement OKbtn = wait.until(ExpectedConditions.visibilityOfElementLocated(OkBtn));
