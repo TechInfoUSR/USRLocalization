@@ -81,7 +81,7 @@ public class Manager_Assessment_submission {
 
 	public void selectGoalCycle(String Emp_name) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+		Thread.sleep(2000);
 		if (Emp_name != null && !Emp_name.isEmpty()) {
 			WebElement empElement = wait.until(ExpectedConditions
 					.visibilityOfElementLocated(By.xpath("//span[contains(text(),'" + Emp_name + "')]")));

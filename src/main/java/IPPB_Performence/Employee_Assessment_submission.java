@@ -112,10 +112,17 @@ public class Employee_Assessment_submission {
     private By passwordField = By.xpath("//input[@name=\"password\"]");
     private By loginButton = By.xpath("//button[@type=\"submit\"]");
     
-    public void login(String username, String password) {
+    public void login(String username, String password) throws InterruptedException {
         driver.findElement(usernameField).sendKeys(username);
         driver.findElement(passwordField).sendKeys(password);
         driver.findElement(loginButton).click();
+        Thread.sleep(2000);
+
+        Boolean b= driver.findElement(By.xpath("//button[@class=\"close\"]")).isDisplayed();
+        if (b==true) {
+            driver.findElement(By.xpath("//button[@class=\"close\"]")).click();
+        }
+
     }
     
     
