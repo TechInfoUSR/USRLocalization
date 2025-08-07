@@ -12,11 +12,12 @@ import org.testng.annotations.Test;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
+import normalFlow_BaseClasses.LoginPage;
 import normalFlow_BaseClasses.One_to_One_manager;
 import normalFlow_BaseClasses.addGoalPlan;
 
 public class One_to_One_manager_test {
-	addGoalPlan addGoalPlan;
+	
     DriverFactory df;
     ConfigpropReader cp;
     Properties prop;
@@ -29,9 +30,9 @@ public class One_to_One_manager_test {
         prop = cp.initLangProp("NormalFlowTest");
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
-        addGoalPlan = new addGoalPlan(driver);
-        addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
-          
+        LoginPage LoginPage = new LoginPage(driver);
+        LoginPage.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
+        LoginPage.ClosePopUp();
         One_to_One_manager = new One_to_One_manager(driver, prop);
 
     

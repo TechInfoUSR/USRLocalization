@@ -12,12 +12,13 @@ import org.testng.annotations.Test;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
+import normalFlow_BaseClasses.LoginPage;
 import normalFlow_BaseClasses.One_to_One_Employee;
 import normalFlow_BaseClasses.addGoalPlan;
 import normalFlow_BaseClasses.emp_assesment_Submission;
 
 public class One_to_One_Employee_test {
-	addGoalPlan addGoalPlan;
+	
     DriverFactory df;
     ConfigpropReader cp;
     Properties prop;
@@ -30,9 +31,10 @@ public class One_to_One_Employee_test {
         prop = cp.initLangProp("NormalFlowTest");
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
-        addGoalPlan = new addGoalPlan(driver);
-        addGoalPlan.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));
-         
+        LoginPage LoginPage = new LoginPage(driver);
+        LoginPage.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));       
+        LoginPage.ClosePopUp();
+        
         One_to_One_Employee = new One_to_One_Employee(driver, prop);
     
     }

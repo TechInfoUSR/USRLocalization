@@ -13,11 +13,10 @@ import org.testng.annotations.Test;
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
 import normalFlow_BaseClasses.Finalize_Employee_Appraisal;
-import normalFlow_BaseClasses.addGoalPlan;
+import normalFlow_BaseClasses.LoginPage;
 
 public class Finalize_Employee_Appraisal_Test 
 {
-	addGoalPlan addGoalPlan;
     DriverFactory df;
     ConfigpropReader cp;
     Properties prop;
@@ -30,8 +29,9 @@ public class Finalize_Employee_Appraisal_Test
         prop = cp.initLangProp("NormalFlowTest");
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
-        addGoalPlan = new addGoalPlan(driver);
-        addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
+        LoginPage LoginPage = new LoginPage(driver);
+        LoginPage.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
+        LoginPage.ClosePopUp();
           
         Finalize_Employee_Appraisal = new Finalize_Employee_Appraisal(driver, prop);
 

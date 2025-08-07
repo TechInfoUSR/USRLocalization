@@ -18,7 +18,7 @@ public class manager_AddGoals
     
         private WebDriver driver;
         private Properties prop;
-        
+        addGoalPlan addGoalPlan;
 
         private By avatarIcon = By.xpath("//a[@class='avatar-sec header-icon']");
         private By employeeName = By.xpath("(//h5[@class='ma-0'])[2]");
@@ -49,6 +49,7 @@ public class manager_AddGoals
             driver.findElement(employeeName).click();
         }
 
+
         public void selectGoalCycle(String cycleName) throws InterruptedException 
         {
             driver.findElement(dropdownToggle).click();
@@ -63,8 +64,8 @@ public class manager_AddGoals
             driver.findElement(By.xpath("//span[contains(text(),'"+empname+" ')]")).click();
             
             
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-            By element1 =  By.xpath("(//img[@src='pmsGE/images/icons/add.svg'])[1]");
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            By element1 =  By.xpath("(//a[@title=\"New Goal\"])[1]");
 
             WebElement element =  wait.until(ExpectedConditions.visibilityOfElementLocated(element1));
 
@@ -79,25 +80,29 @@ public class manager_AddGoals
             catch (TimeoutException e)
             {
 
-                while (true) {
-                    try {
-                        if (element.isDisplayed() && element.isEnabled()) {
+                while (true)
+                {
+                    try
+                    {
+                        if (element.isDisplayed() && element.isEnabled())
+                        {
                             element.click();
                             System.out.println("Clicked on the element.");
                         }
                         // Wait and check if the new page or modal appears
                         boolean isPopupVisible = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("obj_title"))).isDisplayed();
-                        if (isPopupVisible) {
+                        if (isPopupVisible)
+                        {
                             System.out.println("Popup or new page opened.");
                             break; // Exit loop once the new page is detected
                         }
                     } catch (Exception e1) {
                         System.out.println("Element not interactable, retrying...");
                     }
-                    Thread.sleep(1000); // Small delay before retrying
+                    Thread.sleep(100); // Small delay before retrying
                 }
 
-              Thread.sleep(2000);
+              Thread.sleep(20);
 
 
               enterGoalDetails();

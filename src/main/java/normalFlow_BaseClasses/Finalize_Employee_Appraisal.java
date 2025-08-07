@@ -1,9 +1,14 @@
 package normalFlow_BaseClasses;
 
+import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Finalize_Employee_Appraisal 
 {
@@ -22,12 +27,11 @@ public class Finalize_Employee_Appraisal
         this.driver = driver;
         this.prop = prop;
     }
-
-    
     
     
     public void selectGoalCycle(String cycleName) throws InterruptedException 
     {
+
         driver.findElement(dropdownToggle).click();
 //        Thread.sleep(2000);
         driver.findElement(goalCycleLink(cycleName)).click();

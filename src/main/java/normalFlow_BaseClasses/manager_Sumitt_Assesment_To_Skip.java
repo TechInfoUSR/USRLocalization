@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -23,10 +24,31 @@ public class manager_Sumitt_Assesment_To_Skip {
            this.driver = driver;
            this.prop = prop;
        }
-       
+
+       public  void ClosePopUp(){
+   		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+   	    By closeBtnLocator = By.xpath("//button[@class='close']");
+
+   		try {
+   	        WebElement closeBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(closeBtnLocator));
+   	        if (closeBtn.isDisplayed()) {
+   	            closeBtn.click();
+   	            System.out.println("Popup closed successfully.");
+   	        }
+   	    } catch (TimeoutException e) {
+   	        System.out.println("Popup did not appear. Continuing without closing.");
+   	    } catch (Exception e) {
+   	        System.out.println("Unexpected exception in ClosePopUp: " + e.getMessage());
+   	    }
+   	}
+
+
        
        public void selectGoalCycle() throws InterruptedException 
        {
+//           ClosePopUp();
+
+
     	   String cycleName = prop.getProperty("GoalPalnName");
     	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
@@ -71,7 +93,7 @@ public class manager_Sumitt_Assesment_To_Skip {
               EmployeeComment(driver,"//*[@id=\"categ1\"]/ul/li[4]/div/div[2]/img",Employee_comment, "(//a[contains(text(), 'Review Comments')])[2]");
 //              Thread.sleep(1000);
               
-              WebElement element1 = driver.findElement(By.xpath("(//a[@class=\"btn checkin-btn block-btn subAssessmentButton\"])[1]"));
+              WebElement element1 = driver.findElement(By.xpath("(//a[@title=\"Submit Manager Assessment\"])[1]"));
               ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
               element1.click();
 

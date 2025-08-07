@@ -1,28 +1,22 @@
 package normalFlow_TestClasses;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
-import normalFlow_BaseClasses.PMSCyclePage;
-import normalFlow_BaseClasses.addGoalPlan;
+import normalFlow_BaseClasses.LoginPage;
 import normalFlow_BaseClasses.emp_assesment_Submission;
-import normalFlow_BaseClasses.initiatePMSCycle;
-import normalFlow_BaseClasses.manager_AddGoals;
 
 public class employeeFlow_Test
 {
-	addGoalPlan addGoalPlan;
 	emp_assesment_Submission emp_assesment_Submission;
     DriverFactory df;
     ConfigpropReader cp;
@@ -36,9 +30,9 @@ public class employeeFlow_Test
         prop = cp.initLangProp("NormalFlowTest");
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
-        addGoalPlan = new addGoalPlan(driver);
-        addGoalPlan.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));
-
+        LoginPage LoginPage = new LoginPage(driver);
+        LoginPage.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));
+        LoginPage.ClosePopUp();
         emp_assesment_Submission = new emp_assesment_Submission(driver, prop);
     
     }

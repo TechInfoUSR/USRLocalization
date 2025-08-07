@@ -3,9 +3,9 @@
 <suite name="Suite">
   
 <listeners>
-   <listener class-name="normalFlowTest.Email_able_report_Sender" />
+   <listener class-name="normalFlow_TestClasses.Email_able_report_Sender" />
     <!--> execute Normal flow / Smoke testing <-->
-    <listener class-name="normalFlowTest.TestFailureListener" />
+    <listener class-name="normalFlow_TestClasses.TestFailureListener" />
 </listeners>
   
   <!--> execute Normal flow / Smoke testing <-->

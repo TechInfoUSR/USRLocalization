@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -18,6 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class emp_assesment_Submission {
 	  private WebDriver driver;
       private Properties prop;
+    addGoalPlan addGoalPlan;
      
     		private By dropdownToggle = By.xpath("//a[@class='dropdown-toggle']");
     		private By goalCycleLink(String cycleName) 
@@ -29,11 +31,12 @@ public class emp_assesment_Submission {
               this.driver = driver;
               this.prop = prop;
           }
+
     	  
 		public void selectGoalCycle(String cycleName) throws InterruptedException 
           {
-			
-     	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); 
+
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             By is = (dropdownToggle);
             WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(is));
             element.click();

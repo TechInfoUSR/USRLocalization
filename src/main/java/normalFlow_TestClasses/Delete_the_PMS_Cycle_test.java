@@ -5,19 +5,20 @@ import static org.testng.Assert.assertTrue;
 import java.io.IOException;
 import java.util.Properties;
 
-import Utils.RetryAnalyzer;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
+import Utils.RetryAnalyzer;
 import normalFlow_BaseClasses.Delete_the_PMS_Cycle;
-import normalFlow_BaseClasses.addGoalPlan;
+import normalFlow_BaseClasses.LoginPage;
 
 public class Delete_the_PMS_Cycle_test {
-	addGoalPlan addGoalPlan;
+
+//    Remove Employee from PMS cycle
+
     DriverFactory df;
     ConfigpropReader cp;
     Properties prop;
@@ -32,8 +33,9 @@ public class Delete_the_PMS_Cycle_test {
         prop = cp.initLangProp("NormalFlowTest");
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
-        addGoalPlan = new addGoalPlan(driver);
-        addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
+        LoginPage LoginPage = new LoginPage(driver);
+        LoginPage.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
+        
         Delete_the_PMS_Cycle = new Delete_the_PMS_Cycle(driver, prop);
     }
     
@@ -45,10 +47,4 @@ public class Delete_the_PMS_Cycle_test {
     	assertTrue(isdeleted,"working fine");
     	
     }
-    
-//    @AfterClass
-//    void teardown() {
-//    	driver.quit();
-//    }
-    
 }

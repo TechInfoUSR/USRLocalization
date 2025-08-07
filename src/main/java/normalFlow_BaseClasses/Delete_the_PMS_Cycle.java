@@ -24,20 +24,20 @@ public class Delete_the_PMS_Cycle {
 
         String goal = prop.getProperty("GoalPalnName");
         JavascriptExecutor Srollup = (JavascriptExecutor) driver;
-        Srollup.executeScript("window.scrollBy(0,1800)");
+        Srollup.executeScript("window.scrollBy(0,1850)");
         Thread.sleep(2000);
         driver.findElement(By.xpath("//h3[contains(text(),'PMS Program Management')][1]")).click();
         WebElement drop = driver.findElement(By.xpath("//select[@ng-model=\"encReviewCycleId\"]"));
-//    driver.findElement(By.xpath("//select[@ng-model=\"encReviewCycleId\"]")).click();
         Select S = new Select(drop);
         S.selectByVisibleText(goal);
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         // Wait for the rows to be present
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@class='table table-striped']//tr[@ng-repeat=\"pp in allProgressData | filter:{employeeName: searchEmployeeName}\"]")));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//table[@class='table table-striped']//tbody")));
 
-        List<WebElement> tableRows = driver.findElements(By.xpath("//table[@class='table table-striped']//tr[@ng-repeat=\"pp in allProgressData | filter:{employeeName: searchEmployeeName}\"]"));
+        List<WebElement> tableRows = driver.findElements(By.xpath("//table[@class='table table-striped']//tbody//tr"));
+
 
         // Count the number of rows
         int rowCount = tableRows.size();
@@ -47,48 +47,44 @@ public class Delete_the_PMS_Cycle {
         {
             Thread.sleep(2000);
             driver.findElement(By.xpath("//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"][1]")).click();
-//	    driver.findElement(By.xpath("(//a[@class=\"dropdown-toggle cmenu-hide\"])[1]")).click();
-//	    WebElement status = driver.findElement(By.xpath("//span[contains(text(),'Goal Setting Incomplete')]"));
-
-            String actualText = driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr[1]/td[1]/div/ul[2]/li/a/b")).getText();
-            System.out.println(actualText);
-            String actualText1 = driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr/td[1]/div/ul[1]/li[2]/a/b")).getText();
-            System.out.println(actualText1);
-            String ResetEmpAssesmet = driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr/td[1]/div/ul[1]/li[1]/a[2]/b")).getText();
+            String actualTextRemoveEmp = driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr[1]/td[1]/div/ul[2]/li/a/b")).getText();
+            System.out.println(actualTextRemoveEmp);
+            String actualResetManagerAssessment = driver.findElement(By.xpath("//a[@ng-click=\"resetAppraisal(pp.reviewCycleId,pp.employeeId,true,2)\"]//b")).getText();
+            System.out.println(actualResetManagerAssessment);
+            String ResetEmpAssesmet = driver.findElement(By.xpath("(//a[@ng-click=\"resetAppraisal(pp.reviewCycleId,pp.employeeId,false,1,1)\"]//b)[1]")).getText();
             System.out.println(ResetEmpAssesmet);
+            String actResetEmpAssesmet = driver.findElement(By.xpath("(//a[@ng-click=\"resetAppraisal(pp.reviewCycleId, pp.employeeId, false,3)\"]//b)[1]")).getText();
+            
 
-            String exp = "Remove Employee from this PMS Cycle";
-            String rmtex = "Reset Manager's Assessment (without deleting contents filled already by emp. and manager)";
-
-            String ResetAct = "Reset Employee's Assessment (without deleting contents filled already by emp.)";
+            String RemoveEmployee = "Remove Employee from this PMS Cycle";
+            String ResetManager = "Reset Manager's and Authorized Assessment (without deleting contents already filled by employee and manager)";
+            String ResetEmployee = "Reset Employee Assessment";
+            String ResetApproverAsses = "Reset Approver's Assessment (the comment provided by the approver will be deleted)";
+            
             Thread.sleep(2000);
-            if(actualText.equals(exp))
+            
+            if(actualTextRemoveEmp.equals(RemoveEmployee))
             {
 
                 RemoveEmp();
             }
-            else if(actualText1.equals(rmtex))
+            else if(actualResetManagerAssessment.equals(ResetManager))
             {
                 System.out.println("ResetManagerAssessment");
                 ResetManagerAssessment();
             }
-            else if(ResetEmpAssesmet.equals(ResetAct))
+            else if(ResetEmpAssesmet.equals(ResetEmployee))
             {
                 System.out.println("ResetEmpAssesmet");
                 ResetEmpAssesmet();
             }
 
-
-//    	switch(i) {
-//	    case 1: RemoveEmp(); break;
-//	    case 2: DeleteSkipLevelManagersAssessment(); break;
-//	    case 3: ResetManagerAssessment();break;
-//	    default : System.out.println("Invalid");
-//	    }
-
-
-
-//	    driver.findElement(By.xpath("(//a[@ng-click=\"deleteEmpfromCycle(pp.reviewCycleId,pp.employeeId)\"])[1]")).click();
+            else if(actResetEmpAssesmet.equals(ResetApproverAsses))
+            {
+                System.out.println("ResetApproverAsses");
+                ResetApproverAssesmet();
+            }
+            
         }
 
     }
@@ -96,56 +92,62 @@ public class Delete_the_PMS_Cycle {
     void RemoveEmp() throws InterruptedException
     {
         driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div[2]/table/tbody/tr[1]/td[1]/div/ul[2]/li/a/b")).click();
-//		driver.findElement(By.xpath("//a[@class=\"dropdown-toggle cmenu-hide\"]")).click();
-//		driver.findElement(By.xpath("(//b[contains(text(),'Remove Employee from this PMS Cycle')])[2]"));
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
-//		driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[1]")).click();
         Thread.sleep(1000);
     }
 
 
     void ResetEmpAssesmet() throws InterruptedException
     {
-        driver.findElement(By.xpath("(/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div[2]/table/tbody/tr/td[1]/div/ul[1]/li[1]/a[2]/*)[1]")).click();
-        //                                      /html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div[2]/table/tbody/tr[1]/td[1]/div/ul[1]/li[1]/a[2]/b
-
-        WebElement element = driver.findElement(By.xpath("(//b[contains(text(),\"Reset Employee's Assessment \")])[1]"));
-//	   ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
-
-
-
+    	WebElement element =driver.findElement(By.xpath("(//a[@ng-click=\"resetAppraisal(pp.reviewCycleId,pp.employeeId,false,1,1)\"]//b)[1]"));
+//    	boolean Enabled = element.isEnabled();
+//    	System.out.println("Button "+Enabled);
+    	element.click();
+    	Thread.sleep(2000);
         driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
-//	   driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[1]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(3500);
         driver.findElement(By.xpath("//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"][1]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(1500);
         RemoveEmp();
     }
 
     void ResetManagerAssessment() throws InterruptedException
     {
 
-        driver.findElement(By.xpath("//a[@ng-click=\"resetAppraisal(pp.reviewCycleId,pp.employeeId,true,2)\"]//b")).click();
-        Thread.sleep(2000);
-//	   driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[1]")).click();
-        Thread.sleep(1500);
+        boolean IsEnable = driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div[2]/table/tbody/tr[1]/td[1]/div/ul[1]/li[2]/a/img")).isEnabled();
+        System.out.println(IsEnable);
+        driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div[2]/table/tbody/tr[1]/td[1]/div/ul[1]/li[2]/a/img")).click();
+        Thread.sleep(3500);
         driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
-//	   driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[1]")).click();
         Thread.sleep(2000);
-//	   driver.findElement(By.xpath("//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"][1]")).click();
         driver.findElement(By.xpath("(//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"])[1]")).click();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         driver.findElement(By.xpath("(/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr/td[1]/div/*)[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
-//	   driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/button[1]")).click();
         Thread.sleep(1000);
-//	   driver.findElement(By.xpath("//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"][1]")).click();
         driver.findElement(By.xpath("(//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"])[1]")).click();
-        RemoveEmp();
+        ResetEmpAssesmet();
 
     }
+    
+    void ResetApproverAssesmet() throws InterruptedException{
+    	WebElement element = driver.findElement(By.xpath("(//a[@ng-click=\"resetAppraisal(pp.reviewCycleId, pp.employeeId, false,3)\"]//b)[1]"));
+        boolean IsEnable = element.isEnabled();
+        System.out.println(IsEnable);
+        element.click();
+        
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
+        Thread.sleep(4000);
+        driver.findElement(By.xpath("(//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"])[1]")).click();
+        Thread.sleep(1000);
+        ResetManagerAssessment();
+        
+    }
+    
+    
     public boolean isDeleted() throws InterruptedException {
         Thread.sleep(500);
         return driver.findElement(By.xpath("//span[contains(text(),'0-1000 of 0')]")).isDisplayed();

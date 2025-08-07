@@ -1,7 +1,6 @@
 package normalFlow_TestClasses;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -13,6 +12,7 @@ import org.testng.annotations.Test;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
+import normalFlow_BaseClasses.LoginPage;
 import normalFlow_BaseClasses.PMSCyclePage;
 import normalFlow_BaseClasses.Skipp_Approval;
 import normalFlow_BaseClasses.addGoalPlan;
@@ -21,8 +21,7 @@ import normalFlow_BaseClasses.manager_AddGoals;
 
 public class Skipp_Approval_test 
 {
-	
-	addGoalPlan addGoalPlan;
+
 	PMSCyclePage PMSCyclePage;
 	initiatePMSCycle initiatePMSCycle;
 	manager_AddGoals manager_AddGoals;
@@ -31,6 +30,8 @@ public class Skipp_Approval_test
     ConfigpropReader cp;
     Properties prop;
     WebDriver driver;
+    LoginPage LoginPage;
+    
 
     @BeforeTest
     void setUp() throws IOException 
@@ -39,9 +40,10 @@ public class Skipp_Approval_test
          prop = cp.initLangProp("NormalFlowTest");
          df = new DriverFactory();
          driver = df.initDriver("chrome", prop);
-         addGoalPlan = new addGoalPlan(driver);
-         addGoalPlan.login(prop.getProperty("SkipmgrUN"), prop.getProperty("SkipmgrPass"));
-          
+         LoginPage LoginPage = new LoginPage(driver);
+         LoginPage.login(prop.getProperty("SkipmgrUN"), prop.getProperty("SkipmgrPass"));
+         LoginPage.ClosePopUp();
+         
         PMSCyclePage = new PMSCyclePage(driver, prop);
         initiatePMSCycle = new initiatePMSCycle(driver, prop);
         Skipp_Approval = new Skipp_Approval(driver, prop);

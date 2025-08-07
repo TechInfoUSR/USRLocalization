@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -28,8 +29,10 @@ public class One_to_One_manager
         return By.xpath("//a[contains(text(),'" + cycleName + "')]");
     }
 
+
     public void selectGoalCycle(String cycleName) throws InterruptedException 
     {
+
     	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     	
   	    By section = dropdownToggle;

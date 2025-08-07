@@ -14,6 +14,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
@@ -35,6 +36,10 @@ import normalFlow_BaseClasses.manager_AddGoals;
 import normalFlow_BaseClasses.manager_Sumitt_Assesment_To_Skip;
 import normalFlow_TestClasses.Email_able_report_Sender;
 import normalFlow_TestClasses.TestFailureListener;
+import normalFlow_TestClasses.*;
+import normalFlow_BaseClasses.LoginPage;
+
+
 @Listeners(TestFailureListener.class)
 public class SmokeTestSuite{
 	addGoalPlan addGoalPlan;
@@ -56,6 +61,7 @@ public class SmokeTestSuite{
 	Finalize_Employee_Appraisal Finalize_Employee_Appraisal;
 	Delete_the_PMS_Cycle Delete_the_PMS_Cycle;
 	Delete_Goal_Plan_and_PMS_Cycle Delete_Goal_Plan_and_PMS_Cycle;
+	LoginPage LoginPage;
 	
 	
     @BeforeTest
@@ -80,7 +86,7 @@ public class SmokeTestSuite{
     	Finalize_Employee_Appraisal = new Finalize_Employee_Appraisal(driver,prop);
     	Delete_the_PMS_Cycle =new Delete_the_PMS_Cycle(driver,prop);
     	Delete_Goal_Plan_and_PMS_Cycle =new Delete_Goal_Plan_and_PMS_Cycle(driver,prop);
-    	
+    	LoginPage =new LoginPage(driver);
     	
     }
     
@@ -116,7 +122,9 @@ public class SmokeTestSuite{
     @Test(priority = 4,dependsOnMethods = "Initiate_PMSCycle",retryAnalyzer = RetryAnalyzer.class)
     public void Manager_AddGoalTo_Emp() throws InterruptedException {
     	driver.get(prop.getProperty("url"));
-    	addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
+    	LoginPage.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
+    	
+    	LoginPage.ClosePopUp();
 //    	manager_AddGoals.navigateToEmployeeSelf();
         String pmsCycleName = prop.getProperty("GoalPalnName");
         manager_AddGoals.selectGoalCycle(pmsCycleName);
@@ -130,7 +138,8 @@ public class SmokeTestSuite{
 //  @Test
     public void Employee_AssessmentSubmission() throws InterruptedException{
     	driver.get(prop.getProperty("url"));
-    	addGoalPlan.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));
+    	LoginPage.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));
+    	LoginPage.ClosePopUp();
     	String pmsCycleName = prop.getProperty("GoalPalnName");
     	emp_assesment_Submission.selectGoalCycle(pmsCycleName);
     	String isselfsub = emp_assesment_Submission.isSelfsub();
@@ -141,7 +150,8 @@ public class SmokeTestSuite{
     @Test(priority = 6,dependsOnMethods = "Employee_AssessmentSubmission",retryAnalyzer = RetryAnalyzer.class)
     void Manager_AssessmentSubmissionTo_Skip() throws InterruptedException{
     	driver.get(prop.getProperty("url"));
-    	addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
+    	LoginPage.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
+    	LoginPage.ClosePopUp();
     	  manager_Sumitt_Assesment_To_Skip.selectGoalCycle();
     	  String isselfsub = manager_Sumitt_Assesment_To_Skip.isSelfsub();
     	  String Actualtest = "Manager Review Completed";
@@ -152,7 +162,9 @@ public class SmokeTestSuite{
     void Skip_Approval() throws InterruptedException
     {
     	driver.get(prop.getProperty("url"));
-    	addGoalPlan.login(prop.getProperty("SkipmgrUN"), prop.getProperty("SkipmgrPass"));
+    	LoginPage.login(prop.getProperty("SkipmgrUN"), prop.getProperty("SkipmgrPass"));
+    	LoginPage.ClosePopUp();
+    	
     	Skipp_Approval.approve();
     	String isdisp = Skipp_Approval.isSelfsub();
     	System.out.println(isdisp);
@@ -162,7 +174,8 @@ public class SmokeTestSuite{
     @Test(priority = 8,dependsOnMethods = "Skip_Approval",retryAnalyzer = RetryAnalyzer.class)
     void OneToOneMeeting_Manager() throws InterruptedException {
     	driver.get(prop.getProperty("url"));
-    	addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
+    	LoginPage.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
+    	LoginPage.ClosePopUp();
     	One_to_One_manager.selectGoalCycle(prop.getProperty("GoalPalnName"));
     	One_to_One_manager.navigateToEmployeeSelf();
     	String isdisp = One_to_One_manager.isSelfsub();
@@ -175,7 +188,9 @@ public class SmokeTestSuite{
     @Test(priority = 9,dependsOnMethods = "OneToOneMeeting_Manager",retryAnalyzer = RetryAnalyzer.class)
     public void OnToOneMeeting_Employee() throws InterruptedException{
     	driver.get(prop.getProperty("url"));
-    	addGoalPlan.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));
+    	LoginPage.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));
+    	LoginPage.ClosePopUp();
+    	
     	String pmsCycleName = prop.getProperty("GoalPalnName");
     	One_to_One_Employee.selectGoalCycle(pmsCycleName);
     	String isdisp = One_to_One_Employee.isSelfsub();
@@ -187,7 +202,9 @@ public class SmokeTestSuite{
     @Test(priority = 10,dependsOnMethods = "OnToOneMeeting_Employee",retryAnalyzer = RetryAnalyzer.class)
     void Finalize_Emp_Appraisal() throws InterruptedException {
     	driver.get(prop.getProperty("url"));
-    	addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
+    	LoginPage.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
+    	LoginPage.ClosePopUp();
+    	
     	Finalize_Employee_Appraisal.selectGoalCycle(prop.getProperty("GoalPalnName"));
     	Finalize_Employee_Appraisal.navigateToEmployeeSelf();
     	String isdisp = Finalize_Employee_Appraisal.isSelfsub();
@@ -204,7 +221,7 @@ public class SmokeTestSuite{
     void Remove_EmployeesFromGoalPlan() throws InterruptedException {
     	
     	driver.get(prop.getProperty("url"));
-    	addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
+    	LoginPage.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
     	Delete_the_PMS_Cycle.Deletion();
     	boolean isdeleted = Delete_the_PMS_Cycle.isDeleted();
 //    	System.out.println(isdeleted);
@@ -217,7 +234,7 @@ public class SmokeTestSuite{
     void DeletionOf_PMSCycleAndGoalPlan() throws InterruptedException {
     	
     	driver.get(prop.getProperty("url"));
-    	addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
+    	LoginPage.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
     	Delete_Goal_Plan_and_PMS_Cycle.DeletionPMSCycle();
     	Delete_Goal_Plan_and_PMS_Cycle.DeletionGoalPlan();
     }

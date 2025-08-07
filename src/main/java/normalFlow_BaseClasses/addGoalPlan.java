@@ -39,6 +39,8 @@ public class addGoalPlan {
         driver.findElement(loginButton).click();
     }
 
+
+
     public void addGoalPlan1(String goalPlanName, String empGroup,String RatingScale) throws InterruptedException 
     {
         JavascriptExecutor Srollup = (JavascriptExecutor) driver;
@@ -74,16 +76,14 @@ public class addGoalPlan {
         
         driver.findElement(By.xpath("//input[@class=\"form-control dpd2\"]")).click();
         selectDate(Third_Month_Year, Third_MonthDATE);
-        JavascriptExecutor Srollup1 = (JavascriptExecutor) driver;
-        Srollup1.executeScript("window.scrollBy(0,800)");
+        Srollup.executeScript("window.scrollBy(0,800)");
         // Select rating scale
         driver.findElement(ratingScaleField).sendKeys(RatingScale);
         Thread.sleep(2000);
         driver.findElement(ratingScaleDropdown).click();
         Thread.sleep(1000);
         // Select employee group
-        JavascriptExecutor Srollup2 = (JavascriptExecutor) driver;
-        Srollup2.executeScript("window.scrollBy(0,1000)");
+        Srollup.executeScript("window.scrollBy(0,1000)");
         driver.findElement(groupRadioButton).click();
         Thread.sleep(2000);
         driver.findElement(empGroupField).sendKeys(empGroup);
@@ -112,7 +112,7 @@ public class addGoalPlan {
         driver.findElement(isWeightageBasedCheckbox).click();
         Thread.sleep(2000);
 
-        Srollup2.executeScript("window.scrollBy(0,1500)");
+        Srollup.executeScript("window.scrollBy(0,1500)");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement enabled = wait.until(ExpectedConditions.visibilityOfElementLocated(isActiveCheckbox));
         System.out.println(enabled);

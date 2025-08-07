@@ -6,6 +6,7 @@ import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,9 +22,13 @@ public class Skipp_Approval
            this.driver = driver;
            this.prop = prop;
        }
+
 	
 	public void approve() throws InterruptedException 
 	{
+
+
+
 		driver.findElement(By.xpath("//a[@class=\"approval\"]")).click();
 		
 		String cycleName = prop.getProperty("GoalPalnName");

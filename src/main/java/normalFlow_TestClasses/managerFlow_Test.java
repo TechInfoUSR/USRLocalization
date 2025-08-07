@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
+import normalFlow_BaseClasses.LoginPage;
 import normalFlow_BaseClasses.PMSCyclePage;
 import normalFlow_BaseClasses.addGoalPlan;
 import normalFlow_BaseClasses.emp_assesment_Submission;
@@ -20,7 +21,7 @@ import normalFlow_BaseClasses.initiatePMSCycle;
 import normalFlow_BaseClasses.manager_AddGoals;
 
 public class managerFlow_Test {
-	addGoalPlan addGoalPlan;
+	
 	PMSCyclePage PMSCyclePage;
 	initiatePMSCycle initiatePMSCycle;
 	manager_AddGoals manager_AddGoals;
@@ -37,9 +38,9 @@ public class managerFlow_Test {
         prop = cp.initLangProp("NormalFlowTest");
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
-        addGoalPlan = new addGoalPlan(driver);
-        addGoalPlan.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
-          
+        LoginPage LoginPage = new LoginPage(driver);
+        LoginPage.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
+        LoginPage.ClosePopUp();
         PMSCyclePage = new PMSCyclePage(driver, prop);
         initiatePMSCycle = new initiatePMSCycle(driver, prop);
         manager_AddGoals = new manager_AddGoals(driver, prop);

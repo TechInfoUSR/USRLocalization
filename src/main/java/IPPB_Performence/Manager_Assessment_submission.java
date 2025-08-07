@@ -120,19 +120,19 @@ public class Manager_Assessment_submission {
 //			}
 
 
-//			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys("MGRCMT");
+			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys("MGRCMT");
 
 //			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys("MGRCMT");
-			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
-			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
-			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
-			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
-			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
-			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
-			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
-			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
-			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
-			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+//			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+//			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+//			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+//			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+//			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+//			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+//			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+//			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+//			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
+//			driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys(prop.getProperty("CMT1000"));
 
 			Thread.sleep(1500);
 
@@ -142,7 +142,7 @@ public class Manager_Assessment_submission {
 			By OkBtn = (By.xpath("//button[contains(text(),'OK')]"));
 			WebElement OKbtn = wait.until(ExpectedConditions.visibilityOfElementLocated(OkBtn));
 			OKbtn.click();
-//            Thread.sleep(4000); 
+            Thread.sleep(400);
 
 			WebElement Click_TEAM_PMS = wait.until(
 					ExpectedConditions.elementToBeClickable(By.xpath("//img[@src=\"pmsGE/images/svg/team.svg\"]")));
