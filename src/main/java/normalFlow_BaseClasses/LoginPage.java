@@ -28,7 +28,13 @@ public class LoginPage {
     }
 	
 	 public  void ClosePopUp(){
- 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+ 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+ 		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
  	    By closeBtnLocator = By.xpath("//button[@class='close']");
 
  		try {

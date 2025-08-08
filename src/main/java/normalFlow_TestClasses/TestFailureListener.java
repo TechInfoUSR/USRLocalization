@@ -10,7 +10,8 @@ public class TestFailureListener implements ITestListener {
 	 private static final String REPORT_DIR = "D:\\USRInfotech\\10-07-2024_Automation\\USRLocalization\\test-output";
 
     @Override
-    public void onFinish(ITestContext context) {
+    public void onFinish(ITestContext context) 
+    {
         // This method will be called after all tests have run
         Email_able_report_Sender reportSender = new Email_able_report_Sender();
         try {
@@ -53,10 +54,5 @@ public class TestFailureListener implements ITestListener {
     public static boolean hasTestFailed() {
         return hasTestFailed;
     }
-
-	
-    
-    
-    
-    
+ 
 }

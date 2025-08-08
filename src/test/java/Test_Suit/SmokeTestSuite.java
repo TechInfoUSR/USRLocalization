@@ -41,7 +41,8 @@ import normalFlow_BaseClasses.LoginPage;
 
 
 @Listeners(TestFailureListener.class)
-public class SmokeTestSuite{
+public class SmokeTestSuite
+{
 	addGoalPlan addGoalPlan;
     DriverFactory df;
     ConfigpropReader cp;
@@ -112,7 +113,6 @@ public class SmokeTestSuite{
     public void Initiate_PMSCycle() throws InterruptedException 
     {	
     	initiatePMSCycle.goToWeightTab(prop.getProperty("EmpGroup"),prop.getProperty("GoalPalnName"));
-//    	initiatePMSCycle.enterWeightages(prop.getProperty("objectiveWeightage"),prop.getProperty("coreValueWeightage"), prop.getProperty("jobCompetencyWeightage"), prop.getProperty("behaviorWeightage"), prop.getProperty("leadershipWeightage"));
     	initiatePMSCycle.enterWeightages();
     	boolean isDisplayed =initiatePMSCycle.isCycleInitiated();
     	System.out.println(isDisplayed);    	
@@ -120,12 +120,12 @@ public class SmokeTestSuite{
     }
 
     @Test(priority = 4,dependsOnMethods = "Initiate_PMSCycle",retryAnalyzer = RetryAnalyzer.class)
-    public void Manager_AddGoalTo_Emp() throws InterruptedException {
+    public void Manager_AddGoalTo_Emp() throws InterruptedException 
+    {
     	driver.get(prop.getProperty("url"));
     	LoginPage.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
     	
     	LoginPage.ClosePopUp();
-//    	manager_AddGoals.navigateToEmployeeSelf();
         String pmsCycleName = prop.getProperty("GoalPalnName");
         manager_AddGoals.selectGoalCycle(pmsCycleName);
         manager_AddGoals.openEmployeeAssessment();
@@ -152,10 +152,10 @@ public class SmokeTestSuite{
     	driver.get(prop.getProperty("url"));
     	LoginPage.login(prop.getProperty("MgrUN"), prop.getProperty("Mgrpass"));
     	LoginPage.ClosePopUp();
-    	  manager_Sumitt_Assesment_To_Skip.selectGoalCycle();
-    	  String isselfsub = manager_Sumitt_Assesment_To_Skip.isSelfsub();
-    	  String Actualtest = "Manager Review Completed";
-    	  assertEquals(Actualtest,isselfsub,"Manager Assesment is not submitted!!");
+    	manager_Sumitt_Assesment_To_Skip.selectGoalCycle();
+    	String isselfsub = manager_Sumitt_Assesment_To_Skip.isSelfsub();
+    	String Actualtest = "Manager Review Completed";
+    	assertEquals(Actualtest,isselfsub,"Manager Assesment is not submitted!!");
       }
       
     @Test(priority = 7,dependsOnMethods = "Manager_AssessmentSubmissionTo_Skip",retryAnalyzer = RetryAnalyzer.class)
@@ -224,7 +224,6 @@ public class SmokeTestSuite{
     	LoginPage.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
     	Delete_the_PMS_Cycle.Deletion();
     	boolean isdeleted = Delete_the_PMS_Cycle.isDeleted();
-//    	System.out.println(isdeleted);
     	assertTrue(isdeleted,"working fine");
     }
     
@@ -240,40 +239,23 @@ public class SmokeTestSuite{
     }
     
     @AfterMethod
-    public void runOnFailure(ITestResult result) throws InterruptedException {
+    public void runOnFailure(ITestResult result) throws InterruptedException 
+    {
     	
-    	if (ITestResult.FAILURE == result.getStatus()) {
+    	if (ITestResult.FAILURE == result.getStatus()) 
+    	{
             ScreenshotUtil.captureScreenshot(result.getName(),driver);
             Email_able_report_Sender.Screenshortpath( 
                "Test Failed: " + result.getName(),
                "Please find the attached screenshot of the failed test.",
                "screenshots/" + result.getName() + ".png");
     	
-      /*	
-        if (TestFailureListener.hasTestFailed()) {
-        	
-        	
-        	
-        	driver.get(prop.getProperty("url"));
-        	addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
-        	Delete_the_PMS_Cycle.Deletion();
-        	System.out.println("Test case failed and Employees removed from the PMS group");
-
-        	
-        	driver.get(prop.getProperty("url"));
-        	addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
-        	Delete_Goal_Plan_and_PMS_Cycle.DeletionPMSCycle();
-        	Delete_Goal_Plan_and_PMS_Cycle.DeletionGoalPlan();
-
-        }
-      */
-    }
-   
-        
-        
+         }
+    
     }
     @AfterTest
-    void teardown() {
+    void teardown() 
+    {
     	driver.quit();
     }
     

@@ -92,7 +92,7 @@ public class Delete_the_PMS_Cycle {
     void RemoveEmp() throws InterruptedException
     {
         driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div[2]/table/tbody/tr[1]/td[1]/div/ul[2]/li/a/b")).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
         Thread.sleep(1000);
     }
@@ -108,7 +108,7 @@ public class Delete_the_PMS_Cycle {
         driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
         Thread.sleep(3500);
         driver.findElement(By.xpath("//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"][1]")).click();
-        Thread.sleep(1500);
+        Thread.sleep(3000);
         RemoveEmp();
     }
 
@@ -120,14 +120,15 @@ public class Delete_the_PMS_Cycle {
         driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div[2]/table/tbody/tr[1]/td[1]/div/ul[1]/li[2]/a/img")).click();
         Thread.sleep(3500);
         driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
-        Thread.sleep(2000);
+        Thread.sleep(3500);
+//        driver.findElement(By.xpath("(//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"])[1]")).click();
+//        Thread.sleep(4000);
+//        driver.findElement(By.xpath("(/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr/td[1]/div/*)[1]")).click();
+//        Thread.sleep(1000);
+//        driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
+//        Thread.sleep(3500);
         driver.findElement(By.xpath("(//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"])[1]")).click();
-        Thread.sleep(4000);
-        driver.findElement(By.xpath("(/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr/td[1]/div/*)[1]")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("(//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"])[1]")).click();
+        Thread.sleep(3000);
         ResetEmpAssesmet();
 
     }
@@ -142,7 +143,7 @@ public class Delete_the_PMS_Cycle {
         driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
         Thread.sleep(4000);
         driver.findElement(By.xpath("(//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"])[1]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         ResetManagerAssessment();
         
     }

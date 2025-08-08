@@ -12,6 +12,7 @@ import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
+import org.apache.commons.mail.MultiPartEmail;
 import org.testng.IReporter;
 import org.testng.ISuite;
 import org.testng.xml.XmlSuite;
@@ -112,6 +113,16 @@ public class Email_able_report_Sender implements IReporter {
             System.out.println("path to SS: "+attachmentPath);
             attachment.setName(subject+dateFormat.format(currentDate)+".png");
 
+            
+            
+
+//		    email.setHostName("smtp.zeptomail.in");
+//		    email.setSmtpPort(587);
+//		    "noreply@okrstars.com", "PHtE6r0OE+/q2TQppkUD4/6/Hs6tZ456+rtlLwMWtopEDfBQGU1Sr9kilWSx/ksuA/VFFP/JzNpqsLuY4uKMI2rtZDxMWWqyqK3sx/VYSPOZsbq6x00bt1gfdkDeUILue9Zq3SfTuN7ZNA=="
+
+            
+            
+//		    email.setSSLOnConnect(true);
 //          HtmlEmail email = new HtmlEmail();
 //          email.setHostName("smtp.gmail.com");
 //          email.setSmtpPort(587);
