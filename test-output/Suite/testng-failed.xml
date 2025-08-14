@@ -23,6 +23,7 @@
           <include name="runOnFailure"/>
           <include name="teardown"/>
           <include name="Skip_Approval"/>
+          <include name="Remove_EmployeesFromGoalPlan"/>
         </methods>
       </class> <!-- Test_Suit.SmokeTestSuite -->
     </classes>

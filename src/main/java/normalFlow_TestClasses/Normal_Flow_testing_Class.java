@@ -35,7 +35,7 @@ public class Normal_Flow_testing_Class {
     void setUp() throws IOException 
     {
         cp = new ConfigpropReader();
-        prop = cp.initLangProp("NormalFlowTest");
+        prop = cp.initFlow("NormalFlowTest");
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
         addGoalPlan = new addGoalPlan(driver);
@@ -83,7 +83,7 @@ public class Normal_Flow_testing_Class {
     @Test(priority = 4)
     public void empSelf() throws InterruptedException {
         cp = new ConfigpropReader();
-        prop = cp.initLangProp("NormalFlowTest");
+        prop = cp.initFlow("NormalFlowTest");
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
     	

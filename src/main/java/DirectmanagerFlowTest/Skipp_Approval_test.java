@@ -30,7 +30,7 @@ public class Skipp_Approval_test
     void setUp() throws IOException 
     {
     	 cp = new ConfigpropReader();
-         prop = cp.initLangProp("NormalFlowTest");
+         prop = cp.initFlow("DirectMGRProp");
          df = new DriverFactory();
          driver = df.initDriver("chrome", prop);
          addGoalPlan = new addGoalPlan(driver);

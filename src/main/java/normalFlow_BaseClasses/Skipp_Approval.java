@@ -47,19 +47,33 @@ public class Skipp_Approval
 //	        throw new IllegalArgumentException("Employee name property is not set or empty.");
 //	    }
 		
-	    Random random = new Random();
-    	int randomNumber = random.nextInt(100) + 1;
-    	
-	    updateProgressBar(driver, "(//input[@type=\"range\"])[5]", randomNumber);
-
-	    driver.findElement(By.xpath("//textarea[@name=\"comment\"][1]")).sendKeys("Skip CMT");
+//	    Random random = new Random();
+//    	int randomNumber = random.nextInt(100) + 1;
+//    	
+//	    updateProgressBar(driver, "(//input[@type=\"range\"])[5]", randomNumber);
+//
+//	    driver.findElement(By.xpath("//textarea[@name=\"comment\"][1]")).sendKeys("Skip CMT");
+////		Thread.sleep(2000);
+//		driver.findElement(By.xpath("//img[@class=\"mr-1\"][1]")).click();
 //		Thread.sleep(2000);
-		driver.findElement(By.xpath("//img[@class=\"mr-1\"][1]")).click();
-		Thread.sleep(2000);
+//	    driver.findElement(By.xpath("//button[@ng-click=\"submitApprovalForAssessment()\"]")).click();
+//	    Thread.sleep(2000);
+//	    driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
+//	    Thread.sleep(500);
+	    
+	    Thread.sleep(500);
+	    driver.findElement(By.xpath("//img[@src=\"pmsGE/images/svg/tick-green.svg\"]")).click();
+	    Thread.sleep(500);
+	    driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_commentsa\"]")).sendKeys("SKIP Apporoval");
+	    Thread.sleep(3000);
 	    driver.findElement(By.xpath("//button[@ng-click=\"submitApprovalForAssessment()\"]")).click();
 	    Thread.sleep(2000);
 	    driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
-	    Thread.sleep(500);
+	    Thread.sleep(2000);
+	    
+	    
+	    
+	    
 	}
 	
 	

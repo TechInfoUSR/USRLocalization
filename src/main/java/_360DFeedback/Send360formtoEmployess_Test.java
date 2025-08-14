@@ -24,7 +24,7 @@ public class Send360formtoEmployess_Test {
 	    void setUp() throws IOException, InterruptedException 
 	    {
 	        cp = new ConfigpropReader();
-	        prop = cp.initLangProp("360Degree_Flow");
+	        prop = cp.initFlow("360Degree_Flow");
 	        df = new DriverFactory();
 	        driver = df.initDriver("chrome", prop);
 	        Send360formto_Employess = new Send360formto_Employess(driver, prop);

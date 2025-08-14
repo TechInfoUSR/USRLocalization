@@ -26,7 +26,7 @@ public class managertestHomePage {
 	@BeforeTest
 	public void setup() {
 		cp = new ConfigpropReader();
-		prop = cp.initLangProp("english");
+		prop = cp.initFlow("english");
 		df = new DriverFactory();
 		driver = df.initDriver("chrome", prop);
 		driver.findElement(By.xpath("//*[@id=\"hello\"]/div[2]/input")).sendKeys(prop.getProperty("MgrUsername"));

@@ -195,14 +195,14 @@ public class manager_AddGoals
 //                Thread.sleep(1000);
         }
 
-        WebElement element1 = driver.findElement(By.xpath("(//a[@class=\"btn checkin-btn block-btn subAssessmentButton\"])[1]"));
+        WebElement element1 = driver.findElement(By.xpath("(//a[@class=\"btn checkin-btn block-btn subAssessmentButton ng-scope\"])[1]"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
         element1.click();
 
 
-//              Thread.sleep(1000);
-        driver.findElement(By.xpath("(//textarea[@id=\"goal_checkin_commentsa\"])[2]")).sendKeys("MgrCMT");
-//              Thread.sleep(200);
+              Thread.sleep(2000);     
+        driver.findElement(By.xpath("//textarea[@id=\"goal_checkin_mgr\"]")).sendKeys("MgrCMT");
+              Thread.sleep(200);
         driver.findElement(By.xpath("//button[@ng-click=\"submitPerformanceForAuthorizeApprove()\"]")).click();
 
 

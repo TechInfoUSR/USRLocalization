@@ -30,7 +30,7 @@ public class manager_Sumitt_Assesment_To_Skip_Test
     void setUp() throws IOException 
     {
         cp = new ConfigpropReader();
-        prop = cp.initLangProp("NormalFlowTest");
+        prop = cp.initFlow("NormalFlowTest");
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
         manager_Sumitt_Assesment_To_Skip = new manager_Sumitt_Assesment_To_Skip(driver, prop);

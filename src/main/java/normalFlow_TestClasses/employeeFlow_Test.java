@@ -27,7 +27,7 @@ public class employeeFlow_Test
     void setUp() throws IOException 
     {
         cp = new ConfigpropReader();
-        prop = cp.initLangProp("NormalFlowTest");
+        prop = cp.initFlow("NormalFlowTest");
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
         LoginPage LoginPage = new LoginPage(driver);

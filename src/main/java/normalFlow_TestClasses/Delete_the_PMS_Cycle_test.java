@@ -30,7 +30,7 @@ public class Delete_the_PMS_Cycle_test {
     void setUp() throws IOException 
     {
         cp = new ConfigpropReader();
-        prop = cp.initLangProp("NormalFlowTest");
+        prop = cp.initFlow("NormalFlowTest");
         df = new DriverFactory();
         driver = df.initDriver("chrome", prop);
         LoginPage LoginPage = new LoginPage(driver);

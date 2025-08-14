@@ -115,22 +115,18 @@ public class Email_able_report_Sender implements IReporter {
 
             
             
-
+//            noreply@okrstars.com
+            
 //		    email.setHostName("smtp.zeptomail.in");
 //		    email.setSmtpPort(587);
-//		    "noreply@okrstars.com", "PHtE6r0OE+/q2TQppkUD4/6/Hs6tZ456+rtlLwMWtopEDfBQGU1Sr9kilWSx/ksuA/VFFP/JzNpqsLuY4uKMI2rtZDxMWWqyqK3sx/VYSPOZsbq6x00bt1gfdkDeUILue9Zq3SfTuN7ZNA=="
-
+//		    "noreply@okrstars.com", "PHtE6r0OE+/q2TQppkUD4/6/Hs6tZ456+rtlLwMWtopEDfBQGU1Sr9kilWSx/ksuA/VFFP/JzNpqsLuY4uKMI2rtZDxMWWqyqK3sx/VYSPOZsbq6x00bt1gfdkDeUILue9Zq3SfTuN7ZNA=="         
+        
+//            skipmanagergobetter@gmail.com
             
-            
-//		    email.setSSLOnConnect(true);
-//          HtmlEmail email = new HtmlEmail();
 //          email.setHostName("smtp.gmail.com");
 //          email.setSmtpPort(587);
 //          email.setAuthenticator(new DefaultAuthenticator("skipmanagergobetter@gmail.com", "wocx rawr lldu sfws"));
-//          email.setSSLOnConnect(true);
-//          email.setFrom("skipmanagergobetter@gmail.com");
-//          email.setSubject("Test Instance Test Report");
-//          email.setHtmlMsg("Test Report: "+reportContent.toString());
+
             
             HtmlEmail email = new HtmlEmail();
             email.setHostName("mail.usrinfotech.com");
@@ -141,7 +137,7 @@ public class Email_able_report_Sender implements IReporter {
             email.setSubject("Test Instance Test Report");
             email.setHtmlMsg("Test Report: "+reportContent.toString());
                   
-            String[] recipients = {"Hanumanth@usrinfotech.com"};
+            String[] recipients = {"Hanumanth@usrinfotech.com","bharath@usrinfotech.com"};
 //    		"ravi@okrstars.co","santhosh@usrinfotech.com","vaidya@usrinfotech.com","subashini@usrinfotech.com" ,"Bharath@usrinfotech.com"
 
             for (String recipient : recipients) {

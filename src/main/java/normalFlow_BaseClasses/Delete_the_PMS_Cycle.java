@@ -47,7 +47,7 @@ public class Delete_the_PMS_Cycle {
         {
             Thread.sleep(2000);
             driver.findElement(By.xpath("//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"][1]")).click();
-            String actualTextRemoveEmp = driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div/table/tbody/tr[1]/td[1]/div/ul[2]/li/a/b")).getText();
+            String actualTextRemoveEmp = driver.findElement(By.xpath("/html/body/div/div[6]/div/div/div/div[2]/div/section/div[2]/b/div[2]/table/tbody/tr[1]/td[1]/div/ul[2]/li/a/b")).getText();
             System.out.println(actualTextRemoveEmp);
             String actualResetManagerAssessment = driver.findElement(By.xpath("//a[@ng-click=\"resetAppraisal(pp.reviewCycleId,pp.employeeId,true,2)\"]//b")).getText();
             System.out.println(actualResetManagerAssessment);
@@ -90,20 +90,26 @@ public class Delete_the_PMS_Cycle {
     }
 
     void RemoveEmp() throws InterruptedException
-    {
-        driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div[2]/table/tbody/tr[1]/td[1]/div/ul[2]/li/a/b")).click();
+    {    	
+    	Thread.sleep(4000);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        By Isbuttonclickable =  By.xpath("/html/body/div/div[6]/div/div/div/div[2]/div/section/div[2]/b/div[2]/table/tbody/tr[1]/td[1]/div/ul[2]/li/a/b");
+        WebElement element =  wait.until(ExpectedConditions.elementToBeClickable(Isbuttonclickable));      
+        element.click();
+        
         Thread.sleep(3000);
         driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
     }
 
 
     void ResetEmpAssesmet() throws InterruptedException
-    {
-    	WebElement element =driver.findElement(By.xpath("(//a[@ng-click=\"resetAppraisal(pp.reviewCycleId,pp.employeeId,false,1,1)\"]//b)[1]"));
-//    	boolean Enabled = element.isEnabled();
-//    	System.out.println("Button "+Enabled);
-    	element.click();
+    {Thread.sleep(3000);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        By Isbuttonclickable =  By.xpath("(//b[contains(text(),\"Reset Employee Assessment \")])[1]");
+        WebElement element =  wait.until(ExpectedConditions.elementToBeClickable(Isbuttonclickable));      
+        element.click();
+
     	Thread.sleep(2000);
         driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
         Thread.sleep(3500);
@@ -113,12 +119,13 @@ public class Delete_the_PMS_Cycle {
     }
 
     void ResetManagerAssessment() throws InterruptedException
-    {
+    {Thread.sleep(3000);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        By Isbuttonclickable =  By.xpath("(//b[contains(text(),\"Reset Manager's and Authorized Assessment (without deleting contents already filled by employee and manager)\")])[1]");
+        WebElement element =  wait.until(ExpectedConditions.elementToBeClickable(Isbuttonclickable));      
+        element.click();
 
-        boolean IsEnable = driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div[2]/table/tbody/tr[1]/td[1]/div/ul[1]/li[2]/a/img")).isEnabled();
-        System.out.println(IsEnable);
-        driver.findElement(By.xpath("/html/body/div/div[5]/div/div/div/div[2]/div/section/div[2]/b/div[2]/table/tbody/tr[1]/td[1]/div/ul[1]/li[2]/a/img")).click();
-        Thread.sleep(3500);
+        Thread.sleep(3000);
         driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
         Thread.sleep(3500);
 //        driver.findElement(By.xpath("(//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"])[1]")).click();
@@ -134,12 +141,14 @@ public class Delete_the_PMS_Cycle {
     }
     
     void ResetApproverAssesmet() throws InterruptedException{
-    	WebElement element = driver.findElement(By.xpath("(//a[@ng-click=\"resetAppraisal(pp.reviewCycleId, pp.employeeId, false,3)\"]//b)[1]"));
-        boolean IsEnable = element.isEnabled();
-        System.out.println(IsEnable);
-        element.click();
+    	
+    	Thread.sleep(3000);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        By Isbuttonclickable =  By.xpath("(//b[contains(text(),\"Reset Approver's Assessment (the comment provided by the approver will be deleted)\")])[1]");
+        WebElement element =  wait.until(ExpectedConditions.elementToBeClickable(Isbuttonclickable));      
+        element.click();   
         
-        Thread.sleep(2000);
+    	Thread.sleep(2000);
         driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
         Thread.sleep(4000);
         driver.findElement(By.xpath("(//div[@style=\"text-align:left;position:absolute;\"]//img[@src=\"asssets/media/images/plasticine/40/000000/serial-tasks.png\"])[1]")).click();

@@ -71,7 +71,8 @@ public class Employee_Assessment_submission {
                    {
                    case 0: String EmpUN1 = formatter.formatCellValue(cell);
                    EmpUN=EmpUN1;
-                   System.out.print(" "+ EmpUN + "\t"); break;
+                   System.out.print(" "+ EmpUN + "\t"); 
+                   break;
                    case 1: String Emppass = formatter.formatCellValue(cell);
                    driver.get(prop.getProperty("url"));
                    login(EmpUN,Emppass);
