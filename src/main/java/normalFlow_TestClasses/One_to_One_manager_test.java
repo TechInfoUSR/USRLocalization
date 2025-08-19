@@ -14,7 +14,6 @@ import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
 import normalFlow_BaseClasses.LoginPage;
 import normalFlow_BaseClasses.One_to_One_manager;
-import normalFlow_BaseClasses.addGoalPlan;
 
 public class One_to_One_manager_test {
 	

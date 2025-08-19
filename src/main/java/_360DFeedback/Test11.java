@@ -160,7 +160,8 @@ public class Test11 {
              driver.findElement(By.xpath(radioButtonXPath)).click();//input[@value="1 "]
              Thread.sleep(1000);
              }
-             else {
+             else 
+             {
            	  String radioButtonXPath = "(//input[@value=\""+(optionno)+" \"])["+(j)+"]";
                  driver.findElement(By.xpath(radioButtonXPath)).click();
                  Thread.sleep(1000);

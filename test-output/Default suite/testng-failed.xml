@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test_Suit.DirectMGR_Smoke">
+      <class name="Test_Suit.SmokeTestSuite">
         <methods>
-          <include name="setUp"/>
-          <include name="Remove_EmployeesFromGoalPlan"/>
+          <include name="DeletionOf_PMSCycleAndGoalPlan"/>
+          <include name="runOnFailure"/>
           <include name="teardown"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- Test_Suit.DirectMGR_Smoke -->
+      </class> <!-- Test_Suit.SmokeTestSuite -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -14,7 +14,6 @@ import org.testng.annotations.Test;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
-import Utils.EmailUtil;
 import Utils.RetryAnalyzer;
 import Utils.ScreenshotUtil;
 import normalFlow_BaseClasses.Delete_Goal_Plan_and_PMS_Cycle;
@@ -55,16 +54,7 @@ public class Delete_Goal_Plan_and_PMS_Cycle__Test
     	boolean isGoalPlanDeleted = Delete_Goal_Plan_and_PMS_Cycle.isGoalPlanDeleted();
     	assertTrue(isGoalPlanDeleted,"Goal plan deleted");
     }
-    @AfterMethod
-    public void tearDown(ITestResult result) {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            ScreenshotUtil.captureScreenshot(result.getName(),driver);
-            EmailUtil.sendEmail("hanumanth@usrinfotech.com", 
-                "Test Failed: " + result.getName(),
-                "Please find the attached screenshot of the failed test.",
-                "screenshots/" + result.getName() + ".png");
-        }
-    }
+
     @AfterClass
     void teardown() {
     	driver.quit();

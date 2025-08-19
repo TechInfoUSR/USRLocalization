@@ -1,30 +1,23 @@
 package normalFlow_TestClasses;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.ITestResult;
-import org.testng.Assert.*;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
-import Utils.EmailUtil;
-import Utils.ScreenshotUtil;
 import normalFlow_BaseClasses.PMSCyclePage;
 import normalFlow_BaseClasses.addGoalPlan;
 import normalFlow_BaseClasses.emp_assesment_Submission;
 import normalFlow_BaseClasses.initiatePMSCycle;
 import normalFlow_BaseClasses.manager_AddGoals;
-
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
 
 //@Listeners(normalFlowTest.TestFailureListener.class)
 
@@ -88,18 +81,6 @@ public class addGoalPla_CreatePMSCycleTest
     }
 
 
-    
-    @AfterMethod
-    public void tearDown(ITestResult result) {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            ScreenshotUtil.captureScreenshot(result.getName(),driver);
-            EmailUtil.sendEmail("hanumanth@usrinfotech.com", 
-                "Test Failed: " + result.getName(),
-                "Please find the attached screenshot of the failed test.",
-                "screenshots/" + result.getName() + ".png");
-        }
-//        driver.quitDriver();
-    }
     @AfterTest
     void teardown() {
     	driver.quit();

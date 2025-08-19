@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 
 import ConfigReder.ConfigpropReader;
 import DirectmanagerFlowMain.PMSCyclePage;
+import DirectmanagerFlowMain.Progress_reset;
 import DirectmanagerFlowMain.Skip_Approval;
 import DirectmanagerFlowMain.addGoalPlan;
 import DirectmanagerFlowMain.initiatePMSCycle;
@@ -33,7 +34,7 @@ public class DirectMGR_Smoke
     manager_AddGoals manager_AddGoals;
     Skip_Approval Skip_Approval;
     Delete_Goal_Plan_and_PMS_Cycle Delete_Goal_Plan_and_PMS_Cycle;
-    Delete_the_PMS_Cycle Delete_the_PMS_Cycle;
+    Progress_reset Progress_reset;
     LoginPage LoginPage;
 
 
@@ -55,7 +56,7 @@ public class DirectMGR_Smoke
         initiatePMSCycle = new initiatePMSCycle(driver, prop);
         manager_AddGoals = new manager_AddGoals(driver, prop);
         Skip_Approval =new Skip_Approval( driver, prop);
-        Delete_the_PMS_Cycle =new Delete_the_PMS_Cycle(driver, prop);
+        Progress_reset =new Progress_reset(driver, prop);
         Delete_Goal_Plan_and_PMS_Cycle = new Delete_Goal_Plan_and_PMS_Cycle(driver, prop);
         LoginPage =new LoginPage(driver);
     }
@@ -129,8 +130,8 @@ public class DirectMGR_Smoke
 
     	driver.get(prop.getProperty("url"));
     	LoginPage.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
-    	Delete_the_PMS_Cycle.Deletion();
-    	boolean isdeleted = Delete_the_PMS_Cycle.isDeleted();
+    	Progress_reset.Deletion();
+    	boolean isdeleted = Progress_reset.isDeleted();
     	assertTrue(isdeleted,"working fine");
     }
 

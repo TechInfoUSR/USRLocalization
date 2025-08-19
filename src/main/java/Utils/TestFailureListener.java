@@ -1,4 +1,4 @@
-package normalFlow_TestClasses;
+package Utils;
 
 import org.apache.commons.mail.EmailException;
 import org.testng.ITestContext;

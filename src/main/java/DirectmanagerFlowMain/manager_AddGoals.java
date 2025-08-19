@@ -157,12 +157,6 @@ public class manager_AddGoals
         }
 
 
-
-
-
-
-
-
     public void selectGoalCycle() throws InterruptedException
     {
 
@@ -191,8 +185,7 @@ public class manager_AddGoals
 //           		Thread.sleep(5000);
             String Employee_cmt = "EmpCmt";
             String Employee_comment =Employee_cmt + i;
-//            EmployeeComment(driver,"(//div[@class=\"dropdown\"])[2]",Employee_comment, "(//a[@class=\"view-link mt-h cs-modal-btn ng-binding ng-scope\"]) [("+i+")]");
-//                Thread.sleep(1000);
+
         }
 
         WebElement element1 = driver.findElement(By.xpath("(//a[@class=\"btn checkin-btn block-btn subAssessmentButton ng-scope\"])[1]"));

@@ -14,8 +14,6 @@ import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
 import normalFlow_BaseClasses.LoginPage;
 import normalFlow_BaseClasses.One_to_One_Employee;
-import normalFlow_BaseClasses.addGoalPlan;
-import normalFlow_BaseClasses.emp_assesment_Submission;
 
 public class One_to_One_Employee_test {
 	

@@ -2,10 +2,10 @@ package Factory;
 
 import java.time.Duration;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -23,6 +23,10 @@ public class DriverFactory {
 		case "chrome":
 			driver = new ChromeDriver();
 			break;
+		case "edge":
+			driver = new EdgeDriver();
+			break;
+			
 		case "firefox":
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();

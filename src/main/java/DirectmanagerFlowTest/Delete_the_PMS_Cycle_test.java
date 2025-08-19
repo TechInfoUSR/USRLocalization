@@ -1,17 +1,18 @@
 package DirectmanagerFlowTest;
 
-import ConfigReder.ConfigpropReader;
-import Factory.DriverFactory;
-import normalFlow_BaseClasses.Delete_the_PMS_Cycle;
-import normalFlow_BaseClasses.addGoalPlan;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.Properties;
 
-import static org.testng.Assert.assertTrue;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import ConfigReder.ConfigpropReader;
+import DirectmanagerFlowMain.Progress_reset;
+import Factory.DriverFactory;
+import normalFlow_BaseClasses.addGoalPlan;
 
 public class Delete_the_PMS_Cycle_test {
 	addGoalPlan addGoalPlan;
@@ -19,7 +20,7 @@ public class Delete_the_PMS_Cycle_test {
     ConfigpropReader cp;
     Properties prop;
     WebDriver driver;
-    Delete_the_PMS_Cycle Delete_the_PMS_Cycle;
+    Progress_reset Progress_reset;
     
     
     @BeforeTest
@@ -31,21 +32,16 @@ public class Delete_the_PMS_Cycle_test {
         driver = df.initDriver("chrome", prop);
         addGoalPlan = new addGoalPlan(driver);
         addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
-        Delete_the_PMS_Cycle = new Delete_the_PMS_Cycle(driver, prop);
+        Progress_reset = new Progress_reset(driver, prop);
     }
     
     
     @Test
     void DeletionOfEmp_FromCycle() throws InterruptedException {
-    	Delete_the_PMS_Cycle.Deletion();
-    	boolean isdeleted = Delete_the_PMS_Cycle.isDeleted();
+    	Progress_reset.Deletion();
+    	boolean isdeleted = Progress_reset.isDeleted();
     	assertTrue(isdeleted,"working fine");
     	
     }
-    
-//    @AfterClass
-//    void teardown() {
-//    	driver.quit();
-//    }
-    
+
 }

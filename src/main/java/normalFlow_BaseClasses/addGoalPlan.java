@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class addGoalPlan {	
+public class addGoalPlan {
      WebDriver driver;
 
     public addGoalPlan(WebDriver driver) {
@@ -41,7 +41,7 @@ public class addGoalPlan {
 
 
 
-    public void addGoalPlan1(String goalPlanName, String empGroup,String RatingScale) throws InterruptedException 
+    public void addGoalPlan1(String goalPlanName, String empGroup,String RatingScale) throws InterruptedException
     {
         JavascriptExecutor Srollup = (JavascriptExecutor) driver;
         Srollup.executeScript("window.scrollBy(0,1600)");

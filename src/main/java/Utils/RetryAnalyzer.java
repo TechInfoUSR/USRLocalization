@@ -6,14 +6,15 @@ import org.testng.ITestResult;
 public class RetryAnalyzer implements IRetryAnalyzer {
 
     private int retryCount = 0;
-    private static final int maxRetryCount = 1; // Number of retry attempts
+    // Number of retry attempts
+    private static final int maxRetryCount = 1;
 
     @Override
     public boolean retry(ITestResult result) {
         if (retryCount < maxRetryCount) {
             retryCount++;
-            return true; // Return true to retry the test
+            return true; 
         }
-        return false; // Return false to not retry the test
+        return false;
     }
 }

@@ -2,12 +2,8 @@ package DirectmanagerFlowTest;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
-import Utils.EmailUtil;
-import Utils.ScreenshotUtil;
 import normalFlow_BaseClasses.*;
 import org.openqa.selenium.WebDriver;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -79,18 +75,6 @@ public class addGoalPla_CreatePMSCycleTest
     }
 
 
-    
-    @AfterMethod
-    public void tearDown(ITestResult result) {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            ScreenshotUtil.captureScreenshot(result.getName(),driver);
-            EmailUtil.sendEmail("hanumanth@usrinfotech.com", 
-                "Test Failed: " + result.getName(),
-                "Please find the attached screenshot of the failed test.",
-                "screenshots/" + result.getName() + ".png");
-        }
-//        driver.quitDriver();
-    }
     @AfterTest
     void teardown() {
     	driver.quit();

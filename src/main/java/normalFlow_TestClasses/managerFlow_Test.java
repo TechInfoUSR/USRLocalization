@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -15,7 +14,6 @@ import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
 import normalFlow_BaseClasses.LoginPage;
 import normalFlow_BaseClasses.PMSCyclePage;
-import normalFlow_BaseClasses.addGoalPlan;
 import normalFlow_BaseClasses.emp_assesment_Submission;
 import normalFlow_BaseClasses.initiatePMSCycle;
 import normalFlow_BaseClasses.manager_AddGoals;

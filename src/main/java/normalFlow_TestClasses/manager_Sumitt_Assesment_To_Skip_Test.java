@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -15,7 +14,6 @@ import org.testng.annotations.Test;
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
 import normalFlow_BaseClasses.LoginPage;
-import normalFlow_BaseClasses.addGoalPlan;
 import normalFlow_BaseClasses.manager_Sumitt_Assesment_To_Skip;
 
 public class manager_Sumitt_Assesment_To_Skip_Test 

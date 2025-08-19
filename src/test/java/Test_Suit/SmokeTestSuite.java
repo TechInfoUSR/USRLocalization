@@ -8,19 +8,17 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import org.testng.annotations.*;
 
 import ConfigReder.ConfigpropReader;
 import Factory.DriverFactory;
-import Utils.EmailUtil;
 import Utils.RetryAnalyzer;
 import Utils.ScreenshotUtil;
+import Utils.TestFailureListener;
 import normalFlow_BaseClasses.AddEmployeetoDB;
 import normalFlow_BaseClasses.Delete_Goal_Plan_and_PMS_Cycle;
 import normalFlow_BaseClasses.Delete_the_PMS_Cycle;
@@ -34,9 +32,7 @@ import normalFlow_BaseClasses.emp_assesment_Submission;
 import normalFlow_BaseClasses.initiatePMSCycle;
 import normalFlow_BaseClasses.manager_AddGoals;
 import normalFlow_BaseClasses.manager_Sumitt_Assesment_To_Skip;
-import normalFlow_TestClasses.Email_able_report_Sender;
-import normalFlow_TestClasses.TestFailureListener;
-import normalFlow_TestClasses.*;
+import Utils.Email_able_report_Sender;
 import normalFlow_BaseClasses.LoginPage;
 
 
@@ -48,7 +44,6 @@ public class SmokeTestSuite
     ConfigpropReader cp;
     Properties prop;
     WebDriver driver;
-    
     
     AddEmployeetoDB AddEmployeetoDB;
 	PMSCyclePage PMSCyclePage;
@@ -71,7 +66,7 @@ public class SmokeTestSuite
         cp = new ConfigpropReader();
         prop = cp.initFlow("NormalFlowTest");
         df = new DriverFactory();
-        driver = df.initDriver("chrome", prop);
+        driver = df.initDriver("Chrome", prop);
         addGoalPlan = new addGoalPlan(driver);
         addGoalPlan.login(prop.getProperty("HrUsername"), prop.getProperty("HrPassword"));
         AddEmployeetoDB =new AddEmployeetoDB(driver, prop);
@@ -102,6 +97,7 @@ public class SmokeTestSuite
     	
     	assertEquals(GoalPalnName,isDisplayed, "Goal Plan is not displayed!!");
     }
+    
     @Test(priority = 2,dependsOnMethods = "AddGoalPlan",retryAnalyzer = RetryAnalyzer.class)
     public void AddPMSCycle() throws InterruptedException 
     {	String GoalPalnName = prop.getProperty("GoalPalnName");
@@ -109,6 +105,7 @@ public class SmokeTestSuite
     	String isDisplayed = PMSCyclePage.isPMSCycleDisplayed();    	
         assertEquals(GoalPalnName,isDisplayed, "PMS Cycle is not displayed!!!");
     }
+    
     @Test(priority = 3,dependsOnMethods = "AddPMSCycle",retryAnalyzer = RetryAnalyzer.class)
     public void Initiate_PMSCycle() throws InterruptedException 
     {	
@@ -133,9 +130,7 @@ public class SmokeTestSuite
         assertTrue(isDisplayed, "Saved goal successfully"); 
     }
 
-
     @Test(priority = 5,dependsOnMethods = "Manager_AddGoalTo_Emp",retryAnalyzer = RetryAnalyzer.class)
-//  @Test
     public void Employee_AssessmentSubmission() throws InterruptedException{
     	driver.get(prop.getProperty("url"));
     	LoginPage.login(prop.getProperty("EmpUN"), prop.getProperty("Emppass"));
@@ -171,6 +166,7 @@ public class SmokeTestSuite
     	String Act="Submitted successfully";
     	assertEquals(Act,isdisp,"Skip_approval not completed!!!!");
     }
+    
     @Test(priority = 8,dependsOnMethods = "Skip_Approval",retryAnalyzer = RetryAnalyzer.class)
     void OneToOneMeeting_Manager() throws InterruptedException {
     	driver.get(prop.getProperty("url"));
@@ -213,9 +209,6 @@ public class SmokeTestSuite
     	assertEquals(Act,isdisp,"Finalized not completed!!!!");
     	
     }
-    
-    
-    
    
     @Test(priority=11,retryAnalyzer = RetryAnalyzer.class)
     void Remove_EmployeesFromGoalPlan() throws InterruptedException {
@@ -226,8 +219,6 @@ public class SmokeTestSuite
     	boolean isdeleted = Delete_the_PMS_Cycle.isDeleted();
     	assertTrue(isdeleted,"working fine");
     }
-    
-
 
     @Test(priority=12,retryAnalyzer = RetryAnalyzer.class)
     void DeletionOf_PMSCycleAndGoalPlan() throws InterruptedException {

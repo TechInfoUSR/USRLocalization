@@ -69,7 +69,7 @@ public class Skipp_Approval
 	    driver.findElement(By.xpath("//button[@ng-click=\"submitApprovalForAssessment()\"]")).click();
 	    Thread.sleep(2000);
 	    driver.findElement(By.xpath("//button[@data-bb-handler=\"confirm\"]")).click();
-	    Thread.sleep(2000);
+//	    Thread.sleep(2000);
 	    
 	    
 	    

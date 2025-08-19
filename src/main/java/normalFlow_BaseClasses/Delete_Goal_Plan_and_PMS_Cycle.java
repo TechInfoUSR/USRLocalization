@@ -23,6 +23,8 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
     }
 	public void DeletionPMSCycle() throws InterruptedException 
 	{
+		
+	    Thread.sleep(2000);
 		JavascriptExecutor Srollup = (JavascriptExecutor) driver;
         Srollup.executeScript("window.scrollBy(0,1800)");
         	
@@ -33,17 +35,11 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
 
 		String GoalPlanName = prop.getProperty("GoalPalnName");
         WebElement tbody = driver.findElement(By.cssSelector("tbody[role='alert']"));
-
-        // Find all <tr> elements within the <tbody>
         List<WebElement> rows = tbody.findElements(By.tagName("tr"));
-
-        // Get the count of <tr> elements
         int rowCount = rows.size();
         System.out.println("Number of rows in the table: " + rowCount);
         
         
-//		for (int i = 1;i<=rowCount ;i++)
-//		{
 			String test=driver.findElement(By.xpath("//tr[1]//span[contains(text(),'"+GoalPlanName+"')]")).getText();
 			if(test.equals(GoalPlanName)) 
 			{
@@ -55,9 +51,7 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
 	  	    By confirm = (By.xpath("//button[@data-bb-handler=\"confirm\"]"));
 				WebElement confirmBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(confirm));
 	  	    confirmBTN.click();
-//	  	    isPMSDeleted(GoalPlanName);
-//			break;
-//			}
+
 		}
 			else {
 				System.out.println("Already Deleted");
@@ -75,8 +69,6 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
         System.out.println("DeletionGoalPlan Number of rows in the table: " + rowCount);
         
         
-//		for (int i = 1;i<=rowCount ;i++)
-//		{
 			String test=driver.findElement(By.xpath("//tr[1]//td[contains(text(),'"+GoalPlanName+"')]")).getText();
 			System.out.println(test);
 			if(test.equals(GoalPlanName)) 
@@ -89,12 +81,8 @@ public class Delete_Goal_Plan_and_PMS_Cycle {
 				By confirm = (By.xpath("//button[@data-bb-handler=\"confirm\"]"));
 				WebElement confirmBTN = wait.until(ExpectedConditions.visibilityOfElementLocated(confirm));
 				confirmBTN.click();
-//				isGoalPlanDeleted();
-//				break;
 			}
 
-//		}
-		
 		
 	}
 	  public boolean isPMSDeleted(String GoalPlanName) throws InterruptedException {

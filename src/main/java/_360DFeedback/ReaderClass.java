@@ -1,4 +1,4 @@
-package formredingfor360degreefeedback;
+package _360DFeedback;
 
 import java.io.File;
 import java.io.FileInputStream;
