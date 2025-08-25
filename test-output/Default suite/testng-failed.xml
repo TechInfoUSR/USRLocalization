@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test_Suit.SmokeTestSuite">
+      <class name="normalFlow_TestClasses.Delete_Goal_Plan_and_PMS_Cycle__Test">
         <methods>
-          <include name="DeletionOf_PMSCycleAndGoalPlan"/>
-          <include name="runOnFailure"/>
-          <include name="teardown"/>
           <include name="setUp"/>
+          <include name="DeletionofPMS"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- Test_Suit.SmokeTestSuite -->
+      </class> <!-- normalFlow_TestClasses.Delete_Goal_Plan_and_PMS_Cycle__Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

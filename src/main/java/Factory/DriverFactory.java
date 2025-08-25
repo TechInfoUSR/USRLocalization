@@ -41,7 +41,7 @@ public class DriverFactory {
 		}
 
 		driver.get(prop.getProperty("url"));
-		driver.manage().deleteAllCookies();
+//		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 

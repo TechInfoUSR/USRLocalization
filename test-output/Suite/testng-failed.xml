@@ -9,9 +9,9 @@
     <classes>
       <class name="Test_Suit.SmokeTestSuite">
         <methods>
-          <include name="DeletionOf_PMSCycleAndGoalPlan"/>
           <include name="runOnFailure"/>
           <include name="teardown"/>
+          <include name="Remove_EmployeesFromGoalPlan"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- Test_Suit.SmokeTestSuite -->
